@@ -1,0 +1,4677 @@
+[
+  {
+    "offset": "0x1",
+    "token": "0x70000001",
+    "text": "{{ question = {0}, index = {1} }}"
+  },
+  {
+    "offset": "0x45",
+    "token": "0x70000045",
+    "text": "IsBusy"
+  },
+  {
+    "offset": "0x53",
+    "token": "0x70000053",
+    "text": "Title"
+  },
+  {
+    "offset": "0x5f",
+    "token": "0x7000005f",
+    "text": "SelectedLicense"
+  },
+  {
+    "offset": "0x7f",
+    "token": "0x7000007f",
+    "text": "IsIndependentStudyNoticeVisible"
+  },
+  {
+    "offset": "0xbf",
+    "token": "0x700000bf",
+    "text": "ReadinessText"
+  },
+  {
+    "offset": "0xdb",
+    "token": "0x700000db",
+    "text": "Readiness"
+  },
+  {
+    "offset": "0xef",
+    "token": "0x700000ef",
+    "text": "AccuracyText"
+  },
+  {
+    "offset": "0x109",
+    "token": "0x70000109",
+    "text": "ActivityText"
+  },
+  {
+    "offset": "0x123",
+    "token": "0x70000123",
+    "text": "BankText"
+  },
+  {
+    "offset": "0x135",
+    "token": "0x70000135",
+    "text": "MockTestDetails"
+  },
+  {
+    "offset": "0x155",
+    "token": "0x70000155",
+    "text": "Source"
+  },
+  {
+    "offset": "0x163",
+    "token": "0x70000163",
+    "text": "HasPremium"
+  },
+  {
+    "offset": "0x179",
+    "token": "0x70000179",
+    "text": "CanPurchase"
+  },
+  {
+    "offset": "0x191",
+    "token": "0x70000191",
+    "text": "PurchaseButtonText"
+  },
+  {
+    "offset": "0x1b7",
+    "token": "0x700001b7",
+    "text": "PurchaseSummary"
+  },
+  {
+    "offset": "0x1d7",
+    "token": "0x700001d7",
+    "text": "StoreStatusText"
+  },
+  {
+    "offset": "0x1f7",
+    "token": "0x700001f7",
+    "text": "HeroTitle"
+  },
+  {
+    "offset": "0x20b",
+    "token": "0x7000020b",
+    "text": "HeroDescription"
+  },
+  {
+    "offset": "0x22b",
+    "token": "0x7000022b",
+    "text": "IncludedSectionTitle"
+  },
+  {
+    "offset": "0x255",
+    "token": "0x70000255",
+    "text": "IncludedTitle"
+  },
+  {
+    "offset": "0x271",
+    "token": "0x70000271",
+    "text": "IncludedDescription"
+  },
+  {
+    "offset": "0x299",
+    "token": "0x70000299",
+    "text": "IncludedBenefit1"
+  },
+  {
+    "offset": "0x2bb",
+    "token": "0x700002bb",
+    "text": "IncludedBenefit2"
+  },
+  {
+    "offset": "0x2dd",
+    "token": "0x700002dd",
+    "text": "IncludedBenefit3"
+  },
+  {
+    "offset": "0x2ff",
+    "token": "0x700002ff",
+    "text": "PremiumSectionTitle"
+  },
+  {
+    "offset": "0x327",
+    "token": "0x70000327",
+    "text": "PremiumTitle"
+  },
+  {
+    "offset": "0x341",
+    "token": "0x70000341",
+    "text": "PremiumDescription"
+  },
+  {
+    "offset": "0x367",
+    "token": "0x70000367",
+    "text": "PremiumBenefit1"
+  },
+  {
+    "offset": "0x387",
+    "token": "0x70000387",
+    "text": "PremiumBenefit2"
+  },
+  {
+    "offset": "0x3a7",
+    "token": "0x700003a7",
+    "text": "PremiumBenefit3"
+  },
+  {
+    "offset": "0x3c7",
+    "token": "0x700003c7",
+    "text": "PremiumBenefit4"
+  },
+  {
+    "offset": "0x3e7",
+    "token": "0x700003e7",
+    "text": "TestsText"
+  },
+  {
+    "offset": "0x3fb",
+    "token": "0x700003fb",
+    "text": "PassText"
+  },
+  {
+    "offset": "0x40d",
+    "token": "0x7000040d",
+    "text": "Accuracy"
+  },
+  {
+    "offset": "0x41f",
+    "token": "0x7000041f",
+    "text": "HasAttempts"
+  },
+  {
+    "offset": "0x437",
+    "token": "0x70000437",
+    "text": "HasNoAttempts"
+  },
+  {
+    "offset": "0x453",
+    "token": "0x70000453",
+    "text": "Background"
+  },
+  {
+    "offset": "0x469",
+    "token": "0x70000469",
+    "text": "Border"
+  },
+  {
+    "offset": "0x477",
+    "token": "0x70000477",
+    "text": "Foreground"
+  },
+  {
+    "offset": "0x48d",
+    "token": "0x7000048d",
+    "text": "ProgressText"
+  },
+  {
+    "offset": "0x4a7",
+    "token": "0x700004a7",
+    "text": "Progress"
+  },
+  {
+    "offset": "0x4b9",
+    "token": "0x700004b9",
+    "text": "Prompt"
+  },
+  {
+    "offset": "0x4c7",
+    "token": "0x700004c7",
+    "text": "IsSingleAnswer"
+  },
+  {
+    "offset": "0x4e5",
+    "token": "0x700004e5",
+    "text": "IsMultipleAnswer"
+  },
+  {
+    "offset": "0x507",
+    "token": "0x70000507",
+    "text": "QuestionImagePath"
+  },
+  {
+    "offset": "0x52b",
+    "token": "0x7000052b",
+    "text": "HasQuestionImage"
+  },
+  {
+    "offset": "0x54d",
+    "token": "0x7000054d",
+    "text": "HasQuestionVideo"
+  },
+  {
+    "offset": "0x56f",
+    "token": "0x7000056f",
+    "text": "ActionText"
+  },
+  {
+    "offset": "0x585",
+    "token": "0x70000585",
+    "text": "TimeText"
+  },
+  {
+    "offset": "0x597",
+    "token": "0x70000597",
+    "text": "IsExamMode"
+  },
+  {
+    "offset": "0x5ad",
+    "token": "0x700005ad",
+    "text": "IsPreviousVisible"
+  },
+  {
+    "offset": "0x5d1",
+    "token": "0x700005d1",
+    "text": "CanGoPrevious"
+  },
+  {
+    "offset": "0x5ed",
+    "token": "0x700005ed",
+    "text": "IsBookmarkVisible"
+  },
+  {
+    "offset": "0x611",
+    "token": "0x70000611",
+    "text": "Explanation"
+  },
+  {
+    "offset": "0x629",
+    "token": "0x70000629",
+    "text": "IsExplanationVisible"
+  },
+  {
+    "offset": "0x653",
+    "token": "0x70000653",
+    "text": "CanContinue"
+  },
+  {
+    "offset": "0x66b",
+    "token": "0x7000066b",
+    "text": "SourceText"
+  },
+  {
+    "offset": "0x681",
+    "token": "0x70000681",
+    "text": "BookmarkText"
+  },
+  {
+    "offset": "0x69b",
+    "token": "0x7000069b",
+    "text": "ResultTitle"
+  },
+  {
+    "offset": "0x6b3",
+    "token": "0x700006b3",
+    "text": "ScoreText"
+  },
+  {
+    "offset": "0x6c7",
+    "token": "0x700006c7",
+    "text": "DetailText"
+  },
+  {
+    "offset": "0x6dd",
+    "token": "0x700006dd",
+    "text": "Score"
+  },
+  {
+    "offset": "0x6e9",
+    "token": "0x700006e9",
+    "text": "BadgeColor"
+  },
+  {
+    "offset": "0x6ff",
+    "token": "0x700006ff",
+    "text": "CompletionText"
+  },
+  {
+    "offset": "0x71d",
+    "token": "0x7000071d",
+    "text": "IsReviewVisible"
+  },
+  {
+    "offset": "0x73d",
+    "token": "0x7000073d",
+    "text": "SearchText"
+  },
+  {
+    "offset": "0x753",
+    "token": "0x70000753",
+    "text": "ResultText"
+  },
+  {
+    "offset": "0x769",
+    "token": "0x70000769",
+    "text": "IsPremiumUpsellVisible"
+  },
+  {
+    "offset": "0x797",
+    "token": "0x70000797",
+    "text": "HapticFeedbackEnabled"
+  },
+  {
+    "offset": "0x7c3",
+    "token": "0x700007c3",
+    "text": "AutoAdvance"
+  },
+  {
+    "offset": "0x7db",
+    "token": "0x700007db",
+    "text": "StudyRemindersEnabled"
+  },
+  {
+    "offset": "0x807",
+    "token": "0x70000807",
+    "text": "IsPrivacyChoicesVisible"
+  },
+  {
+    "offset": "0x837",
+    "token": "0x70000837",
+    "text": "PremiumButtonText"
+  },
+  {
+    "offset": "0x85b",
+    "token": "0x7000085b",
+    "text": "LicenseText"
+  },
+  {
+    "offset": "0x873",
+    "token": "0x70000873",
+    "text": "Navy"
+  },
+  {
+    "offset": "0x87d",
+    "token": "0x7000087d",
+    "text": "NavySoft"
+  },
+  {
+    "offset": "0x88f",
+    "token": "0x7000088f",
+    "text": "Teal"
+  },
+  {
+    "offset": "0x899",
+    "token": "0x70000899",
+    "text": "TealDark"
+  },
+  {
+    "offset": "0x8ab",
+    "token": "0x700008ab",
+    "text": "Amber"
+  },
+  {
+    "offset": "0x8b7",
+    "token": "0x700008b7",
+    "text": "Coral"
+  },
+  {
+    "offset": "0x8c3",
+    "token": "0x700008c3",
+    "text": "Canvas"
+  },
+  {
+    "offset": "0x8d1",
+    "token": "0x700008d1",
+    "text": "Surface"
+  },
+  {
+    "offset": "0x8e1",
+    "token": "0x700008e1",
+    "text": "Ink"
+  },
+  {
+    "offset": "0x8e9",
+    "token": "0x700008e9",
+    "text": "Slate"
+  },
+  {
+    "offset": "0x8f5",
+    "token": "0x700008f5",
+    "text": "Line"
+  },
+  {
+    "offset": "0x8ff",
+    "token": "0x700008ff",
+    "text": "SuccessSoft"
+  },
+  {
+    "offset": "0x917",
+    "token": "0x70000917",
+    "text": "ErrorSoft"
+  },
+  {
+    "offset": "0x92b",
+    "token": "0x7000092b",
+    "text": "White"
+  },
+  {
+    "offset": "0x937",
+    "token": "0x70000937",
+    "text": "Black"
+  },
+  {
+    "offset": "0x943",
+    "token": "0x70000943",
+    "text": "Gray100"
+  },
+  {
+    "offset": "0x953",
+    "token": "0x70000953",
+    "text": "Gray200"
+  },
+  {
+    "offset": "0x963",
+    "token": "0x70000963",
+    "text": "Gray300"
+  },
+  {
+    "offset": "0x973",
+    "token": "0x70000973",
+    "text": "Gray400"
+  },
+  {
+    "offset": "0x983",
+    "token": "0x70000983",
+    "text": "Gray500"
+  },
+  {
+    "offset": "0x993",
+    "token": "0x70000993",
+    "text": "Gray600"
+  },
+  {
+    "offset": "0x9a3",
+    "token": "0x700009a3",
+    "text": "Gray900"
+  },
+  {
+    "offset": "0x9b3",
+    "token": "0x700009b3",
+    "text": "Gray950"
+  },
+  {
+    "offset": "0x9c3",
+    "token": "0x700009c3",
+    "text": "Primary"
+  },
+  {
+    "offset": "0x9d3",
+    "token": "0x700009d3",
+    "text": "PrimaryDark"
+  },
+  {
+    "offset": "0x9eb",
+    "token": "0x700009eb",
+    "text": "PrimaryDarkText"
+  },
+  {
+    "offset": "0xa0b",
+    "token": "0x70000a0b",
+    "text": "Secondary"
+  },
+  {
+    "offset": "0xa1f",
+    "token": "0x70000a1f",
+    "text": "SecondaryDarkText"
+  },
+  {
+    "offset": "0xa43",
+    "token": "0x70000a43",
+    "text": "Tertiary"
+  },
+  {
+    "offset": "0xa55",
+    "token": "0x70000a55",
+    "text": "PrimaryBrush"
+  },
+  {
+    "offset": "0xa6f",
+    "token": "0x70000a6f",
+    "text": "SecondaryBrush"
+  },
+  {
+    "offset": "0xa8d",
+    "token": "0x70000a8d",
+    "text": "TertiaryBrush"
+  },
+  {
+    "offset": "0xaa9",
+    "token": "0x70000aa9",
+    "text": "WhiteBrush"
+  },
+  {
+    "offset": "0xabf",
+    "token": "0x70000abf",
+    "text": "BlackBrush"
+  },
+  {
+    "offset": "0xad5",
+    "token": "0x70000ad5",
+    "text": "Gray100Brush"
+  },
+  {
+    "offset": "0xaef",
+    "token": "0x70000aef",
+    "text": "Gray200Brush"
+  },
+  {
+    "offset": "0xb09",
+    "token": "0x70000b09",
+    "text": "Gray300Brush"
+  },
+  {
+    "offset": "0xb23",
+    "token": "0x70000b23",
+    "text": "Gray400Brush"
+  },
+  {
+    "offset": "0xb3d",
+    "token": "0x70000b3d",
+    "text": "Gray500Brush"
+  },
+  {
+    "offset": "0xb57",
+    "token": "0x70000b57",
+    "text": "Gray600Brush"
+  },
+  {
+    "offset": "0xb71",
+    "token": "0x70000b71",
+    "text": "Gray900Brush"
+  },
+  {
+    "offset": "0xb8b",
+    "token": "0x70000b8b",
+    "text": "Gray950Brush"
+  },
+  {
+    "offset": "0xba5",
+    "token": "0x70000ba5",
+    "text": "Value"
+  },
+  {
+    "offset": "0xbb1",
+    "token": "0x70000bb1",
+    "text": "OpenSansRegular"
+  },
+  {
+    "offset": "0xbd1",
+    "token": "0x70000bd1",
+    "text": "15"
+  },
+  {
+    "offset": "0xbd7",
+    "token": "0x70000bd7",
+    "text": "OpenSansSemibold"
+  },
+  {
+    "offset": "0xbf9",
+    "token": "0x70000bf9",
+    "text": "30"
+  },
+  {
+    "offset": "0xbff",
+    "token": "0x70000bff",
+    "text": "PageTitle"
+  },
+  {
+    "offset": "0xc13",
+    "token": "0x70000c13",
+    "text": "20"
+  },
+  {
+    "offset": "0xc19",
+    "token": "0x70000c19",
+    "text": "SectionTitle"
+  },
+  {
+    "offset": "0xc33",
+    "token": "0x70000c33",
+    "text": "12"
+  },
+  {
+    "offset": "0xc39",
+    "token": "0x70000c39",
+    "text": "1.2"
+  },
+  {
+    "offset": "0xc41",
+    "token": "0x70000c41",
+    "text": "Eyebrow"
+  },
+  {
+    "offset": "0xc51",
+    "token": "0x70000c51",
+    "text": "13"
+  },
+  {
+    "offset": "0xc57",
+    "token": "0x70000c57",
+    "text": "Muted"
+  },
+  {
+    "offset": "0xc63",
+    "token": "0x70000c63",
+    "text": "14"
+  },
+  {
+    "offset": "0xc69",
+    "token": "0x70000c69",
+    "text": "18,13"
+  },
+  {
+    "offset": "0xc75",
+    "token": "0x70000c75",
+    "text": "50"
+  },
+  {
+    "offset": "0xc7b",
+    "token": "0x70000c7b",
+    "text": "ButtonBase"
+  },
+  {
+    "offset": "0xc91",
+    "token": "0x70000c91",
+    "text": "BasedOn"
+  },
+  {
+    "offset": "0xca1",
+    "token": "0x70000ca1",
+    "text": "PrimaryButton"
+  },
+  {
+    "offset": "0xcbd",
+    "token": "0x70000cbd",
+    "text": "SecondaryButton"
+  },
+  {
+    "offset": "0xcdd",
+    "token": "0x70000cdd",
+    "text": "Transparent"
+  },
+  {
+    "offset": "0xcf5",
+    "token": "0x70000cf5",
+    "text": "1"
+  },
+  {
+    "offset": "0xcf9",
+    "token": "0x70000cf9",
+    "text": "OutlineButton"
+  },
+  {
+    "offset": "0xd15",
+    "token": "0x70000d15",
+    "text": "DangerButton"
+  },
+  {
+    "offset": "0xd2f",
+    "token": "0x70000d2f",
+    "text": "RoundRectangle 20"
+  },
+  {
+    "offset": "0xd53",
+    "token": "0x70000d53",
+    "text": "18"
+  },
+  {
+    "offset": "0xd59",
+    "token": "0x70000d59",
+    "text": "Card"
+  },
+  {
+    "offset": "0xd63",
+    "token": "0x70000d63",
+    "text": "8"
+  },
+  {
+    "offset": "0xd67",
+    "token": "0x70000d67",
+    "text": "Resources/Styles/Colors.xaml;assembly=RoadNZ"
+  },
+  {
+    "offset": "0xdc1",
+    "token": "0x70000dc1",
+    "text": "Resources/Styles/Styles.xaml;assembly=RoadNZ"
+  },
+  {
+    "offset": "0xe1b",
+    "token": "0x70000e1b",
+    "text": "app_start"
+  },
+  {
+    "offset": "0xe2f",
+    "token": "0x70000e2f",
+    "text": "app_resume"
+  },
+  {
+    "offset": "0xe45",
+    "token": "0x70000e45",
+    "text": "app_open"
+  },
+  {
+    "offset": "0xe57",
+    "token": "0x70000e57",
+    "text": "even_open_paywall"
+  },
+  {
+    "offset": "0xe7b",
+    "token": "0x70000e7b",
+    "text": "Home"
+  },
+  {
+    "offset": "0xe85",
+    "token": "0x70000e85",
+    "text": "nav_home.png"
+  },
+  {
+    "offset": "0xe9f",
+    "token": "0x70000e9f",
+    "text": "home"
+  },
+  {
+    "offset": "0xea9",
+    "token": "0x70000ea9",
+    "text": "Practice"
+  },
+  {
+    "offset": "0xebb",
+    "token": "0x70000ebb",
+    "text": "nav_practice.png"
+  },
+  {
+    "offset": "0xedd",
+    "token": "0x70000edd",
+    "text": "practice"
+  },
+  {
+    "offset": "0xeef",
+    "token": "0x70000eef",
+    "text": "nav_progress.png"
+  },
+  {
+    "offset": "0xf11",
+    "token": "0x70000f11",
+    "text": "progress"
+  },
+  {
+    "offset": "0xf23",
+    "token": "0x70000f23",
+    "text": "Settings"
+  },
+  {
+    "offset": "0xf35",
+    "token": "0x70000f35",
+    "text": "nav_settings.png"
+  },
+  {
+    "offset": "0xf57",
+    "token": "0x70000f57",
+    "text": "settings"
+  },
+  {
+    "offset": "0xf69",
+    "token": "0x70000f69",
+    "text": "QuizPage"
+  },
+  {
+    "offset": "0xf7b",
+    "token": "0x70000f7b",
+    "text": "ResultPage"
+  },
+  {
+    "offset": "0xf91",
+    "token": "0x70000f91",
+    "text": "ReviewPage"
+  },
+  {
+    "offset": "0xfa7",
+    "token": "0x70000fa7",
+    "text": "PaywallPage"
+  },
+  {
+    "offset": "0xfbf",
+    "token": "0x70000fbf",
+    "text": "RoadNZ – Driving Test"
+  },
+  {
+    "offset": "0xfeb",
+    "token": "0x70000feb",
+    "text": "ca-app-pub-1533469490370236/1662175805"
+  },
+  {
+    "offset": "0x1039",
+    "token": "0x70001039",
+    "text": "ca-app-pub-1533469490370236/8036012465"
+  },
+  {
+    "offset": "0x1087",
+    "token": "0x70001087",
+    "text": "ca-app-pub-1533469490370236/6158123897"
+  },
+  {
+    "offset": "0x10d5",
+    "token": "0x700010d5",
+    "text": "ca-app-pub-3940256099942544/5354046379"
+  },
+  {
+    "offset": "0x1123",
+    "token": "0x70001123",
+    "text": "ca-app-pub-3940256099942544/9257395921"
+  },
+  {
+    "offset": "0x1171",
+    "token": "0x70001171",
+    "text": "ca-app-pub-3940256099942544/2247696110"
+  },
+  {
+    "offset": "0x11bf",
+    "token": "0x700011bf",
+    "text": "OpenSans-Regular.ttf"
+  },
+  {
+    "offset": "0x11e9",
+    "token": "0x700011e9",
+    "text": "OpenSans-Semibold.ttf"
+  },
+  {
+    "offset": "0x1215",
+    "token": "0x70001215",
+    "text": "android.intent.action.VIEW"
+  },
+  {
+    "offset": "0x124b",
+    "token": "0x7000124b",
+    "text": "roadnz"
+  },
+  {
+    "offset": "0x1259",
+    "token": "0x70001259",
+    "text": "url"
+  },
+  {
+    "offset": "0x1261",
+    "token": "0x70001261",
+    "text": "link"
+  },
+  {
+    "offset": "0x126b",
+    "token": "0x7000126b",
+    "text": "local_reminder"
+  },
+  {
+    "offset": "0x1289",
+    "token": "0x70001289",
+    "text": "push"
+  },
+  {
+    "offset": "0x1293",
+    "token": "0x70001293",
+    "text": "local"
+  },
+  {
+    "offset": "0x129f",
+    "token": "0x7000129f",
+    "text": "android.permission.POST_NOTIFICATIONS"
+  },
+  {
+    "offset": "0x12eb",
+    "token": "0x700012eb",
+    "text": ".general"
+  },
+  {
+    "offset": "0x12fd",
+    "token": "0x700012fd",
+    "text": "notification"
+  },
+  {
+    "offset": "0x1317",
+    "token": "0x70001317",
+    "text": "RoadNZ updates"
+  },
+  {
+    "offset": "0x1335",
+    "token": "0x70001335",
+    "text": "B"
+  },
+  {
+    "offset": "0x1339",
+    "token": "0x70001339",
+    "text": "Car"
+  },
+  {
+    "offset": "0x1341",
+    "token": "0x70001341",
+    "text": "Class 1 learner"
+  },
+  {
+    "offset": "0x1361",
+    "token": "0x70001361",
+    "text": "A"
+  },
+  {
+    "offset": "0x1365",
+    "token": "0x70001365",
+    "text": "Motorcycle"
+  },
+  {
+    "offset": "0x137b",
+    "token": "0x7000137b",
+    "text": "Learner theory"
+  },
+  {
+    "offset": "0x1399",
+    "token": "0x70001399",
+    "text": "HV"
+  },
+  {
+    "offset": "0x139f",
+    "token": "0x7000139f",
+    "text": "Heavy vehicle"
+  },
+  {
+    "offset": "0x13bb",
+    "token": "0x700013bb",
+    "text": "Classes 2–5"
+  },
+  {
+    "offset": "0x13d3",
+    "token": "0x700013d3",
+    "text": "0%"
+  },
+  {
+    "offset": "0x13d9",
+    "token": "0x700013d9",
+    "text": "No answers yet"
+  },
+  {
+    "offset": "0x13f7",
+    "token": "0x700013f7",
+    "text": "Start with a short practice set"
+  },
+  {
+    "offset": "0x1437",
+    "token": "0x70001437",
+    "text": "Loading question bank"
+  },
+  {
+    "offset": "0x1463",
+    "token": "0x70001463",
+    "text": "35 questions · 30 minutes · 32 correct to pass."
+  },
+  {
+    "offset": "0x14c3",
+    "token": "0x700014c3",
+    "text": "//practice"
+  },
+  {
+    "offset": "0x14d9",
+    "token": "0x700014d9",
+    "text": "https://www.nzta.govt.nz/roadcode"
+  },
+  {
+    "offset": "0x151d",
+    "token": "0x7000151d",
+    "text": "SelectedLicenseName"
+  },
+  {
+    "offset": "0x1545",
+    "token": "0x70001545",
+    "text": "Choose a licence"
+  },
+  {
+    "offset": "0x1567",
+    "token": "0x70001567",
+    "text": "Cancel"
+  },
+  {
+    "offset": "0x1575",
+    "token": "0x70001575",
+    "text": " questions · "
+  },
+  {
+    "offset": "0x1591",
+    "token": "0x70001591",
+    "text": " minutes · "
+  },
+  {
+    "offset": "0x15a9",
+    "token": "0x700015a9",
+    "text": " correct to pass."
+  },
+  {
+    "offset": "0x15cd",
+    "token": "0x700015cd",
+    "text": "P0"
+  },
+  {
+    "offset": "0x15d3",
+    "token": "0x700015d3",
+    "text": " accuracy across "
+  },
+  {
+    "offset": "0x15f7",
+    "token": "0x700015f7",
+    "text": " answers"
+  },
+  {
+    "offset": "0x1609",
+    "token": "0x70001609",
+    "text": " of "
+  },
+  {
+    "offset": "0x1613",
+    "token": "0x70001613",
+    "text": " mock tests passed"
+  },
+  {
+    "offset": "0x1639",
+    "token": "0x70001639",
+    "text": "No mock tests completed yet"
+  },
+  {
+    "offset": "0x1671",
+    "token": "0x70001671",
+    "text": " questions available"
+  },
+  {
+    "offset": "0x169b",
+    "token": "0x7000169b",
+    "text": "mock_test"
+  },
+  {
+    "offset": "0x16af",
+    "token": "0x700016af",
+    "text": "unlock"
+  },
+  {
+    "offset": "0x16bd",
+    "token": "0x700016bd",
+    "text": "app"
+  },
+  {
+    "offset": "0x16c5",
+    "token": "0x700016c5",
+    "text": "Unlock RoadNZ Premium"
+  },
+  {
+    "offset": "0x16f1",
+    "token": "0x700016f1",
+    "text": "One-time purchase · Restore anytime"
+  },
+  {
+    "offset": "0x1739",
+    "token": "0x70001739",
+    "text": "RoadNZ Premium"
+  },
+  {
+    "offset": "0x1757",
+    "token": "0x70001757",
+    "text": ".."
+  },
+  {
+    "offset": "0x175d",
+    "token": "0x7000175d",
+    "text": "RoadNZ Premium active"
+  },
+  {
+    "offset": "0x1789",
+    "token": "0x70001789",
+    "text": "Premium access is active on this device"
+  },
+  {
+    "offset": "0x17d9",
+    "token": "0x700017d9",
+    "text": "All content is available, advertising is disabled and studying works offline."
+  },
+  {
+    "offset": "0x1876",
+    "token": "0x70001876",
+    "text": "Remove ads and study without interruptions"
+  },
+  {
+    "offset": "0x18cc",
+    "token": "0x700018cc",
+    "text": "Every licence, topic and question is already available. Premium removes every ad, starts mock tests instantly and works fully offline."
+  },
+  {
+    "offset": "0x19db",
+    "token": "0x700019db",
+    "text": "INCLUDED FOR EVERYONE"
+  },
+  {
+    "offset": "0x1a07",
+    "token": "0x70001a07",
+    "text": "The complete RoadNZ study library"
+  },
+  {
+    "offset": "0x1a4b",
+    "token": "0x70001a4b",
+    "text": "Car, motorcycle and heavy vehicle licences, with every topic available from the start"
+  },
+  {
+    "offset": "0x1af8",
+    "token": "0x70001af8",
+    "text": "All practice topics and questions"
+  },
+  {
+    "offset": "0x1b3c",
+    "token": "0x70001b3c",
+    "text": "Unlimited 35-question mock tests"
+  },
+  {
+    "offset": "0x1b7e",
+    "token": "0x70001b7e",
+    "text": "Progress, search, review and bookmarks"
+  },
+  {
+    "offset": "0x1bcc",
+    "token": "0x70001bcc",
+    "text": "PREMIUM BENEFITS"
+  },
+  {
+    "offset": "0x1bee",
+    "token": "0x70001bee",
+    "text": "An ad-free, uninterrupted experience"
+  },
+  {
+    "offset": "0x1c38",
+    "token": "0x70001c38",
+    "text": "The one-time purchase does not add extra content in this mode. It removes all advertising and unlocks studying anywhere, with or without internet."
+  },
+  {
+    "offset": "0x1d5f",
+    "token": "0x70001d5f",
+    "text": "No banners or interstitials"
+  },
+  {
+    "offset": "0x1d97",
+    "token": "0x70001d97",
+    "text": "No rewarded ads for mock tests"
+  },
+  {
+    "offset": "0x1dd5",
+    "token": "0x70001dd5",
+    "text": "Offline mock tests and study"
+  },
+  {
+    "offset": "0x1e0f",
+    "token": "0x70001e0f",
+    "text": "Go Premium"
+  },
+  {
+    "offset": "0x1e25",
+    "token": "0x70001e25",
+    "text": "Unlock the complete road to test day"
+  },
+  {
+    "offset": "0x1e6f",
+    "token": "0x70001e6f",
+    "text": "Car, motorcycle and heavy vehicle licences are included from the start. Premium opens the remaining topics for every licence and removes advertising."
+  },
+  {
+    "offset": "0x1f9c",
+    "token": "0x70001f9c",
+    "text": "INCLUDED FREE"
+  },
+  {
+    "offset": "0x1fb8",
+    "token": "0x70001fb8",
+    "text": "All three licence types"
+  },
+  {
+    "offset": "0x1fe8",
+    "token": "0x70001fe8",
+    "text": "Car (Class 1) · Motorcycle · Heavy vehicle (Classes 2–5)"
+  },
+  {
+    "offset": "0x205a",
+    "token": "0x7000205a",
+    "text": "Topics 1–4 for whichever licence you select"
+  },
+  {
+    "offset": "0x20b2",
+    "token": "0x700020b2",
+    "text": "Unlimited 35-question mock tests drawn from the free topics"
+  },
+  {
+    "offset": "0x212a",
+    "token": "0x7000212a",
+    "text": "Practice, search and review across the free topics"
+  },
+  {
+    "offset": "0x2190",
+    "token": "0x70002190",
+    "text": "PREMIUM UNLOCKS"
+  },
+  {
+    "offset": "0x21b0",
+    "token": "0x700021b0",
+    "text": "The remaining topics"
+  },
+  {
+    "offset": "0x21da",
+    "token": "0x700021da",
+    "text": "Topics 5 onward for car, motorcycle and heavy vehicle licences"
+  },
+  {
+    "offset": "0x2258",
+    "token": "0x70002258",
+    "text": "The complete question library"
+  },
+  {
+    "offset": "0x2294",
+    "token": "0x70002294",
+    "text": "Practice and review across every topic"
+  },
+  {
+    "offset": "0x22e2",
+    "token": "0x700022e2",
+    "text": "No ads or interruptions, fully offline"
+  },
+  {
+    "offset": "0x2330",
+    "token": "0x70002330",
+    "text": "Continue"
+  },
+  {
+    "offset": "0x2342",
+    "token": "0x70002342",
+    "text": "Purchase pending"
+  },
+  {
+    "offset": "0x2364",
+    "token": "0x70002364",
+    "text": "OK"
+  },
+  {
+    "offset": "0x236a",
+    "token": "0x7000236a",
+    "text": "Checking Google Play…"
+  },
+  {
+    "offset": "0x2396",
+    "token": "0x70002396",
+    "text": "Unlock for "
+  },
+  {
+    "offset": "0x23ae",
+    "token": "0x700023ae",
+    "text": "Go Premium for "
+  },
+  {
+    "offset": "0x23ce",
+    "token": "0x700023ce",
+    "text": "One-time purchase · "
+  },
+  {
+    "offset": "0x23f8",
+    "token": "0x700023f8",
+    "text": " · Restore anytime"
+  },
+  {
+    "offset": "0x241e",
+    "token": "0x7000241e",
+    "text": "Google Play is temporarily unavailable. Please try again or use Restore purchases."
+  },
+  {
+    "offset": "0x24c5",
+    "token": "0x700024c5",
+    "text": "Opening Google Play…"
+  },
+  {
+    "offset": "0x24ef",
+    "token": "0x700024ef",
+    "text": "Google Play could not start the purchase. Please try again."
+  },
+  {
+    "offset": "0x2567",
+    "token": "0x70002567",
+    "text": "Checking your Google Play purchases…"
+  },
+  {
+    "offset": "0x25b1",
+    "token": "0x700025b1",
+    "text": "Google Play could not check previous purchases. Please try again."
+  },
+  {
+    "offset": "0x2636",
+    "token": "0x70002636",
+    "text": "Store review access"
+  },
+  {
+    "offset": "0x265e",
+    "token": "0x7000265e",
+    "text": "Enter the access code supplied in the Google Play review instructions."
+  },
+  {
+    "offset": "0x26ed",
+    "token": "0x700026ed",
+    "text": "Unlock"
+  },
+  {
+    "offset": "0x26fb",
+    "token": "0x700026fb",
+    "text": "Access code"
+  },
+  {
+    "offset": "0x2713",
+    "token": "0x70002713",
+    "text": ""
+  },
+  {
+    "offset": "0x2715",
+    "token": "0x70002715",
+    "text": "The access code is not valid."
+  },
+  {
+    "offset": "0x2751",
+    "token": "0x70002751",
+    "text": "Review access is active. All topics are unlocked and advertising is disabled."
+  },
+  {
+    "offset": "0x27ee",
+    "token": "0x700027ee",
+    "text": "AttemptRow"
+  },
+  {
+    "offset": "0x2804",
+    "token": "0x70002804",
+    "text": " { "
+  },
+  {
+    "offset": "0x280c",
+    "token": "0x7000280c",
+    "text": "Mode = "
+  },
+  {
+    "offset": "0x281c",
+    "token": "0x7000281c",
+    "text": ", Date = "
+  },
+  {
+    "offset": "0x2830",
+    "token": "0x70002830",
+    "text": ", Score = "
+  },
+  {
+    "offset": "0x2846",
+    "token": "0x70002846",
+    "text": ", Status = "
+  },
+  {
+    "offset": "0x285e",
+    "token": "0x7000285e",
+    "text": ", StatusColor = "
+  },
+  {
+    "offset": "0x2880",
+    "token": "0x70002880",
+    "text": "—"
+  },
+  {
+    "offset": "0x2884",
+    "token": "0x70002884",
+    "text": "0"
+  },
+  {
+    "offset": "0x2888",
+    "token": "0x70002888",
+    "text": "d MMM yyyy"
+  },
+  {
+    "offset": "0x289e",
+    "token": "0x7000289e",
+    "text": "/"
+  },
+  {
+    "offset": "0x28a2",
+    "token": "0x700028a2",
+    "text": "PRACTISE"
+  },
+  {
+    "offset": "0x28b4",
+    "token": "0x700028b4",
+    "text": "PASS"
+  },
+  {
+    "offset": "0x28be",
+    "token": "0x700028be",
+    "text": "#B46A00"
+  },
+  {
+    "offset": "0x28ce",
+    "token": "0x700028ce",
+    "text": "#0B7F73"
+  },
+  {
+    "offset": "0x28de",
+    "token": "0x700028de",
+    "text": "#FFFFFF"
+  },
+  {
+    "offset": "0x28ee",
+    "token": "0x700028ee",
+    "text": "#DCE5EA"
+  },
+  {
+    "offset": "0x28fe",
+    "token": "0x700028fe",
+    "text": "#172B3A"
+  },
+  {
+    "offset": "0x290e",
+    "token": "0x7000290e",
+    "text": "Check answer"
+  },
+  {
+    "offset": "0x2928",
+    "token": "0x70002928",
+    "text": "Official source"
+  },
+  {
+    "offset": "0x2948",
+    "token": "0x70002948",
+    "text": "☆ Save"
+  },
+  {
+    "offset": "0x2956",
+    "token": "0x70002956",
+    "text": "Question "
+  },
+  {
+    "offset": "0x296a",
+    "token": "0x7000296a",
+    "text": "Next question"
+  },
+  {
+    "offset": "0x2986",
+    "token": "0x70002986",
+    "text": "Finish mock test"
+  },
+  {
+    "offset": "0x29a8",
+    "token": "0x700029a8",
+    "text": "★ Saved"
+  },
+  {
+    "offset": "0x29b8",
+    "token": "0x700029b8",
+    "text": "#DDF5EF"
+  },
+  {
+    "offset": "0x29c8",
+    "token": "0x700029c8",
+    "text": "#E8EEF5"
+  },
+  {
+    "offset": "0x29d8",
+    "token": "0x700029d8",
+    "text": "#18B7A0"
+  },
+  {
+    "offset": "0x29e8",
+    "token": "0x700029e8",
+    "text": "#102A43"
+  },
+  {
+    "offset": "0x29f8",
+    "token": "0x700029f8",
+    "text": "#FCE8E5"
+  },
+  {
+    "offset": "0x2a08",
+    "token": "0x70002a08",
+    "text": "#F26B5E"
+  },
+  {
+    "offset": "0x2a18",
+    "token": "0x70002a18",
+    "text": "#B63F35"
+  },
+  {
+    "offset": "0x2a28",
+    "token": "0x70002a28",
+    "text": "See results"
+  },
+  {
+    "offset": "0x2a40",
+    "token": "0x70002a40",
+    "text": "You still have "
+  },
+  {
+    "offset": "0x2a60",
+    "token": "0x70002a60",
+    "text": " unanswered question"
+  },
+  {
+    "offset": "0x2a8a",
+    "token": "0x70002a8a",
+    "text": "s"
+  },
+  {
+    "offset": "0x2a8e",
+    "token": "0x70002a8e",
+    "text": ". Submit anyway?"
+  },
+  {
+    "offset": "0x2ab0",
+    "token": "0x70002ab0",
+    "text": "Submit your answers and see the result?"
+  },
+  {
+    "offset": "0x2b00",
+    "token": "0x70002b00",
+    "text": "Finish mock test?"
+  },
+  {
+    "offset": "0x2b24",
+    "token": "0x70002b24",
+    "text": "Submit"
+  },
+  {
+    "offset": "0x2b32",
+    "token": "0x70002b32",
+    "text": "Keep checking"
+  },
+  {
+    "offset": "0x2b4e",
+    "token": "0x70002b4e",
+    "text": "Question video"
+  },
+  {
+    "offset": "0x2b6c",
+    "token": "0x70002b6c",
+    "text": "00:00"
+  },
+  {
+    "offset": "0x2b78",
+    "token": "0x70002b78",
+    "text": "00"
+  },
+  {
+    "offset": "0x2b7e",
+    "token": "0x70002b7e",
+    "text": ":"
+  },
+  {
+    "offset": "0x2b82",
+    "token": "0x70002b82",
+    "text": "ExamReviewItem"
+  },
+  {
+    "offset": "0x2ba0",
+    "token": "0x70002ba0",
+    "text": "Number = "
+  },
+  {
+    "offset": "0x2bb4",
+    "token": "0x70002bb4",
+    "text": ", Prompt = "
+  },
+  {
+    "offset": "0x2bcc",
+    "token": "0x70002bcc",
+    "text": ", QuestionImagePath = "
+  },
+  {
+    "offset": "0x2bfa",
+    "token": "0x70002bfa",
+    "text": ", HasQuestionImage = "
+  },
+  {
+    "offset": "0x2c26",
+    "token": "0x70002c26",
+    "text": ", YourAnswer = "
+  },
+  {
+    "offset": "0x2c46",
+    "token": "0x70002c46",
+    "text": ", YourAnswerImagePath = "
+  },
+  {
+    "offset": "0x2c78",
+    "token": "0x70002c78",
+    "text": ", HasYourAnswerImage = "
+  },
+  {
+    "offset": "0x2ca8",
+    "token": "0x70002ca8",
+    "text": ", CorrectAnswer = "
+  },
+  {
+    "offset": "0x2cce",
+    "token": "0x70002cce",
+    "text": ", CorrectAnswerImagePath = "
+  },
+  {
+    "offset": "0x2d06",
+    "token": "0x70002d06",
+    "text": ", HasCorrectAnswerImage = "
+  },
+  {
+    "offset": "0x2d3c",
+    "token": "0x70002d3c",
+    "text": ", Explanation = "
+  },
+  {
+    "offset": "0x2d5e",
+    "token": "0x70002d5e",
+    "text": "SESSION COMPLETE"
+  },
+  {
+    "offset": "0x2d80",
+    "token": "0x70002d80",
+    "text": "Results"
+  },
+  {
+    "offset": "0x2d90",
+    "token": "0x70002d90",
+    "text": "Incorrect"
+  },
+  {
+    "offset": "0x2da4",
+    "token": "0x70002da4",
+    "text": "Correct"
+  },
+  {
+    "offset": "0x2db4",
+    "token": "0x70002db4",
+    "text": "Not answered"
+  },
+  {
+    "offset": "0x2dce",
+    "token": "0x70002dce",
+    "text": "No answer selected"
+  },
+  {
+    "offset": "0x2df4",
+    "token": "0x70002df4",
+    "text": "QUESTION "
+  },
+  {
+    "offset": "0x2e08",
+    "token": "0x70002e08",
+    "text": "; "
+  },
+  {
+    "offset": "0x2e0e",
+    "token": "0x70002e0e",
+    "text": " — "
+  },
+  {
+    "offset": "0x2e16",
+    "token": "0x70002e16",
+    "text": "//home"
+  },
+  {
+    "offset": "0x2e24",
+    "token": "0x70002e24",
+    "text": "TIME EXPIRED"
+  },
+  {
+    "offset": "0x2e3e",
+    "token": "0x70002e3e",
+    "text": "Keep building"
+  },
+  {
+    "offset": "0x2e5a",
+    "token": "0x70002e5a",
+    "text": "Strong finish"
+  },
+  {
+    "offset": "0x2e76",
+    "token": "0x70002e76",
+    "text": "Mock test not passed"
+  },
+  {
+    "offset": "0x2ea0",
+    "token": "0x70002ea0",
+    "text": "Mock test passed"
+  },
+  {
+    "offset": "0x2ec2",
+    "token": "0x70002ec2",
+    "text": " / "
+  },
+  {
+    "offset": "0x2eca",
+    "token": "0x70002eca",
+    "text": "Review the explanations, then try a focused practice set."
+  },
+  {
+    "offset": "0x2f3e",
+    "token": "0x70002f3e",
+    "text": "You reached the official learner-test pass ratio."
+  },
+  {
+    "offset": "0x2fa2",
+    "token": "0x70002fa2",
+    "text": "You need "
+  },
+  {
+    "offset": "0x2fb6",
+    "token": "0x70002fb6",
+    "text": " correct answers to pass. Review every mistake below."
+  },
+  {
+    "offset": "0x3022",
+    "token": "0x70003022",
+    "text": "You reached the pass mark of "
+  },
+  {
+    "offset": "0x305e",
+    "token": "0x7000305e",
+    "text": " correct answers."
+  },
+  {
+    "offset": "0x3082",
+    "token": "0x70003082",
+    "text": "The "
+  },
+  {
+    "offset": "0x308c",
+    "token": "0x7000308c",
+    "text": "-minute limit expired. You need "
+  },
+  {
+    "offset": "0x30ce",
+    "token": "0x700030ce",
+    "text": " correct answers to pass."
+  },
+  {
+    "offset": "0x3102",
+    "token": "0x70003102",
+    "text": "#FFB547"
+  },
+  {
+    "offset": "0x3112",
+    "token": "0x70003112",
+    "text": "quiz_complete"
+  },
+  {
+    "offset": "0x312e",
+    "token": "0x7000312e",
+    "text": "Mistake workout"
+  },
+  {
+    "offset": "0x314e",
+    "token": "0x7000314e",
+    "text": "Review questions"
+  },
+  {
+    "offset": "0x3170",
+    "token": "0x70003170",
+    "text": "question_library"
+  },
+  {
+    "offset": "0x3192",
+    "token": "0x70003192",
+    "text": " questions"
+  },
+  {
+    "offset": "0x31a8",
+    "token": "0x700031a8",
+    "text": "Question review"
+  },
+  {
+    "offset": "0x31c8",
+    "token": "0x700031c8",
+    "text": " "
+  },
+  {
+    "offset": "0x31cc",
+    "token": "0x700031cc",
+    "text": " ("
+  },
+  {
+    "offset": "0x31d2",
+    "token": "0x700031d2",
+    "text": ")"
+  },
+  {
+    "offset": "0x31d6",
+    "token": "0x700031d6",
+    "text": "Unlock all topics and remove ads"
+  },
+  {
+    "offset": "0x3218",
+    "token": "0x70003218",
+    "text": "Remove ads with RoadNZ Premium"
+  },
+  {
+    "offset": "0x3256",
+    "token": "0x70003256",
+    "text": "reminders_toggled"
+  },
+  {
+    "offset": "0x327a",
+    "token": "0x7000327a",
+    "text": "Content imported"
+  },
+  {
+    "offset": "0x329c",
+    "token": "0x7000329c",
+    "text": " questions from "
+  },
+  {
+    "offset": "0x32be",
+    "token": "0x700032be",
+    "text": " are ready."
+  },
+  {
+    "offset": "0x32d6",
+    "token": "0x700032d6",
+    "text": "Import failed"
+  },
+  {
+    "offset": "0x32f2",
+    "token": "0x700032f2",
+    "text": "Reset progress?"
+  },
+  {
+    "offset": "0x3312",
+    "token": "0x70003312",
+    "text": "This clears answer history, saved questions and test results on this device."
+  },
+  {
+    "offset": "0x33ad",
+    "token": "0x700033ad",
+    "text": "Reset"
+  },
+  {
+    "offset": "0x33b9",
+    "token": "0x700033b9",
+    "text": "progress_reset"
+  },
+  {
+    "offset": "0x33d7",
+    "token": "0x700033d7",
+    "text": " questions · Premium"
+  },
+  {
+    "offset": "0x3401",
+    "token": "0x70003401",
+    "text": "Questions coming soon"
+  },
+  {
+    "offset": "0x342d",
+    "token": "0x7000342d",
+    "text": "›"
+  },
+  {
+    "offset": "0x3431",
+    "token": "0x70003431",
+    "text": "PRO"
+  },
+  {
+    "offset": "0x3439",
+    "token": "0x70003439",
+    "text": "CategoryCard"
+  },
+  {
+    "offset": "0x3453",
+    "token": "0x70003453",
+    "text": "Category = "
+  },
+  {
+    "offset": "0x346b",
+    "token": "0x7000346b",
+    "text": ", QuestionCount = "
+  },
+  {
+    "offset": "0x3491",
+    "token": "0x70003491",
+    "text": ", IsLocked = "
+  },
+  {
+    "offset": "0x34ad",
+    "token": "0x700034ad",
+    "text": ", CountText = "
+  },
+  {
+    "offset": "0x34cb",
+    "token": "0x700034cb",
+    "text": ", AccessText = "
+  },
+  {
+    "offset": "0x34eb",
+    "token": "0x700034eb",
+    "text": ", CanStart = "
+  },
+  {
+    "offset": "0x3507",
+    "token": "0x70003507",
+    "text": "Motorcycle licence"
+  },
+  {
+    "offset": "0x352d",
+    "token": "0x7000352d",
+    "text": "Heavy vehicle licence"
+  },
+  {
+    "offset": "0x3559",
+    "token": "0x70003559",
+    "text": "Car licence"
+  },
+  {
+    "offset": "0x3571",
+    "token": "0x70003571",
+    "text": "topic_"
+  },
+  {
+    "offset": "0x357f",
+    "token": "0x7000357f",
+    "text": "Topic not available yet"
+  },
+  {
+    "offset": "0x35af",
+    "token": "0x700035af",
+    "text": "This is a free topic. Its questions have not been added to the current content bank yet."
+  },
+  {
+    "offset": "0x3662",
+    "token": "0x70003662",
+    "text": "dev.i234.roadnz"
+  },
+  {
+    "offset": "0x3682",
+    "token": "0x70003682",
+    "text": "nznznznz"
+  },
+  {
+    "offset": "0x3694",
+    "token": "0x70003694",
+    "text": "Up for a quick practice test? 🚗"
+  },
+  {
+    "offset": "0x36d6",
+    "token": "0x700036d6",
+    "text": "Got a spare minute? Squeeze in a few road code questions."
+  },
+  {
+    "offset": "0x374a",
+    "token": "0x7000374a",
+    "text": "Review the questions you missed yesterday 📖"
+  },
+  {
+    "offset": "0x37a4",
+    "token": "0x700037a4",
+    "text": "A short quiz a day keeps the resit away 😉"
+  },
+  {
+    "offset": "0x37fa",
+    "token": "0x700037fa",
+    "text": "Your learner licence won't pass itself — quick session?"
+  },
+  {
+    "offset": "0x386a",
+    "token": "0x7000386a",
+    "text": "Keep the streak going! A few questions before the day ends?"
+  },
+  {
+    "offset": "0x38e2",
+    "token": "0x700038e2",
+    "text": "Give-way rules feeling rusty? Brush up in 2 minutes."
+  },
+  {
+    "offset": "0x394c",
+    "token": "0x7000394c",
+    "text": "One mock exam today = more confidence on test day 💪"
+  },
+  {
+    "offset": "0x39b6",
+    "token": "0x700039b6",
+    "text": "Practice makes permanent. Ready for a round?"
+  },
+  {
+    "offset": "0x3a10",
+    "token": "0x70003a10",
+    "text": "Beat your last score — try a quick topic test 🎯"
+  },
+  {
+    "offset": "0x3a72",
+    "token": "0x70003a72",
+    "text": "5 minutes of road code now, less stress later."
+  },
+  {
+    "offset": "0x3ad0",
+    "token": "0x70003ad0",
+    "text": "Turn this idle moment into study time 🕐"
+  },
+  {
+    "offset": "0x3b22",
+    "token": "0x70003b22",
+    "text": "It's been a while! Your road code practice is gathering dust 🕸️"
+  },
+  {
+    "offset": "0x3ba5",
+    "token": "0x70003ba5",
+    "text": "Haven't seen you in a bit — shall we pick up where you left off?"
+  },
+  {
+    "offset": "0x3c28",
+    "token": "0x70003c28",
+    "text": "Consistency wins licences. Come back and keep the progress going 🚀"
+  },
+  {
+    "offset": "0x3cb1",
+    "token": "0x70003cb1",
+    "text": "local_reminders_pending"
+  },
+  {
+    "offset": "0x3ce1",
+    "token": "0x70003ce1",
+    "text": "local_reminders_next_request_code"
+  },
+  {
+    "offset": "0x3d25",
+    "token": "0x70003d25",
+    "text": "alarm"
+  },
+  {
+    "offset": "0x3d31",
+    "token": "0x70003d31",
+    "text": "request_code"
+  },
+  {
+    "offset": "0x3d4b",
+    "token": "0x70003d4b",
+    "text": "title"
+  },
+  {
+    "offset": "0x3d57",
+    "token": "0x70003d57",
+    "text": "body"
+  },
+  {
+    "offset": "0x3d61",
+    "token": "0x70003d61",
+    "text": "Study reminders"
+  },
+  {
+    "offset": "0x3d81",
+    "token": "0x70003d81",
+    "text": ".reminders"
+  },
+  {
+    "offset": "0x3d97",
+    "token": "0x70003d97",
+    "text": "roadnz://home"
+  },
+  {
+    "offset": "0x3db3",
+    "token": "0x70003db3",
+    "text": "android.intent.action.BOOT_COMPLETED"
+  },
+  {
+    "offset": "0x3dfd",
+    "token": "0x70003dfd",
+    "text": "android.intent.action.QUICKBOOT_POWERON"
+  },
+  {
+    "offset": "0x3e4d",
+    "token": "0x70003e4d",
+    "text": "interstitial"
+  },
+  {
+    "offset": "0x3e67",
+    "token": "0x70003e67",
+    "text": "rewarded_gate"
+  },
+  {
+    "offset": "0x3e83",
+    "token": "0x70003e83",
+    "text": "RoadNZ_LocalRemindersEnabled"
+  },
+  {
+    "offset": "0x3ebd",
+    "token": "0x70003ebd",
+    "text": "RoadNZ_LocalReminderShortDays"
+  },
+  {
+    "offset": "0x3ef9",
+    "token": "0x70003ef9",
+    "text": "RoadNZ_LocalReminderLongDays"
+  },
+  {
+    "offset": "0x3f33",
+    "token": "0x70003f33",
+    "text": "RoadNZ_LocalReminderHour"
+  },
+  {
+    "offset": "0x3f65",
+    "token": "0x70003f65",
+    "text": "all_content_with_ads"
+  },
+  {
+    "offset": "0x3f8f",
+    "token": "0x70003f8f",
+    "text": "RoadNZ_ContentAccessMode"
+  },
+  {
+    "offset": "0x3fc1",
+    "token": "0x70003fc1",
+    "text": "RoadNZ_InterstitialQuestionInterval"
+  },
+  {
+    "offset": "0x4009",
+    "token": "0x70004009",
+    "text": "RoadNZ_PracticeResultInterstitialEnabled"
+  },
+  {
+    "offset": "0x405b",
+    "token": "0x7000405b",
+    "text": "RoadNZ_MockAdStrategy"
+  },
+  {
+    "offset": "0x4087",
+    "token": "0x70004087",
+    "text": "RoadNZ_EvenLaunchPaywallEnabled"
+  },
+  {
+    "offset": "0x40c7",
+    "token": "0x700040c7",
+    "text": "selected_license"
+  },
+  {
+    "offset": "0x40e9",
+    "token": "0x700040e9",
+    "text": "haptic_feedback_enabled"
+  },
+  {
+    "offset": "0x4119",
+    "token": "0x70004119",
+    "text": "auto_advance"
+  },
+  {
+    "offset": "0x4133",
+    "token": "0x70004133",
+    "text": "independent_study_notice_shown"
+  },
+  {
+    "offset": "0x4171",
+    "token": "0x70004171",
+    "text": "install_id"
+  },
+  {
+    "offset": "0x4187",
+    "token": "0x70004187",
+    "text": "N"
+  },
+  {
+    "offset": "0x418b",
+    "token": "0x7000418b",
+    "text": "reminders_enabled"
+  },
+  {
+    "offset": "0x41af",
+    "token": "0x700041af",
+    "text": "fcm_token"
+  },
+  {
+    "offset": "0x41c3",
+    "token": "0x700041c3",
+    "text": "last_sync_utc"
+  },
+  {
+    "offset": "0x41df",
+    "token": "0x700041df",
+    "text": "last_active_utc"
+  },
+  {
+    "offset": "0x41ff",
+    "token": "0x700041ff",
+    "text": "app_open_count"
+  },
+  {
+    "offset": "0x421d",
+    "token": "0x7000421d",
+    "text": "O"
+  },
+  {
+    "offset": "0x4221",
+    "token": "0x70004221",
+    "text": "license_type"
+  },
+  {
+    "offset": "0x423b",
+    "token": "0x7000423b",
+    "text": "free"
+  },
+  {
+    "offset": "0x4245",
+    "token": "0x70004245",
+    "text": "premium"
+  },
+  {
+    "offset": "0x4255",
+    "token": "0x70004255",
+    "text": "access_tier"
+  },
+  {
+    "offset": "0x426d",
+    "token": "0x7000426d",
+    "text": "mock_ad_strategy"
+  },
+  {
+    "offset": "0x428f",
+    "token": "0x7000428f",
+    "text": "remote_config_applied"
+  },
+  {
+    "offset": "0x42bb",
+    "token": "0x700042bb",
+    "text": "content_access_mode"
+  },
+  {
+    "offset": "0x42e3",
+    "token": "0x700042e3",
+    "text": "freemium"
+  },
+  {
+    "offset": "0x42f5",
+    "token": "0x700042f5",
+    "text": "interstitial_interval"
+  },
+  {
+    "offset": "0x4321",
+    "token": "0x70004321",
+    "text": "practice_result_ad"
+  },
+  {
+    "offset": "0x4347",
+    "token": "0x70004347",
+    "text": "even_launch_paywall"
+  },
+  {
+    "offset": "0x436f",
+    "token": "0x7000436f",
+    "text": "rewarded_offer"
+  },
+  {
+    "offset": "0x438d",
+    "token": "0x7000438d",
+    "text": "rewarded_accept"
+  },
+  {
+    "offset": "0x43ad",
+    "token": "0x700043ad",
+    "text": "rewarded_cancel"
+  },
+  {
+    "offset": "0x43cd",
+    "token": "0x700043cd",
+    "text": "rewarded_loaded"
+  },
+  {
+    "offset": "0x43ed",
+    "token": "0x700043ed",
+    "text": "rewarded_shown"
+  },
+  {
+    "offset": "0x440b",
+    "token": "0x7000440b",
+    "text": "rewarded_impression"
+  },
+  {
+    "offset": "0x4433",
+    "token": "0x70004433",
+    "text": "rewarded_earned"
+  },
+  {
+    "offset": "0x4453",
+    "token": "0x70004453",
+    "text": "rewarded_dismissed"
+  },
+  {
+    "offset": "0x4479",
+    "token": "0x70004479",
+    "text": "rewarded_failed"
+  },
+  {
+    "offset": "0x4499",
+    "token": "0x70004499",
+    "text": "rewarded_bypass"
+  },
+  {
+    "offset": "0x44b9",
+    "token": "0x700044b9",
+    "text": "rewarded_unknown"
+  },
+  {
+    "offset": "0x44db",
+    "token": "0x700044db",
+    "text": "detail"
+  },
+  {
+    "offset": "0x44e9",
+    "token": "0x700044e9",
+    "text": "quiz_start"
+  },
+  {
+    "offset": "0x44ff",
+    "token": "0x700044ff",
+    "text": "mock_test_start"
+  },
+  {
+    "offset": "0x451f",
+    "token": "0x7000451f",
+    "text": "correct_count"
+  },
+  {
+    "offset": "0x453b",
+    "token": "0x7000453b",
+    "text": "score_percent"
+  },
+  {
+    "offset": "0x4557",
+    "token": "0x70004557",
+    "text": "passed"
+  },
+  {
+    "offset": "0x4565",
+    "token": "0x70004565",
+    "text": "timed_out"
+  },
+  {
+    "offset": "0x4579",
+    "token": "0x70004579",
+    "text": "duration_seconds"
+  },
+  {
+    "offset": "0x459b",
+    "token": "0x7000459b",
+    "text": "mock_test_complete"
+  },
+  {
+    "offset": "0x45c1",
+    "token": "0x700045c1",
+    "text": "paywall_view"
+  },
+  {
+    "offset": "0x45db",
+    "token": "0x700045db",
+    "text": "source"
+  },
+  {
+    "offset": "0x45e9",
+    "token": "0x700045e9",
+    "text": "begin_checkout"
+  },
+  {
+    "offset": "0x4607",
+    "token": "0x70004607",
+    "text": "item_id"
+  },
+  {
+    "offset": "0x4617",
+    "token": "0x70004617",
+    "text": "status"
+  },
+  {
+    "offset": "0x4625",
+    "token": "0x70004625",
+    "text": "purchase_outcome"
+  },
+  {
+    "offset": "0x4647",
+    "token": "0x70004647",
+    "text": "premium_purchase"
+  },
+  {
+    "offset": "0x4669",
+    "token": "0x70004669",
+    "text": "notification_open"
+  },
+  {
+    "offset": "0x468d",
+    "token": "0x7000468d",
+    "text": "route"
+  },
+  {
+    "offset": "0x4699",
+    "token": "0x70004699",
+    "text": "local_reminder_open"
+  },
+  {
+    "offset": "0x46c1",
+    "token": "0x700046c1",
+    "text": "deep_link"
+  },
+  {
+    "offset": "0x46d5",
+    "token": "0x700046d5",
+    "text": "deep_link_invalid"
+  },
+  {
+    "offset": "0x46f9",
+    "token": "0x700046f9",
+    "text": "reminder_toggle"
+  },
+  {
+    "offset": "0x4719",
+    "token": "0x70004719",
+    "text": "enabled"
+  },
+  {
+    "offset": "0x4729",
+    "token": "0x70004729",
+    "text": "error_context"
+  },
+  {
+    "offset": "0x4745",
+    "token": "0x70004745",
+    "text": "Could not record a Firebase exception."
+  },
+  {
+    "offset": "0x4793",
+    "token": "0x70004793",
+    "text": "Could not send Firebase event {EventName}."
+  },
+  {
+    "offset": "0x47e9",
+    "token": "0x700047e9",
+    "text": "Could not set Firebase property {PropertyName}."
+  },
+  {
+    "offset": "0x4849",
+    "token": "0x70004849",
+    "text": "Could not set Crashlytics key {KeyName}."
+  },
+  {
+    "offset": "0x489b",
+    "token": "0x7000489b",
+    "text": "quiz_mode"
+  },
+  {
+    "offset": "0x48af",
+    "token": "0x700048af",
+    "text": "question_count"
+  },
+  {
+    "offset": "0x48cd",
+    "token": "0x700048cd",
+    "text": "car"
+  },
+  {
+    "offset": "0x48d5",
+    "token": "0x700048d5",
+    "text": "motorcycle"
+  },
+  {
+    "offset": "0x48eb",
+    "token": "0x700048eb",
+    "text": "heavy_vehicle"
+  },
+  {
+    "offset": "0x4907",
+    "token": "0x70004907",
+    "text": "unknown"
+  },
+  {
+    "offset": "0x4917",
+    "token": "0x70004917",
+    "text": "app_domain_unhandled"
+  },
+  {
+    "offset": "0x4941",
+    "token": "0x70004941",
+    "text": "unobserved_task"
+  },
+  {
+    "offset": "0x4961",
+    "token": "0x70004961",
+    "text": "Unsupported schema version "
+  },
+  {
+    "offset": "0x4999",
+    "token": "0x70004999",
+    "text": ". Expected version 1 or 2."
+  },
+  {
+    "offset": "0x49cf",
+    "token": "0x700049cf",
+    "text": "Publisher and rightsStatement are required."
+  },
+  {
+    "offset": "0x4a27",
+    "token": "0x70004a27",
+    "text": "A content pack must include categories and questions."
+  },
+  {
+    "offset": "0x4a93",
+    "token": "0x70004a93",
+    "text": "Category IDs must be unique."
+  },
+  {
+    "offset": "0x4acd",
+    "token": "0x70004acd",
+    "text": "Question IDs must be unique."
+  },
+  {
+    "offset": "0x4b07",
+    "token": "0x70004b07",
+    "text": "Media requires a schemaVersion 2 ZIP content pack."
+  },
+  {
+    "offset": "0x4b6d",
+    "token": "0x70004b6d",
+    "text": "packId must contain only letters, numbers, dots, hyphens or underscores."
+  },
+  {
+    "offset": "0x4c00",
+    "token": "0x70004c00",
+    "text": " references an unknown category."
+  },
+  {
+    "offset": "0x4c42",
+    "token": "0x70004c42",
+    "text": " must have a prompt and two to five options."
+  },
+  {
+    "offset": "0x4c9c",
+    "token": "0x70004c9c",
+    "text": " contains invalid answer data."
+  },
+  {
+    "offset": "0x4cda",
+    "token": "0x70004cda",
+    "text": " needs an HTTPS source URL."
+  },
+  {
+    "offset": "0x4d12",
+    "token": "0x70004d12",
+    "text": " must provide zero optionImageFiles entries or one for every option."
+  },
+  {
+    "offset": "0x4d9d",
+    "token": "0x70004d9d",
+    "text": " needs text or an image for every answer."
+  },
+  {
+    "offset": "0x4df1",
+    "token": "0x70004df1",
+    "text": "imageFile"
+  },
+  {
+    "offset": "0x4e05",
+    "token": "0x70004e05",
+    "text": "videoFile"
+  },
+  {
+    "offset": "0x4e19",
+    "token": "0x70004e19",
+    "text": "optionImageFiles"
+  },
+  {
+    "offset": "0x4e3b",
+    "token": "0x70004e3b",
+    "text": " has an unsupported "
+  },
+  {
+    "offset": "0x4e65",
+    "token": "0x70004e65",
+    "text": " type."
+  },
+  {
+    "offset": "0x4e73",
+    "token": "0x70004e73",
+    "text": "media/"
+  },
+  {
+    "offset": "0x4e81",
+    "token": "0x70004e81",
+    "text": "Media reference '"
+  },
+  {
+    "offset": "0x4ea5",
+    "token": "0x70004ea5",
+    "text": "' must be inside media/."
+  },
+  {
+    "offset": "0x4ed7",
+    "token": "0x70004ed7",
+    "text": "Unsafe archive path '"
+  },
+  {
+    "offset": "0x4f03",
+    "token": "0x70004f03",
+    "text": "'."
+  },
+  {
+    "offset": "0x4f09",
+    "token": "0x70004f09",
+    "text": "Unsafe media destination '"
+  },
+  {
+    "offset": "0x4f3f",
+    "token": "0x70004f3f",
+    "text": ".png"
+  },
+  {
+    "offset": "0x4f49",
+    "token": "0x70004f49",
+    "text": ".jpg"
+  },
+  {
+    "offset": "0x4f53",
+    "token": "0x70004f53",
+    "text": ".jpeg"
+  },
+  {
+    "offset": "0x4f5f",
+    "token": "0x70004f5f",
+    "text": ".webp"
+  },
+  {
+    "offset": "0x4f6b",
+    "token": "0x70004f6b",
+    "text": ".gif"
+  },
+  {
+    "offset": "0x4f75",
+    "token": "0x70004f75",
+    "text": ".mp4"
+  },
+  {
+    "offset": "0x4f7f",
+    "token": "0x70004f7f",
+    "text": ".m4v"
+  },
+  {
+    "offset": "0x4f89",
+    "token": "0x70004f89",
+    "text": ".mov"
+  },
+  {
+    "offset": "0x4f93",
+    "token": "0x70004f93",
+    "text": ".webm"
+  },
+  {
+    "offset": "0x4f9f",
+    "token": "0x70004f9f",
+    "text": "."
+  },
+  {
+    "offset": "0x4fa3",
+    "token": "0x70004fa3",
+    "text": "Select an authorised RoadNZ content pack"
+  },
+  {
+    "offset": "0x4ff5",
+    "token": "0x70004ff5",
+    "text": ".zip"
+  },
+  {
+    "offset": "0x4fff",
+    "token": "0x70004fff",
+    "text": "content.json"
+  },
+  {
+    "offset": "0x5019",
+    "token": "0x70005019",
+    "text": "The archive must contain content.json at its root."
+  },
+  {
+    "offset": "0x507f",
+    "token": "0x7000507f",
+    "text": "The archive is missing referenced media '"
+  },
+  {
+    "offset": "0x50d3",
+    "token": "0x700050d3",
+    "text": "Media file '"
+  },
+  {
+    "offset": "0x50ed",
+    "token": "0x700050ed",
+    "text": "' is larger than 100 MB."
+  },
+  {
+    "offset": "0x511f",
+    "token": "0x7000511f",
+    "text": "The content pack contains more than 300 MB of media."
+  },
+  {
+    "offset": "0x5189",
+    "token": "0x70005189",
+    "text": "content-media"
+  },
+  {
+    "offset": "0x51a5",
+    "token": "0x700051a5",
+    "text": "The selected file is not a valid content pack."
+  },
+  {
+    "offset": "0x5203",
+    "token": "0x70005203",
+    "text": "topic"
+  },
+  {
+    "offset": "0x520f",
+    "token": "0x7000520f",
+    "text": "mock"
+  },
+  {
+    "offset": "0x5219",
+    "token": "0x70005219",
+    "text": "mistakes"
+  },
+  {
+    "offset": "0x522b",
+    "token": "0x7000522b",
+    "text": "push_topic_"
+  },
+  {
+    "offset": "0x5243",
+    "token": "0x70005243",
+    "text": "push_mock"
+  },
+  {
+    "offset": "0x5257",
+    "token": "0x70005257",
+    "text": "//"
+  },
+  {
+    "offset": "0x525d",
+    "token": "0x7000525d",
+    "text": "LocalReminder"
+  },
+  {
+    "offset": "0x5279",
+    "token": "0x70005279",
+    "text": "Slot = "
+  },
+  {
+    "offset": "0x5289",
+    "token": "0x70005289",
+    "text": ", FireLocal = "
+  },
+  {
+    "offset": "0x52a7",
+    "token": "0x700052a7",
+    "text": ", Title = "
+  },
+  {
+    "offset": "0x52bd",
+    "token": "0x700052bd",
+    "text": ", Body = "
+  },
+  {
+    "offset": "0x52d1",
+    "token": "0x700052d1",
+    "text": "none"
+  },
+  {
+    "offset": "0x52db",
+    "token": "0x700052db",
+    "text": "before_reward"
+  },
+  {
+    "offset": "0x52f7",
+    "token": "0x700052f7",
+    "text": "reward_earned"
+  },
+  {
+    "offset": "0x5313",
+    "token": "0x70005313",
+    "text": "dismissed_before_reward"
+  },
+  {
+    "offset": "0x5343",
+    "token": "0x70005343",
+    "text": "Uninterrupted mock test"
+  },
+  {
+    "offset": "0x5373",
+    "token": "0x70005373",
+    "text": "Watch one short message from our sponsors to unlock this "
+  },
+  {
+    "offset": "0x53e7",
+    "token": "0x700053e7",
+    "text": "-question mock test. "
+  },
+  {
+    "offset": "0x5413",
+    "token": "0x70005413",
+    "text": "There will be no ad interruptions once it starts. Premium removes ads entirely."
+  },
+  {
+    "offset": "0x54b4",
+    "token": "0x700054b4",
+    "text": "Watch ad and start"
+  },
+  {
+    "offset": "0x54da",
+    "token": "0x700054da",
+    "text": "offer_declined"
+  },
+  {
+    "offset": "0x54f8",
+    "token": "0x700054f8",
+    "text": "consent_unavailable"
+  },
+  {
+    "offset": "0x5520",
+    "token": "0x70005520",
+    "text": "load_unavailable"
+  },
+  {
+    "offset": "0x5542",
+    "token": "0x70005542",
+    "text": "show_failed"
+  },
+  {
+    "offset": "0x555a",
+    "token": "0x7000555a",
+    "text": "show_timeout"
+  },
+  {
+    "offset": "0x5574",
+    "token": "0x70005574",
+    "text": "show_exception"
+  },
+  {
+    "offset": "0x5592",
+    "token": "0x70005592",
+    "text": "rzn_entitlement_v2"
+  },
+  {
+    "offset": "0x55b8",
+    "token": "0x700055b8",
+    "text": "roadnz-premium-owned-v2"
+  },
+  {
+    "offset": "0x55e8",
+    "token": "0x700055e8",
+    "text": "rzn_review_access_v1"
+  },
+  {
+    "offset": "0x5612",
+    "token": "0x70005612",
+    "text": "roadnz-store-review-v1"
+  },
+  {
+    "offset": "0x5640",
+    "token": "0x70005640",
+    "text": "B8C47D96F1A6B6027B418B907E00D912647F82A851CF75840B54FC1F44265FE3"
+  },
+  {
+    "offset": "0x56c3",
+    "token": "0x700056c3",
+    "text": "dev.i234.roadnz|nznznznz|billing-entitlement-v2"
+  },
+  {
+    "offset": "0x5723",
+    "token": "0x70005723",
+    "text": "android"
+  },
+  {
+    "offset": "0x5733",
+    "token": "0x70005733",
+    "text": "ios"
+  },
+  {
+    "offset": "0x573b",
+    "token": "0x7000573b",
+    "text": "https://roadnz.i234.dev/api/sync.php"
+  },
+  {
+    "offset": "0x5785",
+    "token": "0x70005785",
+    "text": "X-Api-Key"
+  },
+  {
+    "offset": "0x5799",
+    "token": "0x70005799",
+    "text": "2a6b43ff230ef750d8c9f8adb1aabc43b47c1d446c07922fe3d95aaf2db1f387"
+  },
+  {
+    "offset": "0x581c",
+    "token": "0x7000581c",
+    "text": "token_changed"
+  },
+  {
+    "offset": "0x5838",
+    "token": "0x70005838",
+    "text": "No internet connection"
+  },
+  {
+    "offset": "0x5866",
+    "token": "0x70005866",
+    "text": "The free version needs an internet connection to run tests. Premium removes ads and works fully offline."
+  },
+  {
+    "offset": "0x5939",
+    "token": "0x70005939",
+    "text": "Not now"
+  },
+  {
+    "offset": "0x5949",
+    "token": "0x70005949",
+    "text": "offline_gate"
+  },
+  {
+    "offset": "0x5963",
+    "token": "0x70005963",
+    "text": "Mock test"
+  },
+  {
+    "offset": "0x5977",
+    "token": "0x70005977",
+    "text": "StoreProductInfo"
+  },
+  {
+    "offset": "0x5999",
+    "token": "0x70005999",
+    "text": "IsAvailable = "
+  },
+  {
+    "offset": "0x59b7",
+    "token": "0x700059b7",
+    "text": ", DisplayPrice = "
+  },
+  {
+    "offset": "0x59db",
+    "token": "0x700059db",
+    "text": ", Message = "
+  },
+  {
+    "offset": "0x59f5",
+    "token": "0x700059f5",
+    "text": "StorePurchaseResult"
+  },
+  {
+    "offset": "0x5a1d",
+    "token": "0x70005a1d",
+    "text": "Status = "
+  },
+  {
+    "offset": "0x5a31",
+    "token": "0x70005a31",
+    "text": ", IsSuccess = "
+  },
+  {
+    "offset": "0x5a4f",
+    "token": "0x70005a4f",
+    "text": "permanent-unlock"
+  },
+  {
+    "offset": "0x5a71",
+    "token": "0x70005a71",
+    "text": "Purchase cancelled."
+  },
+  {
+    "offset": "0x5a99",
+    "token": "0x70005a99",
+    "text": "Google Play could not complete the purchase."
+  },
+  {
+    "offset": "0x5af3",
+    "token": "0x70005af3",
+    "text": "Google Play did not return the RoadNZ Premium purchase."
+  },
+  {
+    "offset": "0x5b63",
+    "token": "0x70005b63",
+    "text": "RoadNZ.Billing"
+  },
+  {
+    "offset": "0x5b81",
+    "token": "0x70005b81",
+    "text": "Purchase update could not be completed: "
+  },
+  {
+    "offset": "0x5bd3",
+    "token": "0x70005bd3",
+    "text": "The purchase was received but could not be finalised. Use Restore purchases to recover it."
+  },
+  {
+    "offset": "0x5c8a",
+    "token": "0x70005c8a",
+    "text": "Ready"
+  },
+  {
+    "offset": "0x5c96",
+    "token": "0x70005c96",
+    "text": "Google Play returned an invalid product entitlement."
+  },
+  {
+    "offset": "0x5d00",
+    "token": "0x70005d00",
+    "text": "The purchase is pending in Google Play. Premium will unlock after payment is confirmed."
+  },
+  {
+    "offset": "0x5db1",
+    "token": "0x70005db1",
+    "text": "The purchase has not been completed."
+  },
+  {
+    "offset": "0x5dfb",
+    "token": "0x70005dfb",
+    "text": "Google Play could not confirm delivery of RoadNZ Premium."
+  },
+  {
+    "offset": "0x5e6f",
+    "token": "0x70005e6f",
+    "text": "RoadNZ Premium is now active."
+  },
+  {
+    "offset": "0x5eab",
+    "token": "0x70005eab",
+    "text": "RoadNZ Premium is already active."
+  },
+  {
+    "offset": "0x5eef",
+    "token": "0x70005eef",
+    "text": "Google Play could not open the purchase screen. Please try again."
+  },
+  {
+    "offset": "0x5f74",
+    "token": "0x70005f74",
+    "text": "A purchase is already in progress."
+  },
+  {
+    "offset": "0x5fba",
+    "token": "0x70005fba",
+    "text": "Google Play could not start the purchase."
+  },
+  {
+    "offset": "0x600e",
+    "token": "0x7000600e",
+    "text": "The purchase confirmation timed out. Use Restore purchases before trying again."
+  },
+  {
+    "offset": "0x60af",
+    "token": "0x700060af",
+    "text": "Google Play Billing is unavailable."
+  },
+  {
+    "offset": "0x60f7",
+    "token": "0x700060f7",
+    "text": "inapp"
+  },
+  {
+    "offset": "0x6103",
+    "token": "0x70006103",
+    "text": "Google Play could not check previous purchases."
+  },
+  {
+    "offset": "0x6163",
+    "token": "0x70006163",
+    "text": "No purchase found."
+  },
+  {
+    "offset": "0x6189",
+    "token": "0x70006189",
+    "text": "RoadNZ Premium is currently unavailable."
+  },
+  {
+    "offset": "0x61db",
+    "token": "0x700061db",
+    "text": "Product 'unlock' was not returned. Check that the product and at least one purchase option are Active and priced for this Play country."
+  },
+  {
+    "offset": "0x62ec",
+    "token": "0x700062ec",
+    "text": "RoadNZ Premium is unavailable for this Google Play account."
+  },
+  {
+    "offset": "0x6364",
+    "token": "0x70006364",
+    "text": "Product '"
+  },
+  {
+    "offset": "0x6378",
+    "token": "0x70006378",
+    "text": "' was returned without an eligible purchase option."
+  },
+  {
+    "offset": "0x63e0",
+    "token": "0x700063e0",
+    "text": "Google Play found RoadNZ Premium, but no purchase option is eligible for this account or Play country."
+  },
+  {
+    "offset": "0x64af",
+    "token": "0x700064af",
+    "text": "No RoadNZ Premium purchase was found for this Google Play account."
+  },
+  {
+    "offset": "0x6536",
+    "token": "0x70006536",
+    "text": "rzn_review_flow_requested_v1"
+  },
+  {
+    "offset": "0x6570",
+    "token": "0x70006570",
+    "text": "rzn_review_completed_sessions_v1"
+  },
+  {
+    "offset": "0x65b2",
+    "token": "0x700065b2",
+    "text": "Could not request the native store review flow."
+  },
+  {
+    "offset": "0x6612",
+    "token": "0x70006612",
+    "text": "roadnz-content.vault"
+  },
+  {
+    "offset": "0x663c",
+    "token": "0x7000663c",
+    "text": "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fff"
+  },
+  {
+    "offset": "0x6684",
+    "token": "0x70006684",
+    "text": "'"
+  },
+  {
+    "offset": "0x6688",
+    "token": "0x70006688",
+    "text": "''"
+  },
+  {
+    "offset": "0x668e",
+    "token": "0x7000668e",
+    "text": "roadnz.db3"
+  },
+  {
+    "offset": "0x66a4",
+    "token": "0x700066a4",
+    "text": "-wal"
+  },
+  {
+    "offset": "0x66ae",
+    "token": "0x700066ae",
+    "text": "-shm"
+  },
+  {
+    "offset": "0x66b8",
+    "token": "0x700066b8",
+    "text": "-journal"
+  },
+  {
+    "offset": "0x66ca",
+    "token": "0x700066ca",
+    "text": "Core rules"
+  },
+  {
+    "offset": "0x66e0",
+    "token": "0x700066e0",
+    "text": "◆"
+  },
+  {
+    "offset": "0x66e4",
+    "token": "0x700066e4",
+    "text": "Signs & signals"
+  },
+  {
+    "offset": "0x6704",
+    "token": "0x70006704",
+    "text": "▲"
+  },
+  {
+    "offset": "0x6708",
+    "token": "0x70006708",
+    "text": "Safe behaviour"
+  },
+  {
+    "offset": "0x6726",
+    "token": "0x70006726",
+    "text": "◎"
+  },
+  {
+    "offset": "0x672a",
+    "token": "0x7000672a",
+    "text": "Emergencies"
+  },
+  {
+    "offset": "0x6742",
+    "token": "0x70006742",
+    "text": "✦"
+  },
+  {
+    "offset": "0x6746",
+    "token": "0x70006746",
+    "text": "Intersections"
+  },
+  {
+    "offset": "0x6762",
+    "token": "0x70006762",
+    "text": "↗"
+  },
+  {
+    "offset": "0x6766",
+    "token": "0x70006766",
+    "text": "Parking"
+  },
+  {
+    "offset": "0x6776",
+    "token": "0x70006776",
+    "text": "P"
+  },
+  {
+    "offset": "0x677a",
+    "token": "0x7000677a",
+    "text": "Road position"
+  },
+  {
+    "offset": "0x6796",
+    "token": "0x70006796",
+    "text": "↥"
+  },
+  {
+    "offset": "0x679a",
+    "token": "0x7000679a",
+    "text": "Motorcycle focus"
+  },
+  {
+    "offset": "0x67bc",
+    "token": "0x700067bc",
+    "text": "◈"
+  },
+  {
+    "offset": "0x67c0",
+    "token": "0x700067c0",
+    "text": "Heavy vehicle class 2"
+  },
+  {
+    "offset": "0x67ec",
+    "token": "0x700067ec",
+    "text": "▣"
+  },
+  {
+    "offset": "0x67f0",
+    "token": "0x700067f0",
+    "text": "Heavy vehicle classes 3–5"
+  },
+  {
+    "offset": "0x6824",
+    "token": "0x70006824",
+    "text": "▦"
+  },
+  {
+    "offset": "0x6828",
+    "token": "0x70006828",
+    "text": "Road code essentials"
+  },
+  {
+    "offset": "0x6852",
+    "token": "0x70006852",
+    "text": "≡"
+  },
+  {
+    "offset": "0x6856",
+    "token": "0x70006856",
+    "text": "In normal conditions, what time gap should you keep behind the vehicle ahead?"
+  },
+  {
+    "offset": "0x68f3",
+    "token": "0x700068f3",
+    "text": "At least 1 second"
+  },
+  {
+    "offset": "0x6917",
+    "token": "0x70006917",
+    "text": "At least 2 seconds"
+  },
+  {
+    "offset": "0x693d",
+    "token": "0x7000693d",
+    "text": "Exactly 3 seconds"
+  },
+  {
+    "offset": "0x6961",
+    "token": "0x70006961",
+    "text": "At least 5 seconds"
+  },
+  {
+    "offset": "0x6987",
+    "token": "0x70006987",
+    "text": "Use the 2-second rule in normal conditions."
+  },
+  {
+    "offset": "0x69df",
+    "token": "0x700069df",
+    "text": "https://www.nzta.govt.nz/driving-skills/learn-to-drive/roadcode/general-road-code/about-driving/key-driving-skills/following-distance"
+  },
+  {
+    "offset": "0x6aec",
+    "token": "0x70006aec",
+    "text": "What following gap is recommended on a wet or slippery road?"
+  },
+  {
+    "offset": "0x6b66",
+    "token": "0x70006b66",
+    "text": "2 seconds"
+  },
+  {
+    "offset": "0x6b7a",
+    "token": "0x70006b7a",
+    "text": "3 seconds"
+  },
+  {
+    "offset": "0x6b8e",
+    "token": "0x70006b8e",
+    "text": "4 seconds"
+  },
+  {
+    "offset": "0x6ba2",
+    "token": "0x70006ba2",
+    "text": "6 seconds"
+  },
+  {
+    "offset": "0x6bb6",
+    "token": "0x70006bb6",
+    "text": "Increase the normal gap to 4 seconds when conditions are poor."
+  },
+  {
+    "offset": "0x6c34",
+    "token": "0x70006c34",
+    "text": "If another driver is tailgating you, what is the safer response?"
+  },
+  {
+    "offset": "0x6cb7",
+    "token": "0x70006cb7",
+    "text": "Brake sharply"
+  },
+  {
+    "offset": "0x6cd3",
+    "token": "0x70006cd3",
+    "text": "Speed up"
+  },
+  {
+    "offset": "0x6ce5",
+    "token": "0x70006ce5",
+    "text": "Increase your gap ahead and let them pass when safe"
+  },
+  {
+    "offset": "0x6d4d",
+    "token": "0x70006d4d",
+    "text": "Move to the right edge"
+  },
+  {
+    "offset": "0x6d7b",
+    "token": "0x70006d7b",
+    "text": "A larger gap ahead gives both drivers more time to react."
+  },
+  {
+    "offset": "0x6def",
+    "token": "0x70006def",
+    "text": "A posted speed limit tells you…"
+  },
+  {
+    "offset": "0x6e2f",
+    "token": "0x70006e2f",
+    "text": "The target speed in every condition"
+  },
+  {
+    "offset": "0x6e77",
+    "token": "0x70006e77",
+    "text": "The minimum legal speed"
+  },
+  {
+    "offset": "0x6ea7",
+    "token": "0x70006ea7",
+    "text": "The maximum legal speed in good conditions"
+  },
+  {
+    "offset": "0x6efd",
+    "token": "0x70006efd",
+    "text": "The speed only trucks must use"
+  },
+  {
+    "offset": "0x6f3b",
+    "token": "0x70006f3b",
+    "text": "You may need to drive more slowly when conditions or hazards require it."
+  },
+  {
+    "offset": "0x6fce",
+    "token": "0x70006fce",
+    "text": "https://www.nzta.govt.nz/driving-skills/learn-to-drive/roadcode/general-road-code/about-limits/speed-limits"
+  },
+  {
+    "offset": "0x70a7",
+    "token": "0x700070a7",
+    "text": "A school bus has stopped to pick up children. What maximum speed applies while you pass?"
+  },
+  {
+    "offset": "0x715a",
+    "token": "0x7000715a",
+    "text": "10 km/h"
+  },
+  {
+    "offset": "0x716a",
+    "token": "0x7000716a",
+    "text": "20 km/h"
+  },
+  {
+    "offset": "0x717a",
+    "token": "0x7000717a",
+    "text": "30 km/h"
+  },
+  {
+    "offset": "0x718a",
+    "token": "0x7000718a",
+    "text": "40 km/h"
+  },
+  {
+    "offset": "0x719a",
+    "token": "0x7000719a",
+    "text": "Drive at 20 km/h or less until you are well past the bus."
+  },
+  {
+    "offset": "0x720e",
+    "token": "0x7000720e",
+    "text": "Does the 20 km/h rule for a stopped school bus apply to traffic approaching from either direction?"
+  },
+  {
+    "offset": "0x72d5",
+    "token": "0x700072d5",
+    "text": "Yes"
+  },
+  {
+    "offset": "0x72dd",
+    "token": "0x700072dd",
+    "text": "Only on rural roads"
+  },
+  {
+    "offset": "0x7305",
+    "token": "0x70007305",
+    "text": "Only when lights flash"
+  },
+  {
+    "offset": "0x7333",
+    "token": "0x70007333",
+    "text": "Only to traffic behind the bus"
+  },
+  {
+    "offset": "0x7371",
+    "token": "0x70007371",
+    "text": "The reduced speed applies no matter which direction you approach from."
+  },
+  {
+    "offset": "0x7400",
+    "token": "0x70007400",
+    "text": "At the bottom of a T-intersection, who must you give way to?"
+  },
+  {
+    "offset": "0x747a",
+    "token": "0x7000747a",
+    "text": "Only vehicles from the right"
+  },
+  {
+    "offset": "0x74b4",
+    "token": "0x700074b4",
+    "text": "Traffic on the continuing road"
+  },
+  {
+    "offset": "0x74f2",
+    "token": "0x700074f2",
+    "text": "Only vehicles turning right"
+  },
+  {
+    "offset": "0x752a",
+    "token": "0x7000752a",
+    "text": "Nobody if there is no sign"
+  },
+  {
+    "offset": "0x7560",
+    "token": "0x70007560",
+    "text": "Traffic on the terminating road gives way to traffic on the continuing road."
+  },
+  {
+    "offset": "0x75fb",
+    "token": "0x700075fb",
+    "text": "https://www.nzta.govt.nz/driving-skills/learn-to-drive/roadcode/general-road-code/about-driving/giving-way/the-give-way-rules"
+  },
+  {
+    "offset": "0x76f8",
+    "token": "0x700076f8",
+    "text": "You are turning right and an oncoming vehicle is turning left. Who gives way?"
+  },
+  {
+    "offset": "0x7795",
+    "token": "0x70007795",
+    "text": "The oncoming vehicle"
+  },
+  {
+    "offset": "0x77bf",
+    "token": "0x700077bf",
+    "text": "The right-turning vehicle"
+  },
+  {
+    "offset": "0x77f3",
+    "token": "0x700077f3",
+    "text": "The larger vehicle"
+  },
+  {
+    "offset": "0x7819",
+    "token": "0x70007819",
+    "text": "The faster vehicle"
+  },
+  {
+    "offset": "0x783f",
+    "token": "0x7000783f",
+    "text": "A driver turning right gives way to oncoming traffic, including traffic turning left."
+  },
+  {
+    "offset": "0x78ec",
+    "token": "0x700078ec",
+    "text": "If no other give-way rule applies at an uncontrolled intersection, give way to…"
+  },
+  {
+    "offset": "0x798d",
+    "token": "0x7000798d",
+    "text": "Vehicles from your left"
+  },
+  {
+    "offset": "0x79bd",
+    "token": "0x700079bd",
+    "text": "Vehicles from your right"
+  },
+  {
+    "offset": "0x79ef",
+    "token": "0x700079ef",
+    "text": "The vehicle going fastest"
+  },
+  {
+    "offset": "0x7a23",
+    "token": "0x70007a23",
+    "text": "Nobody"
+  },
+  {
+    "offset": "0x7a31",
+    "token": "0x70007a31",
+    "text": "The fallback rule is to give way to traffic from your right."
+  },
+  {
+    "offset": "0x7aab",
+    "token": "0x70007aab",
+    "text": "When entering a roundabout, you must give way to vehicles that…"
+  },
+  {
+    "offset": "0x7b2b",
+    "token": "0x70007b2b",
+    "text": "Are behind you"
+  },
+  {
+    "offset": "0x7b49",
+    "token": "0x70007b49",
+    "text": "Will cross your path from the right"
+  },
+  {
+    "offset": "0x7b91",
+    "token": "0x70007b91",
+    "text": "Are signalling left anywhere"
+  },
+  {
+    "offset": "0x7bcb",
+    "token": "0x70007bcb",
+    "text": "Are waiting on your left"
+  },
+  {
+    "offset": "0x7bfd",
+    "token": "0x70007bfd",
+    "text": "Give way to vehicles already on the roundabout or entering from a road to your right."
+  },
+  {
+    "offset": "0x7caa",
+    "token": "0x70007caa",
+    "text": "https://nzta.govt.nz/travelling-on-our-roads/safety-cameras/other-safety-infrastructure/roundabouts"
+  },
+  {
+    "offset": "0x7d73",
+    "token": "0x70007d73",
+    "text": "When driving straight through a roundabout, when should you signal?"
+  },
+  {
+    "offset": "0x7dfc",
+    "token": "0x70007dfc",
+    "text": "Signal right before entering"
+  },
+  {
+    "offset": "0x7e36",
+    "token": "0x70007e36",
+    "text": "Signal left before entering"
+  },
+  {
+    "offset": "0x7e6e",
+    "token": "0x70007e6e",
+    "text": "Do not signal at any time"
+  },
+  {
+    "offset": "0x7ea2",
+    "token": "0x70007ea2",
+    "text": "Signal left after passing the exit before yours"
+  },
+  {
+    "offset": "0x7f02",
+    "token": "0x70007f02",
+    "text": "Do not signal on approach; signal left as you pass the exit before the one you will take."
+  },
+  {
+    "offset": "0x7fb7",
+    "token": "0x70007fb7",
+    "text": "How long should you normally signal before turning or changing lanes?"
+  },
+  {
+    "offset": "0x8044",
+    "token": "0x70008044",
+    "text": "At least 3 seconds"
+  },
+  {
+    "offset": "0x806a",
+    "token": "0x7000806a",
+    "text": "Only while moving"
+  },
+  {
+    "offset": "0x808e",
+    "token": "0x7000808e",
+    "text": "Give other road users at least 3 seconds of warning."
+  },
+  {
+    "offset": "0x80f8",
+    "token": "0x700080f8",
+    "text": "https://nzta.govt.nz/driving-skills/learn-to-drive/roadcode/general-road-code/about-driving/key-driving-skills/giving-signals"
+  },
+  {
+    "offset": "0x81f5",
+    "token": "0x700081f5",
+    "text": "What does a steady red traffic signal mean?"
+  },
+  {
+    "offset": "0x824d",
+    "token": "0x7000824d",
+    "text": "Slow down"
+  },
+  {
+    "offset": "0x8261",
+    "token": "0x70008261",
+    "text": "Stop"
+  },
+  {
+    "offset": "0x826b",
+    "token": "0x7000826b",
+    "text": "Give way only"
+  },
+  {
+    "offset": "0x8287",
+    "token": "0x70008287",
+    "text": "Proceed if no traffic is visible"
+  },
+  {
+    "offset": "0x82c9",
+    "token": "0x700082c9",
+    "text": "A red signal means stop."
+  },
+  {
+    "offset": "0x82fb",
+    "token": "0x700082fb",
+    "text": "What should you do at a yellow traffic signal?"
+  },
+  {
+    "offset": "0x8359",
+    "token": "0x70008359",
+    "text": "Always accelerate"
+  },
+  {
+    "offset": "0x837d",
+    "token": "0x7000837d",
+    "text": "Stop unless you are too close to stop safely"
+  },
+  {
+    "offset": "0x83d7",
+    "token": "0x700083d7",
+    "text": "Treat it as a green signal"
+  },
+  {
+    "offset": "0x840d",
+    "token": "0x7000840d",
+    "text": "Stop only if pedestrians are present"
+  },
+  {
+    "offset": "0x8457",
+    "token": "0x70008457",
+    "text": "A yellow signal means stop unless stopping safely is no longer possible."
+  },
+  {
+    "offset": "0x84ea",
+    "token": "0x700084ea",
+    "text": "Traffic signals are flashing yellow. What should you do?"
+  },
+  {
+    "offset": "0x855c",
+    "token": "0x7000855c",
+    "text": "Apply the give-way rules"
+  },
+  {
+    "offset": "0x858e",
+    "token": "0x7000858e",
+    "text": "Wait for a green signal"
+  },
+  {
+    "offset": "0x85be",
+    "token": "0x700085be",
+    "text": "Drive through without slowing"
+  },
+  {
+    "offset": "0x85fa",
+    "token": "0x700085fa",
+    "text": "Follow the car ahead"
+  },
+  {
+    "offset": "0x8624",
+    "token": "0x70008624",
+    "text": "Flashing yellow means the signals are not working; use the give-way rules."
+  },
+  {
+    "offset": "0x86bb",
+    "token": "0x700086bb",
+    "text": "When you give way, the other road user should not need to…"
+  },
+  {
+    "offset": "0x8731",
+    "token": "0x70008731",
+    "text": "Use an indicator"
+  },
+  {
+    "offset": "0x8753",
+    "token": "0x70008753",
+    "text": "Stop, brake, swerve or take evasive action"
+  },
+  {
+    "offset": "0x87a9",
+    "token": "0x700087a9",
+    "text": "Look at you"
+  },
+  {
+    "offset": "0x87c1",
+    "token": "0x700087c1",
+    "text": "Change gear"
+  },
+  {
+    "offset": "0x87d9",
+    "token": "0x700087d9",
+    "text": "Giving way means allowing the other road user to continue without evasive action."
+  },
+  {
+    "offset": "0x887e",
+    "token": "0x7000887e",
+    "text": ","
+  },
+  {
+    "offset": "0x8882",
+    "token": "0x70008882",
+    "text": "x"
+  },
+  {
+    "offset": "0x8886",
+    "token": "0x70008886",
+    "text": "PRAGMA cipher_memory_security = ON"
+  },
+  {
+    "offset": "0x88cc",
+    "token": "0x700088cc",
+    "text": "PRAGMA secure_delete = ON"
+  },
+  {
+    "offset": "0x8900",
+    "token": "0x70008900",
+    "text": "roadnz_bundled_content_version"
+  },
+  {
+    "offset": "0x893e",
+    "token": "0x7000893e",
+    "text": "roadnz-content.pack"
+  },
+  {
+    "offset": "0x8966",
+    "token": "0x70008966",
+    "text": "ATTACH DATABASE '"
+  },
+  {
+    "offset": "0x898a",
+    "token": "0x7000898a",
+    "text": "' AS bundled KEY '"
+  },
+  {
+    "offset": "0x89b0",
+    "token": "0x700089b0",
+    "text": "BEGIN IMMEDIATE"
+  },
+  {
+    "offset": "0x89d0",
+    "token": "0x700089d0",
+    "text": "DELETE FROM StudyCategory"
+  },
+  {
+    "offset": "0x8a04",
+    "token": "0x70008a04",
+    "text": "DELETE FROM Question"
+  },
+  {
+    "offset": "0x8a2e",
+    "token": "0x70008a2e",
+    "text": "DELETE FROM ExamAttempt"
+  },
+  {
+    "offset": "0x8a5e",
+    "token": "0x70008a5e",
+    "text": "INSERT INTO StudyCategory (Id, Name, Glyph, LicenseCodes, SortOrder)\nSELECT Id, Name, Glyph, LicenseCodes, SortOrder\nFROM bundled.StudyCategory"
+  },
+  {
+    "offset": "0x8b7f",
+    "token": "0x70008b7f",
+    "text": "INSERT INTO Question (\n\tId, CategoryId, LicenseCodes, Prompt,\n\tOption1, Option2, Option3, Option4, Option5,\n\tCorrectOption, CorrectOptionsCsv, Explanation, SourceUrl,\n\tImagePath, VideoPath,\n\tOption1ImagePath, Option2ImagePath, Option3ImagePath,\n\tOption4ImagePath, Option5ImagePath,\n\tAttempts, CorrectAttempts, IsBookmarked)\nSELECT\n\tId, CategoryId, LicenseCodes, Prompt,\n\tOption1, Option2, Option3, Option4, Option5,\n\tCorrectOption, CorrectOptionsCsv, Explanation, SourceUrl,\n\tImagePath, VideoPath,\n\tOption1ImagePath, Option2ImagePath, Option3ImagePath,\n\tOption4ImagePath, Option5ImagePath,\n\t0, 0, 0\nFROM bundled.Question"
+  },
+  {
+    "offset": "0x905a",
+    "token": "0x7000905a",
+    "text": "COMMIT"
+  },
+  {
+    "offset": "0x9068",
+    "token": "0x70009068",
+    "text": "ROLLBACK"
+  },
+  {
+    "offset": "0x907a",
+    "token": "0x7000907a",
+    "text": "DETACH DATABASE bundled"
+  },
+  {
+    "offset": "0x90aa",
+    "token": "0x700090aa",
+    "text": "UPDATE Question SET Attempts = 0, CorrectAttempts = 0, IsBookmarked = 0"
+  },
+  {
+    "offset": "0x913b",
+    "token": "0x7000913b",
+    "text": "NEW ZEALAND THEORY PREP"
+  },
+  {
+    "offset": "0x916b",
+    "token": "0x7000916b",
+    "text": "Ready for the road?"
+  },
+  {
+    "offset": "0x9193",
+    "token": "0x70009193",
+    "text": "Build confidence with focused, private, offline practice."
+  },
+  {
+    "offset": "0x9207",
+    "token": "0x70009207",
+    "text": "ChooseLicenseCommand"
+  },
+  {
+    "offset": "0x9231",
+    "token": "0x70009231",
+    "text": "http://schemas.microsoft.com/dotnet/2021/maui"
+  },
+  {
+    "offset": "0x928d",
+    "token": "0x7000928d",
+    "text": "http://schemas.microsoft.com/winfx/2009/xaml"
+  },
+  {
+    "offset": "0x92e7",
+    "token": "0x700092e7",
+    "text": "views"
+  },
+  {
+    "offset": "0x92f3",
+    "token": "0x700092f3",
+    "text": "clr-namespace:RoadNZ.Views"
+  },
+  {
+    "offset": "0x9329",
+    "token": "0x70009329",
+    "text": "CURRENT LICENCE"
+  },
+  {
+    "offset": "0x9349",
+    "token": "0x70009349",
+    "text": "⌄"
+  },
+  {
+    "offset": "0x934d",
+    "token": "0x7000934d",
+    "text": "READINESS"
+  },
+  {
+    "offset": "0x9361",
+    "token": "0x70009361",
+    "text": "StartMockCommand"
+  },
+  {
+    "offset": "0x9383",
+    "token": "0x70009383",
+    "text": "Activity"
+  },
+  {
+    "offset": "0x9395",
+    "token": "0x70009395",
+    "text": "OpenPracticeCommand"
+  },
+  {
+    "offset": "0x93bd",
+    "token": "0x700093bd",
+    "text": "Question bank"
+  },
+  {
+    "offset": "0x93d9",
+    "token": "0x700093d9",
+    "text": "Choose your next step"
+  },
+  {
+    "offset": "0x9405",
+    "token": "0x70009405",
+    "text": "▶"
+  },
+  {
+    "offset": "0x9409",
+    "token": "0x70009409",
+    "text": "Mock theory test"
+  },
+  {
+    "offset": "0x942b",
+    "token": "0x7000942b",
+    "text": "Start mock test"
+  },
+  {
+    "offset": "0x944b",
+    "token": "0x7000944b",
+    "text": "StartMistakesCommand"
+  },
+  {
+    "offset": "0x9475",
+    "token": "0x70009475",
+    "text": "OpenReviewCommand"
+  },
+  {
+    "offset": "0x9499",
+    "token": "0x70009499",
+    "text": "DismissIndependentStudyNoticeCommand"
+  },
+  {
+    "offset": "0x94e3",
+    "token": "0x700094e3",
+    "text": "IgnoreIndependentStudyNoticeTapCommand"
+  },
+  {
+    "offset": "0x9531",
+    "token": "0x70009531",
+    "text": "INDEPENDENT STUDY APP"
+  },
+  {
+    "offset": "0x955d",
+    "token": "0x7000955d",
+    "text": "Official information, independent preparation"
+  },
+  {
+    "offset": "0x95b9",
+    "token": "0x700095b9",
+    "text": "RoadNZ does not represent, and is not affiliated with, authorised by, endorsed by, or an official product of the New Zealand Government or NZ Transport Agency Waka Kotahi."
+  },
+  {
+    "offset": "0x9712",
+    "token": "0x70009712",
+    "text": "OpenOfficialRoadCodeCommand"
+  },
+  {
+    "offset": "0x974a",
+    "token": "0x7000974a",
+    "text": "Open official government source ↗"
+  },
+  {
+    "offset": "0x978e",
+    "token": "0x7000978e",
+    "text": "CLOSE"
+  },
+  {
+    "offset": "0x979a",
+    "token": "0x7000979a",
+    "text": "Tap outside this notice to close it."
+  },
+  {
+    "offset": "0x97e4",
+    "token": "0x700097e4",
+    "text": "ROADNZ PREMIUM"
+  },
+  {
+    "offset": "0x9802",
+    "token": "0x70009802",
+    "text": "ReviewerAccessCommand"
+  },
+  {
+    "offset": "0x982e",
+    "token": "0x7000982e",
+    "text": "CloseCommand"
+  },
+  {
+    "offset": "0x9848",
+    "token": "0x70009848",
+    "text": "✕"
+  },
+  {
+    "offset": "0x984c",
+    "token": "0x7000984c",
+    "text": "✓"
+  },
+  {
+    "offset": "0x9850",
+    "token": "0x70009850",
+    "text": "PurchaseCommand"
+  },
+  {
+    "offset": "0x9870",
+    "token": "0x70009870",
+    "text": "RestoreCommand"
+  },
+  {
+    "offset": "0x988e",
+    "token": "0x7000988e",
+    "text": "Restore purchases"
+  },
+  {
+    "offset": "0x98b2",
+    "token": "0x700098b2",
+    "text": "ON THIS DEVICE"
+  },
+  {
+    "offset": "0x98d0",
+    "token": "0x700098d0",
+    "text": "Your progress"
+  },
+  {
+    "offset": "0x98ec",
+    "token": "0x700098ec",
+    "text": "Your answer history lives on this device. Study reminders share anonymous stats with the RoadNZ server; turn them off in Settings."
+  },
+  {
+    "offset": "0x99f3",
+    "token": "0x700099f3",
+    "text": "ACCURACY"
+  },
+  {
+    "offset": "0x9a05",
+    "token": "0x70009a05",
+    "text": "SESSIONS"
+  },
+  {
+    "offset": "0x9a17",
+    "token": "0x70009a17",
+    "text": "PASSED"
+  },
+  {
+    "offset": "0x9a25",
+    "token": "0x70009a25",
+    "text": "Answer accuracy"
+  },
+  {
+    "offset": "0x9a45",
+    "token": "0x70009a45",
+    "text": "Recent sessions"
+  },
+  {
+    "offset": "0x9a65",
+    "token": "0x70009a65",
+    "text": "No completed sessions yet. Your first result will appear here."
+  },
+  {
+    "offset": "0x9ae3",
+    "token": "0x70009ae3",
+    "text": "Attempts"
+  },
+  {
+    "offset": "0x9af5",
+    "token": "0x70009af5",
+    "text": "Mode"
+  },
+  {
+    "offset": "0x9aff",
+    "token": "0x70009aff",
+    "text": "Date"
+  },
+  {
+    "offset": "0x9b09",
+    "token": "0x70009b09",
+    "text": "Status"
+  },
+  {
+    "offset": "0x9b17",
+    "token": "0x70009b17",
+    "text": "StatusColor"
+  },
+  {
+    "offset": "0x9b2f",
+    "token": "0x70009b2f",
+    "text": "ExplanationScroll"
+  },
+  {
+    "offset": "0x9b53",
+    "token": "0x70009b53",
+    "text": "PageRoot"
+  },
+  {
+    "offset": "0x9b65",
+    "token": "0x70009b65",
+    "text": "ContentScroll"
+  },
+  {
+    "offset": "0x9b81",
+    "token": "0x70009b81",
+    "text": "ExplanationCard"
+  },
+  {
+    "offset": "0x9ba1",
+    "token": "0x70009ba1",
+    "text": "ToggleBookmarkCommand"
+  },
+  {
+    "offset": "0x9bcd",
+    "token": "0x70009bcd",
+    "text": "MULTIPLE ANSWERS"
+  },
+  {
+    "offset": "0x9bef",
+    "token": "0x70009bef",
+    "text": "Select one or more answers."
+  },
+  {
+    "offset": "0x9c27",
+    "token": "0x70009c27",
+    "text": "OpenQuestionVideoCommand"
+  },
+  {
+    "offset": "0x9c59",
+    "token": "0x70009c59",
+    "text": "Play question video"
+  },
+  {
+    "offset": "0x9c81",
+    "token": "0x70009c81",
+    "text": "Answers"
+  },
+  {
+    "offset": "0x9c91",
+    "token": "0x70009c91",
+    "text": "WHY THIS IS RIGHT"
+  },
+  {
+    "offset": "0x9cb5",
+    "token": "0x70009cb5",
+    "text": "OpenSourceCommand"
+  },
+  {
+    "offset": "0x9cd9",
+    "token": "0x70009cd9",
+    "text": "PreviousQuestionCommand"
+  },
+  {
+    "offset": "0x9d09",
+    "token": "0x70009d09",
+    "text": "Previous"
+  },
+  {
+    "offset": "0x9d1b",
+    "token": "0x70009d1b",
+    "text": "ContinueCommand"
+  },
+  {
+    "offset": "0x9d3b",
+    "token": "0x70009d3b",
+    "text": "BindingContext.SelectAnswerCommand"
+  },
+  {
+    "offset": "0x9d81",
+    "token": "0x70009d81",
+    "text": "IndicatorCornerRadius"
+  },
+  {
+    "offset": "0x9dad",
+    "token": "0x70009dad",
+    "text": "Letter"
+  },
+  {
+    "offset": "0x9dbb",
+    "token": "0x70009dbb",
+    "text": "Text"
+  },
+  {
+    "offset": "0x9dc5",
+    "token": "0x70009dc5",
+    "text": "HasImage"
+  },
+  {
+    "offset": "0x9dd7",
+    "token": "0x70009dd7",
+    "text": "ImagePath"
+  },
+  {
+    "offset": "0x9deb",
+    "token": "0x70009deb",
+    "text": "CORRECT"
+  },
+  {
+    "offset": "0x9dfb",
+    "token": "0x70009dfb",
+    "text": "What next?"
+  },
+  {
+    "offset": "0x9e11",
+    "token": "0x70009e11",
+    "text": "Focused repetition is more useful than immediately repeating the same full set."
+  },
+  {
+    "offset": "0x9eb2",
+    "token": "0x70009eb2",
+    "text": "Review your answers"
+  },
+  {
+    "offset": "0x9eda",
+    "token": "0x70009eda",
+    "text": "ReviewItems"
+  },
+  {
+    "offset": "0x9ef2",
+    "token": "0x70009ef2",
+    "text": "RetryCommand"
+  },
+  {
+    "offset": "0x9f0c",
+    "token": "0x70009f0c",
+    "text": "Practise weak areas"
+  },
+  {
+    "offset": "0x9f34",
+    "token": "0x70009f34",
+    "text": "DoneCommand"
+  },
+  {
+    "offset": "0x9f4c",
+    "token": "0x70009f4c",
+    "text": "Back to home"
+  },
+  {
+    "offset": "0x9f66",
+    "token": "0x70009f66",
+    "text": "Number"
+  },
+  {
+    "offset": "0x9f74",
+    "token": "0x70009f74",
+    "text": "Your answer: {0}"
+  },
+  {
+    "offset": "0x9f96",
+    "token": "0x70009f96",
+    "text": "YourAnswer"
+  },
+  {
+    "offset": "0x9fac",
+    "token": "0x70009fac",
+    "text": "HasYourAnswerImage"
+  },
+  {
+    "offset": "0x9fd2",
+    "token": "0x70009fd2",
+    "text": "YourAnswerImagePath"
+  },
+  {
+    "offset": "0x9ffa",
+    "token": "0x70009ffa",
+    "text": "Correct answer: {0}"
+  },
+  {
+    "offset": "0xa022",
+    "token": "0x7000a022",
+    "text": "CorrectAnswer"
+  },
+  {
+    "offset": "0xa03e",
+    "token": "0x7000a03e",
+    "text": "HasCorrectAnswerImage"
+  },
+  {
+    "offset": "0xa06a",
+    "token": "0x7000a06a",
+    "text": "CorrectAnswerImagePath"
+  },
+  {
+    "offset": "0xa098",
+    "token": "0x7000a098",
+    "text": "Question library"
+  },
+  {
+    "offset": "0xa0ba",
+    "token": "0x7000a0ba",
+    "text": "Search the local question bank, then open any question."
+  },
+  {
+    "offset": "0xa12a",
+    "token": "0x7000a12a",
+    "text": "Search questions or explanations"
+  },
+  {
+    "offset": "0xa16c",
+    "token": "0x7000a16c",
+    "text": "OpenPaywallCommand"
+  },
+  {
+    "offset": "0xa192",
+    "token": "0x7000a192",
+    "text": "Unlock all questions"
+  },
+  {
+    "offset": "0xa1bc",
+    "token": "0x7000a1bc",
+    "text": "Questions"
+  },
+  {
+    "offset": "0xa1d0",
+    "token": "0x7000a1d0",
+    "text": "BindingContext.OpenQuestionCommand"
+  },
+  {
+    "offset": "0xa216",
+    "token": "0x7000a216",
+    "text": "Q{0}"
+  },
+  {
+    "offset": "0xa220",
+    "token": "0x7000a220",
+    "text": "Id"
+  },
+  {
+    "offset": "0xa226",
+    "token": "0x7000a226",
+    "text": "Tune the study experience and manage local data."
+  },
+  {
+    "offset": "0xa288",
+    "token": "0x7000a288",
+    "text": "Study"
+  },
+  {
+    "offset": "0xa294",
+    "token": "0x7000a294",
+    "text": "Vibration feedback"
+  },
+  {
+    "offset": "0xa2ba",
+    "token": "0x7000a2ba",
+    "text": "Feel a short buzz when you answer a question."
+  },
+  {
+    "offset": "0xa316",
+    "token": "0x7000a316",
+    "text": "Auto-advance"
+  },
+  {
+    "offset": "0xa330",
+    "token": "0x7000a330",
+    "text": "Submit single-answer questions as soon as you tap an option."
+  },
+  {
+    "offset": "0xa3aa",
+    "token": "0x7000a3aa",
+    "text": "Get a nudge when you've been away, based on what you were practising."
+  },
+  {
+    "offset": "0xa437",
+    "token": "0x7000a437",
+    "text": "Sources & privacy"
+  },
+  {
+    "offset": "0xa45b",
+    "token": "0x7000a45b",
+    "text": "Verify current road rules using the official New Zealand Road Code."
+  },
+  {
+    "offset": "0xa4e4",
+    "token": "0x7000a4e4",
+    "text": "OpenRoadCodeCommand"
+  },
+  {
+    "offset": "0xa50c",
+    "token": "0x7000a50c",
+    "text": "OpenPrivacyChoicesCommand"
+  },
+  {
+    "offset": "0xa540",
+    "token": "0x7000a540",
+    "text": "Privacy choices"
+  },
+  {
+    "offset": "0xa560",
+    "token": "0x7000a560",
+    "text": "RoadNZ is an independent study app. It does not represent, and is not affiliated with, authorised by, endorsed by, or an official product of the New Zealand Government or NZ Transport Agency Waka Kotahi."
+  },
+  {
+    "offset": "0xa6f9",
+    "token": "0x7000a6f9",
+    "text": "Study reminders send anonymous study stats (topics practised, scores and last activity) to the RoadNZ server to personalise your reminder. Turn off Study reminders to stop this."
+  },
+  {
+    "offset": "0xa85e",
+    "token": "0x7000a85e",
+    "text": "Data"
+  },
+  {
+    "offset": "0xa868",
+    "token": "0x7000a868",
+    "text": "ImportContentPackCommand"
+  },
+  {
+    "offset": "0xa89a",
+    "token": "0x7000a89a",
+    "text": "Import authorised content pack"
+  },
+  {
+    "offset": "0xa8d8",
+    "token": "0x7000a8d8",
+    "text": "ResetProgressCommand"
+  },
+  {
+    "offset": "0xa902",
+    "token": "0x7000a902",
+    "text": "Reset local progress"
+  },
+  {
+    "offset": "0xa92c",
+    "token": "0x7000a92c",
+    "text": "OpenPremiumCommand"
+  },
+  {
+    "offset": "0xa952",
+    "token": "0x7000a952",
+    "text": "VersionText"
+  },
+  {
+    "offset": "0xa96a",
+    "token": "0x7000a96a",
+    "text": "Practice by topic"
+  },
+  {
+    "offset": "0xa98e",
+    "token": "0x7000a98e",
+    "text": "Pick a subject for a short, focused set."
+  },
+  {
+    "offset": "0xa9e0",
+    "token": "0x7000a9e0",
+    "text": "Categories"
+  },
+  {
+    "offset": "0xa9f6",
+    "token": "0x7000a9f6",
+    "text": "BindingContext.StartCategoryCommand"
+  },
+  {
+    "offset": "0xaa3e",
+    "token": "0x7000aa3e",
+    "text": "Category.Glyph"
+  },
+  {
+    "offset": "0xaa5c",
+    "token": "0x7000aa5c",
+    "text": "Category.Name"
+  },
+  {
+    "offset": "0xaa78",
+    "token": "0x7000aa78",
+    "text": "CountText"
+  },
+  {
+    "offset": "0xaa8c",
+    "token": "0x7000aa8c",
+    "text": "AccessText"
+  },
+  {
+    "offset": "0xaaa2",
+    "token": "0x7000aaa2",
+    "text": "A,B,HV"
+  },
+  {
+    "offset": "0xaab0",
+    "token": "0x7000aab0",
+    "text": "ContentImportResult"
+  },
+  {
+    "offset": "0xaad8",
+    "token": "0x7000aad8",
+    "text": "CategoryCount = "
+  },
+  {
+    "offset": "0xaafa",
+    "token": "0x7000aafa",
+    "text": ", Publisher = "
+  },
+  {
+    "offset": "0xab18",
+    "token": "0x7000ab18",
+    "text": "StudyStats"
+  },
+  {
+    "offset": "0xab2e",
+    "token": "0x7000ab2e",
+    "text": "QuestionsAttempted = "
+  },
+  {
+    "offset": "0xab5a",
+    "token": "0x7000ab5a",
+    "text": ", CorrectAnswers = "
+  },
+  {
+    "offset": "0xab82",
+    "token": "0x7000ab82",
+    "text": ", MockTests = "
+  },
+  {
+    "offset": "0xaba0",
+    "token": "0x7000aba0",
+    "text": ", MockTestsPassed = "
+  },
+  {
+    "offset": "0xabca",
+    "token": "0x7000abca",
+    "text": ", AvailableQuestions = "
+  },
+  {
+    "offset": "0xabfa",
+    "token": "0x7000abfa",
+    "text": ", Accuracy = "
+  },
+  {
+    "offset": "0xac16",
+    "token": "0x7000ac16",
+    "text": ", Readiness = "
+  },
+  {
+    "offset": "0xac34",
+    "token": "0x7000ac34",
+    "text": "LicenseOption"
+  },
+  {
+    "offset": "0xac50",
+    "token": "0x7000ac50",
+    "text": "Code = "
+  },
+  {
+    "offset": "0xac60",
+    "token": "0x7000ac60",
+    "text": ", Name = "
+  },
+  {
+    "offset": "0xac74",
+    "token": "0x7000ac74",
+    "text": ", Detail = "
+  },
+  {
+    "offset": "0xac8c",
+    "token": "0x7000ac8c",
+    "text": "TopicProgress"
+  },
+  {
+    "offset": "0xaca8",
+    "token": "0x7000aca8",
+    "text": "CategoryId = "
+  },
+  {
+    "offset": "0xacc4",
+    "token": "0x7000acc4",
+    "text": ", AttemptedQuestions = "
+  },
+  {
+    "offset": "0xacf4",
+    "token": "0x7000acf4",
+    "text": ", Attempts = "
+  },
+  {
+    "offset": "0xad10",
+    "token": "0x7000ad10",
+    "text": ", CorrectAttempts = "
+  },
+  {
+    "offset": "0xad3a",
+    "token": "0x7000ad3a",
+    "text": "AttemptSummary"
+  },
+  {
+    "offset": "0xad58",
+    "token": "0x7000ad58",
+    "text": "TopicTests = "
+  },
+  {
+    "offset": "0xad74",
+    "token": "0x7000ad74",
+    "text": ", MockExams = "
+  },
+  {
+    "offset": "0xad92",
+    "token": "0x7000ad92",
+    "text": ", MockExamsPassed = "
+  },
+  {
+    "offset": "0xadbc",
+    "token": "0x7000adbc",
+    "text": ", MistakeWorkouts = "
+  },
+  {
+    "offset": "0xade6",
+    "token": "0x7000ade6",
+    "text": ", LastAttemptUtc = "
+  },
+  {
+    "offset": "0xae0e",
+    "token": "0x7000ae0e",
+    "text": "ca-app-pub-3940256099942544/"
+  }
+]

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0f172a">
+  <title>NZ Road Code Master Study & Mock Exam</title>
+  <link rel="stylesheet" href="/static/css/style.css?v=1.2.7">
+  <script src="/static/js/chart.min.js"></script>
+</head>
+<body>
+
+  <!-- Auth Gate: Full-screen login gate required to access application -->
+  <div id="auth-gate" class="auth-gate-overlay visible" style="display: flex;">
+    <div class="auth-gate-card">
+      <div class="auth-gate-brand">
+        <span class="logo-badge" style="font-size: 11px;">NZ ROAD CODE</span>
+        <h1 style="font-size: 22px; font-weight: 800; color: var(--slate-900); margin: 10px 0 4px;">Road Code Mastery Hub</h1>
+        <p style="font-size: 14px; color: var(--slate-500); margin: 0;">Sign in or create an account to access the study hub.</p>
+      </div>
+
+      <!-- Quick Switch Section (if profiles exist on this device) -->
+      <div class="auth-section" id="gate-section-saved-profiles" style="margin-top: 16px;">
+        <label class="auth-section-label">Select Saved Profile on This Device:</label>
+        <div class="profile-chips-list" id="gate-saved-profiles-list">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+
+      <!-- Auth Tabs -->
+      <div class="auth-tabs" style="margin-top: 16px;">
+        <button type="button" class="auth-tab-btn active" id="gate-tab-login" data-tab="login">Sign In</button>
+        <button type="button" class="auth-tab-btn" id="gate-tab-register" data-tab="register">Create Account</button>
+      </div>
+
+      <!-- Feedback -->
+      <div id="gate-alert" class="auth-alert" style="display: none; margin-top: 12px;"></div>
+
+      <!-- Sign In Form -->
+      <form id="gate-form-login" class="auth-form active" style="margin-top: 12px;">
+        <div class="form-group">
+          <label for="gate-login-username">Username</label>
+          <input type="text" id="gate-login-username" class="form-input" placeholder="Your username" autocomplete="username" required />
+        </div>
+        <div class="form-group">
+          <label for="gate-login-password">Password</label>
+          <input type="password" id="gate-login-password" class="form-input" placeholder="Your password" autocomplete="current-password" required />
+        </div>
+        <div class="dialog-actions" style="margin-top: 6px;">
+          <button type="submit" class="btn-primary" style="width: 100%;">Sign In</button>
+        </div>
+      </form>
+
+      <!-- Create Account Form -->
+      <form id="gate-form-register" class="auth-form" style="margin-top: 12px;">
+        <div class="form-group">
+          <label for="gate-reg-username">Username <span class="field-hint">(letters, numbers, hyphens)</span></label>
+          <input type="text" id="gate-reg-username" class="form-input" placeholder="e.g. alex" pattern="[a-zA-Z0-9_\-]+" autocomplete="username" required />
+        </div>
+        <div class="form-group">
+          <label for="gate-reg-email">Email Address</label>
+          <input type="email" id="gate-reg-email" class="form-input" placeholder="e.g. alex@example.com" autocomplete="email" required />
+        </div>
+        <div class="form-group">
+          <label for="gate-reg-display">Display Name</label>
+          <input type="text" id="gate-reg-display" class="form-input" placeholder="e.g. Alex M." autocomplete="name" required />
+        </div>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="gate-reg-password">Password</label>
+            <input type="password" id="gate-reg-password" class="form-input" placeholder="Min. 4 characters" minlength="4" autocomplete="new-password" required />
+          </div>
+          <div class="form-group">
+            <label for="gate-reg-confirm">Confirm Password</label>
+            <input type="password" id="gate-reg-confirm" class="form-input" placeholder="Repeat password" minlength="4" autocomplete="new-password" required />
+          </div>
+        </div>
+        <div class="dialog-actions" style="margin-top: 6px;">
+          <button type="submit" class="btn-primary" style="width: 100%;">Create Account &amp; Sign In</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="logo-title">
+        <span class="logo-badge">NZ ROAD CODE</span>
+        <h1 class="app-name">Road Code Mastery Hub</h1>
+      </div>
+
+      <nav class="app-nav" aria-label="Main Navigation">
+        <button class="nav-btn active" data-view="study" id="nav-study">
+          <span>Study Hub</span>
+        </button>
+        <button class="nav-btn" data-view="test" id="nav-test">
+          <span>Mock Test (35Q)</span>
+        </button>
+        <button class="nav-btn" data-view="metrics" id="nav-metrics">
+          <span>Growth Metrics</span>
+        </button>
+        <button class="nav-btn" data-view="weak" id="nav-weak">
+          <span>Weak Areas</span>
+        </button>
+      </nav>
+
+      <div class="header-stats">
+        <div class="header-stat-pill stat-mastery" title="Mastered Questions">
+          <span>Mastery:</span> <b id="hdr-mastery">0 / 716</b>
+        </div>
+        <div class="header-stat-pill stat-readiness" title="Test Readiness Estimate">
+          <span>Readiness:</span> <b id="hdr-readiness">0%</b>
+        </div>
+        <button type="button" id="btn-user-profile" class="header-user-btn" title="Learner Profile & Accounts">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span id="hdr-user-name">Profile</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Areas -->
+  <main class="main-content">
+
+    <!-- =================================================================== -->
+    <!-- VIEW 1: STUDY HUB (All 716 Questions)                               -->
+    <!-- =================================================================== -->
+    <section id="view-study" class="view-panel active">
+      <div class="filter-bar">
+        <div class="filter-row">
+          <input type="text" id="study-search" class="search-input" placeholder="Search 716 questions by prompt, answer, rule..." />
+          <select id="study-section-filter" class="filter-select">
+            <option value="All">All Sections (10 Areas)</option>
+            <option value="Core Rules & General Theory">Core Rules & General Theory</option>
+            <option value="Intersections & Give-Way Scenarios">Intersections & Give-Way Scenarios</option>
+            <option value="Road Signs, Signals & Markings">Road Signs, Signals & Markings</option>
+            <option value="Road Position & Overtaking">Road Position & Overtaking</option>
+            <option value="Driving Behaviour & Defensive Driving">Driving Behaviour & Defensive Driving</option>
+            <option value="Parking & Stopping Restrictions">Parking & Stopping Restrictions</option>
+            <option value="Emergencies & Road Safety">Emergencies & Road Safety</option>
+            <option value="Motorcycle Specific (Class 6)">Motorcycle Specific (Class 6)</option>
+            <option value="Heavy Vehicles & Commercial Driving (Classes 2–5)">Heavy Vehicles & Commercial Driving</option>
+            <option value="Tourist & Driving in NZ Preparation">Tourist & Driving in NZ Preparation</option>
+          </select>
+          <select id="study-license-filter" class="filter-select">
+            <option value="All">All License Classes</option>
+            <option value="Class 1 (Car)">Class 1 (Car)</option>
+            <option value="Class 6 (Motorcycle)">Class 6 (Motorcycle)</option>
+            <option value="Heavy">Heavy Vehicles (2–5)</option>
+          </select>
+        </div>
+
+        <div class="filter-row" style="justify-content: space-between;">
+          <div class="status-pills">
+            <button class="pill-btn active" data-status="">All (716)</button>
+            <button class="pill-btn" data-status="unseen">Unseen</button>
+            <button class="pill-btn" data-status="learning">Needs Practice</button>
+            <button class="pill-btn" data-status="mastered">Mastered</button>
+            <button class="pill-btn" data-status="bookmarked">Bookmarked</button>
+            <button class="pill-btn" data-status="has_image">With Diagrams</button>
+          </div>
+
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <label style="font-size: 13px; font-weight: 600; color: var(--slate-600); cursor: pointer;">
+              <input type="checkbox" id="chk-instant-quiz" checked style="margin-right: 4px;"> Instant Quiz Mode
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Question Cards Stream -->
+      <div id="study-questions-container" class="questions-list">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Pagination Controls -->
+      <div class="pagination-bar">
+        <button id="btn-prev-page" class="page-btn">← Previous</button>
+        <span id="page-indicator" style="font-weight: 700; color: var(--slate-600); font-size: 14px;">Page 1 of 8 (1–100 of 716)</span>
+        <button id="btn-next-page" class="page-btn">Next →</button>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- VIEW 2: MOCK TEST (35 Questions, 30-Min Timer)                      -->
+    <!-- =================================================================== -->
+    <section id="view-test" class="view-panel">
+      <!-- Test Pre-Start Welcome Screen -->
+      <div id="test-welcome-screen" class="test-welcome-card">
+        <h2 class="test-welcome-title">Official Format NZ Road Code Practice Exam</h2>
+        <p style="color: var(--slate-600);">Simulates the real official NZTA theory test with authentic rules & balanced question selection.</p>
+        
+        <ul class="rules-list">
+          <li><b>35 Random Questions:</b> Drawn proportionally from Core Rules, Intersections, Signs, Parking, and Emergencies.</li>
+          <li><b>30-Minute Time Limit:</b> Strict countdown timer replicating actual test conditions.</li>
+          <li><b>Pass Mark: 32 / 35 (91%):</b> You may get up to 3 questions incorrect and still pass.</li>
+          <li><b>Flag for Review:</b> Bookmark tricky questions and return to them using the question navigator grid.</li>
+        </ul>
+
+        <div style="margin: 20px 0;">
+          <label style="font-weight: 600; margin-right: 8px;">Select Licence Focus:</label>
+          <select id="mock-test-license-select" class="filter-select" style="display: inline-block; width: auto;">
+            <option value="Class 1 (Car)">Class 1 (Car)</option>
+            <option value="Class 6 (Motorcycle)">Class 6 (Motorcycle)</option>
+            <option value="All">All Vehicle Classes</option>
+          </select>
+        </div>
+
+        <button id="btn-start-mock-test" class="btn-primary" style="font-size: 16px; padding: 14px 28px;">
+          Start 35-Question Exam (30 Mins)
+        </button>
+      </div>
+
+      <!-- Active Test Screen -->
+      <div id="test-active-screen" class="test-container" style="display: none;">
+        <div class="test-main-card">
+          <div class="test-top-bar">
+            <div class="test-progress-info">
+              <span id="test-item-indicator">Question 1 of 35</span>
+            </div>
+            <div class="test-top-actions">
+              <button id="btn-toggle-grid" class="btn-grid-toggle" type="button" title="View Question Grid">Questions (35)</button>
+              <div class="test-timer-wrapper" id="test-timer-badge">
+                <span class="timer-label">Time:</span>
+                <span id="test-timer-display">30:00</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="test-q-badges" style="margin-bottom: 10px; display: flex; gap: 6px; flex-wrap: wrap;"></div>
+
+          <h3 class="test-question-body" id="test-q-prompt"></h3>
+
+          <div id="test-q-image-wrap" class="test-image-container" style="display: none;">
+            <img id="test-q-image" src="" alt="Test Diagram" onclick="zoomImage(this.src)" />
+          </div>
+
+          <div class="test-options" id="test-options-container">
+            <!-- Rendered via JS -->
+          </div>
+
+          <div class="test-nav-footer">
+            <button id="btn-test-prev" class="btn-secondary">← Prev</button>
+            <button id="btn-test-flag" class="btn-flag">Flag for Review</button>
+            <button id="btn-test-next" class="btn-primary">Next →</button>
+          </div>
+        </div>
+
+        <!-- Right Navigator Sidebar / Mobile Drawer -->
+        <aside class="test-sidebar" id="test-sidebar-drawer">
+          <div class="sidebar-header-row">
+            <div class="sidebar-title">Question Navigator</div>
+            <button id="btn-close-sidebar" class="btn-sidebar-close" type="button" aria-label="Close navigator">&times;</button>
+          </div>
+          <div class="q-grid" id="test-navigator-grid">
+            <!-- 35 buttons generated by JS -->
+          </div>
+
+          <div class="grid-legend">
+            <div class="legend-item"><span class="legend-dot" style="background: var(--slate-200);"></span> Unanswered</div>
+            <div class="legend-item"><span class="legend-dot" style="background: var(--primary);"></span> Answered</div>
+            <div class="legend-item"><span class="legend-dot" style="background: var(--warning);"></span> Flagged</div>
+          </div>
+
+          <button id="btn-test-finish" class="btn-submit-exam">
+            Submit Test
+          </button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- VIEW 3: TEST RESULTS & REVIEW                                       -->
+    <!-- =================================================================== -->
+    <section id="view-results" class="view-panel">
+      <div class="results-header">
+        <div id="results-verdict-banner" class="verdict-banner"></div>
+        <div class="score-stat-grid">
+          <div class="score-stat-box">
+            <div class="score-stat-num" id="res-score">0 / 35</div>
+            <div class="score-stat-lbl">Final Score</div>
+          </div>
+          <div class="score-stat-box">
+            <div class="score-stat-num" id="res-percent">0%</div>
+            <div class="score-stat-lbl">Accuracy</div>
+          </div>
+          <div class="score-stat-box">
+            <div class="score-stat-num" id="res-time">0m 0s</div>
+            <div class="score-stat-lbl">Time Taken</div>
+          </div>
+          <div class="score-stat-box">
+            <div class="score-stat-num" id="res-status-lbl">PASS</div>
+            <div class="score-stat-lbl">Required: 32/35</div>
+          </div>
+        </div>
+
+        <!-- Section breakdown bars -->
+        <div class="section-score-bars" id="res-section-bars"></div>
+
+        <div style="margin-top: 24px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <button class="btn-primary" onclick="switchView('test'); resetTestUI();">Take Another Mock Test</button>
+          <button class="btn-secondary" onclick="switchView('metrics');">View Growth Dashboard</button>
+        </div>
+      </div>
+
+      <!-- Filter review cards -->
+      <div style="margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <h3 style="font-size: 18px; font-weight: 800;">Detailed Question Review</h3>
+        <div class="status-pills">
+          <button class="pill-btn active" id="btn-filter-rev-all">All (35)</button>
+          <button class="pill-btn" id="btn-filter-rev-wrong">Incorrect Only</button>
+          <button class="pill-btn" id="btn-filter-rev-flagged">Flagged</button>
+        </div>
+      </div>
+
+      <div id="results-review-list" class="questions-list">
+        <!-- Review cards rendered by JS -->
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- VIEW 4: GROWTH METRICS & ANALYTICS                                  -->
+    <!-- =================================================================== -->
+    <section id="view-metrics" class="view-panel">
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <span style="font-size: 13px; font-weight: 700; color: var(--slate-500); text-transform: uppercase;">Study Mastery</span>
+          <div class="metric-val" id="metric-mastery-num">0 / 716</div>
+          <div class="metric-sub" id="metric-mastery-sub">0% of total bank mastered</div>
+        </div>
+        <div class="metric-card">
+          <span style="font-size: 13px; font-weight: 700; color: var(--slate-500); text-transform: uppercase;">Official Exam Readiness</span>
+          <div class="metric-val" style="color: var(--primary);" id="metric-readiness-num">0%</div>
+          <div class="metric-sub">Calculated from mock scores & mastery</div>
+        </div>
+        <div class="metric-card">
+          <span style="font-size: 13px; font-weight: 700; color: var(--slate-500); text-transform: uppercase;">Mock Tests Completed</span>
+          <div class="metric-val" id="metric-tests-num">0</div>
+          <div class="metric-sub" id="metric-tests-sub">0 passed (0% pass rate)</div>
+        </div>
+        <div class="metric-card">
+          <span style="font-size: 13px; font-weight: 700; color: var(--slate-500); text-transform: uppercase;">Average Mock Score</span>
+          <div class="metric-val" id="metric-avg-score">0 / 35</div>
+          <div class="metric-sub">Passing threshold: 32 / 35</div>
+        </div>
+      </div>
+
+      <!-- Score Trend Chart -->
+      <div class="chart-card">
+        <div class="chart-title">Mock Test Performance Trend (Threshold: 32/35)</div>
+        <div style="height: 240px; position: relative;">
+          <canvas id="scoreHistoryChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Section Growth Matrix -->
+      <div class="chart-card">
+        <div class="chart-title">Section-by-Section Growth Matrix</div>
+        <p style="font-size: 13px; color: var(--slate-500); margin-bottom: 12px;">Detailed progress breakdown across the 10 official study areas.</p>
+        <div style="overflow-x: auto;">
+          <table class="matrix-table" id="section-matrix-table">
+            <thead>
+              <tr>
+                <th>Study Area</th>
+                <th>Total Questions</th>
+                <th>Mastered</th>
+                <th>Accuracy %</th>
+                <th>Mastery Progress</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="matrix-tbody">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Test History Log -->
+      <div class="chart-card">
+        <div class="chart-title">Past Test History</div>
+        <div id="test-history-log" style="display: flex; flex-direction: column; gap: 8px;">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+
+      <div style="text-align: right; margin-top: 10px;">
+        <button id="btn-reset-data" class="btn-sm" style="color: #dc2626; border-color: #fca5a5;">
+          Reset Study & Test Progress
+        </button>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- VIEW 5: WEAK AREAS TARGETED PRACTICE                                -->
+    <!-- =================================================================== -->
+    <section id="view-weak" class="view-panel">
+      <div class="filter-bar" style="background: #fffbeb; border-color: #fde68a;">
+        <h2 style="font-size: 18px; font-weight: 800; color: #92400e;">Targeted Practice: Questions Needing Focus</h2>
+        <p style="font-size: 13.5px; color: #78350f;">
+          These questions were answered incorrectly during mock tests or marked for practice. Master them here to maximize your exam score!
+        </p>
+      </div>
+
+      <div id="weak-questions-container" class="questions-list">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- DIALOGS & MODALS (Native HTML Dialogs per Modern Web Guidance)        -->
+  <!-- ===================================================================== -->
+  
+  <!-- Image Zoom Dialog -->
+  <dialog id="imgDialog" closedby="any">
+    <div class="dialog-content" style="text-align: center;">
+      <h3 class="dialog-title" id="imgDialogTitle">Road Diagram Inspection</h3>
+      <img id="modalZoomImg" class="modal-img" src="" alt="Diagram Zoom" />
+      <div class="dialog-actions">
+        <button class="btn-secondary" onclick="document.getElementById('imgDialog').close()">Close (Esc)</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Test Submit Confirmation Dialog -->
+  <dialog id="submitConfirmDialog" closedby="any">
+    <div class="dialog-content">
+      <h3 class="dialog-title">Submit Exam for Grading?</h3>
+      <p id="submit-unanswered-warn" style="color: var(--slate-700); font-size: 14.5px;">
+        Are you ready to submit your test?
+      </p>
+      <div class="dialog-actions">
+        <button class="btn-secondary" onclick="document.getElementById('submitConfirmDialog').close()">Keep Reviewing</button>
+        <button class="btn-primary" id="btn-confirm-submit">Yes, Submit Test</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Reset Progress Confirmation Dialog -->
+  <dialog id="resetConfirmDialog" closedby="any">
+    <div class="dialog-content">
+      <h3 class="dialog-title" style="color: #dc2626;">Reset All Study Progress?</h3>
+      <p style="color: var(--slate-700); font-size: 14px;">
+        This will permanently clear all your question mastery statuses, bookmarks, test history, and growth metrics.
+      </p>
+      <div class="dialog-actions">
+        <button class="btn-secondary" onclick="document.getElementById('resetConfirmDialog').close()">Cancel</button>
+        <button class="btn-primary" id="btn-confirm-reset" style="background: #dc2626;">Yes, Reset Everything</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- User Profile & Authentication Dialog -->
+  <dialog id="authModal" closedby="any">
+    <div class="dialog-content auth-dialog-content">
+      <div class="auth-header">
+        <div>
+          <h3 class="dialog-title">Learner Profile & Accounts</h3>
+          <p class="auth-subtitle">Switch learners or create a new profile with independent mastery records and exam history.</p>
+        </div>
+        <button type="button" class="dialog-close-btn" onclick="document.getElementById('authModal').close()" aria-label="Close dialog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <!-- Active Profile Card -->
+      <div class="active-profile-card" id="active-profile-card">
+        <div class="active-profile-info">
+          <div class="active-profile-avatar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          </div>
+          <div style="flex: 1; min-width: 0;">
+            <div class="active-profile-name" id="modal-active-name">Primary Learner</div>
+            <div class="active-profile-user" id="modal-active-username">Username: driver</div>
+            <div class="active-profile-user" id="modal-active-email" style="font-size: 12px; color: var(--slate-500); margin-top: 1px;"></div>
+          </div>
+          <button type="button" class="btn-outline-danger" id="btn-auth-logout">Log Out</button>
+        </div>
+        <div class="active-profile-stats">
+          <div class="active-stat">
+            <span class="stat-label">Mastered</span>
+            <b class="stat-val" id="modal-active-mastery">0</b>
+          </div>
+          <div class="active-stat">
+            <span class="stat-label">Readiness</span>
+            <b class="stat-val" id="modal-active-readiness">0%</b>
+          </div>
+          <div class="active-stat">
+            <span class="stat-label">Exams Taken</span>
+            <b class="stat-val" id="modal-active-tests">0</b>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Switch Section (if multiple profiles exist) -->
+      <div class="auth-section" id="section-saved-profiles">
+        <label class="auth-section-label">Select Saved Profile on This Device:</label>
+        <div class="profile-chips-list" id="saved-profiles-list">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+
+      <!-- Auth Tabs: Sign In / Create Profile -->
+      <div class="auth-tabs">
+        <button type="button" class="auth-tab-btn active" id="tab-login" data-tab="login">Sign In</button>
+        <button type="button" class="auth-tab-btn" id="tab-register" data-tab="register">Create New Profile</button>
+      </div>
+
+      <!-- Feedback / Error messages -->
+      <div id="auth-alert" class="auth-alert" style="display: none;"></div>
+
+      <!-- Tab Content: Sign In -->
+      <form id="form-login" class="auth-form active">
+        <div class="form-group">
+          <label for="login-username">Username</label>
+          <input type="text" id="login-username" name="username" class="form-input" placeholder="e.g. driver" autocomplete="username" required />
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" name="password" class="form-input" placeholder="Enter your password" autocomplete="current-password" required />
+        </div>
+        <div class="dialog-actions" style="margin-top: 6px;">
+          <button type="submit" class="btn-primary" style="width: 100%;">Sign In to Profile</button>
+        </div>
+      </form>
+
+      <!-- Tab Content: Create Profile -->
+      <form id="form-register" class="auth-form">
+        <div class="form-group">
+          <label for="reg-username">Username <span class="field-hint">(letters, numbers, hyphens)</span></label>
+          <input type="text" id="reg-username" name="username" class="form-input" placeholder="e.g. alex" pattern="[a-zA-Z0-9_\-]+" autocomplete="username" required />
+        </div>
+        <div class="form-group">
+          <label for="reg-email">Email Address</label>
+          <input type="email" id="reg-email" name="email" class="form-input" placeholder="e.g. alex@example.com" autocomplete="email" required />
+        </div>
+        <div class="form-group">
+          <label for="reg-display-name">Learner Display Name</label>
+          <input type="text" id="reg-display-name" name="display_name" class="form-input" placeholder="e.g. Alex M." autocomplete="name" required />
+        </div>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="reg-password">Password</label>
+            <input type="password" id="reg-password" name="password" class="form-input" placeholder="Min. 4 characters" minlength="4" autocomplete="new-password" required />
+          </div>
+          <div class="form-group">
+            <label for="reg-confirm-password">Confirm Password</label>
+            <input type="password" id="reg-confirm-password" name="confirm_password" class="form-input" placeholder="Repeat password" minlength="4" autocomplete="new-password" required />
+          </div>
+        </div>
+        <div class="dialog-actions" style="margin-top: 6px;">
+          <button type="submit" class="btn-primary" style="width: 100%;">Create Profile & Sign In</button>
+        </div>
+      </form>
+
+    </div>
+  </dialog>
+
+  <!-- Universal script to close dialogs when clicking backdrop -->
+  <script>
+    document.querySelectorAll('dialog').forEach(dialog => {
+      dialog.addEventListener('click', (e) => {
+        if (e.target === dialog) {
+          dialog.close();
+        }
+      });
+    });
+  </script>
+
+  <!-- Backdrop for mobile sidebar drawer -->
+  <div id="drawer-backdrop" class="drawer-backdrop"></div>
+
+  <!-- Mobile Bottom Navigation Bar (Visible on mobile <= 640px) -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <button class="mobile-nav-btn active" data-view="study" id="mob-nav-study">
+      <span class="mob-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+      </span>
+      <span class="mob-nav-label">Study</span>
+    </button>
+    <button class="mobile-nav-btn" data-view="test" id="mob-nav-test">
+      <span class="mob-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      </span>
+      <span class="mob-nav-label">Mock Test</span>
+    </button>
+    <button class="mobile-nav-btn" data-view="metrics" id="mob-nav-metrics">
+      <span class="mob-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+      </span>
+      <span class="mob-nav-label">Growth</span>
+    </button>
+    <button class="mobile-nav-btn" data-view="weak" id="mob-nav-weak">
+      <span class="mob-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+      </span>
+      <span class="mob-nav-label">Weak Areas</span>
+    </button>
+    <button class="mobile-nav-btn" data-action="profile" id="mob-nav-profile">
+      <span class="mob-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      </span>
+      <span class="mob-nav-label">Profile</span>
+    </button>
+  </nav>
+
+  <script src="/static/js/app.js?v=1.2.9"></script>
+</body>
+</html>
