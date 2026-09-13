@@ -6,6 +6,10 @@ This repository contains the extracted, analyzed, deduplicated, and unified New 
 
 ## 1. Master Compilation & Clean Unique Question Bank
 
+* **[NZ_Road_Code_Master_Unique_Questions_Print_Friendly.pdf](file:///root/nz-dirving/export/NZ_Road_Code_Master_Unique_Questions_Print_Friendly.pdf)**: Complete 104-page print-friendly PDF of all **570 verified unique questions**.
+  * **Semantic Deduplication:** 709 redundant duplicate questions merged based on strict numerical/distance matching, clause permutation equivalence, set-based multiple answer comparisons, and official image diagram MD5 hashes.
+  * **Layout:** Low-margin A4 (10mm top/bottom, 8mm left/right), ink-efficient, dedicated right-hand image boxes (215px wide) for all 198 illustrated questions, left-aligned metadata badges (`[Q#]`, `[Class]`, `[Category]`, `[Source]`), highlighted correct answers with explanations, and running headers/footers with dynamic page numbering (`Page X of 104`).
+* **[nz_road_code_master.html](file:///root/nz-dirving/export/nz_road_code_master.html)**: Standalone print-ready HTML source with embedded CSS Paged Media.
 * **[master_unique_questions.json](file:///root/nz-dirving/export/master_unique_questions.json)**: Consolidated structured database of all 570 clean unique questions with tracked merged question IDs, categories, license classes, answer choices, correct answers, explanations, and local image paths.
 * **[master_1279_questions.json](file:///root/nz-dirving/export/master_1279_questions.json)**: Raw pre-deduplication collection of all 1,279 questions extracted across sources.
 

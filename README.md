@@ -148,6 +148,7 @@ nz-dirving/
     |-- master_unique_questions.json  # 570 canonical deduplicated questions (JSON)
     |-- master_1279_questions.json    # 1,279 raw extracted questions
     |-- nz_road_code_master.html      # Print-ready HTML with embedded CSS Paged Media
+    |-- NZ_Road_Code_Master_Unique_Questions_Print_Friendly.pdf # 104-page master PDF (570 questions)
     `-- NZTA_Official_Road_Code/      # Official Waka Kotahi source diagrams & data
 ```
 
