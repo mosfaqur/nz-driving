@@ -139,7 +139,7 @@ def get_user_profiles_list():
 def serve_index():
     index_path = os.path.join(STATIC_DIR, "index.html")
     with open(index_path, "r", encoding="utf-8") as f:
-        return HTMLResponse(content=f.read())
+        return HTMLResponse(content=f.read(), headers={"Cache-Control": "no-cache, no-store, must-revalidate", "Pragma": "no-cache"})
 
 @app.get("/api/images/{canonical_id}")
 def get_question_image(canonical_id: int):
