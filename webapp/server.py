@@ -30,6 +30,10 @@ app = FastAPI(title="NZ Road Code Multi-User Study & Mock Exam Web App", version
 STATIC_DIR = os.path.join(os.path.dirname(__file__), "static")
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
+@app.api_route("/favicon.ico", methods=["GET", "HEAD"], include_in_schema=False)
+def get_favicon():
+    return FileResponse(os.path.join(STATIC_DIR, "favicon.png"), media_type="image/png")
+
 # =============================================================================
 # AUTHENTICATION DEPENDENCY
 # =============================================================================

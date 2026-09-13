@@ -126,6 +126,15 @@ img {
   flex-shrink: 0;
 }
 
+.app-header-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  display: block;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
 .logo-badge {
   background: var(--primary);
   color: #ffffff;
@@ -1875,6 +1884,12 @@ dialog::backdrop {
     gap: 6px;
     flex-shrink: 1;
     min-width: 0;
+  }
+
+  .app-header-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
   }
 
   .logo-badge {

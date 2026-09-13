@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="../branding/banner.png" alt="NZ Road Code Driving Test & Mock Exam" width="100%" />
+</p>
+
 # NZ Road Code Study & Mock Exam Web Application
 
 A full-stack, responsive web application designed for mastering the New Zealand Road Code and passing the official Class 1, Motorcycle, and Heavy Vehicle learner driver theory tests.

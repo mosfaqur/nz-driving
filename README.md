@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="branding/banner.png" alt="NZ Road Code Driving Test & Mock Exam" width="100%" />
+</p>
+
 # NZ Road Code Master Study & Mock Exam Web Application
 
 [![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
