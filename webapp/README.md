@@ -10,7 +10,7 @@ A full-stack, responsive web application designed for mastering the New Zealand 
 
 ## Overview
 
-The application provides an interactive, data-driven study experience powered by 716 verified, deduplicated NZ road code questions compiled from official NZTA guidelines and industry training sources. It features a per-user study tracker, a 35-question mock exam engine with strict 30-minute timing and official scoring, a targeted weak-area review mode, and progress analytics.
+The application provides an interactive, data-driven study experience powered by 570 verified, deduplicated NZ road code questions compiled from official NZTA guidelines and industry training sources. It features a per-user study tracker, a 35-question mock exam engine with strict 30-minute timing and official scoring, a targeted weak-area review mode, and progress analytics.
 
 - **Frontend**: Vanilla HTML5, CSS3, ES6 JavaScript, Chart.js (Zero framework dependencies, optimized for mobile and desktop).
 - **Backend**: FastAPI (Python 3.10+), Uvicorn ASGI server.
@@ -22,8 +22,8 @@ The application provides an interactive, data-driven study experience powered by
 ## Key Features
 
 ### 1. Interactive Study Hub
-- **High-Density Study Flow**: Displays **100 questions per page**, streamlining the entire 716-question bank across just **8 clean pages**.
-- **Clear & Simple Pagination**: Real-time slice indicator showing exact active question range without clutter, e.g. `Page 1 of 8 (1–100 of 716)`.
+- **High-Density Study Flow**: Displays **100 questions per page**, streamlining the entire 570-question bank across just **6 clean pages**.
+- **Clear & Simple Pagination**: Real-time slice indicator showing exact active question range without clutter, e.g. `Page 1 of 6 (1–100 of 570)`.
 - **Instant Quiz Mode**: Test recall on each question with immediate answer validation, full rule explanations, and diagram references.
 - **Intuitive Answer Choice Bullets**:
   - *Single-Answer Questions*: Circular radio bullets (`.study-opt-radio`) aligned before option identifiers (`[A]`, `[B]`, `[C]`), dynamically tinted with accent color upon selection.

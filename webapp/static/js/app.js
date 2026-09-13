@@ -1197,7 +1197,7 @@ function initMetrics() {
 
 async function loadMetrics() {
   if (!currentUser) {
-    document.getElementById('metric-mastery-num').innerText = '0 / 716';
+    document.getElementById('metric-mastery-num').innerText = '0 / 570';
     document.getElementById('metric-mastery-sub').innerHTML = '<a href="javascript:void(0)" onclick="openAuthModal()" style="color:var(--primary); font-weight:600; text-decoration:underline;">Sign in to track progress</a>';
     document.getElementById('metric-readiness-num').innerText = '0%';
     document.getElementById('metric-tests-num').innerText = '0';
@@ -1666,7 +1666,7 @@ async function checkCurrentUser() {
     const hdrName = document.getElementById('hdr-user-name');
     if (hdrName) hdrName.innerText = 'Sign In';
     const hdrMastery = document.getElementById('hdr-mastery');
-    if (hdrMastery) hdrMastery.innerText = '0 / 716';
+    if (hdrMastery) hdrMastery.innerText = '0 / 570';
     const hdrReadiness = document.getElementById('hdr-readiness');
     if (hdrReadiness) hdrReadiness.innerText = '0%';
     return false;
@@ -1693,7 +1693,7 @@ async function checkCurrentUser() {
     }
     const hdrMastery = document.getElementById('hdr-mastery');
     if (hdrMastery) {
-      hdrMastery.innerText = `${data.mastered_count} / ${data.total_questions || 716}`;
+      hdrMastery.innerText = `${data.mastered_count} / ${data.total_questions || 570}`;
     }
     const hdrReadiness = document.getElementById('hdr-readiness');
     if (hdrReadiness) {
@@ -1946,7 +1946,7 @@ async function handleLogout() {
   const hdrName = document.getElementById('hdr-user-name');
   if (hdrName) hdrName.innerText = 'Sign In';
   const hdrMastery = document.getElementById('hdr-mastery');
-  if (hdrMastery) hdrMastery.innerText = '0 / 716';
+  if (hdrMastery) hdrMastery.innerText = '0 / 570';
   const hdrReadiness = document.getElementById('hdr-readiness');
   if (hdrReadiness) hdrReadiness.innerText = '0%';
   // Close profile modal if open

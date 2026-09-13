@@ -13,7 +13,7 @@
 
 An interactive, responsive, multi-user web application and consolidated study platform designed for learners preparing for the **Official New Zealand Driver Licence Theory Test** across Class 1 (Car), Class 6 (Motorcycle), and Heavy Vehicles (Classes 2–5).
 
-Powered by **716 verified, semantically deduplicated questions** compiled directly from official Waka Kotahi NZTA guidelines and top driver training datasets.
+Powered by **570 verified, semantically deduplicated questions** compiled directly from official Waka Kotahi NZTA guidelines and top driver training datasets.
 
 ---
 
@@ -65,8 +65,8 @@ Mandatory sign-in gate featuring learner registration (with email support) and q
 ## Key Features
 
 ### High-Density Study Hub
-- **100 Questions Per Page**: Organizes the complete 716-question bank across **8 pages** ($\lceil 716 / 100 \rceil = 8$).
-- **Simple Pagination Statement**: Clean, unambiguous counter: `Page 1 of 8 (1–100 of 716)`.
+- **100 Questions Per Page**: Organizes the complete 570-question bank across **6 pages** ($\lceil 570 / 100 \rceil = 6$).
+- **Simple Pagination Statement**: Clean, unambiguous counter: `Page 1 of 6 (1–100 of 570)`.
 - **Intuitive Selection Bullets**:
   - *Single-Choice*: Circular radio bullets (`.study-opt-radio`) aligned before option identifiers (`[A]`, `[B]`, `[C]`).
   - *Multiple-Choice*: Square checkboxes (`.study-opt-checkbox`) with multi-selection support and an explicit "Check Answers" confirmation action.
@@ -101,23 +101,23 @@ Mandatory sign-in gate featuring learner registration (with email support) and q
 
 ---
 
-## Question Bank Breakdown (716 Canonical Questions)
+## Question Bank Breakdown (570 Canonical Questions)
 
 From an initial pool of **1,279 raw extracted questions**, redundant duplicates were consolidated using semantic answer equivalence, token overlap, and image MD5 diagram verification:
 
 | Section Name | Questions | Topics Covered |
 | :--- | :---: | :--- |
-| **Core Rules & General Theory** | **96** | General road rules, speed limits, legal duties, and vehicle standards. |
-| **Driving Behaviour & Defensive Driving** | **96** | Scanning, hazard perception, alcohol/drug limits, fatigue, and phone laws. |
-| **Heavy Vehicles & Commercial Driving (Classes 2–5)** | **84** | Gross vehicle mass, load securing, logbooks, work-time rules, and height limits. |
+| **Motorcycle Specific (Class 6)** | **136** | Protective gear, pillion passengers, stability, and motorcycle roadcraft. |
 | **Intersections & Give-Way Scenarios** | **83** | Priority rules, roundabouts, T-intersections, and traffic light signals. |
-| **Road Signs, Signals & Markings** | **54** | Compulsory, warning, and information signs; road markings and light signals. |
-| **Road Position & Overtaking** | **37** | Passing lanes, lane positioning, motorway driving, and following distances. |
-| **Emergencies & Road Safety** | **32** | Crash procedures, breakdowns, emergency vehicles, and hazard management. |
-| **Parking & Stopping Restrictions** | **21** | Broken yellow lines, pedestrian crossings, clearways, and parking bans. |
-| **Motorcycle Specific (Class 6)** | **206** | Protective gear, pillion passengers, stability, and motorcycle roadcraft. |
-| **Tourist & Driving in NZ Preparation** | **7** | NZ road orientation, driving on the left, and rural driving precautions. |
-| **Total Master Knowledge Base** | **716** | **100% deduplicated, verified official question bank.** |
+| **Core Rules & General Theory** | **80** | General road rules, speed limits, legal duties, and vehicle standards. |
+| **Heavy Vehicles & Commercial Driving (Classes 2–5)** | **80** | Gross vehicle mass, load securing, logbooks, work-time rules, and height limits. |
+| **Driving Behaviour & Defensive Driving** | **74** | Scanning, hazard perception, alcohol/drug limits, fatigue, and phone laws. |
+| **Road Signs, Signals & Markings** | **45** | Compulsory, warning, and information signs; road markings and light signals. |
+| **Road Position & Overtaking** | **28** | Passing lanes, lane positioning, motorway driving, and following distances. |
+| **Emergencies & Road Safety** | **26** | Crash procedures, breakdowns, emergency vehicles, and hazard management. |
+| **Parking & Stopping Restrictions** | **15** | Broken yellow lines, pedestrian crossings, clearways, and parking bans. |
+| **Tourist & Driving in NZ Preparation** | **3** | NZ road orientation, driving on the left, and rural driving precautions. |
+| **Total Master Knowledge Base** | **570** | **100% deduplicated, verified official question bank.** |
 
 ---
 
@@ -145,7 +145,7 @@ nz-dirving/
 |           `-- chart.min.js     # Chart.js library for performance graphs
 `-- export/                      # Datasets, extraction scripts, and print materials
     |-- README.md                # Dataset documentation
-    |-- master_unique_questions.json  # 716 canonical deduplicated questions (JSON)
+    |-- master_unique_questions.json  # 570 canonical deduplicated questions (JSON)
     |-- master_1279_questions.json    # 1,279 raw extracted questions
     |-- nz_road_code_master.html      # Print-ready HTML with embedded CSS Paged Media
     `-- NZTA_Official_Road_Code/      # Official Waka Kotahi source diagrams & data

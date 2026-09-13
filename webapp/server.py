@@ -16,7 +16,7 @@ from database import (
 # Initialize DB & Tables
 init_db()
 
-# Load 691 Clean Questions
+# Load 570 Clean Questions
 _BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 QUESTIONS_FILE = os.path.join(_BASE_DIR, "..", "export", "master_unique_questions.json")
 with open(QUESTIONS_FILE, "r", encoding="utf-8") as f:
