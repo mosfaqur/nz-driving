@@ -4,9 +4,24 @@ print("=" * 65)
 print("NZ ROAD CODE - 570 CANONICAL QUESTIONS MASTER PDF BUILDER")
 print("=" * 65)
 
-SRC_JSON = "/root/nz-dirving/export/master_unique_questions.json"
-HTML_OUT = "/root/nz-dirving/export/nz_road_code_master.html"
-PDF_OUT = "/root/nz-dirving/export/NZ_Road_Code_Master_Unique_Questions_Print_Friendly.pdf"
+_DIR = os.path.dirname(os.path.abspath(__file__))
+_REPO_DIR = os.path.dirname(_DIR)
+SRC_JSON = os.path.join(_DIR, "master_unique_questions.json")
+HTML_OUT = os.path.join(_DIR, "nz_road_code_master.html")
+PDF_OUT = os.path.join(_DIR, "NZ_Road_Code_Master_Unique_Questions_Print_Friendly.pdf")
+
+def resolve_img(ip):
+    if not ip:
+        return None
+    if os.path.isabs(ip) and os.path.exists(ip):
+        return ip
+    cand1 = os.path.join(_REPO_DIR, ip)
+    if os.path.exists(cand1):
+        return cand1
+    cand2 = os.path.join(_DIR, ip)
+    if os.path.exists(cand2):
+        return cand2
+    return None
 
 with open(SRC_JSON, "r", encoding="utf-8") as f:
     questions = json.load(f)
@@ -35,7 +50,7 @@ for q in questions:
         sections_dict["Core Rules & General Theory"].append(q)
 
 letters = ["A", "B", "C", "D", "E", "F"]
-total_illustrated = sum(1 for q in questions if q.get("image_path") and os.path.exists(q["image_path"]))
+total_illustrated = sum(1 for q in questions if resolve_img(q.get("image_path")))
 total_dups = 1279 - len(questions)
 
 html_parts = []
@@ -361,9 +376,9 @@ for sname in SECTION_ORDER:
         q_id_str = f"Q{global_qnum:04d}"
 
         img_box_html = ""
-        ip = q.get("image_path")
-        if ip and os.path.exists(ip):
-            img_box_html = f'<div class="q-img-box"><img src="file://{ip}" alt="Diagram" /></div>'
+        resolved_ip = resolve_img(q.get("image_path"))
+        if resolved_ip:
+            img_box_html = f'<div class="q-img-box"><img src="file://{os.path.abspath(resolved_ip)}" alt="Diagram" /></div>'
 
         correct_indices = set(q.get("correct_option_indices", [q.get("correct_option_index", 0)]))
         opts_html = []

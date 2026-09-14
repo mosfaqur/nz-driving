@@ -18,9 +18,61 @@ init_db()
 
 # Load 570 Clean Questions
 _BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-QUESTIONS_FILE = os.path.join(_BASE_DIR, "..", "export", "master_unique_questions.json")
+_REPO_DIR = os.path.dirname(_BASE_DIR)
+_EXPORT_DIR = os.path.join(_REPO_DIR, "export")
+QUESTIONS_FILE = os.path.join(_EXPORT_DIR, "master_unique_questions.json")
+
+def resolve_image_path(raw_path: Optional[str]) -> Optional[str]:
+    if not raw_path:
+        return None
+    # 1. If absolute path and exists directly
+    if os.path.isabs(raw_path) and os.path.exists(raw_path):
+        return raw_path
+    # 2. If path contains 'export/', resolve relative to _REPO_DIR
+    if "export/" in raw_path:
+        rel = raw_path.split("export/", 1)[1]
+        cand = os.path.join(_EXPORT_DIR, rel)
+        if os.path.exists(cand):
+            return cand
+    # 3. Check relative to _REPO_DIR
+    cand = os.path.join(_REPO_DIR, raw_path.lstrip("/"))
+    if os.path.exists(cand):
+        return cand
+    # 4. Check relative to _EXPORT_DIR
+    cand = os.path.join(_EXPORT_DIR, raw_path.lstrip("/"))
+    if os.path.exists(cand):
+        return cand
+    # 5. Look up by filename in known directories
+    fname = os.path.basename(raw_path)
+    cand_nzta = os.path.join(_EXPORT_DIR, "NZTA_Official_Road_Code", "images", fname)
+    if os.path.exists(cand_nzta):
+        return cand_nzta
+    cand_dt = os.path.join(_EXPORT_DIR, "DTDriverTraining", "images", fname)
+    if os.path.exists(cand_dt):
+        return cand_dt
+    return None
+
+def is_question_image_available(q: dict) -> bool:
+    path = q.get("image_path")
+    if not path:
+        return False
+    if os.path.exists(path):
+        return True
+    resolved = resolve_image_path(path)
+    if resolved and os.path.exists(resolved):
+        q["image_path"] = resolved
+        return True
+    return False
+
 with open(QUESTIONS_FILE, "r", encoding="utf-8") as f:
     ALL_QUESTIONS = json.load(f)
+
+# Resolve and validate image paths at startup
+for q in ALL_QUESTIONS:
+    if q.get("image_path"):
+        resolved = resolve_image_path(q["image_path"])
+        if resolved:
+            q["image_path"] = resolved
 
 QUESTIONS_MAP = {q["canonical_id"]: q for q in ALL_QUESTIONS}
 print(f"Loaded {len(ALL_QUESTIONS)} verified unique questions into web application.")
@@ -135,21 +187,37 @@ def get_user_profiles_list():
 # =============================================================================
 # WEB CLIENT & STATIC ASSETS
 # =============================================================================
-@app.get("/", response_class=HTMLResponse)
+@app.api_route("/", methods=["GET", "HEAD"], response_class=HTMLResponse)
 def serve_index():
     index_path = os.path.join(STATIC_DIR, "index.html")
     with open(index_path, "r", encoding="utf-8") as f:
         return HTMLResponse(content=f.read(), headers={"Cache-Control": "no-cache, no-store, must-revalidate", "Pragma": "no-cache"})
 
-@app.get("/api/images/{canonical_id}")
+@app.api_route("/api/images/{canonical_id}", methods=["GET", "HEAD"])
 def get_question_image(canonical_id: int):
     q = QUESTIONS_MAP.get(canonical_id)
-    if not q or not q.get("image_path") or not os.path.exists(q["image_path"]):
-        raise HTTPException(status_code=404, detail="Image not found")
+    if not q:
+        raise HTTPException(status_code=404, detail="Question not found")
     
-    ext = os.path.splitext(q["image_path"])[1].lower()
-    media_type = "image/png" if ext == ".png" else "image/jpeg"
-    return FileResponse(q["image_path"], media_type=media_type, headers={"Cache-Control": "public, max-age=86400"})
+    img_path = q.get("image_path")
+    if not img_path or not os.path.exists(img_path):
+        resolved = resolve_image_path(img_path)
+        if resolved and os.path.exists(resolved):
+            img_path = resolved
+            q["image_path"] = resolved
+        else:
+            raise HTTPException(status_code=404, detail="Image not found")
+    
+    ext = os.path.splitext(img_path)[1].lower()
+    media_types = {
+        ".png": "image/png",
+        ".jpg": "image/jpeg",
+        ".jpeg": "image/jpeg",
+        ".gif": "image/gif",
+        ".webp": "image/webp"
+    }
+    media_type = media_types.get(ext, "application/octet-stream")
+    return FileResponse(img_path, media_type=media_type, headers={"Cache-Control": "public, max-age=86400"})
 
 # =============================================================================
 # QUESTIONS API (PER-USER PROGRESS)
@@ -181,7 +249,7 @@ def get_questions(
         if license and license != "All" and license.lower() not in q["license_class"].lower():
             continue
             
-        q_has_img = bool(q.get("image_path") and os.path.exists(q["image_path"]))
+        q_has_img = is_question_image_available(q)
         if has_image is not None and q_has_img != has_image:
             continue
             
@@ -233,7 +301,7 @@ def get_question_detail(canonical_id: int, user: dict = Depends(get_current_user
     if not q:
         raise HTTPException(status_code=404, detail="Question not found")
     progress = get_all_progress(user["id"]).get(canonical_id, {})
-    q_has_img = bool(q.get("image_path") and os.path.exists(q["image_path"]))
+    q_has_img = is_question_image_available(q)
     
     res = dict(q)
     res["has_image"] = q_has_img
@@ -341,7 +409,7 @@ def generate_mock_test(license_filter: Optional[str] = "Class 1 (Car)", user: di
     
     test_items = []
     for idx, q in enumerate(selected, 1):
-        q_has_img = bool(q.get("image_path") and os.path.exists(q["image_path"]))
+        q_has_img = is_question_image_available(q)
         test_items.append({
             "test_item_number": idx,
             "canonical_id": q["canonical_id"],
@@ -409,7 +477,7 @@ def submit_mock_test(payload: SubmitTestPayload, user: dict = Depends(get_curren
         if is_correct:
             section_breakdown[sec]["correct"] += 1
             
-        q_has_img = bool(q.get("image_path") and os.path.exists(q["image_path"]))
+        q_has_img = is_question_image_available(q)
         
         review_items.append({
             "canonical_id": qid,
@@ -482,7 +550,7 @@ def get_history_detail(test_id: int, user: dict = Depends(get_current_user)):
             qid = item["question_id"]
             q = QUESTIONS_MAP.get(qid)
             if q:
-                q_has_img = bool(q.get("image_path") and os.path.exists(q["image_path"]))
+                q_has_img = is_question_image_available(q)
                 augmented_answers.append({
                     "canonical_id": qid,
                     "section": q["section"],
@@ -512,7 +580,7 @@ def get_weak_areas(limit: int = 35, user: dict = Depends(get_current_user)):
         st = p.get("status", "unseen")
         
         if inc > 0 or st == "learning":
-            q_has_img = bool(q.get("image_path") and os.path.exists(q["image_path"]))
+            q_has_img = is_question_image_available(q)
             acc = round((p.get("correct_count", 0) / att) * 100, 1) if att > 0 else 0
             weak_list.append({
                 "canonical_id": qid,

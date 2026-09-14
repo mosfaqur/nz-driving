@@ -22,7 +22,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] 3m in front of the front edge of the front seat",
     "explanation": "Maximum length carrying a load that extends forward You can carry a load on your car that extends three metres in front of the front edge of the front seat. For vehicles with a short bonnet, this could extend more than one metre in front of the front bumper, in which case it will need a white, red, yellow or orange fluorescent flag tied to it. The flag must be at least 40cm x 30cm, and the load must not interfere with your view as a driver, or touch the ground. The practical restrictions on the length are there for public safety: any load extending from the front of the car will follow a wider arc when turning. This means that as you turn into an intersection you have to take into account where the front edge of the load is so that you don't hit pedestrians, other road users or road furniture close to the edge of the road like street lights. The extra length should also be taken into account when you are following another vehicle, and when you pull up behind another vehicle at traffic lights or at an intersection. Remember to leave a bit more gap.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_911.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_911.png",
     "merged_count": 2,
     "merged_raw_ids": [
       911,
@@ -53,7 +53,7 @@
     "correct_letter": "D",
     "correct_answer_text": "[D] 4m",
     "explanation": "A load can overhang up to 4m behind the rear axle but it must not drag on the ground. If the load protrudes more than 1m behind the car you must tie a white, red, yellow, or orange fluorescent flag to it.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_211.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_211.png",
     "merged_count": 1,
     "merged_raw_ids": [
       211
@@ -411,7 +411,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] Six months",
     "explanation": "After an initial inspection, another WoF inspection won't be required until the 3rd anniversary of their first registration for all new vehicles. From 1 July 2014, vehicles first registered anywhere in the world on or after 1 January 2000 move to annual WoFs for the lifetime of the vehicle.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_571.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_571.png",
     "merged_count": 1,
     "merged_raw_ids": [
       571
@@ -441,7 +441,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Apply the give way rules as the traffic signals are faulty",
     "explanation": "Yellow flashing traffic signals If there are one or more yellow flashing lights at traffic signals the lights are faulty. When the lights are faulty use the give way rules to determine who goes first. Use caution, though, and assume that other drivers might not know the rules. The basic give way rules are: Give way to vehicles coming straight ahead if you are turning Give way to vehicles turning left if you are turning right Give way to the right on roundabouts At very busy intersections police officers may take over providing traffic signals. You can see the signals here .",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_415.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_415.png",
     "merged_count": 8,
     "merged_raw_ids": [
       415,
@@ -916,7 +916,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "Yes, however if the police car continues on it's way and passes by you, then you don't need to stop.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_484.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_484.png",
     "merged_count": 3,
     "merged_raw_ids": [
       484,
@@ -1266,7 +1266,7 @@
     "correct_letter": "D",
     "correct_answer_text": "[D] 4m",
     "explanation": "The maximum distance a load may overhang your vehicle Vehicles following you must judge the distance to your vehicle so that they can stop in time. Long projecting loads (particularly very narrow ones) have a small focal point and they are difficult to judge. This means that if the vehicle in front stops, the vehicle behind could run into the load which could act like a spear through the windscreen. For this reason any load protruding more than one metre behind must carry a flag, as mentioned above. Even protruding wide loads must have a flag. A narrow load also makes it more difficult for other drivers to pull in behind on a dual carriageway - the load could be small in relation to the vehicle that's carrying it, and might be mounted high. Other drivers may not be expecting this and our peripheral vision above horizontal is not very good. Any load hanging over the end of the vehicle will be unsupported and could flex. It also shifts the balance of the vehicle towards the back. In extreme cases this could affect the steering performance of the vehicle, but the load would have to be quite heavy for this to occur. Make sure any load extending out the back is tied down tightly so that it doesn't bounce free. Also check that you are not exceeding the maximum 12.6m length for a rigid vehicle. Turning arcs A vehicle must not have a load that protrudes too far because there are dangers when turning. The ends of the load will follow a wider arc than the back of the vehicle (and this applies equally to loads that overhang the front, too). Therefore as you turn a corner you risk the load hitting pedestrians, signs, road furniture , buildings and other vehicles.",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/car-no-oversize-load-rear.jpg",
+    "image_path": "export/DTDriverTraining/images/car-no-oversize-load-rear.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1054
@@ -1481,7 +1481,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] If a pedestrian is on any part of the crossing then stop and give way",
     "explanation": "When the pedestrian is on any part of the crossing, then you must stop if the crossing doesn't have a central raised traffic island.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_700.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_700.png",
     "merged_count": 3,
     "merged_raw_ids": [
       700,
@@ -1513,7 +1513,7 @@
     "correct_letter": "D",
     "correct_answer_text": "[D] Pull over and stop",
     "explanation": "What to do when a vehicle with blue and red flashing lights is behind you If a police car is following you with its lights flashing it may be that it is on the way to an emergency, so you should pull over as soon as possible. If it is following you specifically then you may have committed a traffic offence such as speeding or using a cellphone, or you have performed a dangerous or inconsiderate manoeuvre such as not indicating, pulling out in front of someone, or deliberately losing traction, or the number plate of your vehicle has come up as stolen or wanted in relation to a crime. While police vehicles have red and blue lights, ambulances and fire engines only have red lights. This lighting is called emergency vehicle lighting. It can also be used to make other drivers aware of a hazard when stationary. Emergency vehicles often have flashing headlights to augment the emergency lights. On police vehicles a small arrow board is often included between the lights to direct vehicles. LED-based lighting is the most popular type of lighting as it allows the light bar to be much narrower than with the old style of lights (and hence more aerodynamic ). The lights can also be included in the vehicle's windscreen, which you'll see in unmarked police vehicles. Blue lights are only used by vehicles that have the authority to pull you over. These include police, customs officers, fisheries officers and marine reserve officers.",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/police-flash-lights.gif",
+    "image_path": "export/DTDriverTraining/images/police-flash-lights.gif",
     "merged_count": 1,
     "merged_raw_ids": [
       1008
@@ -1542,7 +1542,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Check both ways and wait until they are no longer flashing to cross",
     "explanation": "Even if a train has already passed, you must stop when lights are flashing at a railway level crossing, as there may be another train coming.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_297.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_297.png",
     "merged_count": 5,
     "merged_raw_ids": [
       297,
@@ -1672,7 +1672,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] If a pedestrian is on your half of the crossing then stop and give way",
     "explanation": "Yes - as long as it's safe to do so and there is no pedestrian either crossing or waiting to cross on your side then you can carry on through the crossing.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_351.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_351.png",
     "merged_count": 3,
     "merged_raw_ids": [
       351,
@@ -1734,7 +1734,7 @@
     "correct_letter": "D",
     "correct_answer_text": "[D] Multi-lane road",
     "explanation": "Definitions of different types of road What is a road? In New Zealand lots of different things can be roads. A road is any area the public is reasonably allowed to drive on including streets, highways, riverbeds, beaches, wharves and car parks. But in terms of what we conventionally consider to be a road, there are different types: Single-lane roads Unmarked : These tend to be called lanes, alleys, backroads and drives. They consist of a narrow road, often barely wide enough for two vehicles to pass, with no or few markings. They might be sealed, but they could be gravel or dirt. Marked : These tend to be called streets, roads, routes, single carriageways, highways, or boulevards. They consist of one lane in either direction separated by a centre line Multi-lane roads Three lanes : a road with a marked overtaking lane with a priority in one direction has a passing lane. The opposite direction can use it if the way is clear and there's no restriction such as bollards, fences or a solid yellow line. Some normal streets or roads in urban areas have two lanes in one direction and one in the other. Four lanes : These tend to be either dual carriageways (usually roads in urban areas) or expressways (high-speed roads that don't qualify for motorway status). Some 'arterial roads' are dual carriageways, but they could be single carriageways in places. Sometimes the opposing lanes are separated with a median barrier or median strip. Four or more lanes : street or road (when used in a 50kph urban setting), or motorway when it is high-speed with grade-separated access (i.e. on-ramps and off-ramps)",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/multi-lane-road.jpg",
+    "image_path": "export/DTDriverTraining/images/multi-lane-road.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1210
@@ -1958,7 +1958,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] Four-second rule",
     "explanation": "Stopping distances explained Use the two-second rule in dry conditions. Use the four-second rule in wet conditions or when towing a trailer in dry conditions. On ice it can take up to 10 times the distance to stop. The stopping distance is the distance it takes your vehicle to come to a complete stop. Many factors influence it, such as tyre tread depth - tyre performance drops off steeply in wet conditions once the tread depth falls below 3mm quality of your suspension - poor suspension will cause the vehicle to ' dive ' under brakes, meaning less braking power can be applied through the rear wheels tyre inflation - over-inflation of tyres reduces the contact patch on the road whether you have anti-lock brakes - anti-lock brakes will stop you skidding and generally provide the optimum braking performance, especially if the ABS distributes the braking force so that each wheel is braking at its optimum level (electronic brakeforce distribution) the width of your tyres - wider tyres have a larger contact patch on the road the speed you are travelling - the faster you are going, the longer it will take to stop how much load your vehicle is carrying, including whether it is pulling a trailer - heavier vehicles take longer to stop the road surface - some surfaces have more friction than others your reaction time - reaction times are slowed by tiredness, dehydration , illness, alcohol and drug intake , and age . Stopping distances will be longer with worn tyres, worn suspension, no ABS, a heavier vehicle, narrower tyres and a slippery road surface. The table below from Noon (1994) is a selection of reasonable average values between tyre and road. Surface Type Coefficient of Friction (\u00b5) Gravel and dirt road 0.35 Wet, grassy field 0.20 Dry asphaltic concrete 0.65 Wet asphaltic concrete 0.50 Dry concrete 0.75 Wet concrete 0.60 Snow 0.20 \u2013 0.25 Ice 0.10 \u2013 0.15 Loose moist dirt that allows tyre to sink about 5cm 0.60 \u2013 0.65 The more water present on the road, the lower the coefficient of friction. As little as 0.4mm of water should be considered \u201cwet\u201d (Tulloch, Stocker 2011).",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_136.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_136.png",
     "merged_count": 4,
     "merged_raw_ids": [
       136,
@@ -2245,7 +2245,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] Slow down and pull over to allow them to pass. Stop if necessary",
     "explanation": "You must slow down and pull over if they are behind you and you must stop if necessary. If a police car is following you with its lights flashing, then you must stop. A police car will have blue and red lights.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_199.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_199.png",
     "merged_count": 3,
     "merged_raw_ids": [
       199,
@@ -2496,7 +2496,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Correct",
     "explanation": "Check that there's enough room to get your vehicle across or you may be stranded on the lines when a train is coming.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_770.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_770.png",
     "merged_count": 1,
     "merged_raw_ids": [
       770
@@ -2526,7 +2526,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] 100 metres",
     "explanation": "You need to turn your lights on if you can't see a person 100 metres away while driving. A safe distance is considered to be 100 metres.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_247.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_247.png",
     "merged_count": 3,
     "merged_raw_ids": [
       247,
@@ -2591,7 +2591,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] Red car",
     "explanation": "A vehicle turning right must give way to a vehicle turning left in this example, where two vehicles are facing each other at an intersection with the same signs or signals or no signs or signals.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_283.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_283.png",
     "merged_count": 3,
     "merged_raw_ids": [
       283,
@@ -2621,7 +2621,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "In this example neither vehicle has to give way. Without interfering with each other's path both vehicles can make their turns.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_7.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_7.png",
     "merged_count": 3,
     "merged_raw_ids": [
       7,
@@ -2651,7 +2651,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "Yes, the blue car must give way. The blue car is turning right into the path of the red car which is driving straight through the intersection and must give way.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_27.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_27.png",
     "merged_count": 3,
     "merged_raw_ids": [
       27,
@@ -2681,7 +2681,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "No, the blue car does not have to give way. The red car must give way to the blue car as the red car is at a give way sign and is coming from the blue car's right.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_46.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_46.png",
     "merged_count": 3,
     "merged_raw_ids": [
       46,
@@ -2711,7 +2711,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "The blue car has the right of way because the blue car is travelling straight through the junction and the red car is at a stop sign.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_49.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_49.png",
     "merged_count": 3,
     "merged_raw_ids": [
       49,
@@ -2741,7 +2741,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "The red car must give way to the blue car because both cars have a green light, which means the give way rules apply.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_54.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_54.png",
     "merged_count": 3,
     "merged_raw_ids": [
       54,
@@ -2771,7 +2771,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "The blue car is coming around the roundabout from the right, so the red car must give way.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_72.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_72.png",
     "merged_count": 3,
     "merged_raw_ids": [
       72,
@@ -2801,7 +2801,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "The red car has the right of way, as it is going straight through the intersection.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_88.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_88.png",
     "merged_count": 3,
     "merged_raw_ids": [
       88,
@@ -2831,7 +2831,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "Even though the blue car has a green light, the Give Way rules apply because the red car also has a green light and the red car is coming straight through the intersection.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_90.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_90.png",
     "merged_count": 3,
     "merged_raw_ids": [
       90,
@@ -2861,7 +2861,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "No, the turning red car must give way to the blue car that is travelling straight through as both cars have a green light.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_91.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_91.png",
     "merged_count": 3,
     "merged_raw_ids": [
       91,
@@ -2891,7 +2891,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "The blue car does not have right of way, the red car is coming from the right and therefore, has the right of way on a roundabout.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_112.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_112.png",
     "merged_count": 3,
     "merged_raw_ids": [
       112,
@@ -2921,7 +2921,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "Yes, the blue car must give way. The blue car is turning across the path of the red car that is driving through the intersection.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_133.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_133.png",
     "merged_count": 3,
     "merged_raw_ids": [
       133,
@@ -2951,7 +2951,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "No, the blue car does not have to give way, it is the red car that must stop at the Give Way sign and give way to the blue car.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_142.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_142.png",
     "merged_count": 3,
     "merged_raw_ids": [
       142,
@@ -2981,7 +2981,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "The blue car must give way here as the motorcycle has the right of way. Both vehicles have a green light, therefore the give way rules apply.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_209.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_209.png",
     "merged_count": 3,
     "merged_raw_ids": [
       209,
@@ -3011,7 +3011,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "You must give way to vehicles on the straight road when both cars are turning right at an uncontrolled intersection (which includes many driveways and entrances to public car parks that don't have markings), therefore the blue car has right of way.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_218.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_218.png",
     "merged_count": 3,
     "merged_raw_ids": [
       218,
@@ -3041,7 +3041,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "The red car is waiting at a give way sign so the blue car has right of way.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_224.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_224.png",
     "merged_count": 3,
     "merged_raw_ids": [
       224,
@@ -3071,7 +3071,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "Yes, the blue car must give way to the traffic that is going straight through the intersection because it is waiting at a give way sign to turn at a t-intersection.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_231.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_231.png",
     "merged_count": 3,
     "merged_raw_ids": [
       231,
@@ -3101,7 +3101,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "The other vehicle should give way as the blue car is driving straight through an uncontrolled intersection while the other vehicle is turning.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_243.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_243.png",
     "merged_count": 3,
     "merged_raw_ids": [
       243,
@@ -3131,7 +3131,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "No, the blue car does not have to give way. The red car must give way to the blue car because it is turning from a give way sign at a t-intersection and the blue car is travelling straight through.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_257.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_257.png",
     "merged_count": 3,
     "merged_raw_ids": [
       257,
@@ -3161,7 +3161,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] No.",
     "explanation": "Correct. The red car is waiting at a t-intersection so the blue car has the right of way.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_305.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_305.png",
     "merged_count": 3,
     "merged_raw_ids": [
       305,
@@ -3191,7 +3191,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "The red car is travelling straight through the intersection and the blue car is at a stop sign, therefore the blue car must give way.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_335.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_335.png",
     "merged_count": 3,
     "merged_raw_ids": [
       335,
@@ -3221,7 +3221,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "Yes, the cyclist has right of way here. At the Give Way sign the cyclist must stop.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_363.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_363.png",
     "merged_count": 3,
     "merged_raw_ids": [
       363,
@@ -3251,7 +3251,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "Yes, because the blue car is crossing a lane of oncoming traffic it must give way.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_367.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_367.png",
     "merged_count": 3,
     "merged_raw_ids": [
       367,
@@ -3281,7 +3281,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "The blue car has right of way in this scenario because it is coming from the right. At an uncontrolled intersection, the Give Way rules apply.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_377.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_377.png",
     "merged_count": 3,
     "merged_raw_ids": [
       377,
@@ -3311,7 +3311,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "The driver must give way to ALL other traffic before moving because the blue car is waiting at a stop sign. If both signs were stop or give way signs, then the give way rules would apply, in which case blue would have right of way because it is travelling straight ahead. This tricky situation (which isn't explained well on NZTA's website), could catch you out: always remember that if you're on a stop sign, you are the last to have the right of way.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_429.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_429.png",
     "merged_count": 3,
     "merged_raw_ids": [
       429,
@@ -3341,7 +3341,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "No, the blue car does not need to give way as the red car will exit the roundabout without crossing the path of the blue car.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_506.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_506.png",
     "merged_count": 3,
     "merged_raw_ids": [
       506,
@@ -3371,7 +3371,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "No, the blue car does not have to give way. The red car must stop at the stop sign and give way to the blue car.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_531.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_531.png",
     "merged_count": 3,
     "merged_raw_ids": [
       531,
@@ -3401,7 +3401,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "The blue car does not need to give way, as the red car will exit the roundabout without crossing the path of the blue car.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_567.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_567.png",
     "merged_count": 3,
     "merged_raw_ids": [
       567,
@@ -3431,7 +3431,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "No, the blue car does not have to give way. The red car must stop at the Give Way sign and give way to the blue car.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_597.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_597.png",
     "merged_count": 3,
     "merged_raw_ids": [
       597,
@@ -3461,7 +3461,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "Yes, the blue car needs to give way to the red car and it must stop at the stop sign.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_640.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_640.png",
     "merged_count": 3,
     "merged_raw_ids": [
       640,
@@ -3491,7 +3491,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "Yes, the blue car must give way to the red car by stopping at the Give Way sign.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_712.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_712.png",
     "merged_count": 3,
     "merged_raw_ids": [
       712,
@@ -3521,7 +3521,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "Yes, the blue car has right of was as the red car is turning from the left of the blue car across the way.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_731.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_731.png",
     "merged_count": 3,
     "merged_raw_ids": [
       731,
@@ -3551,7 +3551,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "Yes, the blue car has to give way as the red car is going straight through the intersection and has right of way.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_37.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_37.png",
     "merged_count": 3,
     "merged_raw_ids": [
       37,
@@ -3581,7 +3581,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "The blue car has right of way and the red car must wait. The red car is coming from the opposite direction of the blue car and is turning right while the blue car is turning left.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_168.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_168.png",
     "merged_count": 3,
     "merged_raw_ids": [
       168,
@@ -3611,7 +3611,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "Yes, there is a cyclist coming from the right so the blue car must give way.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_548.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_548.png",
     "merged_count": 3,
     "merged_raw_ids": [
       548,
@@ -3643,7 +3643,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] 50m",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/bus-only-sign.gif",
+    "image_path": "export/DTDriverTraining/images/bus-only-sign.gif",
     "merged_count": 1,
     "merged_raw_ids": [
       1212
@@ -3673,7 +3673,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Don't signal when approaching the roundabout. Signal as you pass the exit before the one you want to take (i.e. at B)",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/roundabout-straight-through 2.jpg",
+    "image_path": "export/DTDriverTraining/images/roundabout-straight-through 2.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1253
@@ -3767,7 +3767,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] False",
     "explanation": "Priority when turning left You have the right of way if you are turning left from a through road; traffic coming towards you must give way. In New Zealand it used to be the other way around, but the law was changed in 2012. The only time you wouldn't have priority when turning left if there's another driver turning right is if you are on a single lane roundabout and the driver turning right is coming from the right. You would have to wait for that vehicle to pass. If you are both turning into a one-way street and the street has two lanes then you can both turn at the same time. This is because you will turn into the left lane and the other vehicle will turn into the right lane. You must stop and wait for pedestrians already crossing the road, though, as will the vehicle turning right.",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/34-core.jpg",
+    "image_path": "export/DTDriverTraining/images/34-core.jpg",
     "merged_count": 6,
     "merged_raw_ids": [
       64,
@@ -3800,7 +3800,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] The blue car",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/cycle-lane-give-way-turning-left.jpg",
+    "image_path": "export/DTDriverTraining/images/cycle-lane-give-way-turning-left.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1249
@@ -3868,7 +3868,7 @@
     "correct_letter": "A, B, C, D",
     "correct_answer_text": "[A] Slow down and be ready to stop / [B] Give way to all other vehicles, except those facing a stop sign / [C] Wait until it's safe to go / [D] Use the give way rules if other vehicles are approaching",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/give-way-sign-on-white.jpg",
+    "image_path": "export/DTDriverTraining/images/give-way-sign-on-white.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1256
@@ -4175,7 +4175,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Red car",
     "explanation": "Correct. A vehicle turning right must give way to a vehicle turning left where two vehicles are facing each other at an intersection with no signs or signals or the same signs or signals (in this case green traffic signals).",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_178.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_178.png",
     "merged_count": 3,
     "merged_raw_ids": [
       178,
@@ -4205,7 +4205,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Red car",
     "explanation": "A vehicle turning right must give way to a vehicle turning left, where two vehicles are facing each other at an intersection with no signs or signals or the same signs or signals (in this case Stop signs).",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_105.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_105.png",
     "merged_count": 3,
     "merged_raw_ids": [
       105,
@@ -4235,7 +4235,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Red car",
     "explanation": "Correct. A vehicle turning right must give way to a vehicle turning left where two vehicles are facing each other at an intersection with no signs or signals or the same signs or signals ( in this case Give Way signs).",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_115.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_115.png",
     "merged_count": 3,
     "merged_raw_ids": [
       115,
@@ -4265,7 +4265,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Red motorcycle",
     "explanation": "The vehicle turning right must give way in this scenario. Where two vehicles are facing each other at an intersection with no signs or signals or the same signs or signals, a vehicle turning right must give way to a vehicle turning left.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_738.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_738.png",
     "merged_count": 3,
     "merged_raw_ids": [
       738,
@@ -4324,7 +4324,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] Don't indicate as you approach the roundabout, then indicate left as you pass the first exit.",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/roundabout-straight-through-orange-car.jpg",
+    "image_path": "export/DTDriverTraining/images/roundabout-straight-through-orange-car.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1200
@@ -4354,7 +4354,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] Signal right as you approach the roundabout and signal left as you pass the exit before the one you want to take",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/roundabout-turn-right.jpg",
+    "image_path": "export/DTDriverTraining/images/roundabout-turn-right.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1201
@@ -4383,7 +4383,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] B",
     "explanation": "How to choose lanes at an intersection Choose a lane early and choose the lane that corresponds with the destination lane that is right for you; try to avoid changing lanes near intersections, and definitely not in the intersection itself. When you are turning at an intersection the rule is to drive to the corresponding lane on the road you are turning into, unless directed differently by an arrow on the road or a sign. If you are turning from a dual carriageway into another dual carriageway from the right-hand lane then you will turn into the right-hand lane; if you're turning from the left-hand lane (if that's allowed) then you'll turn into the left-hand lane. Be wary of long vehicles when turning as they might need to cut the corner to get around when turning from the outside lane, or the front of their vehicle could enter into the left lane if they are in the right lane. Anticipating other drivers' movements Try to make a judgement as to how likely it is that the lane you are choosing will move faster. For example, if you are turning onto a motorway on-ramp and there are two entrance lanes, those lanes will ultimately end in one lane as traffic merges. Therefore, you could try to guess which lane will be faster by looking at the vehicles in the lane. Large, articulated trucks tend to be slower if they are heavily laden - this is because they can't accelerate fast, and they can't make a sharp turn onto the motorway on-ramp at speed.",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/multilane-crossroads.jpg",
+    "image_path": "export/DTDriverTraining/images/multilane-crossroads.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1207
@@ -4411,7 +4411,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/following-a-right-hand-curve.jpg",
+    "image_path": "export/DTDriverTraining/images/following-a-right-hand-curve.jpg",
     "merged_count": 2,
     "merged_raw_ids": [
       1197,
@@ -4444,7 +4444,7 @@
     "correct_letter": "A, C",
     "correct_answer_text": "[A] Red car / [C] Green car",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/blue-car-turning-right-bottom-of-t.jpg",
+    "image_path": "export/DTDriverTraining/images/blue-car-turning-right-bottom-of-t.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1270
@@ -4475,7 +4475,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] Green car",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/crossroads-blue-car-giving-way.jpg",
+    "image_path": "export/DTDriverTraining/images/crossroads-blue-car-giving-way.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1271
@@ -4506,7 +4506,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] Green car",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/blue-car-lorry-on-left-at-crossroads.jpg",
+    "image_path": "export/DTDriverTraining/images/blue-car-lorry-on-left-at-crossroads.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1272
@@ -4539,7 +4539,7 @@
     "correct_letter": "B, C",
     "correct_answer_text": "[B] Red car / [C] Green car",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/blue-car-turning-left-roundabout.jpg",
+    "image_path": "export/DTDriverTraining/images/blue-car-turning-left-roundabout.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1273
@@ -4572,7 +4572,7 @@
     "correct_letter": "A, C",
     "correct_answer_text": "[A] Red car / [C] Green car",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/blue-car-straight-roundabout.jpg",
+    "image_path": "export/DTDriverTraining/images/blue-car-straight-roundabout.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1274
@@ -4603,7 +4603,7 @@
     "correct_letter": "A, C",
     "correct_answer_text": "[A] Red car / [C] Green car",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/blue-car-turning-bay.jpg",
+    "image_path": "export/DTDriverTraining/images/blue-car-turning-bay.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1275
@@ -4632,7 +4632,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] Green car",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/blue-car-stop-crossroads.jpg",
+    "image_path": "export/DTDriverTraining/images/blue-car-stop-crossroads.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1276
@@ -4664,7 +4664,7 @@
     "correct_letter": "B, C",
     "correct_answer_text": "[B] Red car / [C] Green car",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/blue-car-straight-through-turning-bay.jpg",
+    "image_path": "export/DTDriverTraining/images/blue-car-straight-through-turning-bay.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1277
@@ -4694,7 +4694,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Cyclist",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/blue-car-right-at-stop-crossroads.jpg",
+    "image_path": "export/DTDriverTraining/images/blue-car-right-at-stop-crossroads.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1278
@@ -4725,7 +4725,7 @@
     "correct_letter": "B, C",
     "correct_answer_text": "[B] Red car / [C] Green car",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/blue-car-crossroads-turning-right-stop-sign.jpg",
+    "image_path": "export/DTDriverTraining/images/blue-car-crossroads-turning-right-stop-sign.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1279
@@ -4753,7 +4753,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] B",
     "explanation": "How to choose lanes at an intersection Choose a lane early and choose the lane that corresponds with the destination lane that is right for you; try to avoid changing lanes near intersections, and definitely not in the intersection itself. When you are turning at an intersection the rule is to drive to the corresponding lane on the road you are turning into, unless directed differently by an arrow on the road or a sign. If you are turning from a dual carriageway into another dual carriageway from the right-hand lane (inside lane) then you will turn into the right-hand lane; if you're turning from the left-hand or outside lane (if that's allowed) then you'll turn into the left-hand lane. Be wary of long vehicles when turning as they might need to cut the corner to get around when turning from the outside lane, or the front of their vehicle could enter into the outside lane if they are in the inside lane. Anticipating other drivers' movements Try to make a judgement as to how likely it is that the lane you are choosing will move faster. For example, if you are turning onto a motorway on-ramp and there are two entrance lanes, those lanes will ultimately end in one lane as traffic merges. Therefore, you could try to guess which lane will be faster by looking at the vehicles in the lane. Large, articulated trucks tend to be slower if they are heavily laden - this is because they can't accelerate fast, and they can't make a sharp turn onto the motorway on-ramp at speed.",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/turn-right-one-way.jpg",
+    "image_path": "export/DTDriverTraining/images/turn-right-one-way.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1211
@@ -4838,7 +4838,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/left-uncontrolled-crossroads2.jpg",
+    "image_path": "export/DTDriverTraining/images/left-uncontrolled-crossroads2.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1205
@@ -4867,7 +4867,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes - indicate left as you approach the roundabout and until you take the exit",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/y-roundabout-turn-left.jpg",
+    "image_path": "export/DTDriverTraining/images/y-roundabout-turn-left.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1208
@@ -4896,7 +4896,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] Yes - indicate right as you approach the roundabout, then indicate left as you go past the first exit",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/y-roundabout-turn-right.jpg",
+    "image_path": "export/DTDriverTraining/images/y-roundabout-turn-right.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1209
@@ -4924,7 +4924,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/461-pedestrian-pavement-v2.jpg",
+    "image_path": "export/DTDriverTraining/images/461-pedestrian-pavement-v2.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1198
@@ -4952,7 +4952,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "In the case of the diagram above, the vehicle is turning left. If the driver wants to enter the right-hand lane, they must first enter the left hand lane of the one-way street then indicate right and move across to the right-hand lane. In practical driving, this will be done very quickly, possibly without the required three seconds of indication before changing lanes.",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/turn-left-on-dual-carriageway.jpg",
+    "image_path": "export/DTDriverTraining/images/turn-left-on-dual-carriageway.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1203
@@ -4980,7 +4980,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/turning-left-from-curve.jpg",
+    "image_path": "export/DTDriverTraining/images/turning-left-from-curve.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1204
@@ -5008,7 +5008,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No - the green car is too close",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/turn-right-t-intersection.jpg",
+    "image_path": "export/DTDriverTraining/images/turn-right-t-intersection.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1206
@@ -5037,7 +5037,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] Wait until the cyclist has passed",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/cyclist-giving-way-blue-car-turning-right.jpg",
+    "image_path": "export/DTDriverTraining/images/cyclist-giving-way-blue-car-turning-right.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1250
@@ -5124,7 +5124,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] 20kph",
     "explanation": "Correct. The safest speed at an accident site is 20kph because there might be debris on the road and people working to clear it up; or there may be other obstructions.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_186.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_186.png",
     "merged_count": 6,
     "merged_raw_ids": [
       186,
@@ -5261,7 +5261,7 @@
     "correct_letter": "A, B, C, D",
     "correct_answer_text": "[A] High vehicles / [B] Wide vehicles / [C] Long vehicles / [D] Heavy vehicles",
     "explanation": "This sign is a height warning sign that is indicated by the above and below triangular shapes. It shows the height restriction that is applied to all vehicles to the road ahead. All vehicles must be aware of their height because they may be towing a trailer which exceeds the height limit.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_779.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_779.png",
     "merged_count": 2,
     "merged_raw_ids": [
       779,
@@ -5356,7 +5356,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] The maximum speed for that road in good conditions",
     "explanation": "If road conditions are good the speed limit is the maximum speed in which you can drive on that road.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_591.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_591.png",
     "merged_count": 3,
     "merged_raw_ids": [
       591,
@@ -5386,7 +5386,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] It's safe to go ahead. You've got the right of way",
     "explanation": "What is a one-lane bridge? There are many one-lane bridges in New Zealand, especially in rural areas, and even on some busier holiday routes. If you are travelling from the other way you will see two sets of signs that will advise you that you have to give way. The following photos are from Waikawau Reserve on the Thames Coast Road (SH25), looking north. Traffic approaching the one-way bridge over the Waikawau River has right-of-way driving south and sees a sign like the one above; traffic driving north must give way. The first sign advising of a one-way bridge where you don't have the right of way shows a yellow bridge sign plus the red circle showing that traffic coming from the other direction has priority. The second sign, just before the bridge, reminds traffic of the priority. You can also see the white triangle and give way line painted on the road, as well as a road marker and two reflective disks on the barrier on the left. How are one-lane bridges marked? Because you may need to stop when coming up to a one-lane bridge, the traffic markings and signage are important. In the holiday season queues can form at these bridges on some roads. Edge lines form a taper to the bridge from the edges of the seal to the bridge carriageway width. This taper is ideally 50m long. Usually the lines stop when they reach the kerb of the bridge, painted in by about 300mm, unless there's sufficient room to effectively mark and maintain the lines (this is not as probable as the bridge already has restricted width, which is what it's a one-lane bridge). If the approaching roads have a centre line, this is marked up to the bridge, but not on the bridge itself. It's marked to a point where the width of the approach road narrows to less than 5m. There will be a give way line painted on the road with a white triangle. This doesn't have any legal significance, it's not compulsory you stop on the line or even behind the line, it's just a guideline. The give way line will be marked where the road is still at least 5m wide, and preferably 6m. Signs are placed at or before the line. The words ONE LANE BRIDGE are marked on the road. The distance of these from the bridge depends on the speed and type of road. In rural areas they must be at least 120m before the bridge, and in urban areas at least 60m before. The whole phrase is spread over 50m on the road. A single lane arrow can be used to remind drivers to stay on the left as they exit the bridge.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_93.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_93.png",
     "merged_count": 5,
     "merged_raw_ids": [
       93,
@@ -5419,7 +5419,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] Ahead there is a railway level crossing",
     "explanation": "This sign means that ahead there is a railway level crossing.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_4.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_4.png",
     "merged_count": 3,
     "merged_raw_ids": [
       4,
@@ -5451,7 +5451,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] If the weather is OK a car or motorcycle can drive up to 100kph",
     "explanation": "This sign shows that the speed limit for vehicles is a maximum of 100kph. This excludes those vehicles that would be towing a trailer, and vehicles over a certain mass or of a certain type.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_15.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_15.png",
     "merged_count": 3,
     "merged_raw_ids": [
       15,
@@ -5483,7 +5483,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] Road bump ahead",
     "explanation": "It is a warning sign that there is a road bump ahead. If the bumps are man-made they are often called 'traffic calming measures', 'sleeping policemen' or 'judder bars'.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_33.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_33.png",
     "merged_count": 3,
     "merged_raw_ids": [
       33,
@@ -5514,7 +5514,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] The road ahead may have loose stones - drive slowly",
     "explanation": "This sign indicates there's gravel on the road and is a temporary sign usually erected by road workers.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_57.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_57.png",
     "merged_count": 3,
     "merged_raw_ids": [
       57,
@@ -5545,7 +5545,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] Look out for children",
     "explanation": "This sign is typically located near play centres and schools and is to warn drivers that children are likely to be around.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_66.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_66.png",
     "merged_count": 3,
     "merged_raw_ids": [
       66,
@@ -5577,7 +5577,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Uneven road surface ahead",
     "explanation": "This sign indicates to slow down as there is an uneven road ahead. It might have multiple severe bumps and general uneven surfaces so drive with caution.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_94.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_94.png",
     "merged_count": 3,
     "merged_raw_ids": [
       94,
@@ -5609,7 +5609,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] No parking: Bus stop on both sides of sign",
     "explanation": "This sign means that no parking is permitted because bus stops are on both sides of the sign.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_111.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_111.png",
     "merged_count": 3,
     "merged_raw_ids": [
       111,
@@ -5641,7 +5641,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] Watch for children crossing",
     "explanation": "This sign is a warning that there are children crossing the street and you should watch out for them.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_118.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_118.png",
     "merged_count": 3,
     "merged_raw_ids": [
       118,
@@ -5673,7 +5673,7 @@
     "correct_letter": "D",
     "correct_answer_text": "[D] Stop on request",
     "explanation": "This sign indicates that you may come upon a road worker directing traffic where there is roadworks.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_119.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_119.png",
     "merged_count": 3,
     "merged_raw_ids": [
       51,
@@ -5705,7 +5705,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] You have priority over vehicles coming towards you",
     "explanation": "Show courtesy and consideration to other road users, this sign means that you have priority over vehicles coming towards you. Although you have priority, make sure oncoming traffic is going to give way before you continue.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_205.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_205.png",
     "merged_count": 3,
     "merged_raw_ids": [
       205,
@@ -5737,7 +5737,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] Two-way traffic ahead",
     "explanation": "This sign indicates that two-way traffic is approaching.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_253.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_253.png",
     "merged_count": 3,
     "merged_raw_ids": [
       253,
@@ -5769,7 +5769,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] Merging traffic from the left and right",
     "explanation": "This sign means there is traffic merging from both sides.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_332.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_332.png",
     "merged_count": 3,
     "merged_raw_ids": [
       332,
@@ -5801,7 +5801,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] Temporary speed limit",
     "explanation": "This sign indicates the speed limit is only temporary and is only added to speed limit signs.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_374.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_374.png",
     "merged_count": 3,
     "merged_raw_ids": [
       374,
@@ -5832,7 +5832,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] Pedestrian crossing",
     "explanation": "There is a pedestrian crossing ahead.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_392.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_392.png",
     "merged_count": 3,
     "merged_raw_ids": [
       392,
@@ -5863,7 +5863,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] Keep left",
     "explanation": "You may see this type of sign on a traffic island, it tells you to keep left.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_427.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_427.png",
     "merged_count": 3,
     "merged_raw_ids": [
       427,
@@ -5895,7 +5895,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] Don't do a U-turn",
     "explanation": "This sign is warning you not to do a U-turn.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_445.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_445.png",
     "merged_count": 3,
     "merged_raw_ids": [
       445,
@@ -5927,7 +5927,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No parking",
     "explanation": "This sign is a no parking symbol",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_501.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_501.png",
     "merged_count": 3,
     "merged_raw_ids": [
       501,
@@ -5958,7 +5958,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] It shows the direction to an information centre",
     "explanation": "Correct. The way in which to get to the information centre is shown in this sign.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_511.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_511.png",
     "merged_count": 3,
     "merged_raw_ids": [
       6,
@@ -5990,7 +5990,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] There is a roundabout ahead",
     "explanation": "There is a roundabout ahead, this is what the sign indicates.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_514.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_514.png",
     "merged_count": 3,
     "merged_raw_ids": [
       514,
@@ -6022,7 +6022,7 @@
     "correct_letter": "D",
     "correct_answer_text": "[D] No stopping",
     "explanation": "This sign is posted to confirm that there is a clear route for traffic and that you should not stop unless in an emergency.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_536.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_536.png",
     "merged_count": 3,
     "merged_raw_ids": [
       536,
@@ -6054,7 +6054,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] There's an accident ahead so drive no faster than 20kph",
     "explanation": "You should slow down to 20kph, as there's an accident ahead, until you've passed the crash site.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_642.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_642.png",
     "merged_count": 3,
     "merged_raw_ids": [
       642,
@@ -6086,7 +6086,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No heavy vehicles",
     "explanation": "This sign means that heavy vehicles are constrained.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_672.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_672.png",
     "merged_count": 1,
     "merged_raw_ids": [
       672
@@ -6116,7 +6116,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] 30-minute parking on the right of the sign",
     "explanation": "This sign indicates that between 8am and 6pm, parking is accepted to the right of this sign for a maximum of 30 minutes.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_701.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_701.png",
     "merged_count": 3,
     "merged_raw_ids": [
       699,
@@ -6148,7 +6148,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] The comfortable and safe travelling speed is 35kph around this corner.",
     "explanation": "This sign shows the safe and comfortable driving speed around the curve, in kph, when driving a car or motorbike.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_895.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_895.png",
     "merged_count": 3,
     "merged_raw_ids": [
       675,
@@ -6183,7 +6183,7 @@
     "correct_letter": "A, B",
     "correct_answer_text": "[A] Emergency services vehicles can use this lane / [B] Buses can use this lane",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/bus-only-sign.jpg",
+    "image_path": "export/DTDriverTraining/images/bus-only-sign.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1257
@@ -6274,7 +6274,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] 20km/h",
     "explanation": "Speed limit at a road accident site The speed limit from the time you pass an Accident or Crash sign until you have passed the crash site is 20kph. There is only a compulsory 20kph speed limit if you pass an accident sign. A road user may have put a warning triangle out to advise other road users that there could be an accident ahead, but this is only advisory - you should still slow down, though. Police will put an accident sign up and it means that there could be emergency services workers on the road (fire, police or ambulance), sharp debris that could puncture your tyre, injured people on the road, power lines or other dangers blocking your path, mud on the road, vehicle fluids on the road, and so on. 20kph is a safe speed for you to be able to stop very quickly if you need to. You can also check out the 'What to do if you come across an accident' section of our comprehensive article on dealing with crashes and accidents here .",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/crash-without-20km-speed.jpg",
+    "image_path": "export/DTDriverTraining/images/crash-without-20km-speed.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1003
@@ -6304,7 +6304,7 @@
     "correct_letter": "D",
     "correct_answer_text": "[D] The speed limit is now 100kph",
     "explanation": "This sign means that the open road speed limit now applies for the vehicle you are driving.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_52.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_52.png",
     "merged_count": 3,
     "merged_raw_ids": [
       52,
@@ -6366,7 +6366,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Stop before the sign if it's facing you",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/stop-sign-roadworks.jpg",
+    "image_path": "export/DTDriverTraining/images/stop-sign-roadworks.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1260
@@ -6396,7 +6396,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] At the sign",
     "explanation": "Where do speed limits start? The speed limit starts where the sign is placed on the road. This means that if you are coming from a higher speed into a lower speed limit area you must slow down before you reach the sign. If you are in a lower speed limit area and are coming up to a higher speed limit area then you must wait until you reach the sign before you speed up.",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/50kmh-speed-limit-sign.gif",
+    "image_path": "export/DTDriverTraining/images/50kmh-speed-limit-sign.gif",
     "merged_count": 2,
     "merged_raw_ids": [
       1194,
@@ -6426,7 +6426,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] 30km/h",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/beach-speed-limit-variable.jpg",
+    "image_path": "export/DTDriverTraining/images/beach-speed-limit-variable.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1258
@@ -6518,7 +6518,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] No passing",
     "explanation": "Correct. You are not permitted to overtake if you see these yellow cat's eyes on the road.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_87.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_87.png",
     "merged_count": 3,
     "merged_raw_ids": [
       87,
@@ -6642,7 +6642,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes - all blind spots are shown",
     "explanation": "Overcoming blind spots in trucks Trucks can have multiple mirrors set up to help eliminate blind spots. Extra mirrors work well for seeing down the side of the doors, immediately in front of the cab and down the side of long trailers, but they still don't allow the driver to see immediately behind the trailer. For this, there are camera systems available. Also, the mirrors must be adjusted correctly for each driver.",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/truck-trailer-blind-spots-478.jpg",
+    "image_path": "export/DTDriverTraining/images/truck-trailer-blind-spots-478.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1214
@@ -6704,7 +6704,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] Fire hydrant",
     "explanation": "A fire hydrant location is marked with a blue reflector.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_289.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_289.png",
     "merged_count": 3,
     "merged_raw_ids": [
       289,
@@ -6770,7 +6770,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/blocking-cycle-lane.jpg",
+    "image_path": "export/DTDriverTraining/images/blocking-cycle-lane.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1265
@@ -6799,7 +6799,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] At any time you can turn right here",
     "explanation": "From this box, you can turn right without holding up cars going straight through, but you will need to give way for the vehicles driving straight through.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_517.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_517.png",
     "merged_count": 3,
     "merged_raw_ids": [
       23,
@@ -6864,7 +6864,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] Merge like a zip - alternating one from each lane",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/merging-like-a-zip.jpg",
+    "image_path": "export/DTDriverTraining/images/merging-like-a-zip.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1266
@@ -7021,7 +7021,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] On a hill",
     "explanation": "Passing lanes and slow vehicle bays Slow vehicle bays are short stretches of road where an extra lane usually splits off to the left. Traffic moving into the slow vehicle bay should indicate left. Passing lanes are longer stretches of road where an extra lane usually splits off to the right. Traffic overtaking in the passing lane should indicate right. Passing lanes can be short, but they are usually at least 200m and a signpost will be given at the 200m mark advising drivers that the passing lane is ending. What is the difference between passing and overtaking? In New Zealand law, passing is where you move past a vehicle without entering an oncoming lane. Overtaking is where you move past a vehicle in an oncoming lane. This is different to the definition in some other countries, for example Australia.",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/slow-vehicle-bay.png",
+    "image_path": "export/DTDriverTraining/images/slow-vehicle-bay.png",
     "merged_count": 1,
     "merged_raw_ids": [
       1215
@@ -7187,7 +7187,7 @@
     "correct_letter": "D",
     "correct_answer_text": "[D] The centre line is marked in white",
     "explanation": "To the left of the centre line of the road is marked with white cat's eyes.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_73.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_73.png",
     "merged_count": 6,
     "merged_raw_ids": [
       73,
@@ -7254,7 +7254,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/blue-car-flush-median.jpg",
+    "image_path": "export/DTDriverTraining/images/blue-car-flush-median.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1264
@@ -7282,7 +7282,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Left lane (A)",
     "explanation": "",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/left-turn-one-way.jpg",
+    "image_path": "export/DTDriverTraining/images/left-turn-one-way.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1262
@@ -7497,7 +7497,7 @@
     "correct_letter": "B, C",
     "correct_answer_text": "[B] Yes / [C] Yes, as long as you can see 100m ahead of you for the whole time you are passing and you can make the pass without crossing the yellow line.",
     "explanation": "As long as you stay left of the yellow line then you can pass a car in this situation.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_370.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_370.png",
     "merged_count": 2,
     "merged_raw_ids": [
       370,
@@ -7594,7 +7594,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "Correct. There is no room for Vehicle C on the other side of the red box, therefore it can cross the intersection.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_22.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_22.png",
     "merged_count": 3,
     "merged_raw_ids": [
       22,
@@ -7740,7 +7740,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] 1.275m",
     "explanation": "Carrying loads on a car, motorbike or trailer Loading a car Roof racks If you can't fit a load in your car, the safest ways are either to have a roof rack with a custom mounted box, or to use a trailer. When not carrying a load on a roof rack, remove it so that your car is more aerodynamic. Your vehicle's manual will tell you how much you can safely carry on a roof rack. The roof rack manufacturer will specify the maximum load of the rack. You will also need to look for one that suits the shape and size of your vehicle. Not all vehicles can have roof racks fitted easily. If you are carrying loads on your roof rack your load must not extend more than 3 metres forward of the front edge of the front seat or four metres behind the rear axle. The maximum length of your car plus load must not exceed 12.6m. Distribute any load on the roof between the bars and centrally and make sure it is tied down well. Here's how not to carry a mattress The load must not extend more than 1.25 metres either side from the centre line of the vehicle. If your load extends behind the back of your vehicle by more than 1m then you'll need to attach a white, or fluorescent orange, red or yellow flag of at least 40x30cm in size. Loads must be tied down and should not be able to bounce around. Carrying loads in the tray of a ute When carrying loads inside your vehicle, or a on the tray of a ute or trailer, spread the load evenly to keep the height as low as possible. Put larger, heavier items at the bottom, and arrange items so that they don't move about when you turn corners, brake or accelerate. Arrange loads so that they don't project outside of the body of the vehicle, if possible. Cover them if they will be affected by the wind (see the trailer section below). Heavy items such as gas cylinders and tool boxes should be restrained very well, preferably against a cage to stop them moving forward in the event of an accident. Carrying loads on a motorbike Small loads can be carried safely with the proper positioning and fastening. Any heavy items will affect the stability and handling of your motorbike, so it is best to keep these as low as possible especially on lighter bikes. Of course, your load should not drag on the ground because this can create a hazard for other road users if something breaks off, and it could catch in a groove in the tarmac and flip you off your motorbike. For lower loads, be careful that they won't touch the ground when you are leaning over for a corner. The load must also be secure. Riding with a load balanced on your handlebars is dangerous as it can move around, and you will have less control over the bike because you will need to manage the load. Secure them in saddlebags, tank bags or panniers, or under the seat if you have space there. If you have a small luggage rack on the back of the bike then fasten it with either a strop or elastic cords, but make sure the ends of these don't hang down and risk getting caught in your wheel or chain as this can lock the wheel causing you to skid. Keeping the load central helps with balance. Your load should not extend more than 50cm either side of the centre line of your motorbike. It also must not project more than one metre in front of the front wheel or more than one metre behind the rear wheel. Distributing the load evenly will help with your balance. Rather than putting the whole load in one saddlebag, divide it in two. If this isn't possible, you could add extra load to the opposite saddlebag. Carrying an uneven load can cause the bike to pull to one side, and makes it much more difficult to control on bumpy surfaces. Check the load whenever you stop to make sure it hasn't moved. Towing a trailer using your motorbike If you trailer including its load is up to half the weight of your motorbike the maximum speed limit is 90kphg. If your trailer including its load is over half the weight of your motorbike the maximum speed is 40kph. Carrying loads on a light trailer Loads in a trailer must be secured and not able to bounce out of the trailer, or fall over the sides. It's preferable that they are in compartments that are rigidly attached to the trailer. If not, they should be in a cradle or frame designed for the load. If this isn't possible they should be held in by lashings (webbing, strops, ropes or chains) that are securely fixed to anchor points. The lashing capacity is half of its breaking strength, e.g. if the breaking strength is 200kg, the lashing capacity is 100kg. The lashing capacity must be at least twice the weight of the load, so you will need to use as many lashings as necessary to achieve this figure. If you are carrying a loose load, for example, gravel, then the load must remain 100mm below the edge of the trailer. If the load could be affected by airflow then you will need to cover it with netting or a tarpaulin. The types of loads that might need covering are garden waste, silt, sand, gravel, builders mix, wood chips and general rubbish. Goods or animals on your trailer must be placed where they won't injure anyone or distract you while you are driving. Position the load so that the heaviest items are as close to the axle as possible, and balanced. You don't want to have too much load up the front of the trailer as it puts too much stress on the towball. You also don't want all the load on the back of the trailer otherwise it tries to lift the towball and this will give you less grip in the rear of your car. You want some downward force on the towball to keep the connection. If you remove any of the load part way through the journey you might need to rearrange the goods to rebalance the load. You will need to anticipate whether you should take extra strops or ropes to account for this before you leave. This video shows an example of how a load, which is flat and resting on the deck of the trailer, can be lifted by the wind. Towing capacity Your vehicle will have a rated towing capacity for an unbraked trailer (usually 750kg) and a trailer with brakes (which could be anything up to 3500kg) depending on the weight of your vehicle, the chassis strength and the power of the brakes. For more information about carrying loads in a trailer read our guide to towing loads , or visit NZTA's guide to safe towing . Carrying loads on a heavy vehicle Check out our main article about carrying loads in heavy vehicles as there are many more regulations.",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/car-no-oversize-load-side.jpg",
+    "image_path": "export/DTDriverTraining/images/car-no-oversize-load-side.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1083
@@ -7872,7 +7872,7 @@
     "correct_letter": "B, C, D, E",
     "correct_answer_text": "[B] When a police officer is directing traffic / [C] When you are following another car / [D] When another car is coming towards you / [E] If you stop on the side of the road",
     "explanation": "How to know when to dip your headlights You must dip your high beam headlights when a police officer is directing traffic, when you are following another vehicle (within 200m), when you are approaching another vehicle (within 200m), and when you are parked. You don't need to dip your lights when driving in an area with street lights unless there are other vehicles. Driving with your high-beam headlights, even with streetlights, will help you see the way ahead more clearly, especially things like animals or debris on the road. Familiarise yourself with how to turn your high-beam headlights to low-beam quickly so that you don't blind other drivers. Turning your high beam or full beam headlights on is usually by pushing forward the lights stalk on your steering column, and turning them off is by pulling it back (i.e. returning it to where it naturally rests). Pulling back further will flash the lights. If your full beam headlights are on you will see an icon like this on your instrument cluster. Some modern cars come with automatic headlight detection and will dip your headlights for you.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_214.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_214.png",
     "merged_count": 7,
     "merged_raw_ids": [
       71,
@@ -8131,7 +8131,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] 1.25m",
     "explanation": "1.25m from either side of the centre line of your vehicle.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_414.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_414.png",
     "merged_count": 1,
     "merged_raw_ids": [
       414
@@ -8224,7 +8224,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] When lit, buses, trams and bicycles can pass through, ignoring a red traffic signal",
     "explanation": "Before the light turns green, buses, trams or bicycles are allowed to go through a red light before it turns green for all other traffic.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_147.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_147.png",
     "merged_count": 3,
     "merged_raw_ids": [
       147,
@@ -8347,7 +8347,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] Roundabout",
     "explanation": "This sign indicates that you should be preparing to give way as you are coming up to a roundabout.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_29.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_29.png",
     "merged_count": 3,
     "merged_raw_ids": [
       29,
@@ -8379,7 +8379,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] The left side of a bridge",
     "explanation": "Correct. This sign identifies the left side of a bridge.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_127.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_127.png",
     "merged_count": 3,
     "merged_raw_ids": [
       127,
@@ -8410,7 +8410,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] A left-hand bend indicated by a road marker post on the right side",
     "explanation": "Correct. The right side of the road on a left-hand bend is indicated by this marker.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_189.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_189.png",
     "merged_count": 3,
     "merged_raw_ids": [
       185,
@@ -8441,7 +8441,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] Buses are allowed to stop here",
     "explanation": "This sign means that only buses can stop in a bus stop and you may be fined if you park here.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_274.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_274.png",
     "merged_count": 3,
     "merged_raw_ids": [
       60,
@@ -8472,7 +8472,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] The left side of the road",
     "explanation": "This sign is a marker post for the left hand side of the road.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_280.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_280.png",
     "merged_count": 3,
     "merged_raw_ids": [
       280,
@@ -8502,7 +8502,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Stop if you can do so safely",
     "explanation": "It means that you must stop safely if you are able to do so.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_789.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_789.png",
     "merged_count": 3,
     "merged_raw_ids": [
       789,
@@ -8630,7 +8630,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] If you see traffic coming towards you stop and wait until it's clear before you cross the bridge",
     "explanation": "This sign means that you must stop to let the traffic coming towards you through, as they have the right of way. If there's nothing coming and you don't see a stop sign then you don't have to stop.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_812.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_812.png",
     "merged_count": 3,
     "merged_raw_ids": [
       553,
@@ -8857,7 +8857,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Slow down and wait for the cyclist to go past the intersection",
     "explanation": "Correct. The cyclist has the right of way.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_128.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_128.png",
     "merged_count": 3,
     "merged_raw_ids": [
       128,
@@ -9025,7 +9025,7 @@
     "correct_letter": "B, D",
     "correct_answer_text": "[B] Drop back so you're not in the dust cloud / [D] If visibility is reduced significantly put your low beams on",
     "explanation": "How to drive safely on a gravel road If you are approaching a gravel road you could see a sign like this one on the road out to Whatipu west of Auckland. Gravel roads are cheaper to maintain than asphalt roads. There are still many gravel roads in New Zealand in rural areas, and even, as you can see in this case, not far from main cities. When gravel roads are wet, they don't provide problems with dust, but in the summer the dust can obscure other drivers' vision for several hundred metres behind you and, if you meet a vehicle coming towards you, its dust can be a problem for your visibility. Gravel roads still suffer from degradation, though. Gravel is lost over time through the road geometry (e.g. whether it's on an incline or flat), how good the drainage is (water washes away gravel), the type of gravel used, how frequently it is maintained, how much traffic passes over the gravel (gravel gets stuck in tyre treads and is taken away), and wind (wind can blow gravel if it's strong enough). If the road has flat areas, e.g. the crossfall (the gradient from the crown of the road to the edge) is less than 4%, water is likely to pool and weaken the road surface, causing potholes. Conversely, grades of more than 8% are discouraged because the road surface is not strong enough to withstand the acceleration forces of heavier vehicles. In this case, the incline might be sealed. What we might think of as gravel roads are actually three types of road: Unformed roads - these are also called earth roads and have a natural alignment on the terrain without any engineering input Formed roads - these have a fairly well defined cross section with some thought to drainage Gravelled (or metalled) roads - these are built with specific engineering principals and are constructed with high quality gravel When gravel is added back to the road it is called re-sheeting. When the road surface is scraped back to flat it is called grading and it's graded with a grader . Unsealed, gravel roads need to be designed considering the balance of: traffic volumes - i.e. the amount of traffic that will use the road road purpose - i.e. will it be heavy milk trucks, or just light vehicles terrain - how steep do the grades need to be budget for maintenance design standards. Austroads (2003) suggests that an average daily traffic level of 150 vehicles or more justifies a single lane gravel road being formed as a two-lane gravel road. At intersections with sealed roads, the seal is usually extended to reduce the amount of gravel introduced onto the seal road, and to make turning off the sealed road onto the gravel road safer. For more information about driving with limited visibility click here .",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_800.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_800.png",
     "merged_count": 4,
     "merged_raw_ids": [
       122,
@@ -9435,7 +9435,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Wait for the light until it turns green",
     "explanation": "Traffic lights in New Zealand Our traffic lights conform to international standards in terms of their colour, but we have slightly different phasing than some countries. Red lights A red light always means stop. You must wait until the green light shows before you can proceed. A police officer's directions can overrule a red light. There is not a free left turn. Green lights A green light means you can go, as long as it's safe to do so. Filter lights and arrows Filter lights are arrows that point left, right or straight ahead. They give specific directions to the traffic and can be used when traffic needs to be held to allow pedestrians to cross, or in complex junctions where one or more lanes can be allowed to proceed independently of others. Intersections which are busy, have fast-moving traffic, have two or more lanes in either direction or have restricted visibility are more likely to have a red turning arrow to prevent drivers from making ill-judged decisions. It also allows for right-turning traffic to definitely turn and, with the use of sensors in the road, means that the turn signal only needs to be activated when there are vehicles waiting if there is a dedicated right-turn lane or bay. For example, in the traffic signal shown to the left, traffic can go straight ahead but must wait to turn left. This combination is often seen where pedestrians are crossing to the left. This image shows a green filter light to the left. This is most frequently seen where two sets of facing traffic want to turn to the right. Both directions can turn right without interfering with each other's trajectories. The image below shows a red filter light and red light ahead. Yellow lights This amber or yellow traffic light comes after a green light and indicates that the lights are just about to turn red. You should stop if it's safe to do so, and this will vary according to the road conditions, the braking ability of your car, and the ability for people behind you to stop. Flashing yellow lights If a traffic light is faulty it will flash yellow and you should apply the give way rules. The basic give way rules are: Give way to vehicles coming straight ahead if you are turning Give way to vehicles turning left if you are turning right Give way to the right on roundabouts Filter lights for specific vehicles Buses, cycles and trams can be given permission to go first using one of the above priority lights when they are travelling in their own lane. How long do traffic lights stay on? The length of time that the yellow light displays depends on the speed of the intersection. A typical yellow light in an urban area lasts for approximately four seconds. We timed several downtown Auckland lights to come up with an average of 3.8 seconds. In the UK, yellow lights are 1 second per 10mph (16kph) speed limit. Using the same logic the equation would be 1 second every 13.2kph at least for the amber lights we measured. Yellow traffic lights on faster streets may stay on longer because it takes longer for vehicles to stop. Traffic light phases The traffic signal phase in New Zealand goes red, green, yellow, red. Some countries have a combined yellow+green phase or a rapidly flashing amber which can indicate that you can go on a pedestrian crossing as long as all pedestrians have finished crossing. Red and green traffic lights have variable phases, depending on the intersection. More roads joining the intersection will mean a longer red phase. A minor road entering a major intersection could have a very short green phase because there might only ever be one or two vehicles waiting at any one time, whereas a large intersection with a main road travelling through it could see very long green phases on the main road. Phases can be altered by detecting vehicles at an intersection using a magnetic induction loop in the road. Newer systems use cameras and are monitored by an operations centre. Running the red light Going through the red light is called red light running and is a cause of accidents. Running the red light is dangerous. Pedestrians could start to cross and you risk hitting them - bear in mind pedestrians on the other side of the junction will be further across the crossing and therefore less likely to be able to avoid you Vehicles may start to move, especially ones which are obscured from your view Road users run red lights sometimes deliberately, and sometimes accidentally: Cyclists are frequent red light runners Changed or inconsistent phasing at intersections can lead regular users of the road to try to anticipate the change and get it wrong. Inconsistent phasing at adjacent intersections can cause confusion Poor visibility or conspicuity of the lights Low expectation of enforcement in that area leads to drivers taking risks Driver inattention Lights are obscured by a heavy vehicle turning in front of the driver Delays caused further back in the road have created lateness in drivers Traffic signals are installed and operated so that when everyone obeys the rule traffic flows more smoothly. The yellow light that precedes the red light displays for around 3.8-4 seconds in urban areas therefore you have plenty of time to stop before the intersection if you are not in a position where you would have passed through the intersection completely should you hold your speed steady. Not stopping at a red light is an offence and if you are caught you will be fined. Red light cameras Some intersections are covered by a red light camera such as the one pictured below. They use sensors in the road to detect if a vehicle proceeds beyond the give way or stop line after the light has turned red. If you are already in the intersection when the lights turn red, then you won't trigger the camera.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_38.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_38.png",
     "merged_count": 5,
     "merged_raw_ids": [
       38,
@@ -9577,7 +9577,7 @@
     "correct_letter": "B, C, D",
     "correct_answer_text": "[B] Slow down and get ready to stop / [C] Before you cross make sure you've checked both ways / [D] If there are no trains coming and nothing blocking your path then you can cross",
     "explanation": "Approaching a railway level crossing As you are coming up to a railway level crossing, slow down and be ready to stop if necessary, check each way before proceeding to cross, and only cross if there's nothing blocking your path and there are no trains coming. Types of railway crossing In New Zealand we have several types of railway crossing. Level crossings A railway level crossing is where the tracks cross over the road at the same level, i.e. road users must drive across the tracks. These can be uncontrolled (give way or stop sign) or controlled (lights, sirens and/or barrier arms). There are around 3000 railway level crossings in New Zealand, some on public land and some on private land. Around half of them are uncontrolled. Tunnels and cuttings Trains can pass under roads using tunnels and cuttings (where the railway is dug into a channel and the road passes of the top of it over a bridge). Bridges Trains can pass over roads on bridges, such as this one over The Strand in Auckland. Railway bridges only need signage if their height is restricted. Bridges over a railway only need signage if there is some kind of restriction for certain types of vehicles, for example, a weight or width restriction. Railway level crossings, however, need much more signage to warn road users that they are approaching an obstacle for which they might have to stop and give way to a train. Typical signs when approaching a railway level crossing You can find a full list of all the signs and rules used for railway level crossings in New Zealand by clicking here .",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_2.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_2.png",
     "merged_count": 4,
     "merged_raw_ids": [
       2,
@@ -9778,7 +9778,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "Parking where there is a fire hydrant A fire hydrant is a place where the fire service can draw water from the city supply to fight a fire. They are most commonly a rectangular yellow plate in the ground under which a hose can be connected. In the diagram above the yellow rectangle represents the yellow plate, or lid, and the circle is painted with an outside diameter of 1.2m and a line width of 100mm. Fire hydrants are often marked with a blue road stud or cat's eye, and fire officers know to look out for these. The cat's eye might not be on the road; it could be on the pavement or edge of the road. Look also for a yellow arrow (600mm on the long side and 450mm on the base) painted on the road pointing to the fire hydrant. You can also frequently see fire hydrants on pavements and grass verges, for example, the one shown below. You can park your vehicle up to 500mm (50cm) from a fire hydrant as long as there are no other parking restrictions. However, if you want to park closer than that, or over the hydrant, then someone who can move the vehicle will have to stay with it otherwise it could be towed away. A fire hydrant on the road is marked by a 1.2m diameter yellow circle which contains the rectangular hydrant lid. There might also be a yellow isosceles triangle pointing to the hydrant. Hydrants are where the fire service can get water from the mains supply. It helps when fighting a larger fire as there's only a limited amount of water a fire engine can carry.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_55.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_55.png",
     "merged_count": 4,
     "merged_raw_ids": [
       55,
@@ -9840,7 +9840,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] Motorcycles are the only vehicle that are allowed to park left of the sign",
     "explanation": "To the left of the sign, motorcycles can park here. No other vehicle can park here.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_237.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_237.png",
     "merged_count": 4,
     "merged_raw_ids": [
       237,
@@ -9912,7 +9912,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] After you pass the sign you can stop",
     "explanation": "The end of a no-stopping zone or clearway is indicated by this sign.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_424.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_424.png",
     "merged_count": 3,
     "merged_raw_ids": [
       424,
@@ -9942,7 +9942,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] In the next 4km you must not stop anywhere",
     "explanation": "The distance shown under the sign is the distance you must stop.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_298.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_298.png",
     "merged_count": 3,
     "merged_raw_ids": [
       298,
@@ -9973,7 +9973,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] You are not permitted to park here between 7 and 9am",
     "explanation": "This sign means that you must not stop here between the times indicated. If you stop, your car may be towed and you will have to pay a towing fee to get your car back.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_585.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_585.png",
     "merged_count": 3,
     "merged_raw_ids": [
       396,
@@ -10005,7 +10005,7 @@
     "correct_letter": "D",
     "correct_answer_text": "[D] You can stop here only if you have a mobility parking permit",
     "explanation": "You must display a mobility parking permit on your front window in order to park here. If you fail to do so you may be fined or you may have your vehicle towed.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_587.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_587.png",
     "merged_count": 3,
     "merged_raw_ids": [
       587,
@@ -10071,7 +10071,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] You are only able to park there for the amount of time that is shown on the sign as long as you are unloading",
     "explanation": "It's okay for a vehicle to stop here to unload, but it must not be left unattended for more than five minutes. If the vehicle is attended and is being unloaded it can remain in the car park for more than 5 minutes. If the sign said '5MIN MAXIMUM' then the vehicle would have to be moved within 5 minutes.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_125.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_125.png",
     "merged_count": 3,
     "merged_raw_ids": [
       125,
@@ -10134,7 +10134,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "Why do we need to indicate? There are two reasons why you must indicate every time you make a manoeuvre, even if you think there's no one around. You might not have seen every road user It maintains the habit of indicating The Road Code says that you must indicate for three seconds before making a manoeuvre such as changing lanes, turning into a driveway, turning into a parking space, turning at an intersection or overtaking another road user.",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/parking-in-angled-park.jpg",
+    "image_path": "export/DTDriverTraining/images/parking-in-angled-park.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1199
@@ -10163,7 +10163,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] If there is someone who can stay with the vehicle that is able to move it in case of an emergency.",
     "explanation": "You are permitted to park your vehicle on or within 50cm of a fire hydrant (if someone who can move the vehicle stays with it).",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_447.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_447.png",
     "merged_count": 3,
     "merged_raw_ids": [
       447,
@@ -10196,7 +10196,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] For the purposes of unloading you can park at any time, but only for the amount of time shown on the sign",
     "explanation": "For the purposes of unloading you can park any vehicle in a loading zone. However, you must not park a private vehicle there if there is an additional sign underneath that specifically only permits goods vehicles.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_691.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_691.png",
     "merged_count": 2,
     "merged_raw_ids": [
       272,
@@ -10227,7 +10227,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] A police officer",
     "explanation": "Who can place an Accident or Crash sign on the road? Only a police officer can place an accident sign on the road. Other road users can place a warning triangle on the road to inform people that there's an accident. If there is an accident sign it could be that there is debris on the road and you would risk a puncture if you drive over it too fast. Or there may be emergency services workers on the scene dealing with injured people. Or a tow truck could be removing damaged vehicles. The speed limit from when you see this sign until when you have passed the sign is 20kph. If emergency services are attending to the crash, they won't need your help unless, perhaps, you are a doctor. If you come across an accident that emergency service aren't attending to, this comprehensive guide will help you deal with accidents and emergencies . If possible, make a note of all details. If you don't have a pen and paper, use your phone. If you saw the accident, detail what happened. If you came across the accident, detail the scene. You'll need to write the date and time you came across the accident, what are the weather conditions and light like, what's the condition of the road, where did the accident happen (be as specific as possible), what are the details of the vehicles involved, and what damage has occurred. Draw a sketch of the scene if you think it will be useful. There are online software solutions for drawing accident scenes such as AccidentSketch .",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_78.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_78.png",
     "merged_count": 4,
     "merged_raw_ids": [
       78,
@@ -10260,7 +10260,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Approaching is a breakdown or crash",
     "explanation": "A reflectorized triangle will have been carried by the vehicle that has broken down or had an accident, or be from a vehicle assisting.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_198.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_198.png",
     "merged_count": 3,
     "merged_raw_ids": [
       198,
@@ -10519,7 +10519,7 @@
     "correct_letter": "D",
     "correct_answer_text": "[D] The car on the other side of the road turning right",
     "explanation": "You should be prepared to slow down or stop, the car turning right on the other side of the road may misjudge the distance between car C and your car.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_34.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_34.png",
     "merged_count": 3,
     "merged_raw_ids": [
       34,
@@ -10551,7 +10551,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] The child on the side of the road (B)",
     "explanation": "This child's attention is on the child on the side of the road. As you can see children are very unpredictable around roads.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_92.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_92.png",
     "merged_count": 3,
     "merged_raw_ids": [
       92,
@@ -10583,7 +10583,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] The cyclist",
     "explanation": "Correct. The cyclist may turn in front of you as it's already on the road.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_435.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_435.png",
     "merged_count": 3,
     "merged_raw_ids": [
       435,
@@ -10615,7 +10615,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] The reversing car",
     "explanation": "The main hazard in this scenario is the reversing car. You should be prepared to stop as you may be in the car's blind spot.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_554.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_554.png",
     "merged_count": 3,
     "merged_raw_ids": [
       554,
@@ -10879,7 +10879,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] Remain stopped until the lights are no longer flashing",
     "explanation": "You must stop until they have stopped flashing, as red lights may operate outside of airports and fire stations.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_25.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_25.png",
     "merged_count": 3,
     "merged_raw_ids": [
       25,
@@ -10941,7 +10941,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] The cyclist",
     "explanation": "Identifying hazards when approaching a pedestrian crossing Cyclists can be blown off their path, or a person in the parked car could open the door in front of the cyclist. While the cyclist is the main hazard, let's take a look at the other hazards in this image and what could potentially happen. Advanced motorists will always be considering probabilities. The vehicle at B could open the driver's door in front of the cyclist which means the cyclist will either hit the door or will have to swerve around the door. For you to then miss the cyclist you will put yourself in the path of the vehicle C. Vehicle C doesn't appear to pose much of a threat. As long as you stay in your lane, it won't interfere with your trajectory. The pedestrian at D looks like they might wait until they get to the crossing before crossing the road. However, they could equally start to cross when vehicle C passes them. Vehicle B could be obscuring a small child or a pet that could run into the road . In this scenario you should hold back and let the cyclist pass the parked car. Maintain good visibility of the pedestrian crossing. The cyclist will move back to the left once they've passed the car and then you will be able to overtake. You may want to also give the parked car a wide berth in case the driver's door is opened. It also gives you a buffer between the red car at C and the parked car at B.",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/140-behaviour.jpg",
+    "image_path": "export/DTDriverTraining/images/140-behaviour.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1049
@@ -10971,7 +10971,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] The reversing car",
     "explanation": "Identifying hazards when driving past parked cars Let's take a look in more detail at the different hazard in this image. Vehicle A doesn't look like it will move, so the hazards A creates are that it can hide pedestrians and pets, and it reduces the vision of the driver in vehicle B that is backing out. Vehicle B is the obvious hazard. It is reversing already and the driver's view up the road will be obscured. The driver might be able to see you through vehicle A's windows, but imagine if this was a van or an SUV where the windows are at a different height. Therefore you should assume that the driver of vehicle B can't see you. If vehicle B has a reversing camera this might provide a view up the road. Also, new technology called Rear Cross Traffic Alert is becoming more mainstream. This is where the reversing sensors scan up the road as the driver backs out. It's only really good for detecting slower moving vehicles such as bikes, though. Vehicle C is unlikely to be a hazard unless you have to swerve around vehicle B if B backs out too far. Vehicle C could be a hazard if the car at D decides to reverse. However, the driver of D would easily be able to see C as there are no other vehicles blocking the view. D might equally decide to reverse out onto your side of the road, but as C is plainly visible this is unlikely. D could also obscure a pedestrian, but as the pedestrian has a clear view of C it's unlikely that they would cross in front of you. There is also a truck in the top left that is unmarked. As it is not indicating, we can assume that it won't move out from the kerb. If it was indicating then you would want to assume that it might not be able to see you because trucks have larger blind spots. So, in this case, you have two choices: you can stop and wait for B to reverse out of the space. This is safest for both of you. Or, if you can see that the driver of B has seen you and has stopped, you can proceed past.",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/141-behaviour.jpg",
+    "image_path": "export/DTDriverTraining/images/141-behaviour.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1050
@@ -11001,7 +11001,7 @@
     "correct_letter": "D",
     "correct_answer_text": "[D] The car on the other side of the road turning right",
     "explanation": "Identifying hazards at an intersection This is a scenario you could encounter almost every day if you drive in urban areas. Let's take a look at the hazards. In general, this is an intersection with good visibility. There's nothing on the pavement to hide pedestrians, and the road is clear with no islands or crossings. There's no signage shown that could be distracting. Contrast it with the junction in this photo where there are vehicles waiting over the road in an intersection with poor visibility, a pedestrian waiting on the left, a deep shadow making it more difficult to see the Fiat on the right, and a roadworks sign. What you can't see in this photo is that there's a bus stop just around to the left, and a busy supermarket with many pedestrians crossing the road and waiting in the centre. Back to our original intersection diagram: Vehicle A is turning left onto the opposite side of the road and you are almost at the turning, therefore A does not cause a hazard. Vehicle B is partially obscured by vehicle D, but is unlikely to manoeuvre to cause you any problems. The only problem vehicle B could cause is to hit D from behind. As D's wheels are already turned towards the driveway, this will shunt D into your path. This is a reason why when you are waiting to turn across a lane you should keep your wheels facing forward. It's better to be shunted into the back of a car in front than across into the path of traffic coming the other way. Vehicle C would only be a hazard if it had to stop suddenly and there's no indication that that would happen in this diagram. However, the driver of D on the other side of the road, turning right into the driveway, may misjudge the distance between you and car C. You should be prepared to slow down or stop. Also, an advanced driver would notice that this is an older car - a Volkswagen Beetle. It's likely to have slower acceleration. It will almost certainly be a manual gearbox and therefore the driver could stall it half way through the turn. The other thing advanced drivers will look out for is the age of the driver of the other vehicle. Very young drivers are likely to be impetuous and lack skill in judging distances, whereas older drivers could have less visual acuity and perhaps slower reactions.",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/142-behaviour.jpg",
+    "image_path": "export/DTDriverTraining/images/142-behaviour.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1051
@@ -11031,7 +11031,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] The child on your side of the road",
     "explanation": "Identifying pedestrian hazards on the road Looking at the stretch of road in the diagram there are several possible hazards. The hitchhiker at A is hitching in a place where drivers should have their attention elsewhere: on the pedestrian crossing. Any driver picking the hitchhiker up would have to pull in very sharply around the red car on the left, or would end up parking on the pedestrian crossing, which is illegal - you must not park or stop your vehicle on or nearer than 6m to the approach side of a pedestrian crossing unless there are marked bays. As the person hitching a lift is on the other side of the road, they most likely won't create a hazard for you. The child at B is the obvious hazard. Children can be unpredictable on roads as they can be distracted easily, they don't have an understanding of driving and they aren't as good at judging the speed of approaching vehicles. The vehicle at C could become a hazard if it was indicating to pull out from behind vehicle D. You will have to look to see if you can see any intention. You might see a driver's head turning around to check the blind spots, or the wheels starting to turn to move away from the kerb. As the vehicle is fairly close to the red car D it might reverse slightly before moving away and you would see its reversing lights. C also creates a blind spot between it and vehicle D. This might be obscuring another child. If vehicle D wants to move away from the kerb, its view out of the rear view mirror will be obstructed, however, the driver should be able to see you in the wing mirror and perhaps by looking over his shoulder.",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/143-behaviour.jpg",
+    "image_path": "export/DTDriverTraining/images/143-behaviour.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
       1052
@@ -11245,7 +11245,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Yes",
     "explanation": "You are permitted to pass on the left if there are two lanes on your side of the road and it's safe to do so.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_309.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_309.png",
     "merged_count": 3,
     "merged_raw_ids": [
       309,
@@ -11276,7 +11276,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] If you can make the pass without crossing the yellow line and can see 100m in front of you for the whole time you are passing then you can pass",
     "explanation": "As long as you stay to the left of the yellow line in this situation then you can pass a car.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_255.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_255.png",
     "merged_count": 2,
     "merged_raw_ids": [
       255,
@@ -11336,7 +11336,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] Three seconds",
     "explanation": "Signalling before overtaking You should signal for at least three seconds before passing another vehicle. Signalling is only a small part of the overtaking process. You will need to get into the overtaking position, read the road ahead for dangers, judge your speed and that of the vehicle you are overtaking, check your mirrors and blind spots, then indicate. Read our in-depth guide to overtaking here . Keep signalling as you pass the vehicle then, when you see it in your rear view mirror, signal left and pull in in front of it. Remember that you can always abort the overtaking manoeuvre if you don't think it's safe, if you see that there's a solid yellow line coming up, or if you can see ahead that the speed limit drops significantly (e.g. 100kph down to 70kph). Once you have pulled in front of the vehicle in front, check your speed. It can be frustrating for drivers if you overtake and then once you have overtaken you drive slowly and therefore you are holding them up.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_104.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_104.png",
     "merged_count": 4,
     "merged_raw_ids": [
       104,
@@ -12564,7 +12564,7 @@
     "correct_letter": "D",
     "correct_answer_text": "[D] Fire hydrant",
     "explanation": "The location of a fire hydrant is marked.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_76.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_76.png",
     "merged_count": 3,
     "merged_raw_ids": [
       76,
@@ -12594,7 +12594,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] You must not turn left",
     "explanation": "Correct. This sign is a warning to not turn left.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_395.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_395.png",
     "merged_count": 3,
     "merged_raw_ids": [
       236,
@@ -12625,7 +12625,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] Any vehicle can park for 40 minutes to the right of the sign",
     "explanation": "The arrow on the sign outlines the direction you can park in and the number on the sign shows how long you can park there in minutes.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_19.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_19.png",
     "merged_count": 3,
     "merged_raw_ids": [
       19,
@@ -12656,7 +12656,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] The recommended speed for this corner is 35kph",
     "explanation": "The number shows the recommended maximum speed for safe, comfortable travel around the corner and the chevrons show the direction of the corner.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_24.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_24.png",
     "merged_count": 3,
     "merged_raw_ids": [
       24,
@@ -12687,7 +12687,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Traffic turning right must follow this sign",
     "explanation": "Correct. Traffic turning right must follow this sign.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_42.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_42.png",
     "merged_count": 3,
     "merged_raw_ids": [
       42,
@@ -12718,7 +12718,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] Light rail crossing ahead",
     "explanation": "This sign indicates that there is a light rail crossing ahead. Always remember to keep watch for them at junctions and look for rails, signs, and signals.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_81.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_81.png",
     "merged_count": 3,
     "merged_raw_ids": [
       81,
@@ -12751,7 +12751,7 @@
     "correct_letter": "D",
     "correct_answer_text": "[D] This lane must proceed straight ahead",
     "explanation": "This sign demonstrates that you must continue on ahead.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_123.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_123.png",
     "merged_count": 3,
     "merged_raw_ids": [
       123,
@@ -12783,7 +12783,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] The right side of a bridge",
     "explanation": "The right side of the bridge is indicated by the marker.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_137.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_137.png",
     "merged_count": 3,
     "merged_raw_ids": [
       137,
@@ -12815,7 +12815,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] A route for pedestrians only",
     "explanation": "Correct. This sign states that no motor vehicles are allowed, as it marks a pedestrian zone.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_145.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_145.png",
     "merged_count": 3,
     "merged_raw_ids": [
       145,
@@ -12846,7 +12846,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] The left lane is closed",
     "explanation": "This sign is usually erected by road workers and is a temporary warning.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_155.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_155.png",
     "merged_count": 3,
     "merged_raw_ids": [
       155,
@@ -12879,7 +12879,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] A route for pedestrians and cyclists",
     "explanation": "This sign indicates that pedestrians and cyclists share this route.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_203.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_203.png",
     "merged_count": 3,
     "merged_raw_ids": [
       203,
@@ -12911,7 +12911,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Watch out for cattle",
     "explanation": "Correct. This sign provides a warning that there may be cattle in the road or crossing in the road.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_269.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_269.png",
     "merged_count": 3,
     "merged_raw_ids": [
       269,
@@ -12943,7 +12943,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] Give way on a roundabout ahead",
     "explanation": "This sign means that you must give way to vehicles coming from the right and when you see this sign look out for any directions and judge if you need to signal your intentions.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_290.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_290.png",
     "merged_count": 3,
     "merged_raw_ids": [
       290,
@@ -12975,7 +12975,7 @@
     "correct_letter": "D",
     "correct_answer_text": "[D] The maximum speed is 70kph",
     "explanation": "This sign indicates that as long as the road conditions are safe and your vehicle can drive this fast, then the maximum speed limit on this road is 70kph.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_326.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_326.png",
     "merged_count": 3,
     "merged_raw_ids": [
       326,
@@ -13008,7 +13008,7 @@
     "correct_letter": "E",
     "correct_answer_text": "[E] Buses, cyclists, motorcyclists and moped riders can use this lane",
     "explanation": "Cyclists, motorbikes, and moped riders can also use it if there are no other signs stating that it's bus only.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_443.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_443.png",
     "merged_count": 3,
     "merged_raw_ids": [
       443,
@@ -13040,7 +13040,7 @@
     "correct_letter": "D",
     "correct_answer_text": "[D] Any vehicle that is unloading people or goods can park here, but it cannot be left alone for more than 5 minutes",
     "explanation": "If you are unloading goods or people then any vehicle can stop here, but it must not be left unattended for more than 5 minutes. As long as someone is with the car and the loading is continued then it can remain in the car park for more than 5 minutes. If the sign read ' 5 MIN MAXIMUM' then the vehicle would need to be moved within 5 minutes.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_695.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_695.png",
     "merged_count": 1,
     "merged_raw_ids": [
       695
@@ -13565,7 +13565,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Wait, check both ways once they've stopped flashing and then cross",
     "explanation": "There may be another train coming, you should wait.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_98.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_98.png",
     "merged_count": 1,
     "merged_raw_ids": [
       98
@@ -13683,7 +13683,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] Both a and b are correct",
     "explanation": "Both scenarios are correct.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_584.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_584.png",
     "merged_count": 3,
     "merged_raw_ids": [
       96,
@@ -13938,7 +13938,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] 20kph",
     "explanation": "One must slow down to 20kph if a school bus is letting children off, regardless of the direction you are approaching. A child could dash in front of the school bus which is why you need to slow down.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_191.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_191.png",
     "merged_count": 6,
     "merged_raw_ids": [
       191,
@@ -14571,7 +14571,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Give three seconds' warning",
     "explanation": "In order to give plenty of time for other road users to understand your intentions give three seconds for a safe signal time.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_156.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_156.png",
     "merged_count": 6,
     "merged_raw_ids": [
       30,
@@ -14635,7 +14635,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] 100 metres",
     "explanation": "Safety when overtaking The least distance of clear road you must have in front of you when you have finished passing another vehicle is 100m. Remember that you shouldn\u2019t exceed the speed limit when passing, so be sure to allow yourself enough time to complete the passing manoeuvre. Before you pull out to overtake, check you are not being overtaken yourself. Wait until you can see the vehicle you are passing in your rear view mirror before signalling left and moving back to the left. If you are towing a trailer you will need to leave extra distance before moving back across so that you don\u2019t cut the other vehicle off. If you are moving back into a line of traffic you will need to quickly adjust your following distance. By moving in, you will have halved the gap between the vehicle you've just overtaken and the one in front of you. If the vehicle in front has to brake hard, you might run into the back of it, or the vehicle behind might not have had time to drop back enough. If you are passing a motorcyclist and you are driving a large vehicle like a truck or a car towing a caravan be aware that your slipstream can unbalance the motorbike. If you are overtaking in lower visibility don\u2019t assume that other drivers will have their headlights on. It can be quite difficult to see darker-coloured cars when it\u2019s gloomy. Always check twice for motorbikes coming towards you as they are less visible, and pay attention to any signs that might indicate there\u2019s a dip or crest ahead that could obscure your view, or uneven road which could unsettle your vehicle. While you are overtaking, make sure you are looking well ahead so that you're not caught out by an unexpected sharp corner after you've moved back into the lane. Keeping visibility at least 100m after you've finished overtaking will give you time to brake for any obstacles ahead. Read our guide about advanced overtaking and you\u2019ll learn how to clearly signal to other drivers that you are overtaking. It explains advanced techniques that will help keep you safe, including judging distance , identifying hazards ahead, positioning yourself correctly and making the move.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_152.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_152.png",
     "merged_count": 4,
     "merged_raw_ids": [
       152,
@@ -14667,7 +14667,7 @@
     "correct_letter": "C",
     "correct_answer_text": "[C] Yes, but only if there are no vehicles coming",
     "explanation": "Traffic lights in New Zealand Our traffic lights conform to international standards in terms of their colour, but we have slightly different phasing than some countries. Red lights A red light always means stop. You must wait until the green light shows before you can proceed. A police officer's directions can overrule a red light. There is not a free left turn. Green lights A green light means you can go, as long as it's safe to do so. Filter lights and arrows Filter lights are arrows that point left, right or straight ahead. They give specific directions to the traffic and can be used when traffic needs to be held to allow pedestrians to cross, or in complex junctions where one or more lanes can be allowed to proceed independently of others. Intersections which are busy, have fast-moving traffic, have two or more lanes in either direction or have restricted visibility are more likely to have a red turning arrow to prevent drivers from making ill-judged decisions. It also allows for right-turning traffic to definitely turn and, with the use of sensors in the road, means that the turn signal only needs to be activated when there are vehicles waiting if there is a dedicated right-turn lane or bay. For example, in the traffic signal shown to the left, traffic can go straight ahead but must wait to turn left. This combination is often seen where pedestrians are crossing to the left. This image shows a green filter light to the left. This is most frequently seen where two sets of facing traffic want to turn to the right. Both directions can turn right without interfering with each other's trajectories. The image below shows a red filter light and red light ahead. Yellow lights This amber or yellow traffic light comes after a green light and indicates that the lights are just about to turn red. You should stop if it's safe to do so, and this will vary according to the road conditions, the braking ability of your car, and the ability for people behind you to stop. Flashing yellow lights If a traffic light is faulty it will flash yellow and you should apply the give way rules. The basic give way rules are: Give way to vehicles coming straight ahead if you are turning Give way to vehicles turning left if you are turning right Give way to the right on roundabouts Filter lights for specific vehicles Buses, cycles and trams can be given permission to go first using one of the above priority lights when they are travelling in their own lane. How long do traffic lights stay on? The length of time that the yellow light displays depends on the speed of the intersection. A typical yellow light in an urban area lasts for approximately four seconds. We timed several downtown Auckland lights to come up with an average of 3.8 seconds. In the UK, yellow lights are 1 second per 10mph (16kph) speed limit. Using the same logic the equation would be 1 second every 13.2kph at least for the amber lights we measured. Yellow traffic lights on faster streets may stay on longer because it takes longer for vehicles to stop. Traffic light phases The traffic signal phase in New Zealand goes red, green, yellow, red. Some countries have a combined yellow+green phase or a rapidly flashing amber which can indicate that you can go on a pedestrian crossing as long as all pedestrians have finished crossing. Red and green traffic lights have variable phases, depending on the intersection. More roads joining the intersection will mean a longer red phase. A minor road entering a major intersection could have a very short green phase because there might only ever be one or two vehicles waiting at any one time, whereas a large intersection with a main road travelling through it could see very long green phases on the main road. Phases can be altered by detecting vehicles at an intersection using a magnetic induction loop in the road. Newer systems use cameras and are monitored by an operations centre. Running the red light Going through the red light is called red light running and is a cause of accidents. Running the red light is dangerous. Pedestrians could start to cross and you risk hitting them - bear in mind pedestrians on the other side of the junction will be further across the crossing and therefore less likely to be able to avoid you Vehicles may start to move, especially ones which are obscured from your view Road users run red lights sometimes deliberately, and sometimes accidentally: Cyclists are frequent red light runners Changed or inconsistent phasing at intersections can lead regular users of the road to try to anticipate the change and get it wrong. Inconsistent phasing at adjacent intersections can cause confusion Poor visibility or conspicuity of the lights Low expectation of enforcement in that area leads to drivers taking risks Driver inattention Lights are obscured by a heavy vehicle turning in front of the driver Delays caused further back in the road have created lateness in drivers Traffic signals are installed and operated so that when everyone obeys the rule traffic flows more smoothly. The yellow light that precedes the red light displays for around 3.8-4 seconds in urban areas therefore you have plenty of time to stop before the intersection if you are not in a position where you would have passed through the intersection completely should you hold your speed steady. Not stopping at a red light is an offence and if you are caught you will be fined. Red light cameras Some intersections are covered by a red light camera such as the one pictured below. They use sensors in the road to detect if a vehicle proceeds beyond the give way or stop line after the light has turned red. If you are already in the intersection when the lights turn red, then you won't trigger the camera.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_534.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_534.png",
     "merged_count": 4,
     "merged_raw_ids": [
       534,
@@ -14698,7 +14698,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] No",
     "explanation": "Traffic lights in New Zealand Our traffic lights conform to international standards in terms of their colour, but we have slightly different phasing than some countries. Red lights A red light always means stop. You must wait until the green light shows before you can proceed. A police officer's directions can overrule a red light. There is not a free left turn. Green lights A green light means you can go, as long as it's safe to do so. Filter lights and arrows Filter lights are arrows that point left, right or straight ahead. They give specific directions to the traffic and can be used when traffic needs to be held to allow pedestrians to cross, or in complex junctions where one or more lanes can be allowed to proceed independently of others. Intersections which are busy, have fast-moving traffic, have two or more lanes in either direction or have restricted visibility are more likely to have a red turning arrow to prevent drivers from making ill-judged decisions. It also allows for right-turning traffic to definitely turn and, with the use of sensors in the road, means that the turn signal only needs to be activated when there are vehicles waiting if there is a dedicated right-turn lane or bay. For example, in the traffic signal shown to the left, traffic can go straight ahead but must wait to turn left. This combination is often seen where pedestrians are crossing to the left. This image shows a green filter light to the left. This is most frequently seen where two sets of facing traffic want to turn to the right. Both directions can turn right without interfering with each other's trajectories. The image below shows a red filter light and red light ahead. Yellow lights This amber or yellow traffic light comes after a green light and indicates that the lights are just about to turn red. You should stop if it's safe to do so, and this will vary according to the road conditions, the braking ability of your car, and the ability for people behind you to stop. Flashing yellow lights If a traffic light is faulty it will flash yellow and you should apply the give way rules. The basic give way rules are: Give way to vehicles coming straight ahead if you are turning Give way to vehicles turning left if you are turning right Give way to the right on roundabouts Filter lights for specific vehicles Buses, cycles and trams can be given permission to go first using one of the above priority lights when they are travelling in their own lane. How long do traffic lights stay on? The length of time that the yellow light displays depends on the speed of the intersection. A typical yellow light in an urban area lasts for approximately four seconds. We timed several downtown Auckland lights to come up with an average of 3.8 seconds. In the UK, yellow lights are 1 second per 10mph (16kph) speed limit. Using the same logic the equation would be 1 second every 13.2kph at least for the amber lights we measured. Yellow traffic lights on faster streets may stay on longer because it takes longer for vehicles to stop. Traffic light phases The traffic signal phase in New Zealand goes red, green, yellow, red. Some countries have a combined yellow+green phase or a rapidly flashing amber which can indicate that you can go on a pedestrian crossing as long as all pedestrians have finished crossing. Red and green traffic lights have variable phases, depending on the intersection. More roads joining the intersection will mean a longer red phase. A minor road entering a major intersection could have a very short green phase because there might only ever be one or two vehicles waiting at any one time, whereas a large intersection with a main road travelling through it could see very long green phases on the main road. Phases can be altered by detecting vehicles at an intersection using a magnetic induction loop in the road. Newer systems use cameras and are monitored by an operations centre. Running the red light Going through the red light is called red light running and is a cause of accidents. Running the red light is dangerous. Pedestrians could start to cross and you risk hitting them - bear in mind pedestrians on the other side of the junction will be further across the crossing and therefore less likely to be able to avoid you Vehicles may start to move, especially ones which are obscured from your view Road users run red lights sometimes deliberately, and sometimes accidentally: Cyclists are frequent red light runners Changed or inconsistent phasing at intersections can lead regular users of the road to try to anticipate the change and get it wrong. Inconsistent phasing at adjacent intersections can cause confusion Poor visibility or conspicuity of the lights Low expectation of enforcement in that area leads to drivers taking risks Driver inattention Lights are obscured by a heavy vehicle turning in front of the driver Delays caused further back in the road have created lateness in drivers Traffic signals are installed and operated so that when everyone obeys the rule traffic flows more smoothly. The yellow light that precedes the red light displays for around 3.8-4 seconds in urban areas therefore you have plenty of time to stop before the intersection if you are not in a position where you would have passed through the intersection completely should you hold your speed steady. Not stopping at a red light is an offence and if you are caught you will be fined. Red light cameras Some intersections are covered by a red light camera such as the one pictured below. They use sensors in the road to detect if a vehicle proceeds beyond the give way or stop line after the light has turned red. If you are already in the intersection when the lights turn red, then you won't trigger the camera.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_252.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_252.png",
     "merged_count": 5,
     "merged_raw_ids": [
       252,
@@ -14948,7 +14948,7 @@
     "correct_letter": "B",
     "correct_answer_text": "[B] Red car",
     "explanation": "Cars that are turning from the bottom of the T-intersection must give way to you if you are turning right from the top of a T-intersection.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_110.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_110.png",
     "merged_count": 3,
     "merged_raw_ids": [
       110,
@@ -14978,7 +14978,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] Red car",
     "explanation": "Correct. This rule works the same as the T-intersection rule, which means you must give way to all traffic on the road if you are exiting a driveway (including public driveways such as at a hospital or restaurant).",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_121.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_121.png",
     "merged_count": 3,
     "merged_raw_ids": [
       121,
@@ -15103,7 +15103,7 @@
     "correct_letter": "D",
     "correct_answer_text": "[D] To avoid throwing up loose chippings",
     "explanation": "This is a warning sign to reduce your speed, as there is loose road surface. Loose road surface can cause chippings to fly out from your tyres and cause damage to other vehicles, or injury to pedestrians, cyclists and motorcyclists.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_275.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_275.png",
     "merged_count": 3,
     "merged_raw_ids": [
       275,
@@ -15292,7 +15292,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] TRUE",
     "explanation": "Driving safely across railway level crossings When driving across a railway level crossing you must check that there is space for your vehicle on the other side of the line. This is especially important if you are driving a long vehicle. As you can see in the video below, if you get caught out on the crossing, the train cannot stop quickly. Therefore, as you approach a railway level crossing, check how many lines you will need to cross, and that there is enough room for you to pass over the crossing and leave at least 5 metres behind you (5m is about the length of a large car). Be careful in rush hour because vehicles can be slow moving and stop suddenly. Also be careful where there is an intersection soon after the railway crossing because a large vehicle could stop to turn left (if there are pedestrians crossing) or right (if it has to wait for oncoming traffic) and block the road, causing vehicles to stack up behind it. Crossings where this is a risk often have yellow cross-hatches on them that warn drivers not to block the lanes. If you do inadvertently become stranded on the lines, you might be able to drive around the barrier to get off the track. If you can't get off the track, get out of the vehicle and move well out of the way, towards the direction that a train is coming, in case the train hits the vehicle and it ricochets out of the way. As you can see in this satellite photo of the crossing on Morningside Drive, Auckland, there is a long cross-hatched area (marked in yellow lines) which is the no stopping area across the tracks. To the left in the image there is a left turn immediately after it (McDonald), and a bit further on (out of view) a road to the right. On the right of the image, traffic will queue at the traffic lights onto New North Road. This is one of the most dangerous crossings in Auckland and has seen serious accidents and fatalities. The latest data on railway level crossing incidents can be found here . Other causes of accidents on railway lines include vehicles getting stranded due to grounding or breaking down, drivers or pedestrians not looking at uncontrolled crossings, or drivers deliberately driving around barriers that are closed.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_345.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_345.png",
     "merged_count": 4,
     "merged_raw_ids": [
       345,
@@ -16470,7 +16470,7 @@
     "correct_letter": "D",
     "correct_answer_text": "[D] 5 years",
     "explanation": "To carry dangerous goods which includes flammable liquids, explosives, toxic substances, corrosive substances and oxidising agents you must renew your endorsement every 5 years.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_771.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_771.png",
     "merged_count": 2,
     "merged_raw_ids": [
       771,
@@ -17651,7 +17651,7 @@
     "correct_letter": "D",
     "correct_answer_text": "[D] 70kph",
     "explanation": "As a heavy motor vehicle, you will not exceed the absolute speed limit of 90kph, so you can drive at the stated limit here.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_710.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_710.png",
     "merged_count": 1,
     "merged_raw_ids": [
       710
@@ -17741,7 +17741,7 @@
     "correct_letter": "D",
     "correct_answer_text": "[D] 50kph",
     "explanation": "This sign indicates that the maximum speed in safe conditions is 50kph. NZ does not work in miles per hour, it works in kilometres per hour.",
-    "image_path": "/root/nz-dirving/export/NZTA_Official_Road_Code/images/nzroad_158.png",
+    "image_path": "export/NZTA_Official_Road_Code/images/nzroad_158.png",
     "merged_count": 4,
     "merged_raw_ids": [
       158,
@@ -17862,7 +17862,7 @@
     "correct_letter": "A",
     "correct_answer_text": "[A] 20km/h",
     "explanation": "Speed limits at road accident sites If you see an accident sign then emergency services will be attending as only a police officer can put this sign up . Other road users can use warning triangles to warn people that there is an accident ahead. An accident sign looks like this: It might only have the bottom ACCIDENT plate and it could also be in blue and white rather than orange and black. The limit is reduced for a number of reasons: Protect emergency services workers who are attending the scene Prevent or minimise damage to vehicles driving through the scene (i.e. sharp objects such as broken glass could be on the road) Allow for any changes in the road surface caused by the accident (i.e. mud and vegetation dragged onto the road, vehicle fluids spilled onto the road, tarmac surface damaged or gouged) Protect the parties involved in the accident who may be dazed and confused In a minor accident or a breakdown a driver can put up a red warning triangle. A reflectorised red warning triangle looks like this: Some cars come with these as standard (usually European ones). We have an in-depth guide to dealing with accidents and accident scenes here .",
-    "image_path": "/root/nz-dirving/export/DTDriverTraining/images/crash-without-20km-speed.jpg",
+    "image_path": "export/DTDriverTraining/images/crash-without-20km-speed.jpg",
     "merged_count": 2,
     "merged_raw_ids": [
       1016,
