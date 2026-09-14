@@ -2107,17 +2107,19 @@
       "If someone cuts in front of you",
       "As you are leaving a family member's house"
     ],
-    "is_multi_answer": false,
+    "is_multi_answer": true,
     "correct_option_indices": [
-      0
+      0,
+      1
     ],
     "correct_letters": [
-      "A"
+      "A",
+      "B"
     ],
     "correct_option_index": 0,
-    "correct_letter": "A",
-    "correct_answer_text": "[A] To let another drive know that you are there",
-    "explanation": "To provide a reasonable traffic warning is the only time you should use your horn.",
+    "correct_letter": "A, B",
+    "correct_answer_text": "[A] To let another drive know that you are there / [B] To warn a motorcycle",
+    "explanation": "A horn should only be used as a reasonable traffic warning to alert other drivers, motorcyclists, or road users of your presence or an impending hazard. It must not be used in anger or as a social greeting.",
     "image_path": "",
     "merged_count": 1,
     "merged_raw_ids": [
@@ -2353,7 +2355,7 @@
       "Police officer",
       "Taxi Cab driver"
     ],
-    "is_multi_answer": false,
+    "is_multi_answer": true,
     "correct_option_indices": [
       2
     ],
@@ -2363,7 +2365,7 @@
     "correct_option_index": 2,
     "correct_letter": "C",
     "correct_answer_text": "[C] Police officer",
-    "explanation": "Who can stop your vehicle to perform a roadside check? The police can stop your vehicle to check its roadworthiness at the road side. It's called a TWIRL (tyres, windscreen, indicators, rust and lights). If a police officer suspects that the vehicle you are driving might not be roadworthy they will pull you over and conduct a short test, plus check your driver licence and possibly do a breath screening test. They might also conduct the test if you've been pulled over for a traffic offence such as speeding or driving inconsiderately. It's not a Warrant of Fitness test. For minor infringements police will usually be lenient and offer 'traffic compliance' if you are polite and compliant, for example if your Warrant has only just expired. They will help advise you how to get the item fixed and why. The seven main areas they will check are tyres - looking for the tread depth and general condition plus inflation level. If your vehicle is modified and has extra camber, then your tyres can wear on the inside more quickly. Indicator blocks in the tread will show where the tread depth is less than 1.5mm. They will check the lights work and aren't obscured, e.g. not covered by tape. Indicator, park, brake and headlights must work. Obvious rust patches in structural areas could be cause for concern, and could mean the vehicle isn't roadworthy. There must not be any loose or damaged parts. The windscreen should not have any cracks and damage in the critical vision area. Your wipers must work. Mirrors should be present and not damaged. Vehicles made after 2000 must have both wing mirrors and a rear-view mirror. Vehicles made before 2000 must have either a rear view mirror or a wing mirror on the driver's side. Safety belts must not be damaged or overly faded and the buckles must work correctly. Correct child restraints must be in the vehicle for any children under 8 years old. The exhaust system is checked for leaks and smoke. There should be no cracks in the exhaust. The exhaust must not be overly noisy. Suspension system. There should be clearance between the tyres and bodywork and no components should be touching the ground. If you have a modified car it might need a certification from LVVTA . Traffic compliance may be offered for minor defects such as worn tyres or smoky vehicles. The defects must be repaired If the defects are major, it might be green-stickered. Conditions for driving the vehicle will be given. A new WoF isn't required if it's a simple fix, but the police may require you to prove you've fixed it. Otherwise, a new Warrant of Fitness will be required. If the defects are serious, the vehicle is unsafe and will be pink-stickered. It must not be driven, and must be fixed immediately. A new WoF will be issued. If you have already been pulled over for a specific issue, or you have significant problems then police might fine you. Just remember: be courteous and polite and offer solutions to the officer rather than making life difficult for them. This way you will stay on the officer's good side and have more of a chance of driving away from the inspection with the ability to fix your car without getting a fine.",
+    "explanation": "Under the Land Transport Act, only a Police officer is legally authorized to stop your vehicle and conduct a roadside check.",
     "image_path": "",
     "merged_count": 4,
     "merged_raw_ids": [
@@ -4495,7 +4497,7 @@
       "No one - they all give way to you",
       "Truck"
     ],
-    "is_multi_answer": false,
+    "is_multi_answer": true,
     "correct_option_indices": [
       0
     ],
@@ -4505,7 +4507,7 @@
     "correct_option_index": 0,
     "correct_letter": "A",
     "correct_answer_text": "[A] Purple car",
-    "explanation": "Give way to vehicles coming from your right. The purple car is to your right, so you must give way to it.",
+    "explanation": "Give way to vehicles coming from your right on the uncontrolled road. The purple car is to your right going straight through, so you must give way to it. The cyclist, green car, and truck all face Give Way signs and must give way to you.",
     "image_path": "export/DTDriverTraining/images/blue-car-lorry-on-left-at-crossroads.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
@@ -4526,7 +4528,7 @@
       "Purple car",
       "Orange car"
     ],
-    "is_multi_answer": false,
+    "is_multi_answer": true,
     "correct_option_indices": [
       1
     ],
@@ -4536,7 +4538,7 @@
     "correct_option_index": 1,
     "correct_letter": "B",
     "correct_answer_text": "[B] Red car",
-    "explanation": "The red car is the only vehicle that will pass in front of you from the right.",
+    "explanation": "When turning left at the roundabout, give way to traffic already circulating or approaching from your immediate right. The red car is the only vehicle that will pass in front of you from the right.",
     "image_path": "export/DTDriverTraining/images/blue-car-turning-left-roundabout.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
@@ -4557,7 +4559,7 @@
       "Motorbike",
       "Orange car"
     ],
-    "is_multi_answer": false,
+    "is_multi_answer": true,
     "correct_option_indices": [
       3
     ],
@@ -4567,7 +4569,7 @@
     "correct_option_index": 3,
     "correct_letter": "D",
     "correct_answer_text": "[D] Motorbike",
-    "explanation": "The motorbike is crossing your path from the right.",
+    "explanation": "At the roundabout, give way to vehicles circulating from your right. The motorbike is crossing your path from the right, so you must give way to it. The orange car is turning left away from your path, and the other vehicles must give way to you.",
     "image_path": "export/DTDriverTraining/images/blue-car-straight-roundabout.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
@@ -4586,7 +4588,7 @@
       "Neither of the vehicles",
       "Green car"
     ],
-    "is_multi_answer": false,
+    "is_multi_answer": true,
     "correct_option_indices": [
       0
     ],
@@ -4596,7 +4598,7 @@
     "correct_option_index": 0,
     "correct_letter": "A",
     "correct_answer_text": "[A] Red car",
-    "explanation": "The green car must give way to you. You have to give way to the red car.",
+    "explanation": "The green car is facing a Give Way sign and must give way to all traffic. Because you are turning right across oncoming traffic, you must give way to the oncoming red car which is turning left.",
     "image_path": "export/DTDriverTraining/images/blue-car-turning-bay.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
@@ -4647,7 +4649,7 @@
       "Green car",
       "None. You have the right of way"
     ],
-    "is_multi_answer": false,
+    "is_multi_answer": true,
     "correct_option_indices": [
       3
     ],
@@ -4657,7 +4659,7 @@
     "correct_option_index": 3,
     "correct_letter": "D",
     "correct_answer_text": "[D] None. You have the right of way",
-    "explanation": "You have right of way as you're continuing straight through the intersection.",
+    "explanation": "You are continuing straight through on a priority road without signs. The purple car is in a right-turn bay and must give way to oncoming through traffic, the red car is at a Stop sign, and the green car is in a separate left-turn lane. You have the right of way over all vehicles.",
     "image_path": "export/DTDriverTraining/images/blue-car-straight-through-turning-bay.jpg",
     "merged_count": 1,
     "merged_raw_ids": [
@@ -6575,7 +6577,7 @@
       "Speed up",
       "Tap your brakes to warn the other drivers"
     ],
-    "is_multi_answer": false,
+    "is_multi_answer": true,
     "correct_option_indices": [
       0
     ],
@@ -6585,7 +6587,7 @@
     "correct_option_index": 0,
     "correct_letter": "A",
     "correct_answer_text": "[A] Check your blind spots",
-    "explanation": "Blind spots when driving We have blind spots in a vehicle because we have limited peripheral vision in our eyes, and our view is obstructed either by the vehicle's pillars or, if you are riding a motorbike, the helmet. Our field of view is almost 200 degrees , but on the edges we see very little detail. We can swivel each eye around 90 degrees and that gives us a horizontal field of view that can approach 200 degrees in some cases, without turning our head, but with not much detail on the edges. Therefore when driving it's important that we turn our head and our eyes to look over our shoulder behind us. When changing lanes it advisable to match your speed with the lane you are moving into as quickly as possible. If the left-hand lane is moving more slowly then you may need to slow down slightly in your lane first before moving over. When you have made your manoeuvre, if you have slotted between two other vehicles then you will have effectively halved the following distance and therefore both you and the other vehicle might need to drop back to maintain the two-second rule. Watch out for traffic braking ahead as you move as this might leave the vehicle behind you nowhere to go if you brake sharply and have cut in too close to it. This is especially important when you pull in front of a heavy vehicle which will take longer to stop. Should you change lanes? If it's not necessary to change lanes, don't do it. You may think you are jumping ahead of the traffic, but at a certain traffic density changing lanes actually slows traffic down as vehicles behind you will have to brake to accommodate your manoeuvre, thus slowing everyone else down behind them. If drivers ahead of you are doing the same that will affect your journey time. When you pull into the left lane, don't do it where another lane is merging.",
+    "explanation": "Before changing lanes to your left, you must signal for at least three seconds and check your mirrors and blind spots over your shoulder.",
     "image_path": "",
     "merged_count": 4,
     "merged_raw_ids": [
@@ -11171,7 +11173,7 @@
       "Long trousers",
       "Boots"
     ],
-    "is_multi_answer": false,
+    "is_multi_answer": true,
     "correct_option_indices": [
       0
     ],
@@ -11181,7 +11183,7 @@
     "correct_option_index": 0,
     "correct_letter": "A",
     "correct_answer_text": "[A] Helmet",
-    "explanation": "How to avoid injuries when riding a motorbike If you want to see how bad your scars can be if you have an accident without wearing protective clothing, check this video out. The lady in question had a helmet on, but no other protective gear. She crashed and slid up the road for 522 feet - about 160m. She has extensive scarring, which is shown in the video. What protective gear do you need for riding a motorbike? This outlines how important it is for a motorcyclist to be properly protected on the road. Tarmac will shred your skin like a cheese grater. Protective clothing can do more than protect your skin, though. A back protector will cushion your spine against impacts, helping prevent debilitating spinal injuries. Sturdy boots will protect your ankles from being broken if they are twisted under the bike, and if they come with shin protection that is even better because if you go over the handlebars you are likely to hit your shins on them, which can shatter the bones. Leather gloves will protect your hands and long trousers will protect your legs. A reflective vest will make you more visible to other road users. The video above shows how important it is to have a full face helmet. You can see where the helmet took the impact - along the side. A half helmet or open face helmets do not have adequate protection. You can read our guide to motorbike helmets here. This article shows where most helmet impacts occur . Carrying passengers A passenger is also required to wear a helmet by law. They are not required to wear any other protective clothing. You must have a full class 6 licence before you can carry a passenger on a motorbike. As well as adjusting your mirror and headlights and firming up your shock absorbers (if your bike comes with this ability), you should put more air in your tyres. You should always ride in your normal position; don't move forwards. What equipment do you need to be able to carry a pillion passenger? You must have foot pegs for the passenger, and enough room on the seat for you to sit normally and the passenger to sit safely without hanging over the end of the seat. Avoiding hypothermia when riding Hypothermia is when your core body temperature drops dangerously, reducing your reflexes. Even on a fine day, the wind chill can cause hypothermia. Riding a bike at 100kph means that winds of 100kph plus any headwind speed will be hitting your body. This can decrease the effective temperature by a lot. For example, if the air temperature is 20 degrees Celsius and you are riding at 100kph, the effective temperature is 12.4 degrees Celsius. You can find a wind chill calculator here .",
+    "explanation": "By New Zealand law, a motorcyclist is required to wear an approved, securely fastened safety helmet at all times when riding on the road.",
     "image_path": "",
     "merged_count": 2,
     "merged_raw_ids": [
@@ -11423,7 +11425,7 @@
       "It keeps the face of the rider warm in cooler temperatures",
       "It's impossible to breath without one above 80kph"
     ],
-    "is_multi_answer": false,
+    "is_multi_answer": true,
     "correct_option_indices": [
       1
     ],
@@ -11433,7 +11435,7 @@
     "correct_option_index": 1,
     "correct_letter": "B",
     "correct_answer_text": "[B] The rider's eyes and face are protected from wind, rain, insects, dust and other debris",
-    "explanation": "Helmet impact points The smallest helmet you can purchase is a half helmet. It contains no face protection and minimal protection for the back and sides of the head. Half helmets work well if you get a hit on the top of your head, or around the crown. Unfortunately for riders with half helmets, less than 35% of crashes show an impact in these areas. If you like your pretty face, there's a 55% chance it's going to be rearranged by the tarmac, another vehicle, or some vegetation - that's how many impacts there are direct to the face. And those impacts usually mean significant plastic surgery, and complete reconstruction of your jaw and nose. On the side and back of your head you are also at risk. These diagrams shows how: You may think that you would be completely able to adjust where your head hits, but this isn't the case as many impacts render the rider unconscious, and that means your face sliding down the road with you being blissfully unaware. Until (or if) you wake up. The images show that even a helmet with good side protection but no chin protection would leave you exposed to a high risk of facial injury. Helmets with no visor protection also increase the risk of non-accident facial injury by stones kicked up from other vehicles, or heavier insects such as bees. This means that motocross helmets come with risks, and goggles aren't as strong as a plastic visor. You can choose a helmet style here.",
+    "explanation": "Face protection (such as a full-face helmet visor or goggles) protects the rider's eyes and face from wind, rain, insects, and flying road debris, ensuring clear vision.",
     "image_path": "",
     "merged_count": 2,
     "merged_raw_ids": [
@@ -14085,17 +14087,19 @@
       "If you're made because someone cuts in front of you",
       "To say good-bye as you leave your family's house"
     ],
-    "is_multi_answer": false,
+    "is_multi_answer": true,
     "correct_option_indices": [
-      0
+      0,
+      1
     ],
     "correct_letters": [
-      "A"
+      "A",
+      "B"
     ],
     "correct_option_index": 0,
-    "correct_letter": "A",
-    "correct_answer_text": "[A] To warn another driver of your presence",
-    "explanation": "Your horn should only be used for a reasonable traffic warning.",
+    "correct_letter": "A, B",
+    "correct_answer_text": "[A] To warn another driver of your presence / [B] To warn a motorcycle that you are approaching",
+    "explanation": "A horn should only be used as a reasonable traffic warning, such as warning another driver of your presence or alerting an approaching motorcyclist. It must not be used in anger or as a farewell.",
     "image_path": "",
     "merged_count": 1,
     "merged_raw_ids": [
@@ -14498,7 +14502,7 @@
       "Leather pants",
       "Goggles"
     ],
-    "is_multi_answer": false,
+    "is_multi_answer": true,
     "correct_option_indices": [
       0
     ],
@@ -14508,7 +14512,7 @@
     "correct_option_index": 0,
     "correct_letter": "A",
     "correct_answer_text": "[A] Helmet",
-    "explanation": "How to avoid injuries when riding a motorbike If you want to see how bad your scars can be if you have an accident without wearing protective clothing, check this video out. The lady in question had a helmet on, but no other protective gear. She crashed and slid up the road for 522 feet - about 160m. She has extensive scarring, which is shown in the video. What protective gear do you need for riding a motorbike? This outlines how important it is for a motorcyclist to be properly protected on the road. Tarmac will shred your skin like a cheese grater. Protective clothing can do more than protect your skin, though. A back protector will cushion your spine against impacts, helping prevent debilitating spinal injuries. Sturdy boots will protect your ankles from being broken if they are twisted under the bike, and if they come with shin protection that is even better because if you go over the handlebars you are likely to hit your shins on them, which can shatter the bones. Leather gloves will protect your hands and long trousers will protect your legs. A reflective vest will make you more visible to other road users. The video above shows how important it is to have a full face helmet. You can see where the helmet took the impact - along the side. A half helmet or open face helmets do not have adequate protection. You can read our guide to motorbike helmets here. This article shows where most helmet impacts occur . Carrying passengers A passenger is also required to wear a helmet by law. They are not required to wear any other protective clothing. You must have a full class 6 licence before you can carry a passenger on a motorbike. As well as adjusting your mirror and headlights and firming up your shock absorbers (if your bike comes with this ability), you should put more air in your tyres. You should always ride in your normal position; don't move forwards. What equipment do you need to be able to carry a pillion passenger? You must have foot pegs for the passenger, and enough room on the seat for you to sit normally and the passenger to sit safely without hanging over the end of the seat. Avoiding hypothermia when riding Hypothermia is when your core body temperature drops dangerously, reducing your reflexes. Even on a fine day, the wind chill can cause hypothermia. Riding a bike at 100kph means that winds of 100kph plus any headwind speed will be hitting your body. This can decrease the effective temperature by a lot. For example, if the air temperature is 20 degrees Celsius and you are riding at 100kph, the effective temperature is 12.4 degrees Celsius. You can find a wind chill calculator here .",
+    "explanation": "Under New Zealand Land Transport law, only an approved, securely fastened safety helmet is mandatory for a motorcycle passenger. Other protective gear (boots, jacket, leather pants, goggles) is strongly recommended for safety, but is not mandated by law.",
     "image_path": "",
     "merged_count": 2,
     "merged_raw_ids": [
