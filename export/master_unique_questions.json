@@ -875,7 +875,7 @@
       "If you're angry and upset at someone because they took your parking space",
       "As you drop off your kids at school"
     ],
-    "is_multi_answer": false,
+    "is_multi_answer": true,
     "correct_option_indices": [
       0
     ],
@@ -1371,7 +1371,7 @@
       "If the vehicle stops in front it gives you enough time to stop",
       "If required two seconds is enough time to stop in any weather conditions."
     ],
-    "is_multi_answer": false,
+    "is_multi_answer": true,
     "correct_option_indices": [
       1
     ],
