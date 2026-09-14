@@ -159,7 +159,7 @@
     "source": "Official NZTA / Waka Kotahi",
     "category": "Core",
     "license_class": "All Classes",
-    "prompt": "At what time are you permitted to pass another moving vehicle to its right?",
+    "prompt": "At what time are you permitted to pass another moving vehicle to its right? Select all that apply.",
     "options": [
       "When you start passing you can see 100m in front of you",
       "You've signalled right for at least 3 seconds",
@@ -272,19 +272,17 @@
       "Yes",
       "Yes, but only if a supervisor agrees to it"
     ],
-    "is_multi_answer": true,
+    "is_multi_answer": false,
     "correct_option_indices": [
-      1,
       2
     ],
     "correct_letters": [
-      "B",
       "C"
     ],
-    "correct_option_index": 1,
-    "correct_letter": "B, C",
-    "correct_answer_text": "[B] Yes / [C] Yes, but only if a supervisor agrees to it",
-    "explanation": "Driving restrictions when on a learner licence To get a learner licence you'll have to practice and pass a theory test , which you can do for free on this website. When you have a learner licence you must have a supervisor at all times and display L plates on your vehicle. You can drive most light vehicles (such as cars, vans and utes), all terrain vehicles, mopeds (but not motorbikes), and some agricultural vehicles. You must carry your driver licence with you at all times when driving. What is a supervisor? A supervisor must have held a full NZ licence, or an equivalent overseas licence, for at least two years, and they must carry their licence while they are supervising you. They will sit in the passenger seat next to you while you are driving so that they can help if you get into difficulties. If you are learning to ride a moped and have a learner licence you must always display an L plate, must not carry passengers and must not ride between 10pm - 5am. Once you've got your learner licence, use the Practice program to help accelerate your learning. You must hold your learner licence for at least 6 months before you can progress to a restricted licence.",
+    "correct_option_index": 2,
+    "correct_letter": "C",
+    "correct_answer_text": "[C] Yes, but only if a supervisor agrees to it",
+    "explanation": "You can carry passengers on a learner licence, but only if your supervisor agrees. The supervisor must sit in the front passenger seat and hold a full NZ licence for at least 2 years.",
     "image_path": "",
     "merged_count": 3,
     "merged_raw_ids": [
@@ -1192,19 +1190,17 @@
       "35 demerit points",
       "$225 fine"
     ],
-    "is_multi_answer": true,
+    "is_multi_answer": false,
     "correct_option_indices": [
-      0,
-      1
+      0
     ],
     "correct_letters": [
-      "A",
-      "B"
+      "A"
     ],
     "correct_option_index": 0,
-    "correct_letter": "A, B",
-    "correct_answer_text": "[A] 25 demerit points and a $100 fine / [B] 25 demerit points",
-    "explanation": "",
+    "correct_letter": "A",
+    "correct_answer_text": "[A] 25 demerit points and a $100 fine",
+    "explanation": "Failing to display L plates when required carries an infringement fee of $100 and 25 demerit points.",
     "image_path": "",
     "merged_count": 1,
     "merged_raw_ids": [
@@ -4097,12 +4093,12 @@
     "source": "DT Driver Training (Extended)",
     "category": "Car - Intersection",
     "license_class": "Class 1 (Car)",
-    "prompt": "Which of these are T-intersections (or T-junctions)? Select all that apply",
+    "prompt": "Which of these are T-intersections (or T-junctions)? Select all that apply.",
     "options": [
-      "A",
-      "B",
-      "C",
-      "D"
+      "Intersection A",
+      "Intersection B",
+      "Intersection C",
+      "Intersection D"
     ],
     "is_multi_answer": true,
     "correct_option_indices": [
@@ -4115,9 +4111,9 @@
     ],
     "correct_option_index": 1,
     "correct_letter": "B, D",
-    "correct_answer_text": "[B] B / [D] D",
+    "correct_answer_text": "[B] Intersection B / [D] Intersection D",
     "explanation": "What is a T-intersection? T intersections are the most basic of intersections where one road meets another at right angles (or close to a right angle). They are less complex than crossroads. T intersections work well in low and medium volumes of traffic but can be difficult to emerge from when turning right if traffic is heavy. When a T-intersection gets busy, or there are a number of accidents, it might have traffic lights installed to control when vehicles can go. Otherwise the intersection might be uncontrolled (no lines), a give way (a white line) or a stop (yellow line). When a stop sign is placed at a T-intersection it is usually because visibility of the road is restricted as you approach it.",
-    "image_path": "",
+    "image_path": "export/DTDriverTraining/images/t_intersections_composite.png",
     "merged_count": 1,
     "merged_raw_ids": [
       1191
@@ -4131,10 +4127,10 @@
     "license_class": "Class 1 (Car)",
     "prompt": "Which of these signs wouldn't you see as you approach a roundabout?",
     "options": [
-      "A",
-      "B",
-      "C",
-      "D"
+      "Sign A (Roundabout ahead)",
+      "Sign B (Give way)",
+      "Sign C (Keep left)",
+      "Sign D (Open road speed limit)"
     ],
     "is_multi_answer": false,
     "correct_option_indices": [
@@ -4145,9 +4141,9 @@
     ],
     "correct_option_index": 3,
     "correct_letter": "D",
-    "correct_answer_text": "[D] D",
+    "correct_answer_text": "[D] Sign D (Open road speed limit)",
     "explanation": "Roundabout signs When you start looking for signage you'll see that there's a lot of it, and the approach to roundabouts is one area where a number of signs warn drivers and instruct them what to do. In everyday driving we might not notice them because they eventually just seem like common sense, for example the blue arrow to keep left. On some roundabouts in poorly lit areas, left-pointing chevrons might be used as further warning to drivers that they are approaching the roundabout.",
-    "image_path": "",
+    "image_path": "export/DTDriverTraining/images/roundabout_signs_composite.png",
     "merged_count": 1,
     "merged_raw_ids": [
       1196
@@ -4768,19 +4764,24 @@
     "category": "Intersection",
     "license_class": "All Classes",
     "prompt": "You are waiting to turn left and you are in the left-hand lane at traffic signals. Which of these traffic signals may you move on?",
-    "options": [],
+    "options": [
+      "Signal A",
+      "Signal B",
+      "Signal C",
+      "Signal D"
+    ],
     "is_multi_answer": false,
     "correct_option_indices": [
-      0
+      1
     ],
     "correct_letters": [
-      "A"
+      "B"
     ],
-    "correct_option_index": 0,
-    "correct_letter": "A",
-    "correct_answer_text": "[A]",
-    "explanation": "You must wait because the signal has a red left arrow.",
-    "image_path": "",
+    "correct_option_index": 1,
+    "correct_letter": "B",
+    "correct_answer_text": "[B] Signal B",
+    "explanation": "Signal B has a green left-turn arrow showing that left-turning traffic may proceed. Signals A, C, and D all show a red left-turn arrow, which prohibits turning left.",
+    "image_path": "export/NZTA_Official_Road_Code/images/traffic_signals_turn_left.png",
     "merged_count": 3,
     "merged_raw_ids": [
       306,
@@ -5052,19 +5053,24 @@
     "category": "Signs",
     "license_class": "All Classes",
     "prompt": "At a railway level crossing, which of these signs won't you see?",
-    "options": [],
+    "options": [
+      "Sign A",
+      "Sign B",
+      "Sign C",
+      "Sign D"
+    ],
     "is_multi_answer": false,
     "correct_option_indices": [
-      0
+      2
     ],
     "correct_letters": [
-      "A"
+      "C"
     ],
-    "correct_option_index": 0,
-    "correct_letter": "A",
-    "correct_answer_text": "[A]",
-    "explanation": "You won't see C, it is a one-way bridge sign.",
-    "image_path": "",
+    "correct_option_index": 2,
+    "correct_letter": "C",
+    "correct_answer_text": "[C] Sign C",
+    "explanation": "You won't see Sign C, as it is a one-lane bridge warning sign, not a railway level crossing sign.",
+    "image_path": "export/NZTA_Official_Road_Code/images/railway_crossing_signs.png",
     "merged_count": 3,
     "merged_raw_ids": [
       116,
@@ -5313,19 +5319,17 @@
       "Yellow",
       "Yellow, or yellow and purple"
     ],
-    "is_multi_answer": true,
+    "is_multi_answer": false,
     "correct_option_indices": [
-      2,
       3
     ],
     "correct_letters": [
-      "C",
       "D"
     ],
-    "correct_option_index": 2,
-    "correct_letter": "C, D",
-    "correct_answer_text": "[C] Yellow / [D] Yellow, or yellow and purple",
-    "explanation": "Yellow and purple lights are the colour of the first pilot vehicle's lights and the second one has yellow lights. Police vehicles have red and blue lights, maintenance vehicles have yellow flashing lights and fire and ambulance engines have red lights.",
+    "correct_option_index": 3,
+    "correct_letter": "D",
+    "correct_answer_text": "[D] Yellow, or yellow and purple",
+    "explanation": "First pilot vehicles display yellow and purple flashing lights, while second or subsequent pilot vehicles display yellow flashing lights. Therefore, pilot vehicles have yellow, or yellow and purple lights.",
     "image_path": "",
     "merged_count": 3,
     "merged_raw_ids": [
@@ -6322,10 +6326,10 @@
     "license_class": "Class 1 (Car)",
     "prompt": "Which of these signs won't you see at a railway level crossing?",
     "options": [
-      "A",
-      "B",
-      "C",
-      "D"
+      "Sign A",
+      "Sign B",
+      "Sign C",
+      "Sign D"
     ],
     "is_multi_answer": false,
     "correct_option_indices": [
@@ -6336,9 +6340,9 @@
     ],
     "correct_option_index": 2,
     "correct_letter": "C",
-    "correct_answer_text": "[C] C",
-    "explanation": "What signs will you see for railway level crossings? A railway level crossing is a place where railway tracks cross a road at the same level as the road. As such, they need signage to warn vehicles to give way to trains. Signs that show the position of a railway level crossing will be shown on a yellow diamond. These can indicate that the crossing is ahead of you at a certain angle, on a minor side road, or on a major road after an intersection. Warning signs can show a train either pointing left or right, and a crossbuck sign . These are often positioned around 200m before the crossing. The signs in answers A and B above show uncontrolled railway crossings with a give way or a compulsory stop. A controlled railway crossing will have lights, sirens and/or barrier arms. To see every type of sign used in New Zealand railway crossings, more information about controlled and uncontrolled level crossings, and rules around driving over crossings, check out our article here .",
-    "image_path": "",
+    "correct_answer_text": "[C] Sign C",
+    "explanation": "Sign C is a one-lane bridge give-way sign, which is not used at railway level crossings. Signs A, B, and D are standard railway crossing signs.",
+    "image_path": "export/NZTA_Official_Road_Code/images/railway_crossing_signs.png",
     "merged_count": 1,
     "merged_raw_ids": [
       1018
@@ -6599,22 +6603,20 @@
     "license_class": "All Classes",
     "prompt": "Can you use a right turn bay to overtake a vehicle travelling straight ahead?",
     "options": [
-      "Correct",
-      "Incorrect",
-      "If the road is clear ahead then yes"
+      "No",
+      "Yes",
+      "Only if the road ahead is clear"
     ],
-    "is_multi_answer": true,
+    "is_multi_answer": false,
     "correct_option_indices": [
-      0,
-      1
+      0
     ],
     "correct_letters": [
-      "A",
-      "B"
+      "A"
     ],
     "correct_option_index": 0,
-    "correct_letter": "A, B",
-    "correct_answer_text": "[A] Correct / [B] Incorrect",
+    "correct_letter": "A",
+    "correct_answer_text": "[A] No",
     "explanation": "You cannot use a right turning bay to overtake, you can only use it if you are turning right.",
     "image_path": "",
     "merged_count": 1,
@@ -7486,19 +7488,17 @@
       "Yes",
       "Yes, as long as you can see 100m ahead of you for the whole time you are passing and you can make the pass without crossing the yellow line."
     ],
-    "is_multi_answer": true,
+    "is_multi_answer": false,
     "correct_option_indices": [
-      1,
       2
     ],
     "correct_letters": [
-      "B",
       "C"
     ],
-    "correct_option_index": 1,
-    "correct_letter": "B, C",
-    "correct_answer_text": "[B] Yes / [C] Yes, as long as you can see 100m ahead of you for the whole time you are passing and you can make the pass without crossing the yellow line.",
-    "explanation": "As long as you stay left of the yellow line then you can pass a car in this situation.",
+    "correct_option_index": 2,
+    "correct_letter": "C",
+    "correct_answer_text": "[C] Yes, as long as you can see 100m ahead of you for the whole time you are passing and you can make the pass without crossing the yellow line.",
+    "explanation": "You may only pass on a solid yellow line if you can do so without crossing the line and you have at least 100m of clear road ahead of you throughout the entire manoeuvre.",
     "image_path": "export/NZTA_Official_Road_Code/images/nzroad_370.png",
     "merged_count": 2,
     "merged_raw_ids": [
@@ -7964,21 +7964,17 @@
       "Disqualified for six months",
       "First time offenders are let off without punishment"
     ],
-    "is_multi_answer": true,
+    "is_multi_answer": false,
     "correct_option_indices": [
-      0,
-      1,
-      2
+      0
     ],
     "correct_letters": [
-      "A",
-      "B",
-      "C"
+      "A"
     ],
     "correct_option_index": 0,
-    "correct_letter": "A, B, C",
-    "correct_answer_text": "[A] Three months in prison, $4500 fine, disqualified for six months or more / [B] $500 fine, disqualified for six months / [C] Disqualified for six months",
-    "explanation": "Breath screening tests A police officer can require you to undergo a breath screening test. There are steep fines if you refuse to consent to an evidential test. If you do need an evidential test you will need to give your vehicle keys to the police officer and you will then accompany them for a test. This might be in a roadside ‘booze bus’ (a vehicle kitted out with testing equipment), or you may have to accompany them to a police station. If you opt for the blood test they will have a medical doctor take the blood. You can refuse an evidential blood test , but you must then consent to an evidential breath test and vice versa. If the evidential breath test result is over the limit you can request a blood test for confirmation. You are allowed to call a lawyer before the evidential blood or breath test and if you don’t have a phone available, one will be made available for you. There are specialist drink-drive (DUI) lawyers. Implications for your vehicle's safety You may need to leave your vehicle on the side of the road if you are instructed by a police officer to accompany them to the station, unless someone who is with you is legally able to drive the vehicle to another location. By 'legally able' this means of legal age, holding the right type of licence, not under any kind of suspension or disqualification, and not under the influence of drugs or alcohol. You can call a tow truck, but this will be at your expense and could cost a couple of hundred dollars. If you are stopped on the motorway then you will be legally required to move your vehicle If you choose to leave your vehicle on the side of the road then it is at risk of vandalism. Penalties If you are 16-19 years old the alcohol limit is zero. If you are 20 years old or over, the alcohol limit is 50mg per 100ml of blood or 250mcg per litre of breath. If your test reading is greater than 130mg per 100ml of blood or 650mcg per litre of breath you will receive an immediate on-the-spot licence suspension, as long as you have no prior convictions for operating or attempting to operate a vehicle while intoxicated (“under the influence of excess breath alcohol”), or for refusing to provide a sample, or for causing death or injury while driving under the influence. If your reading is between 251-400mcg you will receive a $200 fine and 50 demerit points and will be banned from driving for 12 hours. If you have a previous conviction then you will receive the licence suspension immediately you are above the limit. The suspension is for 28 days, and there are court-imposed penalties to add on the top. Examples of fines and penalties Killing or injuring someone while you’re driving under the influence: up to 10 years in prison, up to $20,000 fine and one year or more disqualification from driving. If you’ve already been convicted of a drink-driving offence, then your suspension will likely be more than one year. Driving while under the influence (i.e. more than 80mg/100ml): for a first or second offence you could receive up to 3 months in jail, a fine of up to $4500 and six months or more disqualification. If you have at least two previous convictions then you could face up to two years in prison and a fine of up to $6000, with a disqualification of at least one year. The court may also impose a zero alcohol licence if you’ve already been convicted. If it’s your first conviction then you may need to use an alcohol interlock after a three-month disqualification. If you are under 20 and have more than 30mg/100ml or 150mcg per litre you could face up to 3 months in jail, a fine of up to $2250 and a disqualification of 3 months or more. If you refuse to give blood you could face up to 3 months in jail, a fine of up to $4500 and a disqualification of 6 months or more. This rises to up to 2 years in jail, up to $6000 in fines and a disqualification of more than one year if you have at least two previous convictions. If you don’t hand over your vehicle’s keys the fine is up to $10,000. Alcohol and drug limits It's no longer cool to have 'one for the road'. Any consumption of alcohol has an effect on your driving by impairing your reactions, making you over-confident, making it more likely you will fall asleep at the wheel and reducing your ability to perceive speed and distance. In fact, your reactions suffer well before you even start feeling drunk. Remember that the limit for a driver under 20 years old is effectively zero - one drink will put you over the limit. For information about calculating your blood alcohol level and the types of fines and penalties you can get, click here .",
+    "correct_letter": "A",
+    "correct_answer_text": "[A] Three months in prison, $4500 fine, disqualified for six months or more",
+    "explanation": "If you refuse to give blood for an evidential blood alcohol test, the maximum penalty for a first offence is up to three months in prison, up to a $4500 fine, and disqualification from driving for six months or more.",
     "image_path": "",
     "merged_count": 1,
     "merged_raw_ids": [
@@ -9797,22 +9793,20 @@
     "license_class": "All Classes",
     "prompt": "Does a broken yellow line painted close to the edge of the road indicate that you may stop or park your vehicle there at any time?",
     "options": [
-      "Correct.",
+      "Correct",
       "Incorrect"
     ],
-    "is_multi_answer": true,
+    "is_multi_answer": false,
     "correct_option_indices": [
-      0,
       1
     ],
     "correct_letters": [
-      "A",
       "B"
     ],
-    "correct_option_index": 0,
-    "correct_letter": "A, B",
-    "correct_answer_text": "[A] Correct. / [B] Incorrect",
-    "explanation": "If there is a broken yellow line, you can't park there.",
+    "correct_option_index": 1,
+    "correct_letter": "B",
+    "correct_answer_text": "[B] Incorrect",
+    "explanation": "A broken yellow line painted near the edge of the road means no stopping or parking at any time.",
     "image_path": "",
     "merged_count": 1,
     "merged_raw_ids": [
@@ -11755,7 +11749,7 @@
     "source": "Official NZTA / Waka Kotahi",
     "category": "Behaviour",
     "license_class": "Class 6 (Motorcycle)",
-    "prompt": "If the vehicle behind you starts to pass you, what should you do?",
+    "prompt": "If the vehicle behind you starts to pass you, what should you do? Select all that apply.",
     "options": [
       "Move over to the far left hand side of the road",
       "Maintain your speed",
@@ -15800,19 +15794,17 @@
       "The weight of the load",
       "Half the weight of the load"
     ],
-    "is_multi_answer": true,
+    "is_multi_answer": false,
     "correct_option_indices": [
-      1,
       2
     ],
     "correct_letters": [
-      "B",
       "C"
     ],
-    "correct_option_index": 1,
-    "correct_letter": "B, C",
-    "correct_answer_text": "[B] The weight of the load / [C] Half the weight of the load",
-    "explanation": "Heavy vehicle weights and loads The tare weight is the weight of the vehicle itself, not including any load. Gross weight is the combined weight of a vehicle and its load, accessories and equipment. Before an overweight vehicle or load can be used on the road, the driver must obtain an overweight permit, which must be carried in the vehicle. You can get one from your local NZTA office. Lashings and tie downs You can see in this image that the front pipe has two lashings through it to stop it rolling. The pipe is blocked by another concrete platter at the front and has chocks to also help prevent it shifting (these are small wooden blocks in a triangle shape. The load is distributed so that the centre of the heaviest part of the load (the two pipes) is just in front of the rear axle. The combined rated strength of lashings or tie downs placed over rigid loads on heavy motor vehicles where loaded against a headboard must exceed that of the load. The combined rated strength of lashings or tie downs placed over rigid loads on heavy motor vehicles where not loaded against a headboard must exceed twice that of the load. For sideways forces, the load restraint system must be able to take at least half the weight of the load to keep it secure. Anchor points to which lashings are secured must have a strength of at least the same strength as the lashings. Axle loads There are four types of axle: single (S), single large-tyred (SL), single mega-tyred axle, and twin-tyred (T) . The maximum load on a single standard-tyred axle is 6000kg. The maximum load on a single large-tyred axle is 7200kg. The maximum load on a single mega-tyred axle is 7600kg, or 7200kg if it's a steering axle The maximum load on a twin-tyred axle is 8200kg. Weights must be distributed so that at least 20% of the load remains over the front wheels. This is especially important in vehicles with a large rear overhang. When there's not enough weight over the front wheels, steering performance is reduced and the vehicle is more likely to understeer (continue straight ahead even though the wheels are turned). This axle loading diagram shows how much weight various combinations of tandem axles can take. Tri-axle sets can take even more. An quad axle sets, often seen on tankers can carry up to 20,000kg. Maximum total mass for: Vehicles of 7 or 8 axles 16.8m or more with a minimum of 7 axles: 45,000kg 17.4m or more with a minimum of 8 axles: 46,000kg A-trains and B-trains The combined gross mass of an A-train must not exceed 39 tonnes. The combined gross mass of a B-train must not exceed 39 tonnes, unless it has: at least two motor-driven axles in a tandem or tri axle set three motor-driven axles in a tri-axle set Simple trailers The gross mass of a simple trailer must not exceed 36 tonnes (or 40 tonnes if the towing connection is a roll-coupled hitch approved by the NZ Transport Agency). Loading certificate A loading certificate (or certificate of loading) must contain the tare weight in kg, the gross laden weight in kg, the gross combination weight in kg (if the vehicle has a towing connection) and static roll threshold height and weight limits (when laden or unladen, most goods service vehicles with a maximum gross vehicle mass (GVM) exceeding 12 tonnes must have a static roll threshold (SRT) of at least 0.35 g (where g is the acceleration due to gravity)). If it's a passenger vehicle it will show the seating capacity. .",
+    "correct_option_index": 2,
+    "correct_letter": "C",
+    "correct_answer_text": "[C] Half the weight of the load",
+    "explanation": "For sideways forces, the load restraint system must be able to withstand at least half the weight of the load (0.5g).",
     "image_path": "",
     "merged_count": 2,
     "merged_raw_ids": [
@@ -16552,21 +16544,17 @@
       "50mm each side",
       "100mm each side"
     ],
-    "is_multi_answer": true,
+    "is_multi_answer": false,
     "correct_option_indices": [
-      0,
-      2,
-      3
+      0
     ],
     "correct_letters": [
-      "A",
-      "C",
-      "D"
+      "A"
     ],
     "correct_option_index": 0,
-    "correct_letter": "A, C, D",
-    "correct_answer_text": "[A] 0mm each side / [C] 50mm each side / [D] 100mm each side",
-    "explanation": "Heavy vehicle dimensions and measurements Class 2 The forward distance is the measurement is from the rear axis to the front of the vehicle or its load. The maximum distance a vehicle or its load may extend forward from the front edge of the driver's seat (in its rearmost position) is three metres. On a rigid vehicle that has two axle sets and is steered by the front axle set the front axis is as shown - the centre point of the front axle. The maximum width allowed for a vehicle (other than an agricultural vehicle) including its load is 2.55m, or 1.275m each side of a longitudinal centre line. Straps or tensioning devices must not be permanently or rigidly fixed to the vehicle. The only extra width allowed is: side marker lamps and direction indicators collapsible mirrors that extend not more than: 240mm beyond the side of a vehicle or its trailer; and 1.49m when measured from a vehicle’s longitudinal centre-line central tyre inflation system hoses that extend not more than 75mm beyond the outside of the tyre on the drive axles of a heavy motor vehicle a hubodometer that extends not more than 50mm beyond one side of a vehicle from a non-lifting, non-steering axle whose outer casings are of a light colour, provided the hubodometer is fitted on the axle that causes the least overwidth cab exterior grabrails that extend not more than 1.325m when measured from a vehicle’s longitudinal centre-line the bulge towards the bottom of a tyre trolley bus poles and their safety cables, when extended to collect electric power from overhead conducting wires, provided there is a 2.5m ground clearance outside the body of a bus cameras or close-proximity monitoring systems mounted on the side exterior of a vehicle that extends not more than 70mm from the side wall of the vehicle devices for improving the aerodynamic performance of a vehicle that extend not more than 25mm from either side of a vehicle. The maximum height from the ground permitted for a vehicle, including its load is shown above at point 2. It is 4.3m including lashings, tarpaulins, straps, chains or covers (load securing devices). The straps or tensioning devices must not be permanently or rigidly fixed to the vehicle. When you are driving a heavy vehicle, or any vehicle towing a load, you will need to be aware of signs (such as the one shown on the left) on bridges and other spans across roads indicating a maximum height clearance. The maximum forward distance for a heavy rigid vehicle without a tow coupling is shown above at point 1, and is 9.5m. If the vehicle has a tow coupling it is reduced to 8.5m. For a heavy rigid vehicle whose rear-most axle is a non-steering axle, the maximum rear overhang permitted including its load is shown at point 4. It is the lesser of 4m or 70% of the wheelbase. The maximum overall length for a heavy rigid vehicle including its load when not towing a trailer is shown at point 3 above. It is 12.6m not including collapsible mirrors, or 11.5m if towing a trailer. A tandem axle is two axles where the centres are spaced no less than 1 metre and no more than 2 metres apart. A tri-axle set means three axles where the centres of the first and third axels are spaced no less than 2m apart and no more than 3m apart with all axles containing an equal number of tyres and none of the axles being a single standard-tyred axle. The wheelbase is measured from the rear axis to the centre of the foremost axle. In a tandem axle, as shown above, the rear axis is half way between them. If it was a single axle, the rear axis is where the rear axle is. Reflectors Heavy motor vehicles must display two or more approved red reflectors. The reflectors must be at least 30cm2 in diameter and they must be placed at 1.5m above ground level, but not more than 2.1m if 1.5m is impractical. Class 3-5 The maximum width permitted for a heavy trailer (other than an agricultural trailer) from its longitudinal centre line is 2.55m, the same as other vehicles. The maximum overall length for a rigid vehicle and semi-trailer combination (including load, but excluding collapsible mirrors) is 19m. If it was with a trailer, it would be 20m. The maximum overall length for any heavy motor vehicle towing two trailers is 20m. This length applies whether it's an A-train, B-train, pole trailer or simple trailer. The maximum distance a load may extend behind the body of a trailer before an over-dimension flag is required on the end of the load is 1m. There are different lighting requirements depending on the dimensions of the load. At night the flag must be replaced by one or more lights, depending on the characteristics of the load. If the load is up to 1m long and more than 1m wide then you only need one rear-facing red light in the centre of the load. Heavy motor vehicles and vehicles fitted with a flat deck or tray for carrying goods that are parked on the street at night must display a rear-facing red light that is visible at least 100m away and is on the side of the vehicle closest to the centre line. If it's an over-dimension vehicle (i.e. one with a projecting load) then the lights must be visible from at least 200m away during the hours of darkness. Rear overhang means the distance from the rear axis to the rear of the vehicle or its load, whichever is greater. The maximum for a heavy full trailer is 4 metres or 50 percent of the wheelbase, as shown in the diagram above, whichever is less. For a semi-trailer, forward distance means the distance from the rear axis of the semi-trailer to the centre of the kingpin. The maximum is 9.2 metres. Full weights and measures can be found here . See if you know your class 2 measurements: take a free quiz here .",
+    "correct_letter": "A",
+    "correct_answer_text": "[A] 0mm each side",
+    "explanation": "Fasteners used in securing loads are permitted 0mm additional width each side.",
     "image_path": "",
     "merged_count": 1,
     "merged_raw_ids": [
@@ -16585,21 +16573,17 @@
       "The weight of the load",
       "Half the weight of the load"
     ],
-    "is_multi_answer": true,
+    "is_multi_answer": false,
     "correct_option_indices": [
-      0,
-      1,
-      2
+      1
     ],
     "correct_letters": [
-      "A",
-      "B",
-      "C"
+      "B"
     ],
-    "correct_option_index": 0,
-    "correct_letter": "A, B, C",
-    "correct_answer_text": "[A] Twice the weight of the load / [B] The weight of the load / [C] Half the weight of the load",
-    "explanation": "Heavy vehicle weights and loads The tare weight is the weight of the vehicle itself, not including any load. Gross weight is the combined weight of a vehicle and its load, accessories and equipment. Before an overweight vehicle or load can be used on the road, the driver must obtain an overweight permit, which must be carried in the vehicle. You can get one from your local NZTA office. Lashings and tie downs You can see in this image that the front pipe has two lashings through it to stop it rolling. The pipe is blocked by another concrete platter at the front and has chocks to also help prevent it shifting (these are small wooden blocks in a triangle shape. The load is distributed so that the centre of the heaviest part of the load (the two pipes) is just in front of the rear axle. The combined rated strength of lashings or tie downs placed over rigid loads on heavy motor vehicles where loaded against a headboard must exceed that of the load. The combined rated strength of lashings or tie downs placed over rigid loads on heavy motor vehicles where not loaded against a headboard must exceed twice that of the load. For sideways forces, the load restraint system must be able to take at least half the weight of the load to keep it secure. Anchor points to which lashings are secured must have a strength of at least the same strength as the lashings. Axle loads There are four types of axle: single (S), single large-tyred (SL), single mega-tyred axle, and twin-tyred (T) . The maximum load on a single standard-tyred axle is 6000kg. The maximum load on a single large-tyred axle is 7200kg. The maximum load on a single mega-tyred axle is 7600kg, or 7200kg if it's a steering axle The maximum load on a twin-tyred axle is 8200kg. Weights must be distributed so that at least 20% of the load remains over the front wheels. This is especially important in vehicles with a large rear overhang. When there's not enough weight over the front wheels, steering performance is reduced and the vehicle is more likely to understeer (continue straight ahead even though the wheels are turned). This axle loading diagram shows how much weight various combinations of tandem axles can take. Tri-axle sets can take even more. An quad axle sets, often seen on tankers can carry up to 20,000kg. Maximum total mass for: Vehicles of 7 or 8 axles 16.8m or more with a minimum of 7 axles: 45,000kg 17.4m or more with a minimum of 8 axles: 46,000kg A-trains and B-trains The combined gross mass of an A-train must not exceed 39 tonnes. The combined gross mass of a B-train must not exceed 39 tonnes, unless it has: at least two motor-driven axles in a tandem or tri axle set three motor-driven axles in a tri-axle set Simple trailers The gross mass of a simple trailer must not exceed 36 tonnes (or 40 tonnes if the towing connection is a roll-coupled hitch approved by the NZ Transport Agency). Loading certificate A loading certificate (or certificate of loading) must contain the tare weight in kg, the gross laden weight in kg, the gross combination weight in kg (if the vehicle has a towing connection) and static roll threshold height and weight limits (when laden or unladen, most goods service vehicles with a maximum gross vehicle mass (GVM) exceeding 12 tonnes must have a static roll threshold (SRT) of at least 0.35 g (where g is the acceleration due to gravity)). If it's a passenger vehicle it will show the seating capacity. .",
+    "correct_option_index": 1,
+    "correct_letter": "B",
+    "correct_answer_text": "[B] The weight of the load",
+    "explanation": "The combined rated strength of lashings or tie downs placed over rigid loads on heavy motor vehicles where loaded against a headboard must be at least the weight of the load.",
     "image_path": "",
     "merged_count": 2,
     "merged_raw_ids": [
