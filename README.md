@@ -28,14 +28,27 @@ High-density browsing at **100 questions per page** with intuitive circular radi
 
 ---
 
-### 2. Instant Quiz Mode & Answer Feedback
+### 2. Official NZTA Theory Handbook & Drive Go Video Lessons
+Dedicated interactive handbook integrating the official New Zealand Road Code across 8 structured chapters alongside all 63 video lessons from the official Waka Kotahi NZTA / ACC Drive Go program.
+
+| Official Theory Handbook Reader | Drive Go Video Lessons Gallery |
+| :---: | :---: |
+| ![Theory Handbook Reader](docs/screenshots/11_theory_handbook_desktop.png) | ![Drive Go Video Lessons](docs/screenshots/12_drive_go_videos_desktop.png) |
+
+| Responsive Video Modal Player | Mobile Theory & Video View |
+| :---: | :---: |
+| ![Drive Go Video Modal](docs/screenshots/13_drive_go_video_modal.png) | ![Mobile Theory View](docs/screenshots/14_theory_mobile_view.png) |
+
+---
+
+### 3. Instant Quiz Mode & Answer Feedback
 Test recall on the fly with immediate emerald/crimson answer verification, circular selection bullets, and official rule explanations.
 
 ![Instant Quiz Mode Feedback](docs/screenshots/04_instant_quiz_desktop.png)
 
 ---
 
-### 3. Official 35-Question Mock Exam Simulator
+### 4. Official 35-Question Mock Exam Simulator
 Strict 30-minute countdown timer, official 32/35 (91.4%) pass mark, question flagging, and an interactive 35-item navigation drawer.
 
 | Desktop Exam in Progress | Mobile Exam View |
@@ -44,7 +57,7 @@ Strict 30-minute countdown timer, official 32/35 (91.4%) pass mark, question fla
 
 ---
 
-### 4. Growth Metrics & Weak Areas Diagnostic
+### 5. Growth Metrics & Weak Areas Diagnostic
 Data-driven readiness scoring, score trajectories rendered via Chart.js, and automated isolation of tricky questions.
 
 | Historical Growth Analytics | Targeted Weak Areas Practice |
@@ -53,7 +66,7 @@ Data-driven readiness scoring, score trajectories rendered via Chart.js, and aut
 
 ---
 
-### 5. Multi-User Authentication Gate
+### 6. Multi-User Authentication Gate
 Mandatory sign-in gate featuring learner registration (with email support) and quick-switch profile chips for shared devices.
 
 | Desktop Authentication Gate | Mobile Login Gate |
@@ -75,6 +88,13 @@ Mandatory sign-in gate featuring learner registration (with email support) and q
   - *Status Icons*: Clean SVG icons for Mastered (green checkmark), Needs Practice (amber refresh), and Unseen (dashed circle).
   - *Clean Action Bar*: One-tap bookmark toggle without redundant labels.
   - *Diagram Zoom*: Modal zoom dialogs for high-resolution road diagrams.
+
+### Official NZTA Theory Handbook & Drive Go Video Lessons
+- **8 Comprehensive Theory Chapters**: Structured study covering Licence Stages & Demerits, Speed Limits, Give-Way & Intersections, Road Signs & Markings, Stopping & Towing, Vehicle Standards & WoF, Alcohol & Emergencies, and Motorcycle/Heavy Vehicle specifics.
+- **63 Waka Kotahi Drive Go Video Lessons**: Complete video catalogue across all 8 official playlists (*Starting out*, *Beginner*, *Intermediate*, *Experienced*, *Test Preparation*, *Common Mistakes*, *Driver Behaviour*, *Coaching Tips*).
+- **Responsive In-App Video Modal Player**: Distraction-free embedded player (`youtube-nocookie.com`) with playlist badges, instant category filtering, and direct links to YouTube.
+- **Direct Practice Linking**: Jump directly from any theory chapter into practice questions filtered for that topic.
+- **Category 11 Dedicated Filter**: Direct Study Hub access to all 42 official NZTA Category 11 Theory questions.
 
 ### Official 35-Question Mock Exam Simulator
 - **Authentic Proportions**: 35 questions drawn randomly from Core Rules, Intersections, Signs, Parking, and Emergencies matching official NZTA quotas.
@@ -145,6 +165,8 @@ nz-dirving/
 |           `-- chart.min.js     # Chart.js library for performance graphs
 `-- export/                      # Datasets, extraction scripts, and print materials
     |-- README.md                # Dataset documentation
+    |-- nzta_theory_guide.json   # 8 comprehensive official NZTA theory chapters
+    |-- drive_go_videos.json     # 63 official Waka Kotahi Drive Go video lessons
     |-- master_unique_questions.json  # 570 canonical deduplicated questions (JSON)
     |-- master_1279_questions.json    # 1,279 raw extracted questions
     |-- nz_road_code_master.html      # Print-ready HTML with embedded CSS Paged Media
@@ -166,6 +188,12 @@ All protected endpoints require an `Authorization: Bearer <session_token>` heade
 | `POST` | `/api/auth/logout` | Terminate session and invalidate session token | Yes |
 | `GET` | `/api/auth/me` | Fetch authenticated user summary, mastery count, and readiness | Yes |
 | `GET` | `/api/auth/users` | List public profile summaries for device quick switcher | No |
+
+### Official Theory & Video Endpoints
+| Method | Endpoint | Description | Auth Required |
+| :--- | :--- | :--- | :---: |
+| `GET` | `/api/theory/guide` | Retrieve 8 comprehensive NZ Road Code theory study chapters | No |
+| `GET` | `/api/theory/videos` | Query 63 official Drive Go video lessons with category filter | No |
 
 ### Study & Question Endpoints
 | Method | Endpoint | Description | Auth Required |

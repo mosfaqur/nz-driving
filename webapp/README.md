@@ -38,7 +38,14 @@ The application provides an interactive, data-driven study experience powered by
   - **Bookmark Action**: One-tap toggle icon with accessible tooltip.
   - **Diagram Viewer**: High-resolution diagrams with tap-to-zoom modal dialogs (clean display without redundant captions).
 
-### 2. Official 35-Question Mock Exam Engine
+### 2. Official NZTA Theory Handbook & Drive Go Video Lessons
+- **8 Comprehensive Theory Chapters**: Structured study covering Licence Stages & Demerits, Speed Limits, Give-Way & Intersections, Road Signs & Markings, Stopping & Towing, Vehicle Standards & WoF, Alcohol & Emergencies, and Motorcycle/Heavy Vehicle specifics.
+- **63 Waka Kotahi Drive Go Video Lessons**: Complete video catalogue across all 8 official playlists (*Starting out*, *Beginner*, *Intermediate*, *Experienced*, *Test Preparation*, *Common Mistakes*, *Driver Behaviour*, *Coaching Tips*).
+- **Responsive In-App Video Modal Player**: Distraction-free embedded player (`youtube-nocookie.com`) with playlist badges, instant category filtering, and direct links to YouTube.
+- **Direct Practice Linking**: Jump directly from any theory chapter into practice questions filtered for that topic.
+- **Category 11 Dedicated Filter**: Direct Study Hub access to all 42 official NZTA Category 11 Theory questions.
+
+### 3. Official 35-Question Mock Exam Engine
 - **Balanced Question Distribution**: Follows official NZTA proportions across core rules, intersections, parking, emergencies, signs, and road conditions.
 - **Official Exam Rules**:
   - 35 questions with a 30-minute countdown timer.
@@ -49,15 +56,15 @@ The application provides an interactive, data-driven study experience powered by
   - Detailed breakdown of score per section.
   - Full item-by-item question review displaying correct vs. selected answers with official rule explanations.
 
-### 3. Weak Area Diagnostic Drill
+### 4. Weak Area Diagnostic Drill
 - Isolates all questions answered incorrectly across study sessions or mock tests.
 - Dynamically updates as questions are practiced and mastered.
 
-### 4. Growth & Readiness Metrics
+### 5. Growth & Readiness Metrics
 - **Readiness Score**: Calculates percentage preparedness for the actual NZTA exam based on unique questions mastered.
 - **Historical Performance Chart**: Interactive Chart.js timeline showing exam score trajectories, pass/fail thresholds, and average exam duration.
 
-### 5. Multi-User Authentication & Profile Isolation
+### 6. Multi-User Authentication & Profile Isolation
 - **Mandatory Authentication**: Full-screen authentication gate protecting study data; each learner must register and log in.
 - **User Registration**: Supports username, email address, display name, and secure password.
 - **Flexible Sign In**: Users can log in using either their **Username** or **Email Address**.
