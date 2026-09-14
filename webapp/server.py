@@ -77,6 +77,26 @@ for q in ALL_QUESTIONS:
 QUESTIONS_MAP = {q["canonical_id"]: q for q in ALL_QUESTIONS}
 print(f"Loaded {len(ALL_QUESTIONS)} verified unique questions into web application.")
 
+THEORY_GUIDE_FILE = os.path.join(_EXPORT_DIR, "nzta_theory_guide.json")
+THEORY_GUIDE = []
+if os.path.exists(THEORY_GUIDE_FILE):
+    try:
+        with open(THEORY_GUIDE_FILE, "r", encoding="utf-8") as f:
+            THEORY_GUIDE = json.load(f)
+        print(f"Loaded {len(THEORY_GUIDE)} official NZTA theory chapters.")
+    except Exception as e:
+        print(f"Warning: Could not load theory guide: {e}")
+
+DRIVE_GO_VIDEOS_FILE = os.path.join(_EXPORT_DIR, "drive_go_videos.json")
+DRIVE_GO_VIDEOS = []
+if os.path.exists(DRIVE_GO_VIDEOS_FILE):
+    try:
+        with open(DRIVE_GO_VIDEOS_FILE, "r", encoding="utf-8") as f:
+            DRIVE_GO_VIDEOS = json.load(f)
+        print(f"Loaded {len(DRIVE_GO_VIDEOS)} official Drive Go video lessons.")
+    except Exception as e:
+        print(f"Warning: Could not load drive go videos: {e}")
+
 app = FastAPI(title="NZ Road Code Multi-User Study & Mock Exam Web App", version="1.1.0")
 
 STATIC_DIR = os.path.join(os.path.dirname(__file__), "static")
@@ -243,8 +263,12 @@ def get_questions(
         q_status = p.get("status", "unseen")
         is_bookmarked = p.get("bookmarked", 0) == 1
         
-        if section and section != "All" and q["section"] != section:
-            continue
+        if section and section != "All":
+            if section == "Official NZTA Theory (Category 11)":
+                if "theory" not in q.get("category", "").lower():
+                    continue
+            elif q["section"] != section:
+                continue
             
         if license and license != "All" and license.lower() not in q["license_class"].lower():
             continue
@@ -606,6 +630,35 @@ def get_weak_areas(limit: int = 35, user: dict = Depends(get_current_user)):
 def reset_user_progress(user: dict = Depends(get_current_user)):
     reset_progress(user["id"])
     return {"success": True, "message": f"Study progress and test history reset for user {user['username']}"}
+
+# =============================================================================
+# THEORY GUIDE & VIDEO LESSONS (OFFICIAL NZTA & DRIVE GO)
+# =============================================================================
+@app.get("/api/theory/guide")
+def get_theory_guide():
+    return {
+        "total_chapters": len(THEORY_GUIDE),
+        "chapters": THEORY_GUIDE
+    }
+
+@app.get("/api/theory/videos")
+def get_theory_videos(category: Optional[str] = None):
+    categories = []
+    for v in DRIVE_GO_VIDEOS:
+        cat = v.get("category")
+        if cat and cat not in categories:
+            categories.append(cat)
+            
+    if category and category != "All":
+        filtered = [v for v in DRIVE_GO_VIDEOS if v.get("category", "").lower() == category.lower()]
+    else:
+        filtered = DRIVE_GO_VIDEOS
+
+    return {
+        "total": len(filtered),
+        "categories": categories,
+        "videos": filtered
+    }
 
 if __name__ == "__main__":
     import uvicorn

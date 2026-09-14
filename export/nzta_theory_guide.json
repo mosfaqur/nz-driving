@@ -1,0 +1,142 @@
+[
+  {
+    "id": "licences",
+    "title": "1. Licence Stages, Conditions & Demerits",
+    "icon": "licence",
+    "summary": "Everything you need to know about Learner, Restricted, Full licences, supervisor requirements, and demerit points.",
+    "sections": [
+      {
+        "heading": "Learner Licence Conditions",
+        "content": "You must be at least 16 years of age to apply for a learner licence and pass the official theory test.\n\nKey Rules:\n- Always display 'L' plates on the front and rear of your vehicle (or on the rear of a motorcycle).\n- Always have your learner licence with you when driving.\n- You must ALWAYS be accompanied by a supervisor who sits in the front passenger seat.\n- Supervisor Requirements: Must have held a full New Zealand Class 1 licence for at least 2 years and not be subject to any driving suspension or disqualification.\n- Carrying Passengers: You may carry passengers, but ONLY if your supervisor explicitly agrees.\n- Alcohol Limit: Zero alcohol limit applies if you are under 20 years of age."
+      },
+      {
+        "heading": "Restricted Licence Conditions",
+        "content": "Once you pass the practical restricted test (after holding a learner licence for at least 6 months):\n\nKey Rules:\n- You can drive on your own between 5:00 AM and 10:00 PM.\n- Between 10:00 PM and 5:00 AM, you may only drive if accompanied by a supervisor in the front passenger seat.\n- Carrying Passengers: You must NOT carry passengers unless you are accompanied by a supervisor, EXCEPT for: your spouse/partner, your dependent children, or your parent/guardian.\n- Transmission restriction: If you passed your test in an automatic vehicle, you may only drive an automatic until you obtain your full licence or pass in a manual."
+      },
+      {
+        "heading": "Full Licence & Demerit Points",
+        "content": "After holding a restricted licence for 18 months (or 12 months if you complete an approved advanced driving course):\n\nDemerit Points System:\n- If you accumulate 100 or more demerit points within any 2-year period, your driver licence is suspended for 3 months.\n- Demerit points expire 2 years after the date of the offence.\n- Failing to display L-plates: 25 demerit points + $100 fine.\n- Driving outside restricted hours or carrying unauthorized passengers: 35 demerit points + $100 fine.\n- Speeding demerits: 20 points (11-20 km/h over), 35 points (21-30 km/h over), 40 points (31-34 km/h over), 50 points (35+ km/h over)."
+      }
+    ]
+  },
+  {
+    "id": "speeds-following",
+    "title": "2. Speed Limits & Safe Following Distances",
+    "icon": "speed",
+    "summary": "Mastering the 2-second and 4-second following distance rules, speed limits, and stopping distances.",
+    "sections": [
+      {
+        "heading": "The Two-Second & Four-Second Rules",
+        "content": "The Two-Second Rule (Good Conditions):\n- Use in normal, dry weather conditions on sealed roads.\n- How to calculate: Pick a fixed roadside object (like a sign or tree). When the vehicle in front passes it, count 'one thousand and one, one thousand and two'. If you reach the marker before finishing, you are following too closely.\n- Purpose: Gives you enough time and reaction space to stop safely if the vehicle in front stops suddenly.\n\nThe Four-Second Rule (Adverse Conditions):\n- You MUST double your following distance to at least 4 seconds in: wet roads, frost, ice, gravel roads, fog, when towing a trailer, or when following a motorcycle."
+      },
+      {
+        "heading": "Standard New Zealand Speed Limits",
+        "content": "- Open Road Default: 100 km/h for cars and motorcycles on motorways and rural highways (unless lower speed is signposted).\n- Built-up Urban Default: 50 km/h in residential and commercial areas.\n- Past a School Bus: 20 km/h when passing a school bus that has stopped to let children on or off, travelling in either direction.\n- Past an Accident / Emergency: 20 km/h when passing an accident scene or emergency vehicle displaying blue, red, or amber flashing lights.\n- Towing a Trailer: Maximum legal speed limit when towing a trailer on the open road is 90 km/h (even in a 100 km/h zone)."
+      }
+    ]
+  },
+  {
+    "id": "intersections-giveway",
+    "title": "3. Giving Way at Intersections & Roundabouts",
+    "icon": "intersection",
+    "summary": "Clear, practical breakdown of the New Zealand Give Way rules (updated 2012), T-intersections, and roundabout signaling.",
+    "sections": [
+      {
+        "heading": "The Core Give Way Hierarchy",
+        "content": "When approaching an intersection, priorities are determined in this order:\n1. Stop Signs: You must come to a COMPLETE STOP, not a rolling stop, and give way to all traffic.\n2. Give Way Signs: Slow down and be prepared to stop; yield to all traffic not facing a stop or give way sign.\n3. Top of the T Rule: If you are at an uncontrolled T-intersection, all vehicles on the terminating road (bottom of the T) MUST give way to all vehicles on the continuing road (top of the T).\n4. Turning vs Straight: Vehicles turning give way to vehicles travelling straight through.\n5. Right Turn vs Left Turn: If both vehicles are facing each other with equal priority (e.g. both facing green lights or both uncontrolled), the vehicle turning right MUST give way to the vehicle turning left."
+      },
+      {
+        "heading": "Roundabouts & Indicating",
+        "content": "Priority on Roundabouts:\n- You must give way to all vehicles approaching or already on the roundabout coming from your right.\n\nIndicating at Roundabouts:\n- Turning Left (First Exit): Indicate left as you approach the roundabout, and keep indicating left until you have exited.\n- Going Straight Through: Do NOT indicate as you approach the roundabout. Indicate left as you pass the exit immediately before your intended exit.\n- Turning Right (More than halfway): Indicate right as you approach the roundabout. Continue indicating right while circulating, then indicate left as you pass the exit immediately before your intended exit."
+      }
+    ]
+  },
+  {
+    "id": "signs-markings",
+    "title": "4. Road Signs, Markings & Median Strips",
+    "icon": "signs",
+    "summary": "How to interpret compulsory signs, warning signs, broken yellow lines, solid centre lines, and flush medians.",
+    "sections": [
+      {
+        "heading": "Road Sign Types",
+        "content": "- Compulsory Signs: Red border/circle or red octagon (Stop, Give Way, Speed limit, Wrong Way, No Right Turn). You MUST obey these by law.\n- Warning Signs (Permanent): Yellow diamond-shaped signs alerting you to road hazards ahead (sharp bends, intersections, winding roads, pedestrian crossings).\n- Warning Signs (Temporary): Orange diamond-shaped or orange rectangular signs indicating road works, detours, loose gravel, or slippery surfaces.\n- Information Signs: Blue, green, or white rectangular signs giving directions, motorway exits, or services."
+      },
+      {
+        "heading": "Road Markings & Yellow Lines",
+        "content": "- Broken Yellow Lines: Painted along the kerb or edge of the road means NO STOPPING or parking at any time.\n- Solid Yellow Centre Line (No-Passing Line): Indicates that it is unsafe to overtake. You must NOT cross the line to pass another vehicle. You may only pass if you stay completely within your lane and have 100m of clear road ahead throughout the manoeuvre.\n- Flush Medians: A strip in the middle of the road painted with white diagonal stripes. You can use it as a safe refuge to slow down and wait to turn right into a driveway/side road, or to wait for a gap when turning right into traffic. NEVER use a flush median as an overtaking or acceleration lane."
+      }
+    ]
+  },
+  {
+    "id": "parking-towing",
+    "title": "5. Stopping, Parking & Towing Regulations",
+    "icon": "parking",
+    "summary": "Legal distances from driveways and crossings, parking on hills, and safe vehicle towing guidelines.",
+    "sections": [
+      {
+        "heading": "Legal Parking Clearances",
+        "content": "You must NOT park:\n- Closer than 6 metres to an intersection or pedestrian crossing.\n- Closer than 1 metre to any vehicle entrance, driveway, or private garage access.\n- Closer than 0.5 metres to a fire hydrant (unless someone stays in the vehicle to move it if required).\n- On clearways or bus lanes during operating hours.\n- On or within 6 metres of a railway level crossing.\n- Facing oncoming traffic (you must park parallel to and within 1 metre of the left-hand kerb, unless in a one-way street)."
+      },
+      {
+        "heading": "Parking on Steep Hills",
+        "content": "- Facing Downhill: Turn your front wheels TOWARDS the kerb. Put the vehicle in Reverse gear (manual) or Park (automatic), and firmly apply the handbrake.\n- Facing Uphill with Kerb: Turn your front wheels AWAY from the kerb (so if it rolls back, the tyre catches the kerb). Put the vehicle in 1st gear (manual) or Park (automatic), and apply the handbrake.\n- Facing Uphill without Kerb: Turn wheels toward the side of the road."
+      },
+      {
+        "heading": "Towing Trailers & Vehicles",
+        "content": "- Maximum open road speed when towing a trailer: 90 km/h.\n- Maximum tow rope/bar length between vehicles: 4 metres.\n- A white flag or cloth (at least 30cm square) must be attached to the towline if the distance between vehicles exceeds 1 metre.\n- When towing at night, a red light must be displayed on the back of the trailer."
+      }
+    ]
+  },
+  {
+    "id": "vehicle-wof",
+    "title": "6. Vehicle Safety Standards & Warrant of Fitness (WoF)",
+    "icon": "wof",
+    "summary": "Inspection schedules, tyre requirements, seatbelts, child safety restraints, and vehicle dimensions.",
+    "sections": [
+      {
+        "heading": "Warrant of Fitness (WoF) Requirements",
+        "content": "A WoF confirms that your vehicle met official road safety standards at the date and time of inspection.\n\nInspection Frequencies:\n- Vehicles first registered on or after 1 January 2000: Every 12 months (annually).\n- Vehicles first registered before 1 January 2000: Every 6 months.\n- New Vehicles: After initial inspection, exempt until 3 years old, then annually.\n- Responsibility: You can be fined if your vehicle is driven on the road without a current WoF or if it fails safety standards even with a current sticker."
+      },
+      {
+        "heading": "Tyres, Lights & Seatbelts",
+        "content": "- Tyre Tread Depth: Minimum legal depth is 1.5mm across the central three-quarters of the tread pattern around the entire circumference of the tyre.\n- Headlights: Must be on from 30 minutes after sunset until 30 minutes before sunrise, and whenever you cannot clearly see 100 metres ahead.\n- Dipping Headlights: You MUST dip your high beams when approaching within 200 metres of another vehicle, when following another vehicle within 200 metres, when directed by police, and when parked.\n- Seatbelts & Restraints: The driver is legally responsible for ensuring all passengers under 15 years old are properly restrained. Passengers aged 15 and over are responsible for wearing their own seatbelts."
+      },
+      {
+        "heading": "Load Overhang Limits",
+        "content": "- Forward Overhang: Maximum 3 metres from the front edge of the driver's seat.\n- Rear Overhang: Maximum 4 metres from the rear axis.\n- Warning Flag: If a load extends more than 1 metre behind or in front of the vehicle body, you MUST attach a clean white, red, or high-vis flag (at least 30cm x 30cm) during the day, and red lights at night."
+      }
+    ]
+  },
+  {
+    "id": "alcohol-drugs",
+    "title": "7. Alcohol, Drug Limits & Driving Emergencies",
+    "icon": "emergency",
+    "summary": "Legal limits, police testing procedures, penalties, and crash emergency protocols.",
+    "sections": [
+      {
+        "heading": "Alcohol & Drug Limits",
+        "content": "- Drivers Under 20 Years Old: Zero alcohol limit. Even one standard drink can put you over the legal limit.\n- Drivers 20 Years Old and Over: 250 micrograms (mcg) of alcohol per litre of breath, or 50 milligrams (mg) of alcohol per 100 millilitres of blood.\n- Penalties for 251-400 mcg: $200 infringement fee, 50 demerit points, and 12-hour driving ban.\n- Penalties over 400 mcg or refusal: Court appearance, disqualification from driving for 6 months or more, and maximum fine up to $4,500 (or prison)."
+      },
+      {
+        "heading": "Crash & Breakdown Emergencies",
+        "content": "- Breakdown on Motorway: Pull over to the hard shoulder as far left as possible. Turn on hazard lights. Stay in the car with seatbelts fastened or exit via left door and wait behind roadside barriers.\n- Bonnet Flies Up: Gently brake, stay in your lane, and look through the gap under the bonnet or out your driver's window to steer safely to the shoulder.\n- Headlight Failure: Switch to park/fog lights immediately, slow down, signal, and pull off the road safely."
+      }
+    ]
+  },
+  {
+    "id": "motorcycles-heavy",
+    "title": "8. Motorcycle (Class 6) & Heavy Vehicle (Classes 2-5) Theory",
+    "icon": "truck",
+    "summary": "Specialized rules for motorcyclists and commercial truck drivers.",
+    "sections": [
+      {
+        "heading": "Motorcycle Specific Rules (Class 6)",
+        "content": "- Helmets: Every rider and pillion passenger must wear an approved, properly fastened safety helmet (standards: UN/ECE 22, AS 1698, NZS 5430, BS 6658, JIS T8133).\n- Daytime Running Lights: Motorcyclists must ride with headlights on low beam or daytime running lights during daylight to maximize visibility.\n- Pillion Passengers: To carry a pillion passenger, the motorcycle must have footrests and a secure seat for the passenger. Learner and restricted motorcycle licence holders are strictly forbidden from carrying passengers.\n- Puncture / Blowout: Do NOT brake hard. Close the throttle gradually, shift weight back if the front tyre deflates, and coast to a gentle stop."
+      },
+      {
+        "heading": "Heavy Vehicle Specific Rules (Classes 2-5)",
+        "content": "- Certificate of Fitness (CoF): Required every 6 months for heavy vehicles.\n- Work-Time Rules: Maximum 13 hours of work time in any cumulative work day, followed by at least 10 hours continuous rest. A 30-minute rest break is mandatory after 5.5 hours of continuous work.\n- Load Restraints: Restraint systems must withstand 100% (1.0g) of load weight forward, 50% (0.5g) sideways, and 50% (0.5g) backward.\n- Road User Charges (RUC): Licence must be displayed inside the windscreen on the passenger side (motor vehicles) or on the front left side (trailers)."
+      }
+    ]
+  }
+]

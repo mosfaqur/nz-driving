@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0f172a">
   <title>NZ Road Code Master Study & Mock Exam</title>
   <link rel="icon" type="image/png" href="/static/favicon.png">
-  <link rel="stylesheet" href="/static/css/style.css?v=1.2.7">
+  <link rel="stylesheet" href="/static/css/style.css?v=1.4.0">
   <script src="/static/js/chart.min.js"></script>
 </head>
 <body>
@@ -97,6 +97,9 @@
         <button class="nav-btn active" data-view="study" id="nav-study">
           <span>Study Hub</span>
         </button>
+        <button class="nav-btn" data-view="theory" id="nav-theory">
+          <span>Theory &amp; Lessons</span>
+        </button>
         <button class="nav-btn" data-view="test" id="nav-test">
           <span>Mock Test (35Q)</span>
         </button>
@@ -138,6 +141,7 @@
           <input type="text" id="study-search" class="search-input" placeholder="Search 570 questions by prompt, answer, rule..." />
           <select id="study-section-filter" class="filter-select">
             <option value="All">All Sections (10 Areas)</option>
+            <option value="Official NZTA Theory (Category 11)">Official NZTA Theory (Category 11)</option>
             <option value="Core Rules & General Theory">Core Rules & General Theory</option>
             <option value="Intersections & Give-Way Scenarios">Intersections & Give-Way Scenarios</option>
             <option value="Road Signs, Signals & Markings">Road Signs, Signals & Markings</option>
@@ -185,6 +189,68 @@
         <button id="btn-prev-page" class="page-btn">← Previous</button>
         <span id="page-indicator" style="font-weight: 700; color: var(--slate-600); font-size: 14px;">Page 1 of 6 (1–100 of 570)</span>
         <button id="btn-next-page" class="page-btn">Next →</button>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- VIEW: THEORY & VIDEO LESSONS (NZTA Road Code & Drive Go)           -->
+    <!-- =================================================================== -->
+    <section id="view-theory" class="view-panel">
+      <!-- Theory Hero / Header Banner -->
+      <div class="theory-hero">
+        <div class="theory-hero-text">
+          <div class="theory-badge">Official Waka Kotahi NZTA / Drive Go</div>
+          <h2 class="theory-title">Official Theory Handbook &amp; Video Lessons</h2>
+          <p class="theory-subtitle">
+            Study official New Zealand Road Code rules across 8 structured chapters, and watch all 63 video lessons from the official Waka Kotahi NZTA Drive Go program.
+          </p>
+        </div>
+        
+        <div class="theory-tab-pills" role="tablist">
+          <button type="button" class="theory-tab-btn active" id="tab-btn-handbook" data-tab="handbook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            <span>Theory Handbook (8 Chapters)</span>
+          </button>
+          <button type="button" class="theory-tab-btn" id="tab-btn-videos" data-tab="videos">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+            <span>Drive Go Video Lessons (63 Videos)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab Content 1: Theory Handbook -->
+      <div id="theory-pane-handbook" class="theory-tab-pane active">
+        <div class="theory-pane-controls">
+          <div class="theory-pane-info">
+            <h3 class="theory-pane-heading">New Zealand Road Code Essential Study Guide</h3>
+            <p class="theory-pane-desc">Click any chapter to review laws, speed limits, right-of-way rules, and practice related official questions.</p>
+          </div>
+          <div class="theory-pane-actions">
+            <button type="button" class="btn-sm btn-secondary" id="btn-toggle-all-chapters">Expand All</button>
+          </div>
+        </div>
+
+        <div id="theory-chapters-container" class="theory-chapters-list">
+          <!-- Rendered via JS -->
+          <div class="loading-state">Loading official theory handbook...</div>
+        </div>
+      </div>
+
+      <!-- Tab Content 2: Drive Go Video Lessons -->
+      <div id="theory-pane-videos" class="theory-tab-pane" style="display: none;">
+        <div class="video-filter-bar">
+          <div class="video-search-wrap">
+            <input type="text" id="video-search-input" class="search-input" placeholder="Search 63 video lessons by topic (e.g. roundabout, reverse parallel park, motorway)..." />
+          </div>
+          <div class="video-categories-row" id="video-categories-container">
+            <!-- Category filter pills rendered via JS -->
+          </div>
+        </div>
+
+        <div id="video-lessons-grid" class="video-grid">
+          <!-- Video cards rendered via JS -->
+          <div class="loading-state">Loading Drive Go video lessons...</div>
+        </div>
       </div>
     </section>
 
@@ -431,6 +497,30 @@
     </div>
   </dialog>
 
+  <!-- Drive Go Video Player Dialog -->
+  <dialog id="videoModal" class="video-dialog" closedby="any">
+    <div class="video-modal-content">
+      <div class="video-modal-header">
+        <div class="video-modal-meta">
+          <span class="video-cat-badge" id="videoModalCategory">Drive Go Lesson</span>
+          <h3 class="video-modal-title" id="videoModalTitle">Video Lesson</h3>
+        </div>
+        <button type="button" class="dialog-close-btn" onclick="closeVideoModal()" aria-label="Close Video">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="video-player-wrapper">
+        <iframe id="videoModalIframe" src="" title="Waka Kotahi Drive Go Video Lesson" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-modal-footer">
+        <span style="font-size: 13px; color: var(--slate-600);">Source: Official NZ Transport Agency Waka Kotahi / Drive Go</span>
+        <a id="videoModalExternalLink" href="" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="text-decoration: none;">
+          Open on YouTube
+        </a>
+      </div>
+    </div>
+  </dialog>
+
   <!-- Test Submit Confirmation Dialog -->
   <dialog id="submitConfirmDialog" closedby="any">
     <div class="dialog-content">
@@ -587,6 +677,12 @@
       </span>
       <span class="mob-nav-label">Study</span>
     </button>
+    <button class="mobile-nav-btn" data-view="theory" id="mob-nav-theory">
+      <span class="mob-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+      </span>
+      <span class="mob-nav-label">Theory</span>
+    </button>
     <button class="mobile-nav-btn" data-view="test" id="mob-nav-test">
       <span class="mob-nav-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
@@ -613,6 +709,6 @@
     </button>
   </nav>
 
-  <script src="/static/js/app.js?v=1.3.0"></script>
+  <script src="/static/js/app.js?v=1.4.0"></script>
 </body>
 </html>

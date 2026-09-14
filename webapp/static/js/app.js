@@ -96,6 +96,8 @@ function switchView(viewName) {
 
   if (viewName === 'study') {
     loadStudyQuestions();
+  } else if (viewName === 'theory') {
+    loadTheoryView();
   } else if (viewName === 'metrics') {
     loadMetrics();
   } else if (viewName === 'weak') {
@@ -1964,10 +1966,501 @@ async function handleLogout() {
 function refreshCurrentView() {
   if (currentView === 'study') {
     loadStudyQuestions();
+  } else if (currentView === 'theory') {
+    loadTheoryView();
   } else if (currentView === 'metrics') {
     loadMetrics();
   } else if (currentView === 'weak') {
     loadWeakAreas();
   }
 }
+
+// =============================================================================
+// THEORY HANDBOOK & DRIVE GO VIDEO LESSONS MODULE
+// =============================================================================
+let theoryGuideData = null;
+let driveGoVideosData = null;
+let activeTheoryTab = 'handbook'; // 'handbook' | 'videos'
+let selectedVideoCategory = 'All';
+let videoSearchQuery = '';
+let theoryModuleInitialized = false;
+
+function initTheoryModule() {
+  if (theoryModuleInitialized) return;
+  theoryModuleInitialized = true;
+
+  const btnHandbook = document.getElementById('tab-btn-handbook');
+  const btnVideos = document.getElementById('tab-btn-videos');
+
+  if (btnHandbook) {
+    btnHandbook.addEventListener('click', () => {
+      activeTheoryTab = 'handbook';
+      updateTheoryTabPanes();
+    });
+  }
+
+  if (btnVideos) {
+    btnVideos.addEventListener('click', () => {
+      activeTheoryTab = 'videos';
+      updateTheoryTabPanes();
+      if (!driveGoVideosData) {
+        fetchDriveGoVideos();
+      }
+    });
+  }
+
+  const toggleAllBtn = document.getElementById('btn-toggle-all-chapters');
+  if (toggleAllBtn) {
+    toggleAllBtn.addEventListener('click', () => {
+      toggleAllChapters();
+    });
+  }
+
+  const searchInput = document.getElementById('video-search-input');
+  if (searchInput) {
+    let searchDebounce;
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(searchDebounce);
+      searchDebounce = setTimeout(() => {
+        videoSearchQuery = e.target.value.trim().toLowerCase();
+        renderDriveGoVideos();
+      }, 200);
+    });
+  }
+
+  // Ensure iframe stops audio when dialog is closed via Esc or click outside
+  const videoDialog = document.getElementById('videoModal');
+  if (videoDialog) {
+    videoDialog.addEventListener('close', () => {
+      const iframe = document.getElementById('videoModalIframe');
+      if (iframe) iframe.src = '';
+    });
+  }
+}
+
+function updateTheoryTabPanes() {
+  const btnHandbook = document.getElementById('tab-btn-handbook');
+  const btnVideos = document.getElementById('tab-btn-videos');
+  const paneHandbook = document.getElementById('theory-pane-handbook');
+  const paneVideos = document.getElementById('theory-pane-videos');
+
+  if (activeTheoryTab === 'handbook') {
+    if (btnHandbook) {
+      btnHandbook.classList.add('active');
+      btnHandbook.setAttribute('aria-selected', 'true');
+    }
+    if (btnVideos) {
+      btnVideos.classList.remove('active');
+      btnVideos.setAttribute('aria-selected', 'false');
+    }
+    if (paneHandbook) {
+      paneHandbook.classList.add('active');
+      paneHandbook.style.display = 'block';
+    }
+    if (paneVideos) {
+      paneVideos.classList.remove('active');
+      paneVideos.style.display = 'none';
+    }
+  } else {
+    if (btnVideos) {
+      btnVideos.classList.add('active');
+      btnVideos.setAttribute('aria-selected', 'true');
+    }
+    if (btnHandbook) {
+      btnHandbook.classList.remove('active');
+      btnHandbook.setAttribute('aria-selected', 'false');
+    }
+    if (paneVideos) {
+      paneVideos.classList.add('active');
+      paneVideos.style.display = 'block';
+    }
+    if (paneHandbook) {
+      paneHandbook.classList.remove('active');
+      paneHandbook.style.display = 'none';
+    }
+  }
+}
+
+async function loadTheoryView() {
+  initTheoryModule();
+  updateTheoryTabPanes();
+
+  if (activeTheoryTab === 'handbook') {
+    if (!theoryGuideData) {
+      await fetchTheoryGuide();
+    } else {
+      renderTheoryHandbook();
+    }
+  } else {
+    if (!driveGoVideosData) {
+      await fetchDriveGoVideos();
+    } else {
+      renderDriveGoVideos();
+    }
+  }
+}
+
+async function fetchTheoryGuide() {
+  const container = document.getElementById('theory-chapters-container');
+  if (container) {
+    container.innerHTML = '<div class="loading-state">Loading official theory handbook...</div>';
+  }
+
+  try {
+    const res = await authFetch('/api/theory/guide');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    theoryGuideData = data.chapters || [];
+    renderTheoryHandbook();
+  } catch (err) {
+    console.error('Failed to load theory guide:', err);
+    if (container) {
+      container.innerHTML = `
+        <div class="test-welcome-card" style="text-align: center; border-color: #fecaca; background: #fff5f5;">
+          <h4 style="color: #dc2626; margin-bottom: 8px;">Unable to load Theory Handbook</h4>
+          <p style="color: var(--slate-600); margin-bottom: 12px;">Check your connection and try refreshing.</p>
+          <button class="btn-sm btn-primary" onclick="fetchTheoryGuide()">Retry</button>
+        </div>
+      `;
+    }
+  }
+}
+
+function renderTheoryHandbook() {
+  const container = document.getElementById('theory-chapters-container');
+  if (!container || !theoryGuideData) return;
+
+  if (theoryGuideData.length === 0) {
+    container.innerHTML = '<div class="loading-state">No theory chapters available.</div>';
+    return;
+  }
+
+  // Chapter to related question section mapping
+  const chapterSectionMap = {
+    'licences': 'Core Rules & General Theory',
+    'speeds-following': 'Core Rules & General Theory',
+    'intersections-giveway': 'Intersections & Give-Way Scenarios',
+    'signs-markings': 'Road Signs, Signals & Markings',
+    'parking-towing': 'Parking & Stopping Restrictions',
+    'vehicle-wof': 'Official NZTA Theory (Category 11)',
+    'alcohol-drugs': 'Emergencies & Road Safety',
+    'motorcycles-heavy': 'Motorcycle Specific (Class 6)'
+  };
+
+  // Chapter to Drive Go video playlist category mapping
+  const chapterVideoMap = {
+    'licences': '1. Starting out (off-road area)',
+    'speeds-following': '4. Higher speed areas (80 to 100km/h)',
+    'intersections-giveway': '3. Moving into traffic and intersections',
+    'signs-markings': '2. Quiet streets (50km/h or less)',
+    'parking-towing': '6. Reversing and parking',
+    'vehicle-wof': '1. Starting out (off-road area)',
+    'alcohol-drugs': '7. Tricky conditions',
+    'motorcycles-heavy': '5. Motorways'
+  };
+
+  let html = '';
+  theoryGuideData.forEach((ch, idx) => {
+    const chNum = idx + 1;
+    const isFirst = idx === 0;
+    const relatedSection = chapterSectionMap[ch.id] || 'Core Rules & General Theory';
+    const relatedVideoCat = chapterVideoMap[ch.id] || '';
+
+    html += `
+      <div class="chapter-card ${isFirst ? 'expanded' : ''}" id="chapter-card-${escapeHtml(ch.id)}">
+        <div class="chapter-header" onclick="toggleChapter('${escapeHtml(ch.id)}')">
+          <div class="chapter-title-group">
+            <div class="chapter-number-badge">0${chNum}</div>
+            <div class="chapter-title-wrap">
+              <h4 class="chapter-title">${escapeHtml(ch.title)}</h4>
+              <div class="chapter-summary">${escapeHtml(ch.summary)}</div>
+            </div>
+          </div>
+          <div class="chapter-chevron">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        </div>
+
+        <div class="chapter-body">
+          <div class="chapter-sections-list">
+    `;
+
+    (ch.sections || []).forEach(sec => {
+      html += `
+            <div class="chapter-section-item">
+              <div class="chapter-section-heading">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>${escapeHtml(sec.heading)}</span>
+              </div>
+              <div class="chapter-section-content">${escapeHtml(sec.content)}</div>
+            </div>
+      `;
+    });
+
+    html += `
+          </div>
+
+          <div class="chapter-actions-bar">
+            <button type="button" class="chapter-action-link" onclick="practiceTheorySection('${escapeHtml(relatedSection)}')">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+              <span>Practice Questions (${escapeHtml(relatedSection)})</span>
+            </button>
+
+            ${relatedVideoCat ? `
+            <button type="button" class="chapter-action-link" style="color: #b91c1c; background: #fef2f2; border-color: #fecaca;" onclick="filterVideosByCategory('${escapeHtml(relatedVideoCat)}')">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+              </svg>
+              <span>Watch Drive Go Lessons</span>
+            </button>
+            ` : ''}
+          </div>
+        </div>
+      </div>
+    `;
+  });
+
+  container.innerHTML = html;
+}
+
+function toggleChapter(chapterId) {
+  const card = document.getElementById(`chapter-card-${chapterId}`);
+  if (card) {
+    card.classList.toggle('expanded');
+  }
+}
+
+function toggleAllChapters() {
+  const cards = document.querySelectorAll('.chapter-card');
+  const anyClosed = Array.from(cards).some(c => !c.classList.contains('expanded'));
+  const btn = document.getElementById('btn-toggle-all-chapters');
+
+  cards.forEach(c => {
+    if (anyClosed) {
+      c.classList.add('expanded');
+    } else {
+      c.classList.remove('expanded');
+    }
+  });
+
+  if (btn) {
+    btn.innerText = anyClosed ? 'Collapse All' : 'Expand All';
+  }
+}
+
+function practiceTheorySection(sectionName) {
+  switchView('study');
+  const sectionFilter = document.getElementById('study-section-filter');
+  if (sectionFilter) {
+    sectionFilter.value = sectionName;
+    studyFilters.section = sectionName;
+    studyPage = 1;
+    loadStudyQuestions();
+  }
+}
+
+async function fetchDriveGoVideos() {
+  const container = document.getElementById('video-lessons-grid');
+  if (container) {
+    container.innerHTML = '<div class="loading-state">Loading Drive Go video lessons...</div>';
+  }
+
+  try {
+    const res = await authFetch('/api/theory/videos');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    driveGoVideosData = data;
+    renderDriveGoCategories(data.categories || []);
+    renderDriveGoVideos();
+  } catch (err) {
+    console.error('Failed to load drive go videos:', err);
+    if (container) {
+      container.innerHTML = `
+        <div class="test-welcome-card" style="text-align: center; border-color: #fecaca; background: #fff5f5; grid-column: 1 / -1;">
+          <h4 style="color: #dc2626; margin-bottom: 8px;">Unable to load Drive Go Video Lessons</h4>
+          <p style="color: var(--slate-600); margin-bottom: 12px;">Check your connection and try refreshing.</p>
+          <button class="btn-sm btn-primary" onclick="fetchDriveGoVideos()">Retry</button>
+        </div>
+      `;
+    }
+  }
+}
+
+function renderDriveGoCategories(categories) {
+  const catContainer = document.getElementById('video-categories-container');
+  if (!catContainer) return;
+
+  let html = `
+    <button type="button" class="video-cat-pill ${selectedVideoCategory === 'All' ? 'active' : ''}" onclick="setVideoCategory('All')">
+      All Lessons (63)
+    </button>
+  `;
+
+  categories.forEach(cat => {
+    const isActive = selectedVideoCategory === cat;
+    html += `
+      <button type="button" class="video-cat-pill ${isActive ? 'active' : ''}" onclick="setVideoCategory('${escapeHtml(cat)}')">
+        ${escapeHtml(cat)}
+      </button>
+    `;
+  });
+
+  catContainer.innerHTML = html;
+}
+
+function setVideoCategory(cat) {
+  selectedVideoCategory = cat;
+  if (driveGoVideosData) {
+    renderDriveGoCategories(driveGoVideosData.categories || []);
+  }
+  renderDriveGoVideos();
+}
+
+function filterVideosByCategory(categoryName) {
+  activeTheoryTab = 'videos';
+  updateTheoryTabPanes();
+  selectedVideoCategory = categoryName;
+
+  if (!driveGoVideosData) {
+    fetchDriveGoVideos();
+  } else {
+    renderDriveGoCategories(driveGoVideosData.categories || []);
+    renderDriveGoVideos();
+  }
+
+  const paneVideos = document.getElementById('theory-pane-videos');
+  if (paneVideos) {
+    paneVideos.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+function renderDriveGoVideos() {
+  const container = document.getElementById('video-lessons-grid');
+  if (!container || !driveGoVideosData) return;
+
+  const allVideos = driveGoVideosData.videos || [];
+  let filtered = allVideos;
+
+  if (selectedVideoCategory && selectedVideoCategory !== 'All') {
+    filtered = filtered.filter(v => v.category === selectedVideoCategory);
+  }
+
+  if (videoSearchQuery) {
+    filtered = filtered.filter(v => {
+      const target = `${v.title} ${v.category}`.toLowerCase();
+      return target.includes(videoSearchQuery);
+    });
+  }
+
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div class="test-welcome-card" style="text-align: center; grid-column: 1 / -1; padding: 40px 20px;">
+        <h4 style="color: var(--slate-800); margin-bottom: 6px;">No video lessons match your search</h4>
+        <p style="color: var(--slate-500); font-size: 14px; margin-bottom: 12px;">Try a different keyword or switch category to 'All Lessons'.</p>
+        <button class="btn-sm btn-secondary" onclick="setVideoCategory('All'); document.getElementById('video-search-input').value = ''; videoSearchQuery = ''; renderDriveGoVideos();">
+          Reset Filter
+        </button>
+      </div>
+    `;
+    return;
+  }
+
+  let html = '';
+  filtered.forEach(v => {
+    const encodedVideo = encodeURIComponent(JSON.stringify(v));
+    html += `
+      <div class="video-card" onclick="openVideoModal('${encodedVideo}')">
+        <div class="video-thumb-container">
+          <img class="video-thumb-img" src="${escapeHtml(v.thumbnail_url)}" alt="${escapeHtml(v.title)}" loading="lazy" onerror="this.src='/static/favicon.png'" />
+          <div class="video-play-overlay">
+            <div class="video-play-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="video-info-box">
+          <div>
+            <span class="video-cat-badge">${escapeHtml(v.category)}</span>
+            <h4 class="video-card-title">${escapeHtml(v.title)}</h4>
+          </div>
+          <div class="video-card-action">
+            <span>Watch Video Lesson</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+
+  container.innerHTML = html;
+}
+
+function openVideoModal(videoObjOrJson) {
+  let video = videoObjOrJson;
+  if (typeof videoObjOrJson === 'string') {
+    try {
+      video = JSON.parse(decodeURIComponent(videoObjOrJson));
+    } catch (e) {
+      console.error('Error parsing video payload:', e);
+      return;
+    }
+  }
+
+  const modal = document.getElementById('videoModal');
+  const titleEl = document.getElementById('videoModalTitle');
+  const catEl = document.getElementById('videoModalCategory');
+  const iframe = document.getElementById('videoModalIframe');
+  const extLink = document.getElementById('videoModalExternalLink');
+
+  if (titleEl) titleEl.innerText = video.title || 'Drive Go Lesson';
+  if (catEl) catEl.innerText = video.category || 'Official Lesson';
+  if (extLink) extLink.href = video.youtube_url || `https://www.youtube.com/watch?v=${video.video_id}`;
+
+  if (iframe) {
+    const embedUrl = video.embed_url || `https://www.youtube-nocookie.com/embed/${video.video_id}`;
+    iframe.src = `${embedUrl}?autoplay=1&rel=0`;
+  }
+
+  if (modal && typeof modal.showModal === 'function') {
+    modal.showModal();
+  }
+}
+
+function closeVideoModal() {
+  const modal = document.getElementById('videoModal');
+  const iframe = document.getElementById('videoModalIframe');
+  if (iframe) {
+    iframe.src = '';
+  }
+  if (modal && modal.open) {
+    modal.close();
+  }
+}
+
+// Expose handlers globally for template onclick handlers
+window.toggleChapter = toggleChapter;
+window.toggleAllChapters = toggleAllChapters;
+window.practiceTheorySection = practiceTheorySection;
+window.filterVideosByCategory = filterVideosByCategory;
+window.setVideoCategory = setVideoCategory;
+window.openVideoModal = openVideoModal;
+window.closeVideoModal = closeVideoModal;
+window.fetchTheoryGuide = fetchTheoryGuide;
+window.fetchDriveGoVideos = fetchDriveGoVideos;
+
 
