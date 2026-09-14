@@ -437,3 +437,10 @@ with open(HTML_OUT, "w", encoding="utf-8") as f:
     f.write(html_content)
 
 print(f"Generated HTML: {HTML_OUT} with {global_qnum - 1} questions ({len(html_content)/1024:.1f} KB).")
+
+print("Rendering print-friendly PDF via headless Chrome...")
+subprocess.run([
+    "google-chrome", "--headless", "--no-sandbox", "--disable-gpu",
+    f"--print-to-pdf={PDF_OUT}", HTML_OUT
+], check=True)
+print(f"Generated PDF: {PDF_OUT} ({os.path.getsize(PDF_OUT)/1024:.1f} KB)")
