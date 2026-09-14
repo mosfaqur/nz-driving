@@ -170,6 +170,11 @@ function initStudyHub() {
         b.classList.toggle('active', b.getAttribute('data-status') === studyFilters.status);
       });
     }
+    if (urlParams.get('search')) {
+      studyFilters.search = urlParams.get('search');
+      const sInput = document.getElementById('filter-search');
+      if (sInput) sInput.value = studyFilters.search;
+    }
   } catch (e) {}
 
   // Pagination buttons
