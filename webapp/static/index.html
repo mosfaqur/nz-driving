@@ -7,7 +7,7 @@
   <title>NZ Road Code Master Study & Mock Exam</title>
   <link rel="icon" type="image/png" href="/static/favicon.png">
   <link rel="stylesheet" href="/static/css/leaflet.css">
-  <link rel="stylesheet" href="/static/css/style.css?v=2.2.0">
+  <link rel="stylesheet" href="/static/css/style.css?v=2.2.2">
   <script src="/static/js/chart.min.js"></script>
 </head>
 <body>
@@ -948,12 +948,18 @@
       </div>
       <!-- Floating Action Buttons -->
       <div class="driver-floating-actions">
-        <button type="button" class="driver-float-btn" id="driverVoiceBtn" onclick="toggleDriverVoice()" title="Toggle Voice Prompts">
+        <button type="button" class="driver-float-btn active" id="driverVoiceBtn" onclick="toggleDriverVoice()" title="Toggle Voice Prompts">
           <svg id="driverVoiceIcon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
         </button>
         <button type="button" class="driver-float-btn" id="driverRecenterBtn" onclick="recenterDriverMap()" title="Re-center on Vehicle">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
         </button>
+        <div class="driver-voice-pill" id="driverVoicePill" title="Choose English Voice Accent">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <select id="driverVoiceSelect" class="driver-voice-select" onchange="changeDriverNavVoice(this.value)" aria-label="Select Voice Accent">
+            <option value="">English Voice</option>
+          </select>
+        </div>
       </div>
     </div>
 
@@ -988,6 +994,6 @@
   </div>
 
   <script src="/static/js/leaflet.js"></script>
-  <script src="/static/js/app.js?v=2.2.1"></script>
+  <script src="/static/js/app.js?v=2.2.2"></script>
 </body>
 </html>

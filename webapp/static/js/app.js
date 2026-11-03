@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   initMockTest();
   initMetrics();
   initAuth();
+  initVoiceEngine();
   loadProfilesList();
   const authed = await checkCurrentUser();
   if (authed) {
@@ -2962,30 +2963,190 @@ function playNavChime() {
   } catch (e) {}
 }
 
+// ============================================================================
+// VOICE SYNTHESIS ENGINE (CLEAN ENGLISH SAT-NAV AUDIO)
+// ============================================================================
+let availableEnglishVoices = [];
+let activeNavVoice = null;
+
+function findBestEnglishVoice() {
+  const allVoices = ('speechSynthesis' in window) ? window.speechSynthesis.getVoices() || [] : [];
+  if (!allVoices.length) return null;
+
+  availableEnglishVoices = allVoices.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+  if (!availableEnglishVoices.length) {
+    availableEnglishVoices = allVoices;
+  }
+
+  // Check saved voice from localStorage
+  const savedName = localStorage.getItem('nz_driver_voice');
+  if (savedName) {
+    const matched = availableEnglishVoices.find(v => v.name === savedName);
+    if (matched) return matched;
+  }
+
+  // Priority ranking: en-NZ > en-AU > en-GB > en-US > any English
+  const nz = availableEnglishVoices.find(v => /en[-_]NZ/i.test(v.lang));
+  if (nz) return nz;
+
+  const au = availableEnglishVoices.find(v => /en[-_]AU/i.test(v.lang));
+  if (au) return au;
+
+  const gb = availableEnglishVoices.find(v => /en[-_]GB/i.test(v.lang));
+  if (gb) return gb;
+
+  const us = availableEnglishVoices.find(v => /en[-_]US/i.test(v.lang));
+  if (us) return us;
+
+  return availableEnglishVoices[0] || allVoices[0];
+}
+
+function initVoiceEngine() {
+  if (!('speechSynthesis' in window)) return;
+
+  function loadAndSelect() {
+    activeNavVoice = findBestEnglishVoice();
+    populateVoicePicker();
+  }
+
+  loadAndSelect();
+  if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = loadAndSelect;
+  }
+}
+window.initVoiceEngine = initVoiceEngine;
+
+function populateVoicePicker() {
+  const select = document.getElementById('driverVoiceSelect');
+  if (!select) return;
+
+  const allVoices = ('speechSynthesis' in window) ? window.speechSynthesis.getVoices() || [] : [];
+  const enVoices = allVoices.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+  const list = enVoices.length ? enVoices : allVoices;
+
+  select.innerHTML = '';
+  if (!list.length) {
+    const opt = document.createElement('option');
+    opt.value = '';
+    opt.textContent = 'English (Default)';
+    select.appendChild(opt);
+    return;
+  }
+
+  list.forEach(v => {
+    const opt = document.createElement('option');
+    opt.value = v.name;
+    const langTag = v.lang ? `[${v.lang}] ` : '';
+    opt.textContent = `${langTag}${v.name}`;
+    if (activeNavVoice && activeNavVoice.name === v.name) {
+      opt.selected = true;
+    }
+    select.appendChild(opt);
+  });
+}
+window.populateVoicePicker = populateVoicePicker;
+
+function changeDriverNavVoice(voiceName) {
+  const allVoices = ('speechSynthesis' in window) ? window.speechSynthesis.getVoices() || [] : [];
+  const found = allVoices.find(v => v.name === voiceName);
+  if (found) {
+    activeNavVoice = found;
+    localStorage.setItem('nz_driver_voice', found.name);
+    speakNavInstruction(`Voice set to ${found.name}`, true);
+  }
+}
+window.changeDriverNavVoice = changeDriverNavVoice;
+
+// Clean street names & abbreviations for natural English GPS speech
+function cleanTextForSpeech(text) {
+  if (!text) return '';
+  let s = String(text);
+
+  // Expand VTNZ acronym
+  s = s.replace(/\bVTNZ\b/g, 'V T N Z');
+
+  // Format parenthetical signs
+  s = s.replace(/\((?:signs\s+for\s+)?([^)]+)\)/gi, ', signs for $1');
+
+  // Highway and Route numbers
+  s = s.replace(/\s*\/\s*State\s*Hwy\s*(\d+)/gi, ', State Highway $1');
+  s = s.replace(/\s*\/\s*SH\s*(\d+)/gi, ', State Highway $1');
+  s = s.replace(/\s*\/\s*Rte\s*(\d+)/gi, ', Route $1');
+  s = s.replace(/\bSH(\d+)\b/gi, 'State Highway $1');
+  s = s.replace(/\s*\/\s*/g, ' or ');
+
+  // Place name prefixes
+  s = s.replace(/\bMt\.?\s*([A-Z])/g, 'Mount $1');
+  s = s.replace(/\bPt\.?\s*([A-Z])/g, 'Point $1');
+  s = s.replace(/\bSt\.?\s*([A-Z])/g, 'Saint $1');
+
+  // Street suffixes
+  s = s.replace(/\bAve\b\.?/gi, 'Avenue');
+  s = s.replace(/\bRd\b\.?/gi, 'Road');
+  s = s.replace(/\bDr\b\.?/gi, 'Drive');
+  s = s.replace(/\bCres\b\.?/gi, 'Crescent');
+  s = s.replace(/\bPl\b\.?/gi, 'Place');
+  s = s.replace(/\bPde\b\.?/gi, 'Parade');
+  s = s.replace(/\bHwy\b\.?/gi, 'Highway');
+  s = s.replace(/\bMtwy\b\.?/gi, 'Motorway');
+  s = s.replace(/\bCt\b\.?/gi, 'Court');
+  s = s.replace(/\bBlvd\b\.?/gi, 'Boulevard');
+  s = s.replace(/\bLn\b\.?/gi, 'Lane');
+  s = s.replace(/\bTerr?\b\.?/gi, 'Terrace');
+  s = s.replace(/\bSt\b\.?/gi, 'Street');
+
+  // Ordinal numbers (roundabout exits)
+  s = s.replace(/\b1st\b/gi, 'first');
+  s = s.replace(/\b2nd\b/gi, 'second');
+  s = s.replace(/\b3rd\b/gi, 'third');
+  s = s.replace(/\b4th\b/gi, 'fourth');
+  s = s.replace(/\b5th\b/gi, 'fifth');
+
+  // Speed symbols
+  s = s.replace(/(\d+)\s*km\/h/gi, '$1 kilometers per hour');
+
+  // Clean symbols and extra punctuation
+  s = s.replace(/[•&]/g, ' and ');
+  s = s.replace(/[()\[\]"]/g, '');
+  s = s.replace(/\s*,\s*,+/g, ',').replace(/\s*,\s*/g, ', ');
+  s = s.replace(/\s{2,}/g, ' ').trim();
+  return s;
+}
+
 // Spoken Voice Guidance via HTML5 Speech Synthesis
 function speakNavInstruction(text, force = false) {
   if (!driverNavState.voiceEnabled) return;
   if (!('speechSynthesis' in window)) return;
   if (!text) return;
-  if (driverNavState.lastSpokenText === text && !force) return;
 
-  driverNavState.lastSpokenText = text;
+  const spokenText = cleanTextForSpeech(text);
+  if (!spokenText) return;
+  if (driverNavState.lastSpokenText === spokenText && !force) return;
+
+  driverNavState.lastSpokenText = spokenText;
   playNavChime();
 
   setTimeout(() => {
     try {
       window.speechSynthesis.cancel();
-      const utter = new SpeechSynthesisUtterance(text);
-      utter.rate = 0.98;
+      const utter = new SpeechSynthesisUtterance(spokenText);
+      utter.rate = 1.0;
       utter.pitch = 1.0;
-      const voices = window.speechSynthesis.getVoices() || [];
-      const nzVoice = voices.find(v => (v.lang && (v.lang.includes('en-NZ') || v.lang.includes('en-AU') || v.lang.includes('en-GB'))));
-      if (nzVoice) utter.voice = nzVoice;
+
+      // Lock strictly to an English language tag to prevent foreign TTS mixing
+      const voice = activeNavVoice || findBestEnglishVoice();
+      if (voice) {
+        utter.voice = voice;
+        utter.lang = voice.lang || 'en-NZ';
+      } else {
+        utter.lang = 'en-NZ';
+      }
+
       window.speechSynthesis.speak(utter);
     } catch (e) {
       console.warn('Speech error:', e);
     }
-  }, 120);
+  }, 100);
 }
 
 // Distance between coordinates in meters (Haversine formula)
@@ -3089,6 +3250,9 @@ async function launchDriverNav(routeId, autoDemo = false) {
   // Display overlay
   const overlay = document.getElementById('driverNavOverlay');
   if (overlay) overlay.style.display = 'flex';
+
+  // Initialize or update voice picker
+  populateVoicePicker();
 
   // Initialize Leaflet Map
   initDriverNavMap(targetRoute, targetCenter);
@@ -3483,7 +3647,7 @@ function startDriverDemoSimulation() {
   if (driverNavState.demoIndex === 0 && steps.length > 0) {
     const firstStep = steps[0];
     updateDriverHudStep(0, 50);
-    speakNavInstruction(`Starting demo simulation for ${driverNavState.activeRoute.name}. ${firstStep.instruction}. ${firstStep.examiner_focus || ''}`);
+    speakNavInstruction(`Starting demo simulation for ${driverNavState.activeRoute.name}. ${firstStep.instruction}.`);
   }
 
   driverNavState.demoTimer = setInterval(() => {
@@ -3525,7 +3689,7 @@ function startDriverDemoSimulation() {
     if (stepIdx !== driverNavState.currentStepIndex) {
       driverNavState.currentStepIndex = stepIdx;
       const currentStep = steps[stepIdx];
-      speakNavInstruction(`${currentStep.instruction}. ${currentStep.examiner_focus || ''}`);
+      speakNavInstruction(currentStep.instruction);
     }
   }, 250);
 }
