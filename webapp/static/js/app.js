@@ -2935,7 +2935,10 @@ const driverNavState = {
   isDemoPlaying: false,
   demoTimer: null,
   demoIndex: 0,
-  startTime: null
+  startTime: null,
+  hasStartedRoute: false,
+  offRouteCount: 0,
+  onRouteCount: 0
 };
 
 // Web Audio API Chime for turn alert
@@ -3069,6 +3072,12 @@ async function launchDriverNav(routeId, autoDemo = false) {
   driverNavState.isDemoPlaying = false;
   driverNavState.demoIndex = 0;
   driverNavState.startTime = Date.now();
+  driverNavState.hasStartedRoute = false;
+  driverNavState.offRouteCount = 0;
+  driverNavState.onRouteCount = 0;
+
+  const offRouteEl = document.getElementById('driverOffRouteBanner');
+  if (offRouteEl) offRouteEl.style.display = 'none';
 
   // Screen WakeLock to keep screen on while driving
   if ('wakeLock' in navigator) {
@@ -3087,17 +3096,13 @@ async function launchDriverNav(routeId, autoDemo = false) {
   // Update HUD
   updateDriverHudStep(0, 0);
 
-  // Start GPS Geolocation
-  startDriverGeolocation();
-
-  // Welcome speech
-  speakNavInstruction(`Starting driving test route for ${targetRoute.name}. Follow the highlighted route.`);
-
-  // Auto-start demo if requested
+  // If autoDemo requested, start simulation directly without touching device GPS hardware
   if (autoDemo) {
-    setTimeout(() => {
-      toggleDriverDemoSimulation();
-    }, 400);
+    startDriverDemoSimulation();
+  } else {
+    // Start GPS Geolocation for live on-road driving
+    startDriverGeolocation();
+    speakNavInstruction(`Starting driving test route for ${targetRoute.name}. Follow the highlighted route.`);
   }
 }
 window.launchDriverNav = launchDriverNav;
@@ -3194,8 +3199,18 @@ function startDriverGeolocation() {
 
   updateDriverGpsStatus('Acquiring GPS...', true);
 
+  if (driverNavState.watchId !== null) {
+    navigator.geolocation.clearWatch(driverNavState.watchId);
+    driverNavState.watchId = null;
+  }
+
   driverNavState.watchId = navigator.geolocation.watchPosition(
     (pos) => {
+      // If demo simulation is actively playing, ignore real hardware GPS updates
+      if (driverNavState.isDemoPlaying) {
+        return;
+      }
+
       const lat = pos.coords.latitude;
       const lng = pos.coords.longitude;
       const rawSpeed = pos.coords.speed;
@@ -3207,7 +3222,9 @@ function startDriverGeolocation() {
     },
     (err) => {
       console.warn('Geolocation warning:', err.message);
-      updateDriverGpsStatus('Weak GPS', false);
+      if (!driverNavState.isDemoPlaying) {
+        updateDriverGpsStatus('Weak GPS', false);
+      }
     },
     {
       enableHighAccuracy: true,
@@ -3258,31 +3275,72 @@ function processVehiclePosition(lat, lng, speedKmh, heading) {
     driverNavState.map.panTo([lat, lng], { animate: true, duration: 0.5 });
   }
 
-  // Check off-route status
-  const polyline = (driverNavState.activeRoute && driverNavState.activeRoute.polyline_coords) || [];
-  if (polyline.length > 0) {
-    const minDist = calcMinDistToPolyline([lat, lng], polyline);
-    const offRouteEl = document.getElementById('driverOffRouteBanner');
-    if (minDist > 45) {
-      if (!driverNavState.isOffRoute) {
-        driverNavState.isOffRoute = true;
-        if (offRouteEl) offRouteEl.style.display = 'flex';
-        speakNavInstruction('You are off the test route. Please return to the official route.');
+  // Check off-route status (ONLY for live driving GPS, NEVER during demo simulation!)
+  if (!driverNavState.isDemoPlaying) {
+    const polyline = (driverNavState.activeRoute && driverNavState.activeRoute.polyline_coords) || [];
+    if (polyline.length > 0) {
+      const startCoord = polyline[0];
+      const distToStart = calcDistanceMeters(lat, lng, startCoord[0], startCoord[1]);
+
+      // Before driver arrives at starting point (e.g. at home or heading to test centre)
+      if (!driverNavState.hasStartedRoute) {
+        if (distToStart <= 120) {
+          driverNavState.hasStartedRoute = true;
+          speakNavInstruction('Arrived at test starting point. Follow the highlighted route.');
+        } else {
+          // Guide toward test centre without false off-route alarms
+          const offRouteEl = document.getElementById('driverOffRouteBanner');
+          if (offRouteEl) offRouteEl.style.display = 'none';
+          const countEl = document.getElementById('driverCountdown');
+          if (countEl) countEl.innerText = `${Math.round(distToStart / 100) / 10} km`;
+          const instEl = document.getElementById('driverInstruction');
+          if (instEl) instEl.innerText = `Proceed to starting point: ${driverNavState.activeCenter?.name || 'Testing Centre'}`;
+          return;
+        }
       }
-    } else {
-      if (driverNavState.isOffRoute) {
-        driverNavState.isOffRoute = false;
-        if (offRouteEl) offRouteEl.style.display = 'none';
-        speakNavInstruction('Rejoined test route. Continuing navigation.');
+
+      // Live GPS Debounced Off-Route check
+      const minDist = calcMinDistToPolyline([lat, lng], polyline);
+      const offRouteEl = document.getElementById('driverOffRouteBanner');
+
+      if (minDist > 65) {
+        driverNavState.offRouteCount = (driverNavState.offRouteCount || 0) + 1;
+        driverNavState.onRouteCount = 0;
+        // Require 3 consecutive readings (>3s) outside 65m to avoid GPS jitter
+        if (driverNavState.offRouteCount >= 3) {
+          if (!driverNavState.isOffRoute) {
+            driverNavState.isOffRoute = true;
+            if (offRouteEl) offRouteEl.style.display = 'flex';
+            speakNavInstruction('You are off the test route. Please return to the official route.');
+          }
+        }
+      } else if (minDist < 40) {
+        driverNavState.onRouteCount = (driverNavState.onRouteCount || 0) + 1;
+        driverNavState.offRouteCount = 0;
+        // Require 2 consecutive readings inside 40m before confirming rejoin
+        if (driverNavState.onRouteCount >= 2) {
+          if (driverNavState.isOffRoute) {
+            driverNavState.isOffRoute = false;
+            if (offRouteEl) offRouteEl.style.display = 'none';
+            speakNavInstruction('Rejoined test route. Continuing navigation.');
+          }
+        }
       }
     }
+  } else {
+    // In demo mode: strictly keep off-route state and banner disabled
+    driverNavState.isOffRoute = false;
+    const offRouteEl = document.getElementById('driverOffRouteBanner');
+    if (offRouteEl) offRouteEl.style.display = 'none';
   }
 
-  // Advance steps based on proximity
-  const steps = (driverNavState.activeRoute && driverNavState.activeRoute.steps) || [];
-  const currIdx = driverNavState.currentStepIndex;
-  if (currIdx < steps.length) {
-    updateDriverHudStep(currIdx, 150);
+  // Advance steps based on proximity (live GPS only, demo mode handles its own countdown)
+  if (!driverNavState.isDemoPlaying) {
+    const steps = (driverNavState.activeRoute && driverNavState.activeRoute.steps) || [];
+    const currIdx = driverNavState.currentStepIndex;
+    if (currIdx < steps.length) {
+      updateDriverHudStep(currIdx, 150);
+    }
   }
 }
 
@@ -3381,82 +3439,117 @@ window.recenterDriverMap = recenterDriverMap;
 // Toggle Demo Simulation Playback
 function toggleDriverDemoSimulation() {
   if (driverNavState.isDemoPlaying) {
-    // Stop Demo
-    driverNavState.isDemoPlaying = false;
-    if (driverNavState.demoTimer) clearInterval(driverNavState.demoTimer);
-    driverNavState.demoTimer = null;
-    const btn = document.getElementById('driverDemoBtn');
-    if (btn) {
-      btn.classList.remove('playing');
-      const text = document.getElementById('driverDemoBtnText');
-      if (text) text.innerText = 'Demo Play';
-    }
-    updateDriverGpsStatus('GPS Locked', true);
+    stopDriverDemoSimulation();
   } else {
-    // Start Demo
-    const polyline = (driverNavState.activeRoute && driverNavState.activeRoute.polyline_coords) || [];
-    if (polyline.length < 2) {
-      alert('Polyline not loaded for simulation.');
-      return;
-    }
-
-    driverNavState.isDemoPlaying = true;
-    const btn = document.getElementById('driverDemoBtn');
-    if (btn) {
-      btn.classList.add('playing');
-      const text = document.getElementById('driverDemoBtnText');
-      if (text) text.innerText = 'Pause Demo';
-    }
-    updateDriverGpsStatus('Demo Simulating', true);
-
-    const steps = (driverNavState.activeRoute && driverNavState.activeRoute.steps) || [];
-    const stepInterval = Math.max(1, Math.floor(polyline.length / Math.max(1, steps.length)));
-
-    driverNavState.demoTimer = setInterval(() => {
-      if (driverNavState.demoIndex >= polyline.length - 1) {
-        // Finished route!
-        toggleDriverDemoSimulation();
-        speakNavInstruction('You have arrived back at the testing centre. Practical driving test circuit completed!');
-        return;
-      }
-
-      const p1 = polyline[driverNavState.demoIndex];
-      driverNavState.demoIndex = Math.min(driverNavState.demoIndex + 2, polyline.length - 1);
-      const p2 = polyline[driverNavState.demoIndex];
-
-      // Calculate bearing between p1 and p2
-      const dLon = (p2[1] - p1[1]) * Math.PI / 180;
-      const y = Math.sin(dLon) * Math.cos(p2[0] * Math.PI / 180);
-      const x = Math.cos(p1[0] * Math.PI / 180) * Math.sin(p2[0] * Math.PI / 180) -
-                Math.sin(p1[0] * Math.PI / 180) * Math.cos(p2[0] * Math.PI / 180) * Math.cos(dLon);
-      const bearing = (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
-
-      // Realistic speed ~ 48-52 km/h
-      const simSpeed = Math.floor(45 + Math.random() * 8);
-
-      processVehiclePosition(p2[0], p2[1], simSpeed, bearing);
-
-      if (driverNavState.map) {
-        driverNavState.map.panTo([p2[0], p2[1]], { animate: true, duration: 0.2 });
-      }
-
-      // Advance step
-      const stepIdx = Math.min(steps.length - 1, Math.floor(driverNavState.demoIndex / stepInterval));
-      if (stepIdx !== driverNavState.currentStepIndex) {
-        driverNavState.currentStepIndex = stepIdx;
-        const currentStep = steps[stepIdx];
-        updateDriverHudStep(stepIdx, 60);
-        speakNavInstruction(`${currentStep.instruction}. ${currentStep.examiner_focus || ''}`);
-      }
-    }, 300);
+    startDriverDemoSimulation();
   }
 }
 window.toggleDriverDemoSimulation = toggleDriverDemoSimulation;
 
+function startDriverDemoSimulation() {
+  const polyline = (driverNavState.activeRoute && driverNavState.activeRoute.polyline_coords) || [];
+  if (polyline.length < 2) {
+    alert('Polyline not loaded for simulation.');
+    return;
+  }
+
+  // Clear any existing simulation timer
+  if (driverNavState.demoTimer) clearInterval(driverNavState.demoTimer);
+
+  driverNavState.isDemoPlaying = true;
+  driverNavState.isOffRoute = false;
+  driverNavState.offRouteCount = 0;
+  driverNavState.onRouteCount = 0;
+
+  const offRouteEl = document.getElementById('driverOffRouteBanner');
+  if (offRouteEl) offRouteEl.style.display = 'none';
+
+  const btn = document.getElementById('driverDemoBtn');
+  if (btn) {
+    btn.classList.add('playing');
+    const text = document.getElementById('driverDemoBtnText');
+    if (text) text.innerText = 'Pause Demo';
+  }
+  updateDriverGpsStatus('Demo Simulating', true);
+
+  const steps = (driverNavState.activeRoute && driverNavState.activeRoute.steps) || [];
+  const stepInterval = Math.max(1, Math.floor(polyline.length / Math.max(1, steps.length)));
+
+  if (driverNavState.demoIndex >= polyline.length - 1) {
+    driverNavState.demoIndex = 0;
+    driverNavState.currentStepIndex = 0;
+  }
+
+  if (driverNavState.demoIndex === 0 && steps.length > 0) {
+    const firstStep = steps[0];
+    updateDriverHudStep(0, 50);
+    speakNavInstruction(`Starting demo simulation for ${driverNavState.activeRoute.name}. ${firstStep.instruction}. ${firstStep.examiner_focus || ''}`);
+  }
+
+  driverNavState.demoTimer = setInterval(() => {
+    if (driverNavState.demoIndex >= polyline.length - 1) {
+      // Completed route circuit
+      stopDriverDemoSimulation();
+      speakNavInstruction('You have arrived back at the testing centre. Practical driving test circuit completed!');
+      return;
+    }
+
+    const p1 = polyline[driverNavState.demoIndex];
+    driverNavState.demoIndex = Math.min(driverNavState.demoIndex + 2, polyline.length - 1);
+    const p2 = polyline[driverNavState.demoIndex];
+
+    // Calculate bearing between p1 and p2
+    const dLon = (p2[1] - p1[1]) * Math.PI / 180;
+    const y = Math.sin(dLon) * Math.cos(p2[0] * Math.PI / 180);
+    const x = Math.cos(p1[0] * Math.PI / 180) * Math.sin(p2[0] * Math.PI / 180) -
+              Math.sin(p1[0] * Math.PI / 180) * Math.cos(p2[0] * Math.PI / 180) * Math.cos(dLon);
+    const bearing = (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
+
+    // Realistic simulated speed ~ 48-52 km/h
+    const simSpeed = Math.floor(45 + Math.random() * 8);
+
+    processVehiclePosition(p2[0], p2[1], simSpeed, bearing);
+
+    if (driverNavState.map) {
+      driverNavState.map.panTo([p2[0], p2[1]], { animate: true, duration: 0.2 });
+    }
+
+    // Dynamic countdown and step advancement
+    const stepIdx = Math.min(steps.length - 1, Math.floor(driverNavState.demoIndex / stepInterval));
+    const nextTargetPoint = (stepIdx + 1) * stepInterval;
+    const pointsRemaining = Math.max(0, nextTargetPoint - driverNavState.demoIndex);
+    const countdownMeters = Math.max(15, Math.round(pointsRemaining * 12));
+
+    updateDriverHudStep(stepIdx, countdownMeters);
+
+    if (stepIdx !== driverNavState.currentStepIndex) {
+      driverNavState.currentStepIndex = stepIdx;
+      const currentStep = steps[stepIdx];
+      speakNavInstruction(`${currentStep.instruction}. ${currentStep.examiner_focus || ''}`);
+    }
+  }, 250);
+}
+window.startDriverDemoSimulation = startDriverDemoSimulation;
+
+function stopDriverDemoSimulation() {
+  driverNavState.isDemoPlaying = false;
+  if (driverNavState.demoTimer) clearInterval(driverNavState.demoTimer);
+  driverNavState.demoTimer = null;
+
+  const btn = document.getElementById('driverDemoBtn');
+  if (btn) {
+    btn.classList.remove('playing');
+    const text = document.getElementById('driverDemoBtnText');
+    if (text) text.innerText = 'Demo Play';
+  }
+  updateDriverGpsStatus('GPS Ready', true);
+}
+window.stopDriverDemoSimulation = stopDriverDemoSimulation;
+
 // Exit Driver Navigation
 function exitDriverNavigation() {
   if (driverNavState.isDemoPlaying) {
-    toggleDriverDemoSimulation();
+    stopDriverDemoSimulation();
   }
 
   if (driverNavState.watchId !== null) {
@@ -3480,5 +3573,14 @@ function exitDriverNavigation() {
     driverNavState.map.remove();
     driverNavState.map = null;
   }
+
+  driverNavState.activeRoute = null;
+  driverNavState.activeCenter = null;
+  driverNavState.isOffRoute = false;
+  driverNavState.lastSpokenText = '';
+  driverNavState.hasStartedRoute = false;
+  driverNavState.offRouteCount = 0;
+  driverNavState.onRouteCount = 0;
+  driverNavState.demoIndex = 0;
 }
 window.exitDriverNavigation = exitDriverNavigation;
