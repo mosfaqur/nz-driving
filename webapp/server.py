@@ -109,6 +109,16 @@ if os.path.exists(AUCKLAND_ROUTES_FILE):
 
 app = FastAPI(title="NZ Road Code Multi-User Study & Mock Exam Web App", version="1.1.0")
 
+@app.middleware("http")
+async def add_no_cache_headers(request: Request, call_next):
+    response = await call_next(request)
+    path = request.url.path
+    if path == "/" or path.endswith(".html") or path.endswith(".js") or path.endswith(".css") or "/api/routes" in path:
+        response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+        response.headers["Pragma"] = "no-cache"
+        response.headers["Expires"] = "0"
+    return response
+
 STATIC_DIR = os.path.join(os.path.dirname(__file__), "static")
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
@@ -764,6 +774,69 @@ def get_single_route(route_id: str):
                     "route": r
                 }
     raise HTTPException(status_code=404, detail=f"Route '{route_id}' not found.")
+
+@app.get("/api/routes/route/{route_id}/gpx")
+def download_route_gpx(route_id: str):
+    all_centers = AUCKLAND_ROUTES_DATA.get("centers", [])
+    target_center = None
+    target_route = None
+    for c in all_centers:
+        for r in c.get("routes", []):
+            if r.get("id") == route_id:
+                target_center = c
+                target_route = r
+                break
+        if target_route:
+            break
+            
+    if not target_route:
+        raise HTTPException(status_code=404, detail=f"Route '{route_id}' not found.")
+        
+    route_name = target_route.get("name", "NZ Practical Test Route").replace("&", "and")
+    desc = target_route.get("overview", "").replace("&", "and")
+    snapped_wps = target_route.get("snapped_waypoints", [])
+    polyline = target_route.get("polyline_coords", [])
+    
+    gpx_lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<gpx version="1.1" creator="NZ Practical Driving Test App" xmlns="http://www.topografix.com/GPX/1/1">',
+        '  <metadata>',
+        f'    <name>{route_name}</name>',
+        f'    <desc>{desc}</desc>',
+        '  </metadata>',
+        '  <rte>',
+        f'    <name>{route_name}</name>',
+        f'    <desc>{desc}</desc>'
+    ]
+    
+    for i, wp in enumerate(snapped_wps, 1):
+        lat = wp.get("lat")
+        lng = wp.get("lng")
+        name = str(wp.get("name", f"Waypoint {i}")).replace("&", "and")
+        gpx_lines.append(f'    <rtept lat="{lat}" lon="{lng}">')
+        gpx_lines.append(f'      <name>{name}</name>')
+        gpx_lines.append('    </rtept>')
+        
+    gpx_lines.append('  </rte>')
+    
+    if polyline:
+        gpx_lines.append('  <trk>')
+        gpx_lines.append(f'    <name>{route_name} Track</name>')
+        gpx_lines.append('    <trkseg>')
+        for pt in polyline:
+            gpx_lines.append(f'      <trkpt lat="{pt[0]}" lon="{pt[1]}" />')
+        gpx_lines.append('    </trkseg>')
+        gpx_lines.append('  </trk>')
+        
+    gpx_lines.append('</gpx>')
+    gpx_content = "\n".join(gpx_lines)
+    
+    filename = f"{route_id}.gpx"
+    return Response(
+        content=gpx_content,
+        media_type="application/gpx+xml",
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'}
+    )
 
 if __name__ == "__main__":
     import uvicorn

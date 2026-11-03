@@ -55,7 +55,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   const authed = await checkCurrentUser();
   if (authed) {
     hideAuthGate();
-    loadStudyQuestions();
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetView = urlParams.get('view') || (window.location.hash ? window.location.hash.replace('#', '') : null);
+    if (targetView && ['routes', 'theory', 'study', 'test', 'metrics', 'weak'].includes(targetView)) {
+      switchView(targetView);
+    } else {
+      loadStudyQuestions();
+    }
   } else {
     showAuthGate();
   }
@@ -2665,14 +2671,26 @@ function renderRoutesCenters(centers) {
             <p class="route-overview-text">${escapeHtml(r.overview || '')}</p>
           </div>
           <div class="route-actions-row">
-            <a href="${escapeHtml(r.google_maps_url)}" target="_blank" rel="noopener noreferrer" class="btn-gmaps-primary" title="Open live GPS directions in Google Maps">
+            <button type="button" class="btn-gps-nav-primary" onclick="launchDriverNav('${escapeHtml(r.id)}', false)" title="Launch live turn-by-turn in-app GPS navigation with voice guidance">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
-              <span>Open in Google Maps</span>
-            </a>
+              <span>Drive (Live GPS)</span>
+            </button>
+            <button type="button" class="btn-demo-sim-card" onclick="launchDriverNav('${escapeHtml(r.id)}', true)" title="Instant animated drive simulation with voice and speedometer playback">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>Demo Drive</span>
+            </button>
             <button type="button" class="btn-route-details" onclick="openRouteModal('${escapeHtml(r.id)}')" title="View turn-by-turn steps, examiner tips, and maneuvers">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
               <span>Steps &amp; Tips</span>
             </button>
+            <a href="${escapeHtml(r.google_maps_url)}" target="_blank" rel="noopener noreferrer" class="btn-gmaps-secondary" title="Open live GPS directions in Google Maps">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              <span>Google Maps</span>
+            </a>
+            <a href="/api/routes/route/${escapeHtml(r.id)}/gpx" class="btn-gpx-export" download title="Download GPX file for Garmin, TomTom or car GPS">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>GPX</span>
+            </a>
           </div>
         </div>
       `;
@@ -2806,6 +2824,20 @@ async function openRouteModal(routeId) {
     appleBtn.style.display = 'none';
   }
 
+  // Wire GPX download and In-App GPS navigation buttons
+  currentModalRouteId = routeId;
+  const startGpsBtn = document.getElementById('routeModalStartGpsBtn');
+  if (startGpsBtn) {
+    startGpsBtn.onclick = () => {
+      closeRouteModal();
+      launchDriverNav(routeId);
+    };
+  }
+  const gpxBtn = document.getElementById('routeModalGpxBtn');
+  const footerGpxBtn = document.getElementById('routeModalFooterGpxBtn');
+  if (gpxBtn) gpxBtn.href = `/api/routes/route/${routeId}/gpx`;
+  if (footerGpxBtn) footerGpxBtn.href = `/api/routes/route/${routeId}/gpx`;
+
   if (overviewEl) overviewEl.innerText = targetRoute.overview || '';
 
   // Speed zones
@@ -2871,3 +2903,582 @@ window.resetRoutesFilters = resetRoutesFilters;
 window.loadRoutesView = loadRoutesView;
 
 
+
+// ============================================================================
+// IN-APP TURN-BY-TURN GPS DRIVER NAVIGATION SYSTEM
+// ============================================================================
+let currentModalRouteId = null;
+
+function launchDriverNavFromModal(autoDemo = false) {
+  if (currentModalRouteId) {
+    closeRouteModal();
+    launchDriverNav(currentModalRouteId, autoDemo);
+  }
+}
+window.launchDriverNavFromModal = launchDriverNavFromModal;
+
+const driverNavState = {
+  activeRoute: null,
+  activeCenter: null,
+  map: null,
+  polylineLayer: null,
+  vehicleMarker: null,
+  startMarker: null,
+  watchId: null,
+  wakeLock: null,
+  voiceEnabled: true,
+  currentStepIndex: 0,
+  speedLimit: 50,
+  userLocation: null,
+  lastSpokenText: '',
+  isOffRoute: false,
+  isDemoPlaying: false,
+  demoTimer: null,
+  demoIndex: 0,
+  startTime: null
+};
+
+// Web Audio API Chime for turn alert
+function playNavChime() {
+  try {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return;
+    const ctx = new AudioContextClass();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.type = 'sine';
+    const now = ctx.currentTime;
+    osc.frequency.setValueAtTime(540, now);
+    osc.frequency.setValueAtTime(720, now + 0.1);
+    gain.gain.setValueAtTime(0.12, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+    osc.start(now);
+    osc.stop(now + 0.35);
+  } catch (e) {}
+}
+
+// Spoken Voice Guidance via HTML5 Speech Synthesis
+function speakNavInstruction(text, force = false) {
+  if (!driverNavState.voiceEnabled) return;
+  if (!('speechSynthesis' in window)) return;
+  if (!text) return;
+  if (driverNavState.lastSpokenText === text && !force) return;
+
+  driverNavState.lastSpokenText = text;
+  playNavChime();
+
+  setTimeout(() => {
+    try {
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.rate = 0.98;
+      utter.pitch = 1.0;
+      const voices = window.speechSynthesis.getVoices() || [];
+      const nzVoice = voices.find(v => (v.lang && (v.lang.includes('en-NZ') || v.lang.includes('en-AU') || v.lang.includes('en-GB'))));
+      if (nzVoice) utter.voice = nzVoice;
+      window.speechSynthesis.speak(utter);
+    } catch (e) {
+      console.warn('Speech error:', e);
+    }
+  }, 120);
+}
+
+// Distance between coordinates in meters (Haversine formula)
+function calcDistanceMeters(lat1, lon1, lat2, lon2) {
+  const R = 6371000;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}
+
+// Shortest perpendicular distance from a point to a polyline
+function calcMinDistToPolyline(point, polyline) {
+  if (!polyline || polyline.length === 0) return 0;
+  let minD = Infinity;
+  for (let i = 0; i < polyline.length; i++) {
+    const d = calcDistanceMeters(point[0], point[1], polyline[i][0], polyline[i][1]);
+    if (d < minD) minD = d;
+  }
+  return minD;
+}
+
+// Maneuver SVG Icons based on turn instruction
+function getManeuverSvg(instruction) {
+  const text = (instruction || '').toLowerCase();
+  if (text.includes('left') && text.includes('slight')) {
+    return `<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M14 4l-4 4 4 4"/><path d="M10 8h5a5 5 0 0 1 5 5v7"/></svg>`;
+  } else if (text.includes('right') && text.includes('slight')) {
+    return `<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M10 4l4 4-4 4"/><path d="M14 8h-5a5 5 0 0 0-5 5v7"/></svg>`;
+  } else if (text.includes('left') || text.includes('sharp left')) {
+    return `<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><polyline points="9 10 4 15 9 20"></polyline><path d="M20 4v7a4 4 0 0 1-4 4H4"></path></svg>`;
+  } else if (text.includes('right') || text.includes('sharp right')) {
+    return `<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><polyline points="15 10 20 15 15 20"></polyline><path d="M4 4v7a4 4 0 0 0 4 4h12"></path></svg>`;
+  } else if (text.includes('roundabout')) {
+    return `<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><circle cx="12" cy="12" r="5"></circle><polyline points="12 2 15 5 12 8"></polyline><path d="M12 2a10 10 0 1 1-7.07 17.07"></path></svg>`;
+  } else if (text.includes('u-turn')) {
+    return `<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M9 10L4 15l5 5"></path><path d="M20 4v7a6 6 0 0 1-12 0V4"></path></svg>`;
+  } else if (text.includes('finish') || text.includes('arrive') || text.includes('destination')) {
+    return `<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>`;
+  } else {
+    return `<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>`;
+  }
+}
+
+// Launch Navigation Mode
+async function launchDriverNav(routeId, autoDemo = false) {
+  let targetCenter = null;
+  let targetRoute = null;
+
+  if (allRoutesData && allRoutesData.centers) {
+    for (const c of allRoutesData.centers) {
+      for (const r of (c.routes || [])) {
+        if (r.id === routeId) {
+          targetCenter = c;
+          targetRoute = r;
+          break;
+        }
+      }
+      if (targetRoute) break;
+    }
+  }
+
+  if (!targetRoute) {
+    try {
+      const res = await fetch(`/api/routes/route/${routeId}`);
+      if (!res.ok) throw new Error('Route not found');
+      const data = await res.json();
+      targetCenter = data.center;
+      targetRoute = data.route;
+    } catch (e) {
+      alert('Could not load route for driving: ' + e.message);
+      return;
+    }
+  }
+
+  driverNavState.activeRoute = targetRoute;
+  driverNavState.activeCenter = targetCenter;
+  driverNavState.currentStepIndex = 0;
+  driverNavState.lastSpokenText = '';
+  driverNavState.isOffRoute = false;
+  driverNavState.isDemoPlaying = false;
+  driverNavState.demoIndex = 0;
+  driverNavState.startTime = Date.now();
+
+  // Screen WakeLock to keep screen on while driving
+  if ('wakeLock' in navigator) {
+    try {
+      driverNavState.wakeLock = await navigator.wakeLock.request('screen');
+    } catch (err) {}
+  }
+
+  // Display overlay
+  const overlay = document.getElementById('driverNavOverlay');
+  if (overlay) overlay.style.display = 'flex';
+
+  // Initialize Leaflet Map
+  initDriverNavMap(targetRoute, targetCenter);
+
+  // Update HUD
+  updateDriverHudStep(0, 0);
+
+  // Start GPS Geolocation
+  startDriverGeolocation();
+
+  // Welcome speech
+  speakNavInstruction(`Starting driving test route for ${targetRoute.name}. Follow the highlighted route.`);
+
+  // Auto-start demo if requested
+  if (autoDemo) {
+    setTimeout(() => {
+      toggleDriverDemoSimulation();
+    }, 400);
+  }
+}
+window.launchDriverNav = launchDriverNav;
+
+// Initialize or update Leaflet Map
+function initDriverNavMap(route, center) {
+  const mapContainer = document.getElementById('driverNavMap');
+  if (!mapContainer) return;
+
+  if (driverNavState.map) {
+    driverNavState.map.remove();
+    driverNavState.map = null;
+  }
+
+  const polyline = route.polyline_coords || [];
+  let centerLat = center && center.coords ? center.coords.lat : -36.8485;
+  let centerLng = center && center.coords ? center.coords.lng : 174.7633;
+
+  if (polyline.length > 0) {
+    centerLat = polyline[0][0];
+    centerLng = polyline[0][1];
+  }
+
+  driverNavState.map = L.map('driverNavMap', {
+    zoomControl: false,
+    attributionControl: false
+  }).setView([centerLat, centerLng], 17);
+
+  // Clean OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19
+  }).addTo(driverNavState.map);
+
+  // Polyline shadow and glowing path
+  if (polyline.length > 1) {
+    // Outer casing (casing layer for high visibility)
+    L.polyline(polyline, {
+      color: '#0369a1',
+      weight: 9,
+      opacity: 0.65,
+      lineCap: 'round',
+      lineJoin: 'round'
+    }).addTo(driverNavState.map);
+
+    // Inner bright navigation polyline
+    driverNavState.polylineLayer = L.polyline(polyline, {
+      color: '#0284c7',
+      weight: 6,
+      opacity: 0.95,
+      lineCap: 'round',
+      lineJoin: 'round'
+    }).addTo(driverNavState.map);
+
+    driverNavState.map.fitBounds(driverNavState.polylineLayer.getBounds(), {
+      padding: [80, 80]
+    });
+  }
+
+  // Start & Finish Markers
+  const startIcon = L.divIcon({
+    className: 'custom-pin-start',
+    html: `<div style="background:#16a34a;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:10px;border:3px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,0.4);">START</div>`,
+    iconSize: [28, 28],
+    iconAnchor: [14, 14]
+  });
+  if (polyline.length > 0) {
+    driverNavState.startMarker = L.marker(polyline[0], { icon: startIcon }).addTo(driverNavState.map);
+  }
+
+  // Vehicle puck marker
+  const puckIcon = L.divIcon({
+    className: 'vehicle-marker-puck',
+    html: `
+      <div class="vehicle-puck-pulse"></div>
+      <div class="vehicle-puck-body" id="vehiclePuckRotator">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 19 21 12 17 5 21 12 2"></polygon></svg>
+      </div>
+    `,
+    iconSize: [32, 32],
+    iconAnchor: [16, 16]
+  });
+
+  const initialLoc = polyline.length > 0 ? polyline[0] : [centerLat, centerLng];
+  driverNavState.vehicleMarker = L.marker(initialLoc, { icon: puckIcon, zIndexOffset: 1000 }).addTo(driverNavState.map);
+  driverNavState.userLocation = { lat: initialLoc[0], lng: initialLoc[1], speed: 0, heading: 0 };
+}
+
+// Start Geolocation Watcher
+function startDriverGeolocation() {
+  if (!('geolocation' in navigator)) {
+    updateDriverGpsStatus('GPS Unavailable', false);
+    return;
+  }
+
+  updateDriverGpsStatus('Acquiring GPS...', true);
+
+  driverNavState.watchId = navigator.geolocation.watchPosition(
+    (pos) => {
+      const lat = pos.coords.latitude;
+      const lng = pos.coords.longitude;
+      const rawSpeed = pos.coords.speed;
+      const speedKmh = rawSpeed !== null && rawSpeed > 0 ? Math.round(rawSpeed * 3.6) : 0;
+      const heading = pos.coords.heading || 0;
+
+      updateDriverGpsStatus('GPS Locked', true);
+      processVehiclePosition(lat, lng, speedKmh, heading);
+    },
+    (err) => {
+      console.warn('Geolocation warning:', err.message);
+      updateDriverGpsStatus('Weak GPS', false);
+    },
+    {
+      enableHighAccuracy: true,
+      maximumAge: 1000,
+      timeout: 10000
+    }
+  );
+}
+
+function updateDriverGpsStatus(text, isGood) {
+  const el = document.getElementById('driverGpsStatus');
+  if (el) {
+    el.innerText = text;
+    el.className = `dash-stat-val ${isGood ? 'status-active' : ''}`;
+  }
+}
+
+// Process new vehicle location & update HUD
+function processVehiclePosition(lat, lng, speedKmh, heading) {
+  driverNavState.userLocation = { lat, lng, speed: speedKmh, heading };
+
+  // Update vehicle marker on map
+  if (driverNavState.vehicleMarker) {
+    driverNavState.vehicleMarker.setLatLng([lat, lng]);
+  }
+
+  // Rotate vehicle arrowhead
+  const rotator = document.getElementById('vehiclePuckRotator');
+  if (rotator && heading !== null && heading !== undefined) {
+    rotator.style.transform = `rotate(${heading}deg)`;
+  }
+
+  // Update Speedometer HUD
+  const speedEl = document.getElementById('driverLiveSpeed');
+  if (speedEl) speedEl.innerText = speedKmh;
+
+  const speedBox = document.getElementById('driverSpeedBox');
+  if (speedBox) {
+    if (speedKmh > driverNavState.speedLimit) {
+      speedBox.classList.add('speed-warning');
+    } else {
+      speedBox.classList.remove('speed-warning');
+    }
+  }
+
+  // Follow vehicle smoothly
+  if (driverNavState.map && !driverNavState.isDemoPlaying) {
+    driverNavState.map.panTo([lat, lng], { animate: true, duration: 0.5 });
+  }
+
+  // Check off-route status
+  const polyline = (driverNavState.activeRoute && driverNavState.activeRoute.polyline_coords) || [];
+  if (polyline.length > 0) {
+    const minDist = calcMinDistToPolyline([lat, lng], polyline);
+    const offRouteEl = document.getElementById('driverOffRouteBanner');
+    if (minDist > 45) {
+      if (!driverNavState.isOffRoute) {
+        driverNavState.isOffRoute = true;
+        if (offRouteEl) offRouteEl.style.display = 'flex';
+        speakNavInstruction('You are off the test route. Please return to the official route.');
+      }
+    } else {
+      if (driverNavState.isOffRoute) {
+        driverNavState.isOffRoute = false;
+        if (offRouteEl) offRouteEl.style.display = 'none';
+        speakNavInstruction('Rejoined test route. Continuing navigation.');
+      }
+    }
+  }
+
+  // Advance steps based on proximity
+  const steps = (driverNavState.activeRoute && driverNavState.activeRoute.steps) || [];
+  const currIdx = driverNavState.currentStepIndex;
+  if (currIdx < steps.length) {
+    updateDriverHudStep(currIdx, 150);
+  }
+}
+
+// Update Driver HUD
+function updateDriverHudStep(stepIndex, countdownMeters) {
+  const route = driverNavState.activeRoute;
+  if (!route) return;
+  const steps = route.steps || [];
+  const step = steps[stepIndex] || {
+    instruction: 'Follow route circuit',
+    road_type: 'Suburban Street',
+    examiner_focus: 'Maintain safe following distance, scan mirrors regularly.'
+  };
+
+  // Maneuver Icon
+  const iconWrap = document.getElementById('driverManeuverIcon');
+  if (iconWrap) iconWrap.innerHTML = getManeuverSvg(step.instruction);
+
+  // Countdown text
+  const countEl = document.getElementById('driverCountdown');
+  if (countEl) {
+    if (countdownMeters <= 30) countEl.innerText = 'Now';
+    else countEl.innerText = `In ${Math.round(countdownMeters)} m`;
+  }
+
+  // Instruction text
+  const instEl = document.getElementById('driverInstruction');
+  if (instEl) instEl.innerText = step.instruction;
+
+  // Step Meta
+  const metaEl = document.getElementById('driverStepMeta');
+  if (metaEl) {
+    const roadType = step.road_type || 'Suburban Street';
+    let limit = 50;
+    if (roadType.includes('Arterial') || roadType.includes('60')) limit = 60;
+    if (roadType.includes('Expressway') || roadType.includes('Motorway') || roadType.includes('80')) limit = 80;
+    if (roadType.includes('100')) limit = 100;
+    driverNavState.speedLimit = limit;
+
+    const limitBadge = document.getElementById('driverSpeedLimitBadge');
+    if (limitBadge) limitBadge.innerText = limit;
+
+    metaEl.innerHTML = `Step ${stepIndex + 1} of ${steps.length} &bull; ${limit} km/h ${escapeHtml(roadType)}`;
+  }
+
+  // Examiner focus tip
+  const tipEl = document.getElementById('driverExaminerTipText');
+  if (tipEl) {
+    tipEl.innerText = step.examiner_focus || 'Scan mirrors every 10-15 seconds, check blind spots before changing lanes.';
+  }
+
+  // Progress Bar
+  const fillEl = document.getElementById('driverProgressFill');
+  if (fillEl && steps.length > 0) {
+    const pct = Math.round(((stepIndex + 1) / steps.length) * 100);
+    fillEl.style.width = `${pct}%`;
+  }
+
+  // Remaining Distance
+  const remDistEl = document.getElementById('driverRemainingDist');
+  if (remDistEl) remDistEl.innerText = route.distance || '-- km';
+
+  const remTimeEl = document.getElementById('driverRemainingTime');
+  if (remTimeEl) remTimeEl.innerText = route.duration || '-- min';
+}
+
+// Toggle Voice Guidance
+function toggleDriverVoice() {
+  driverNavState.voiceEnabled = !driverNavState.voiceEnabled;
+  const btn = document.getElementById('driverVoiceBtn');
+  if (btn) {
+    if (driverNavState.voiceEnabled) {
+      btn.classList.add('active');
+      btn.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>`;
+      speakNavInstruction('Voice guidance unmuted.');
+    } else {
+      btn.classList.remove('active');
+      btn.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>`;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+    }
+  }
+}
+window.toggleDriverVoice = toggleDriverVoice;
+
+// Re-center Map on Vehicle
+function recenterDriverMap() {
+  if (driverNavState.map && driverNavState.userLocation) {
+    driverNavState.map.setView([driverNavState.userLocation.lat, driverNavState.userLocation.lng], 17, {
+      animate: true,
+      duration: 0.5
+    });
+  }
+}
+window.recenterDriverMap = recenterDriverMap;
+
+// Toggle Demo Simulation Playback
+function toggleDriverDemoSimulation() {
+  if (driverNavState.isDemoPlaying) {
+    // Stop Demo
+    driverNavState.isDemoPlaying = false;
+    if (driverNavState.demoTimer) clearInterval(driverNavState.demoTimer);
+    driverNavState.demoTimer = null;
+    const btn = document.getElementById('driverDemoBtn');
+    if (btn) {
+      btn.classList.remove('playing');
+      const text = document.getElementById('driverDemoBtnText');
+      if (text) text.innerText = 'Demo Play';
+    }
+    updateDriverGpsStatus('GPS Locked', true);
+  } else {
+    // Start Demo
+    const polyline = (driverNavState.activeRoute && driverNavState.activeRoute.polyline_coords) || [];
+    if (polyline.length < 2) {
+      alert('Polyline not loaded for simulation.');
+      return;
+    }
+
+    driverNavState.isDemoPlaying = true;
+    const btn = document.getElementById('driverDemoBtn');
+    if (btn) {
+      btn.classList.add('playing');
+      const text = document.getElementById('driverDemoBtnText');
+      if (text) text.innerText = 'Pause Demo';
+    }
+    updateDriverGpsStatus('Demo Simulating', true);
+
+    const steps = (driverNavState.activeRoute && driverNavState.activeRoute.steps) || [];
+    const stepInterval = Math.max(1, Math.floor(polyline.length / Math.max(1, steps.length)));
+
+    driverNavState.demoTimer = setInterval(() => {
+      if (driverNavState.demoIndex >= polyline.length - 1) {
+        // Finished route!
+        toggleDriverDemoSimulation();
+        speakNavInstruction('You have arrived back at the testing centre. Practical driving test circuit completed!');
+        return;
+      }
+
+      const p1 = polyline[driverNavState.demoIndex];
+      driverNavState.demoIndex = Math.min(driverNavState.demoIndex + 2, polyline.length - 1);
+      const p2 = polyline[driverNavState.demoIndex];
+
+      // Calculate bearing between p1 and p2
+      const dLon = (p2[1] - p1[1]) * Math.PI / 180;
+      const y = Math.sin(dLon) * Math.cos(p2[0] * Math.PI / 180);
+      const x = Math.cos(p1[0] * Math.PI / 180) * Math.sin(p2[0] * Math.PI / 180) -
+                Math.sin(p1[0] * Math.PI / 180) * Math.cos(p2[0] * Math.PI / 180) * Math.cos(dLon);
+      const bearing = (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
+
+      // Realistic speed ~ 48-52 km/h
+      const simSpeed = Math.floor(45 + Math.random() * 8);
+
+      processVehiclePosition(p2[0], p2[1], simSpeed, bearing);
+
+      if (driverNavState.map) {
+        driverNavState.map.panTo([p2[0], p2[1]], { animate: true, duration: 0.2 });
+      }
+
+      // Advance step
+      const stepIdx = Math.min(steps.length - 1, Math.floor(driverNavState.demoIndex / stepInterval));
+      if (stepIdx !== driverNavState.currentStepIndex) {
+        driverNavState.currentStepIndex = stepIdx;
+        const currentStep = steps[stepIdx];
+        updateDriverHudStep(stepIdx, 60);
+        speakNavInstruction(`${currentStep.instruction}. ${currentStep.examiner_focus || ''}`);
+      }
+    }, 300);
+  }
+}
+window.toggleDriverDemoSimulation = toggleDriverDemoSimulation;
+
+// Exit Driver Navigation
+function exitDriverNavigation() {
+  if (driverNavState.isDemoPlaying) {
+    toggleDriverDemoSimulation();
+  }
+
+  if (driverNavState.watchId !== null) {
+    navigator.geolocation.clearWatch(driverNavState.watchId);
+    driverNavState.watchId = null;
+  }
+
+  if (driverNavState.wakeLock) {
+    driverNavState.wakeLock.release().catch(() => {});
+    driverNavState.wakeLock = null;
+  }
+
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+  }
+
+  const overlay = document.getElementById('driverNavOverlay');
+  if (overlay) overlay.style.display = 'none';
+
+  if (driverNavState.map) {
+    driverNavState.map.remove();
+    driverNavState.map = null;
+  }
+}
+window.exitDriverNavigation = exitDriverNavigation;

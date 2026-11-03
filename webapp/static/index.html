@@ -6,7 +6,8 @@
   <meta name="theme-color" content="#0f172a">
   <title>NZ Road Code Master Study & Mock Exam</title>
   <link rel="icon" type="image/png" href="/static/favicon.png">
-  <link rel="stylesheet" href="/static/css/style.css?v=1.4.0">
+  <link rel="stylesheet" href="/static/css/leaflet.css">
+  <link rel="stylesheet" href="/static/css/style.css?v=2.2.0">
   <script src="/static/js/chart.min.js"></script>
 </head>
 <body>
@@ -101,7 +102,7 @@
           <span>Theory &amp; Lessons</span>
         </button>
         <button class="nav-btn" data-view="routes" id="nav-routes">
-          <span>Test Routes</span>
+          <span>Driving Routes &amp; GPS</span>
         </button>
         <button class="nav-btn" data-view="test" id="nav-test">
           <span>Mock Test (35Q)</span>
@@ -632,12 +633,24 @@
         <div class="route-modal-launch-banner">
           <div class="launch-banner-text">
             <h4>Ready to practice this route?</h4>
-            <p>Click below to open this exact driving circuit in Google Maps with live GPS navigation, turn prompts, and speed monitoring.</p>
+            <p>Start live in-app GPS turn-by-turn navigation with spoken audio guidance, or open in external maps.</p>
           </div>
           <div class="launch-banner-btns">
-            <a id="routeModalGmapsBtn" href="" target="_blank" rel="noopener noreferrer" class="btn-gmaps-primary">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
-              <span>Start Google Maps Navigation</span>
+            <button type="button" id="routeModalStartGpsBtn" class="btn-gps-nav-primary" onclick="launchDriverNavFromModal(false)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+              <span>Drive Route (Live GPS)</span>
+            </button>
+            <button type="button" id="routeModalDemoBtn" class="btn-demo-sim-card" onclick="launchDriverNavFromModal(true)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>Demo Drive (Simulate)</span>
+            </button>
+            <a id="routeModalGmapsBtn" href="" target="_blank" rel="noopener noreferrer" class="btn-gmaps-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              <span>Google Maps</span>
+            </a>
+            <a id="routeModalGpxBtn" href="" class="btn-gpx-export" download>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>Download GPX</span>
             </a>
           </div>
         </div>
@@ -679,10 +692,20 @@
       <!-- Modal Footer -->
       <div class="route-modal-footer">
         <button type="button" class="btn-secondary" onclick="closeRouteModal()">Close (Esc)</button>
-        <a id="routeModalFooterGmapsBtn" href="" target="_blank" rel="noopener noreferrer" class="btn-gmaps-primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
-          <span>Open in Google Maps</span>
-        </a>
+        <div class="footer-actions-group">
+          <a id="routeModalFooterGpxBtn" href="" class="btn-gpx-export" download>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>GPX</span>
+          </a>
+          <a id="routeModalFooterGmapsBtn" href="" target="_blank" rel="noopener noreferrer" class="btn-gmaps-secondary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+            <span>Google Maps</span>
+          </a>
+          <button type="button" class="btn-gps-nav-primary" onclick="launchDriverNavFromModal()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+            <span>Drive (Live GPS)</span>
+          </button>
+        </div>
       </div>
     </div>
   </dialog>
@@ -881,6 +904,90 @@
     </button>
   </nav>
 
-  <script src="/static/js/app.js?v=1.5.0"></script>
+  <!-- Full-Screen Automotive GPS Navigation & Turn-by-Turn Driver Mode -->
+  <div id="driverNavOverlay" class="driver-nav-overlay" style="display: none;">
+    <!-- Top HUD Banner (Primary Maneuver & Examiner Focus Alert) -->
+    <div class="driver-hud-top">
+      <div class="driver-maneuver-card">
+        <div class="driver-maneuver-icon-wrap" id="driverManeuverIcon">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+        </div>
+        <div class="driver-maneuver-text-group">
+          <div class="driver-dist-countdown" id="driverCountdown">In 200 m</div>
+          <div class="driver-instruction-text" id="driverInstruction">Continue straight on route</div>
+          <div class="driver-step-meta" id="driverStepMeta">Step 1 of 30 &bull; 50 km/h Zone</div>
+        </div>
+        <button type="button" class="driver-hud-close-btn" onclick="exitDriverNavigation()" aria-label="Exit Navigation">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <!-- Examiner Audio/Visual Focus Tip Banner -->
+      <div class="driver-examiner-banner" id="driverExaminerBanner">
+        <div class="examiner-badge-pill">Examiner Focus</div>
+        <div class="examiner-tip-text" id="driverExaminerTipText">Maintain legal speed limit, scan mirrors every 10-15 seconds.</div>
+      </div>
+
+      <!-- Off-Route Warning Alert Banner -->
+      <div class="driver-offroute-banner" id="driverOffRouteBanner" style="display: none;">
+        <span class="offroute-alert-badge">OFF TEST ROUTE</span>
+        <span class="offroute-alert-text">You have left the test route. Please rejoin the highlighted track.</span>
+      </div>
+    </div>
+
+    <!-- Central Interactive Leaflet Map Viewport -->
+    <div id="driverNavMap" class="driver-nav-map-container"></div>
+
+    <!-- Floating Map Controls (Speedometer, Re-center, Voice) -->
+    <div class="driver-map-floating-controls">
+      <!-- Speedometer HUD Badge -->
+      <div class="driver-speedometer-box" id="driverSpeedBox">
+        <div class="speed-number" id="driverLiveSpeed">0</div>
+        <div class="speed-unit">km/h</div>
+        <div class="speed-limit-badge" id="driverSpeedLimitBadge" title="Posted Legal Speed Limit">50</div>
+      </div>
+      <!-- Floating Action Buttons -->
+      <div class="driver-floating-actions">
+        <button type="button" class="driver-float-btn" id="driverVoiceBtn" onclick="toggleDriverVoice()" title="Toggle Voice Prompts">
+          <svg id="driverVoiceIcon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+        </button>
+        <button type="button" class="driver-float-btn" id="driverRecenterBtn" onclick="recenterDriverMap()" title="Re-center on Vehicle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Bottom Driver Control Dashboard -->
+    <div class="driver-hud-bottom">
+      <div class="driver-progress-strip">
+        <div class="driver-progress-fill" id="driverProgressFill" style="width: 5%;"></div>
+      </div>
+      <div class="driver-dashboard-stats">
+        <div class="dash-stat-block">
+          <span class="dash-stat-label">REMAINING</span>
+          <span class="dash-stat-val" id="driverRemainingDist">-- km</span>
+        </div>
+        <div class="dash-stat-block">
+          <span class="dash-stat-label">EST. TIME</span>
+          <span class="dash-stat-val" id="driverRemainingTime">-- min</span>
+        </div>
+        <div class="dash-stat-block">
+          <span class="dash-stat-label">GPS STATUS</span>
+          <span class="dash-stat-val status-active" id="driverGpsStatus">Connecting...</span>
+        </div>
+        <!-- Demo Simulation / Playback Controls -->
+        <div class="dash-controls-block">
+          <button type="button" class="btn-driver-demo" id="driverDemoBtn" onclick="toggleDriverDemoSimulation()">
+            <svg id="driverDemoIcon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            <span id="driverDemoBtnText">Demo Play</span>
+          </button>
+          <button type="button" class="btn-driver-exit" onclick="exitDriverNavigation()">End Drive</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/js/leaflet.js"></script>
+  <script src="/static/js/app.js?v=2.2.0"></script>
 </body>
 </html>
