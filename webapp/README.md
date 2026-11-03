@@ -45,7 +45,14 @@ The application provides an interactive, data-driven study experience powered by
 - **Direct Practice Linking**: Jump directly from any theory chapter into practice questions filtered for that topic.
 - **Category 11 Dedicated Filter**: Direct Study Hub access to all 42 official NZTA Category 11 Theory questions.
 
-### 3. Official 35-Question Mock Exam Engine
+### 3. Auckland Practical Driving Test Routes & Google Maps Navigation
+- **13 Practical Test Centres**: Complete coverage of all official VTNZ testing centres across Greater Auckland: Westgate, Albany, Glen Innes, Highbrook, Manukau Lambie, Mount Wellington, New Lynn, Pukekohe, Silverdale, Takanini, Takapuna, Warkworth, and Wiri.
+- **39 Authentic Practical Circuits**: Covers Class 1R (Restricted Licence) and Class 1F (Full Licence) test circuits.
+- **One-Click Google Maps GPS Navigation**: Pre-formatted Universal Directions URLs with origin, destination, and intermediate waypoints for turn-by-turn driving practice.
+- **Turn-by-Turn Maneuvers & Examiner Advice**: Detailed step-by-step turns, road types, speed limits, and official examiner tips.
+- **Sub-Region & Test Type Filters**: Instant search and filtering across West Auckland, North Shore & Rodney, Central & East, and South Auckland & Franklin.
+
+### 4. Official 35-Question Mock Exam Engine
 - **Balanced Question Distribution**: Follows official NZTA proportions across core rules, intersections, parking, emergencies, signs, and road conditions.
 - **Official Exam Rules**:
   - 35 questions with a 30-minute countdown timer.
@@ -164,6 +171,15 @@ All protected endpoints require an `Authorization: Bearer <session_token>` heade
 | `GET` | `/api/weak-areas` | Query questions needing practice based on historical mistakes | Yes |
 | `GET` | `/api/metrics` | Retrieve comprehensive learning metrics and score timelines | Yes |
 | `POST` | `/api/reset` | Permanently reset study progress and test records for current user | Yes |
+
+### Theory & Auckland Test Routes Endpoints
+| Method | Endpoint | Description | Auth Required |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/theory/guide` | Retrieve 8 official NZTA theory chapters and rule summaries | No |
+| `GET` | `/api/theory/videos` | Query 63 official Drive Go video lessons with category filtering | No |
+| `GET` | `/api/routes` | Query Auckland practical test centres and routes (filters: `area`, `test_type`, `search`) | No |
+| `GET` | `/api/routes/{center_id}` | Fetch full practical test centre details, pass rate, and all routes | No |
+| `GET` | `/api/routes/route/{route_id}` | Fetch individual route details, turn-by-turn steps, and Google Maps URL | No |
 
 ---
 

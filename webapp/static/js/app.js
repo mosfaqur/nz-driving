@@ -98,6 +98,8 @@ function switchView(viewName) {
     loadStudyQuestions();
   } else if (viewName === 'theory') {
     loadTheoryView();
+  } else if (viewName === 'routes') {
+    loadRoutesView();
   } else if (viewName === 'metrics') {
     loadMetrics();
   } else if (viewName === 'weak') {
@@ -2462,5 +2464,410 @@ window.openVideoModal = openVideoModal;
 window.closeVideoModal = closeVideoModal;
 window.fetchTheoryGuide = fetchTheoryGuide;
 window.fetchDriveGoVideos = fetchDriveGoVideos;
+
+// =============================================================================
+// AUCKLAND PRACTICAL DRIVING TEST ROUTES & GOOGLE MAPS NAVIGATION
+// =============================================================================
+let allRoutesData = null;
+let routesFilter = {
+  area: 'all',
+  test_type: 'all',
+  search: ''
+};
+let routesEventsInitialized = false;
+
+async function loadRoutesView() {
+  initRoutesEventListeners();
+
+  const container = document.getElementById('routes-centers-container');
+  if (!allRoutesData) {
+    if (container) {
+      container.innerHTML = '<div class="loading-state">Loading Auckland practical test routes...</div>';
+    }
+    try {
+      const res = await fetch('/api/routes');
+      if (!res.ok) {
+        throw new Error(`Server returned status ${res.status}`);
+      }
+      allRoutesData = await res.json();
+    } catch (err) {
+      console.error('Failed to load driving routes:', err);
+      if (container) {
+        container.innerHTML = `
+          <div style="text-align: center; padding: 40px; background: #ffffff; border-radius: 8px; border: 1px solid var(--slate-200);">
+            <h3 style="font-size: 16px; font-weight: 700; color: var(--slate-800);">Unable to Load Test Routes</h3>
+            <p style="color: var(--slate-600); margin: 6px 0 16px;">${err.message}</p>
+            <button class="btn-primary" onclick="loadRoutesView()">Retry</button>
+          </div>
+        `;
+      }
+      return;
+    }
+  }
+
+  applyRoutesFilter();
+}
+
+function initRoutesEventListeners() {
+  if (routesEventsInitialized) return;
+  routesEventsInitialized = true;
+
+  // Search input
+  const searchInput = document.getElementById('routes-search-input');
+  const searchClear = document.getElementById('routes-search-clear');
+  if (searchInput) {
+    let debounceTimer;
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        routesFilter.search = e.target.value.trim();
+        if (searchClear) {
+          searchClear.style.display = routesFilter.search ? 'flex' : 'none';
+        }
+        applyRoutesFilter();
+      }, 200);
+    });
+  }
+
+  if (searchClear) {
+    searchClear.addEventListener('click', () => {
+      if (searchInput) {
+        searchInput.value = '';
+        routesFilter.search = '';
+        searchClear.style.display = 'none';
+        searchInput.focus();
+        applyRoutesFilter();
+      }
+    });
+  }
+
+  // Test type toggle buttons (All, Restricted, Full)
+  document.querySelectorAll('.type-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.type-filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      routesFilter.test_type = btn.getAttribute('data-type') || 'all';
+      applyRoutesFilter();
+    });
+  });
+
+  // Area pill buttons
+  document.querySelectorAll('.area-pill-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.area-pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      routesFilter.area = btn.getAttribute('data-area') || 'all';
+      applyRoutesFilter();
+    });
+  });
+}
+
+function applyRoutesFilter() {
+  if (!allRoutesData || !allRoutesData.centers) return;
+
+  const areaFilter = routesFilter.area.toLowerCase();
+  const typeFilter = routesFilter.test_type.toLowerCase();
+  const searchFilter = routesFilter.search.toLowerCase();
+
+  let matchedCenters = [];
+  let totalMatchingRoutes = 0;
+
+  allRoutesData.centers.forEach(c => {
+    // 1. Filter Area
+    if (areaFilter !== 'all' && c.area.toLowerCase() !== areaFilter) {
+      return;
+    }
+
+    // 2. Filter Routes in this Center by Test Type
+    let routes = c.routes || [];
+    if (typeFilter !== 'all') {
+      if (typeFilter === 'restricted') {
+        routes = routes.filter(r => r.badge_type === 'restricted');
+      } else if (typeFilter === 'full') {
+        routes = routes.filter(r => r.badge_type === 'full');
+      }
+    }
+
+    // 3. Search text
+    if (searchFilter) {
+      const centerMatch = (
+        c.name.toLowerCase().includes(searchFilter) ||
+        (c.suburb && c.suburb.toLowerCase().includes(searchFilter)) ||
+        (c.address && c.address.toLowerCase().includes(searchFilter)) ||
+        (c.key_features && c.key_features.some(kf => kf.toLowerCase().includes(searchFilter)))
+      );
+
+      if (!centerMatch) {
+        routes = routes.filter(r => (
+          r.name.toLowerCase().includes(searchFilter) ||
+          (r.overview && r.overview.toLowerCase().includes(searchFilter)) ||
+          (r.key_maneuvers && r.key_maneuvers.some(km => km.toLowerCase().includes(searchFilter))) ||
+          (r.steps && r.steps.some(s => s.instruction.toLowerCase().includes(searchFilter)))
+        ));
+      }
+    }
+
+    if (routes.length > 0) {
+      const cClone = Object.assign({}, c, { routes: routes });
+      matchedCenters.push(cClone);
+      totalMatchingRoutes += routes.length;
+    }
+  });
+
+  // Update summary bar
+  const summaryEl = document.getElementById('routes-summary-text');
+  if (summaryEl) {
+    summaryEl.innerText = `Showing ${matchedCenters.length} testing centre${matchedCenters.length === 1 ? '' : 's'} (${totalMatchingRoutes} route${totalMatchingRoutes === 1 ? '' : 's'})`;
+  }
+
+  renderRoutesCenters(matchedCenters);
+}
+
+function renderRoutesCenters(centers) {
+  const container = document.getElementById('routes-centers-container');
+  if (!container) return;
+
+  if (centers.length === 0) {
+    container.innerHTML = `
+      <div style="text-align: center; padding: 50px 20px; background: #ffffff; border-radius: 12px; border: 1px solid var(--slate-200);">
+        <h3 style="font-size: 16px; font-weight: 800; color: var(--slate-800); margin: 0 0 6px;">No Driving Routes Found</h3>
+        <p style="color: var(--slate-600); font-size: 14px; margin: 0 0 16px;">Try adjusting your search query, selecting another geographic area, or clearing filters.</p>
+        <button type="button" class="btn-sm btn-secondary" onclick="resetRoutesFilters()">Reset All Filters</button>
+      </div>
+    `;
+    return;
+  }
+
+  let html = '';
+  centers.forEach(c => {
+    const featuresHtml = (c.key_features || []).map(f => `<span class="center-feature-pill">${escapeHtml(f)}</span>`).join('');
+    
+    let routesHtml = '';
+    (c.routes || []).forEach(r => {
+      const isRestricted = r.badge_type === 'restricted';
+      const badgeClass = isRestricted ? 'restricted' : 'full';
+      const badgeText = isRestricted ? 'Restricted (1R)' : 'Full (1F)';
+
+      routesHtml += `
+        <div class="route-card" id="card-${escapeHtml(r.id)}">
+          <div class="route-card-top">
+            <div class="route-meta-badges">
+              <span class="route-code-badge">${escapeHtml(r.route_code || 'Practical Route')}</span>
+              <span class="route-type-badge ${badgeClass}">${badgeText}</span>
+            </div>
+            <h4 class="route-title">${escapeHtml(r.name)}</h4>
+            <div class="route-stats-chips">
+              <span class="route-chip">${escapeHtml(r.distance || '')}</span>
+              <span class="route-chip">${escapeHtml(r.duration || '')}</span>
+              <span class="route-chip">${escapeHtml(r.difficulty || 'Moderate')}</span>
+              <span class="route-chip">${(r.steps || []).length} turns</span>
+            </div>
+            <p class="route-overview-text">${escapeHtml(r.overview || '')}</p>
+          </div>
+          <div class="route-actions-row">
+            <a href="${escapeHtml(r.google_maps_url)}" target="_blank" rel="noopener noreferrer" class="btn-gmaps-primary" title="Open live GPS directions in Google Maps">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+              <span>Open in Google Maps</span>
+            </a>
+            <button type="button" class="btn-route-details" onclick="openRouteModal('${escapeHtml(r.id)}')" title="View turn-by-turn steps, examiner tips, and maneuvers">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+              <span>Steps &amp; Tips</span>
+            </button>
+          </div>
+        </div>
+      `;
+    });
+
+    html += `
+      <div class="center-card" id="center-${escapeHtml(c.center_id)}">
+        <div class="center-card-header">
+          <div class="center-title-row">
+            <h3 class="center-title">${escapeHtml(c.name)}</h3>
+            <div class="center-badges-row">
+              <span class="badge-area">${escapeHtml(c.area)}</span>
+              <span class="badge-passrate">Pass Rate ~${escapeHtml(c.pass_rate || '60%')}</span>
+              <span class="badge-agency">${escapeHtml(c.agency || 'VTNZ')}</span>
+            </div>
+          </div>
+          <div class="center-address-row">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>${escapeHtml(c.address)}</span>
+          </div>
+          ${featuresHtml ? `<div class="center-features-row">${featuresHtml}</div>` : ''}
+          ${c.center_tips ? `
+            <div class="center-officer-tip">
+              <b>Testing Area Note:</b> ${escapeHtml(c.center_tips)}
+            </div>
+          ` : ''}
+        </div>
+        <div class="center-routes-grid">
+          ${routesHtml}
+        </div>
+      </div>
+    `;
+  });
+
+  container.innerHTML = html;
+}
+
+function resetRoutesFilters() {
+  routesFilter = { area: 'all', test_type: 'all', search: '' };
+  const searchInput = document.getElementById('routes-search-input');
+  if (searchInput) searchInput.value = '';
+  const searchClear = document.getElementById('routes-search-clear');
+  if (searchClear) searchClear.style.display = 'none';
+
+  document.querySelectorAll('.type-filter-btn').forEach(b => {
+    if (b.getAttribute('data-type') === 'all') b.classList.add('active');
+    else b.classList.remove('active');
+  });
+
+  document.querySelectorAll('.area-pill-btn').forEach(b => {
+    if (b.getAttribute('data-area') === 'all') b.classList.add('active');
+    else b.classList.remove('active');
+  });
+
+  applyRoutesFilter();
+}
+
+async function openRouteModal(routeId) {
+  let targetCenter = null;
+  let targetRoute = null;
+
+  if (allRoutesData && allRoutesData.centers) {
+    for (const c of allRoutesData.centers) {
+      for (const r of (c.routes || [])) {
+        if (r.id === routeId) {
+          targetCenter = c;
+          targetRoute = r;
+          break;
+        }
+      }
+      if (targetRoute) break;
+    }
+  }
+
+  if (!targetRoute) {
+    try {
+      const res = await fetch(`/api/routes/route/${routeId}`);
+      if (!res.ok) throw new Error('Route not found');
+      const data = await res.json();
+      targetCenter = data.center;
+      targetRoute = data.route;
+    } catch (e) {
+      alert('Could not load route details: ' + e.message);
+      return;
+    }
+  }
+
+  // Populate Modal Fields
+  const modal = document.getElementById('routeModal');
+  const codeEl = document.getElementById('routeModalCode');
+  const typeEl = document.getElementById('routeModalType');
+  const areaEl = document.getElementById('routeModalArea');
+  const titleEl = document.getElementById('routeModalTitle');
+  const addrTextEl = document.getElementById('routeModalAddressText');
+  const distEl = document.getElementById('routeModalDistance');
+  const durEl = document.getElementById('routeModalDuration');
+  const stepsCountEl = document.getElementById('routeModalStepsCount');
+  const diffEl = document.getElementById('routeModalDifficulty');
+  const passEl = document.getElementById('routeModalPassRate');
+  const gmapsBtn = document.getElementById('routeModalGmapsBtn');
+  const footerGmapsBtn = document.getElementById('routeModalFooterGmapsBtn');
+  const appleBtn = document.getElementById('routeModalAppleBtn');
+  const overviewEl = document.getElementById('routeModalOverview');
+  const speedZonesEl = document.getElementById('routeModalSpeedZones');
+  const keyManeuversEl = document.getElementById('routeModalKeyManeuvers');
+  const examinerTipsEl = document.getElementById('routeModalExaminerTips');
+  const stepsSummaryEl = document.getElementById('routeModalStepsSummary');
+  const stepsListEl = document.getElementById('routeModalStepsList');
+
+  if (codeEl) codeEl.innerText = targetRoute.route_code || 'Practical Route';
+  if (typeEl) {
+    typeEl.innerText = targetRoute.test_type || 'Restricted Licence (Class 1R)';
+    typeEl.className = `route-badge-type ${targetRoute.badge_type === 'full' ? 'full' : 'restricted'}`;
+  }
+  if (areaEl) areaEl.innerText = (targetCenter && targetCenter.area) || 'Auckland';
+  if (titleEl) titleEl.innerText = targetRoute.name || 'Practical Driving Route';
+  if (addrTextEl) addrTextEl.innerText = (targetCenter && targetCenter.address) || '';
+
+  if (distEl) distEl.innerText = targetRoute.distance || '--';
+  if (durEl) durEl.innerText = targetRoute.duration || '--';
+  if (stepsCountEl) stepsCountEl.innerText = `${(targetRoute.steps || []).length} maneuvers`;
+  if (diffEl) diffEl.innerText = targetRoute.difficulty || 'Moderate';
+  if (passEl) passEl.innerText = (targetCenter && targetCenter.pass_rate) || '60%';
+
+  if (gmapsBtn) gmapsBtn.href = targetRoute.google_maps_url || '#';
+  if (footerGmapsBtn) footerGmapsBtn.href = targetRoute.google_maps_url || '#';
+  if (appleBtn && targetRoute.apple_maps_url) {
+    appleBtn.href = targetRoute.apple_maps_url;
+    appleBtn.style.display = 'inline-flex';
+  } else if (appleBtn) {
+    appleBtn.style.display = 'none';
+  }
+
+  if (overviewEl) overviewEl.innerText = targetRoute.overview || '';
+
+  // Speed zones
+  if (speedZonesEl) {
+    const zones = targetRoute.speed_zones || ['50 km/h Suburban'];
+    speedZonesEl.innerHTML = zones.map(z => `<span class="speed-pill">${escapeHtml(z)}</span>`).join('');
+  }
+
+  // Key maneuvers
+  if (keyManeuversEl) {
+    const maneuvers = targetRoute.key_maneuvers || [];
+    keyManeuversEl.innerHTML = maneuvers.map(m => `<li>${escapeHtml(m)}</li>`).join('');
+  }
+
+  // Examiner tips
+  if (examinerTipsEl) {
+    const tips = targetRoute.examiner_tips || [];
+    examinerTipsEl.innerHTML = tips.map(t => `<li>${escapeHtml(t)}</li>`).join('');
+  }
+
+  // Steps list
+  if (stepsSummaryEl) {
+    stepsSummaryEl.innerText = `${(targetRoute.steps || []).length} Turn-by-Turn Steps`;
+  }
+
+  if (stepsListEl) {
+    const steps = targetRoute.steps || [];
+    let stepsHtml = '';
+    steps.forEach(s => {
+      stepsHtml += `
+        <div class="route-step-row">
+          <div class="step-num-badge">${s.step_number}</div>
+          <div class="step-main">
+            <div class="step-instruction">${escapeHtml(s.instruction)}</div>
+            ${s.examiner_focus ? `<div class="step-tip">${escapeHtml(s.examiner_focus)}</div>` : ''}
+          </div>
+          <div class="step-meta">
+            ${s.road_type ? `<span class="step-road-type">${escapeHtml(s.road_type)}</span>` : ''}
+            <span class="step-distance">${escapeHtml(s.distance || '')}</span>
+          </div>
+        </div>
+      `;
+    });
+    stepsListEl.innerHTML = stepsHtml;
+  }
+
+  if (modal && typeof modal.showModal === 'function') {
+    modal.showModal();
+  }
+}
+
+function closeRouteModal() {
+  const modal = document.getElementById('routeModal');
+  if (modal && modal.open) {
+    modal.close();
+  }
+}
+
+// Expose routes functions globally
+window.openRouteModal = openRouteModal;
+window.closeRouteModal = closeRouteModal;
+window.resetRoutesFilters = resetRoutesFilters;
+window.loadRoutesView = loadRoutesView;
 
 

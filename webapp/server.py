@@ -97,6 +97,16 @@ if os.path.exists(DRIVE_GO_VIDEOS_FILE):
     except Exception as e:
         print(f"Warning: Could not load drive go videos: {e}")
 
+AUCKLAND_ROUTES_FILE = os.path.join(_EXPORT_DIR, "auckland_test_routes.json")
+AUCKLAND_ROUTES_DATA = {"region": "Auckland", "centers": [], "total_centers": 0, "total_routes": 0, "areas": []}
+if os.path.exists(AUCKLAND_ROUTES_FILE):
+    try:
+        with open(AUCKLAND_ROUTES_FILE, "r", encoding="utf-8") as f:
+            AUCKLAND_ROUTES_DATA = json.load(f)
+        print(f"Loaded {AUCKLAND_ROUTES_DATA.get('total_centers', 0)} Auckland practical test centres and {AUCKLAND_ROUTES_DATA.get('total_routes', 0)} driving routes.")
+    except Exception as e:
+        print(f"Warning: Could not load Auckland driving test routes: {e}")
+
 app = FastAPI(title="NZ Road Code Multi-User Study & Mock Exam Web App", version="1.1.0")
 
 STATIC_DIR = os.path.join(os.path.dirname(__file__), "static")
@@ -659,6 +669,101 @@ def get_theory_videos(category: Optional[str] = None):
         "categories": categories,
         "videos": filtered
     }
+
+# =============================================================================
+# AUCKLAND PRACTICAL DRIVING TEST ROUTES & GOOGLE MAPS NAVIGATION
+# =============================================================================
+@app.get("/api/routes")
+def get_driving_routes(
+    area: Optional[str] = None,
+    test_type: Optional[str] = None,
+    search: Optional[str] = None
+):
+    all_centers = AUCKLAND_ROUTES_DATA.get("centers", [])
+    areas_list = AUCKLAND_ROUTES_DATA.get("areas", [])
+    
+    result_centers = []
+    total_matching_routes = 0
+    
+    for c in all_centers:
+        # Filter by area
+        if area and area.lower() != "all" and c.get("area", "").lower() != area.lower():
+            continue
+            
+        routes_in_center = c.get("routes", [])
+        
+        # Filter routes by test_type (restricted vs full)
+        if test_type and test_type.lower() != "all":
+            tt = test_type.lower()
+            if "rest" in tt or "1r" in tt:
+                routes_in_center = [r for r in routes_in_center if r.get("badge_type") == "restricted"]
+            elif "full" in tt or "1f" in tt:
+                routes_in_center = [r for r in routes_in_center if r.get("badge_type") == "full"]
+
+        # Filter by search keyword
+        if search:
+            q = search.lower().strip()
+            # Match center name, suburb, or address
+            center_match = (
+                q in c.get("name", "").lower() or
+                q in c.get("suburb", "").lower() or
+                q in c.get("address", "").lower() or
+                any(q in kf.lower() for kf in c.get("key_features", []))
+            )
+            if not center_match:
+                # Or match any route name, overview, maneuvers
+                routes_in_center = [
+                    r for r in routes_in_center
+                    if q in r.get("name", "").lower() or
+                    q in r.get("overview", "").lower() or
+                    any(q in km.lower() for km in r.get("key_maneuvers", [])) or
+                    any(q in s.get("instruction", "").lower() for s in r.get("steps", []))
+                ]
+                
+        if routes_in_center:
+            c_copy = dict(c)
+            c_copy["routes"] = routes_in_center
+            c_copy["matching_routes_count"] = len(routes_in_center)
+            result_centers.append(c_copy)
+            total_matching_routes += len(routes_in_center)
+            
+    return {
+        "region": AUCKLAND_ROUTES_DATA.get("region", "Auckland"),
+        "total_centers": len(result_centers),
+        "total_routes": total_matching_routes,
+        "areas": areas_list,
+        "centers": result_centers
+    }
+
+@app.get("/api/routes/{center_id}")
+def get_center_routes(center_id: str):
+    all_centers = AUCKLAND_ROUTES_DATA.get("centers", [])
+    for c in all_centers:
+        if c.get("center_id", "").lower() == center_id.lower():
+            return c
+    raise HTTPException(status_code=404, detail=f"Testing centre '{center_id}' not found.")
+
+@app.get("/api/routes/route/{route_id}")
+def get_single_route(route_id: str):
+    all_centers = AUCKLAND_ROUTES_DATA.get("centers", [])
+    for c in all_centers:
+        for r in c.get("routes", []):
+            if r.get("id") == route_id:
+                return {
+                    "center": {
+                        "center_id": c["center_id"],
+                        "name": c["name"],
+                        "official_title": c["official_title"],
+                        "area": c["area"],
+                        "suburb": c["suburb"],
+                        "address": c["address"],
+                        "coords": c["coords"],
+                        "pass_rate": c["pass_rate"],
+                        "agency": c["agency"]
+                    },
+                    "route": r
+                }
+    raise HTTPException(status_code=404, detail=f"Route '{route_id}' not found.")
 
 if __name__ == "__main__":
     import uvicorn

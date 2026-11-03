@@ -41,14 +41,27 @@ Dedicated interactive handbook integrating the official New Zealand Road Code ac
 
 ---
 
-### 3. Instant Quiz Mode & Answer Feedback
+### 3. Auckland Practical Driving Test Routes & Google Maps Navigation
+Full coverage of all 13 official practical testing centres across Greater Auckland (Westgate, Albany, Glen Innes, Highbrook, Manukau Lambie, Mount Wellington, New Lynn, Pukekohe, Silverdale, Takanini, Takapuna, Warkworth, Wiri) with 39 interactive Restricted (Class 1R) and Full (Class 1F) test routes. Click any route to launch turn-by-turn driving navigation directly in Google Maps.
+
+| Auckland Test Routes Overview | Sub-Region & Route Filtering |
+| :---: | :---: |
+| ![Auckland Test Routes Overview](docs/screenshots/15_routes_desktop_overview.png) | ![West Auckland Routes Filtered](docs/screenshots/16_routes_westgate_filtered.png) |
+
+| Turn-by-Turn Maneuvers & Examiner Advice | Responsive Mobile Test Routes |
+| :---: | :---: |
+| ![Turn-by-Turn Route Details Modal](docs/screenshots/17_routes_turn_by_turn_modal.png) | ![Mobile Test Routes View](docs/screenshots/18_routes_mobile_view.png) |
+
+---
+
+### 4. Instant Quiz Mode & Answer Feedback
 Test recall on the fly with immediate emerald/crimson answer verification, circular selection bullets, and official rule explanations.
 
 ![Instant Quiz Mode Feedback](docs/screenshots/04_instant_quiz_desktop.png)
 
 ---
 
-### 4. Official 35-Question Mock Exam Simulator
+### 5. Official 35-Question Mock Exam Simulator
 Strict 30-minute countdown timer, official 32/35 (91.4%) pass mark, question flagging, and an interactive 35-item navigation drawer.
 
 | Desktop Exam in Progress | Mobile Exam View |
@@ -57,7 +70,7 @@ Strict 30-minute countdown timer, official 32/35 (91.4%) pass mark, question fla
 
 ---
 
-### 5. Growth Metrics & Weak Areas Diagnostic
+### 6. Growth Metrics & Weak Areas Diagnostic
 Data-driven readiness scoring, score trajectories rendered via Chart.js, and automated isolation of tricky questions.
 
 | Historical Growth Analytics | Targeted Weak Areas Practice |
@@ -66,7 +79,7 @@ Data-driven readiness scoring, score trajectories rendered via Chart.js, and aut
 
 ---
 
-### 6. Multi-User Authentication Gate
+### 7. Multi-User Authentication Gate
 Mandatory sign-in gate featuring learner registration (with email support) and quick-switch profile chips for shared devices.
 
 | Desktop Authentication Gate | Mobile Login Gate |
@@ -76,6 +89,13 @@ Mandatory sign-in gate featuring learner registration (with email support) and q
 ---
 
 ## Key Features
+
+### Auckland Practical Driving Test Routes & Google Maps Navigation
+- **13 Practical Test Centres**: Complete coverage of all official VTNZ testing centres across Greater Auckland: Westgate, Albany, Glen Innes, Highbrook, Manukau Lambie, Mount Wellington, New Lynn, Pukekohe, Silverdale, Takanini, Takapuna, Warkworth, and Wiri.
+- **39 Authentic Practical Circuits**: 39 distinct routes covering Class 1R (Restricted Licence) and Class 1F (Full Licence) test circuits.
+- **Direct Google Maps Navigation**: One-click URL direction launch with origin, destination, and key waypoints formatted for immediate turn-by-turn GPS guidance on iOS, Android, and desktop.
+- **Turn-by-Turn Maneuvers & Examiner Advice**: Detailed step-by-step guidance, road types (suburban, arterial, roundabout, motorway), speed zone indicators, and official testing officer tips for tricky intersections and maneuvers.
+- **Geographic & Type Filtering**: Instant filtering by Auckland sub-regions (West Auckland, North Shore & Rodney, Central & East, South Auckland & Franklin) and test type (Class 1R vs Class 1F).
 
 ### High-Density Study Hub
 - **100 Questions Per Page**: Organizes the complete 570-question bank across **6 pages** ($\lceil 570 / 100 \rceil = 6$).

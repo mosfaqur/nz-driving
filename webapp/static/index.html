@@ -100,6 +100,9 @@
         <button class="nav-btn" data-view="theory" id="nav-theory">
           <span>Theory &amp; Lessons</span>
         </button>
+        <button class="nav-btn" data-view="routes" id="nav-routes">
+          <span>Test Routes</span>
+        </button>
         <button class="nav-btn" data-view="test" id="nav-test">
           <span>Mock Test (35Q)</span>
         </button>
@@ -251,6 +254,63 @@
           <!-- Video cards rendered via JS -->
           <div class="loading-state">Loading Drive Go video lessons...</div>
         </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- VIEW: AUCKLAND DRIVING TEST ROUTES & GOOGLE MAPS NAVIGATION         -->
+    <!-- =================================================================== -->
+    <section id="view-routes" class="view-panel">
+      <!-- Routes Hero Header -->
+      <div class="routes-hero">
+        <div class="routes-hero-text">
+          <div class="routes-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+            <span>Auckland Practical Test Navigation</span>
+          </div>
+          <h2 class="routes-title">Auckland Practical Driving Test Routes</h2>
+          <p class="routes-subtitle">
+            Practice real Restricted (Class 1R) and Full (Class 1F) test routes across all 13 official practical testing centres in Greater Auckland. Click any route to launch turn-by-turn driving navigation in Google Maps.
+          </p>
+        </div>
+      </div>
+
+      <!-- Controls: Search, Area Pills, Test Type Filter -->
+      <div class="routes-controls-card">
+        <div class="routes-search-row">
+          <div class="routes-search-wrap">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="routes-search-input" class="routes-search-input" placeholder="Search testing centres, suburbs, or streets (e.g. Westgate, Albany, Fred Taylor, Spartan)..." />
+            <button type="button" id="routes-search-clear" class="routes-search-clear" style="display:none;" title="Clear search">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+          </div>
+
+          <div class="routes-type-toggle" role="group" aria-label="Test Type Filter">
+            <button type="button" class="type-filter-btn active" data-type="all">All Routes</button>
+            <button type="button" class="type-filter-btn" data-type="restricted">Restricted (1R)</button>
+            <button type="button" class="type-filter-btn" data-type="full">Full (1F)</button>
+          </div>
+        </div>
+
+        <div class="routes-area-bar" id="routes-area-pills">
+          <button type="button" class="area-pill-btn active" data-area="all">All Areas (13 Centres)</button>
+          <button type="button" class="area-pill-btn" data-area="West Auckland">West Auckland</button>
+          <button type="button" class="area-pill-btn" data-area="North Shore &amp; Rodney">North Shore &amp; Rodney</button>
+          <button type="button" class="area-pill-btn" data-area="Central &amp; East Auckland">Central &amp; East</button>
+          <button type="button" class="area-pill-btn" data-area="South Auckland &amp; Franklin">South Auckland &amp; Franklin</button>
+        </div>
+      </div>
+
+      <!-- Live Summary Bar -->
+      <div class="routes-summary-bar">
+        <span id="routes-summary-text" class="routes-summary-text">Showing 13 testing centres (39 routes)</span>
+        <span class="routes-summary-hint">Google Maps GPS navigation opens directly in Google Maps app or browser</span>
+      </div>
+
+      <!-- Test Centres & Routes Grid -->
+      <div id="routes-centers-container" class="routes-centers-list">
+        <div class="loading-state">Loading Auckland practical test routes...</div>
       </div>
     </section>
 
@@ -521,6 +581,112 @@
     </div>
   </dialog>
 
+  <!-- Route Details & Turn-by-Turn Maneuvers Dialog -->
+  <dialog id="routeModal" class="route-dialog" closedby="any">
+    <div class="route-modal-content">
+      <div class="route-modal-header">
+        <div class="route-modal-meta">
+          <div class="route-modal-badges">
+            <span class="route-badge-code" id="routeModalCode">Class 1R - Route 1</span>
+            <span class="route-badge-type" id="routeModalType">Restricted Licence</span>
+            <span class="route-badge-area" id="routeModalArea">West Auckland</span>
+          </div>
+          <h3 class="route-modal-title" id="routeModalTitle">VTNZ Westgate - Restricted Circuit 1</h3>
+          <div class="route-modal-center-addr" id="routeModalAddress">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span id="routeModalAddressText">2-6 Pinot Lane, Westgate, Auckland 0614</span>
+          </div>
+        </div>
+        <button type="button" class="dialog-close-btn" onclick="closeRouteModal()" aria-label="Close Route Details">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="route-modal-body">
+        <!-- Quick Stats Strip -->
+        <div class="route-modal-stats-strip">
+          <div class="route-stat-item">
+            <span class="route-stat-label">Distance</span>
+            <b class="route-stat-val" id="routeModalDistance">13.8 km</b>
+          </div>
+          <div class="route-stat-item">
+            <span class="route-stat-label">Estimated Time</span>
+            <b class="route-stat-val" id="routeModalDuration">35 mins</b>
+          </div>
+          <div class="route-stat-item">
+            <span class="route-stat-label">Turns / Steps</span>
+            <b class="route-stat-val" id="routeModalStepsCount">31 maneuvers</b>
+          </div>
+          <div class="route-stat-item">
+            <span class="route-stat-label">Difficulty</span>
+            <b class="route-stat-val" id="routeModalDifficulty">Moderate</b>
+          </div>
+          <div class="route-stat-item">
+            <span class="route-stat-label">Centre Pass Rate</span>
+            <b class="route-stat-val" id="routeModalPassRate">59%</b>
+          </div>
+        </div>
+
+        <!-- Big Navigation Action Bar -->
+        <div class="route-modal-launch-banner">
+          <div class="launch-banner-text">
+            <h4>Ready to practice this route?</h4>
+            <p>Click below to open this exact driving circuit in Google Maps with live GPS navigation, turn prompts, and speed monitoring.</p>
+          </div>
+          <div class="launch-banner-btns">
+            <a id="routeModalGmapsBtn" href="" target="_blank" rel="noopener noreferrer" class="btn-gmaps-primary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+              <span>Start Google Maps Navigation</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Route Overview & Speed Zones -->
+        <div class="route-modal-section">
+          <h4 class="route-section-heading">Route Overview &amp; Speed Zones</h4>
+          <p id="routeModalOverview" class="route-modal-desc"></p>
+          <div id="routeModalSpeedZones" class="route-speed-pills"></div>
+        </div>
+
+        <!-- Key Maneuvers & Hazards -->
+        <div class="route-modal-section">
+          <h4 class="route-section-heading">Key Test Maneuvers Evaluated</h4>
+          <ul id="routeModalKeyManeuvers" class="route-check-list"></ul>
+        </div>
+
+        <!-- Examiner Tips Callout -->
+        <div class="route-examiner-callout">
+          <div class="callout-header">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            <span>Official NZTA Practical Examiner Advice</span>
+          </div>
+          <ul id="routeModalExaminerTips" class="examiner-tips-list"></ul>
+        </div>
+
+        <!-- Turn-by-Turn Steps Table -->
+        <div class="route-modal-section">
+          <div class="route-steps-header">
+            <h4 class="route-section-heading">Turn-by-Turn Driving Directions</h4>
+            <span id="routeModalStepsSummary" class="steps-count-badge">31 Steps</span>
+          </div>
+          <div id="routeModalStepsList" class="route-steps-table-wrapper">
+            <!-- Steps rendered via JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="route-modal-footer">
+        <button type="button" class="btn-secondary" onclick="closeRouteModal()">Close (Esc)</button>
+        <a id="routeModalFooterGmapsBtn" href="" target="_blank" rel="noopener noreferrer" class="btn-gmaps-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+          <span>Open in Google Maps</span>
+        </a>
+      </div>
+    </div>
+  </dialog>
+
   <!-- Test Submit Confirmation Dialog -->
   <dialog id="submitConfirmDialog" closedby="any">
     <div class="dialog-content">
@@ -683,6 +849,12 @@
       </span>
       <span class="mob-nav-label">Theory</span>
     </button>
+    <button class="mobile-nav-btn" data-view="routes" id="mob-nav-routes">
+      <span class="mob-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+      </span>
+      <span class="mob-nav-label">Routes</span>
+    </button>
     <button class="mobile-nav-btn" data-view="test" id="mob-nav-test">
       <span class="mob-nav-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
@@ -709,6 +881,6 @@
     </button>
   </nav>
 
-  <script src="/static/js/app.js?v=1.4.0"></script>
+  <script src="/static/js/app.js?v=1.5.0"></script>
 </body>
 </html>
