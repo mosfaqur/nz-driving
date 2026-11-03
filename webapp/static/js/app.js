@@ -1446,7 +1446,9 @@ function zoomImage(src, title = 'Road Diagram') {
 }
 
 function escapeHtml(str) {
-  if (!str) return '';
+  if (str === null || str === undefined) return '';
+  if (Array.isArray(str)) return str.map(escapeHtml).join(' ');
+  if (typeof str !== 'string') str = String(str);
   return str
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -2473,10 +2475,11 @@ window.fetchTheoryGuide = fetchTheoryGuide;
 window.fetchDriveGoVideos = fetchDriveGoVideos;
 
 // =============================================================================
-// AUCKLAND PRACTICAL DRIVING TEST ROUTES & GOOGLE MAPS NAVIGATION
+// NEW ZEALAND PRACTICAL DRIVING TEST ROUTES & GOOGLE MAPS NAVIGATION
 // =============================================================================
 let allRoutesData = null;
 let routesFilter = {
+  region: 'all',
   area: 'all',
   test_type: 'all',
   search: ''
@@ -2489,7 +2492,7 @@ async function loadRoutesView() {
   const container = document.getElementById('routes-centers-container');
   if (!allRoutesData) {
     if (container) {
-      container.innerHTML = '<div class="loading-state">Loading Auckland practical test routes...</div>';
+      container.innerHTML = '<div class="loading-state">Loading New Zealand practical test routes...</div>';
     }
     try {
       const res = await fetch('/api/routes');
@@ -2558,7 +2561,36 @@ function initRoutesEventListeners() {
     });
   });
 
-  // Area pill buttons
+  // Region dropdown select
+  const regionSelect = document.getElementById('routes-region-select');
+  if (regionSelect) {
+    regionSelect.addEventListener('change', (e) => {
+      routesFilter.region = e.target.value || 'all';
+      document.querySelectorAll('.region-pill-btn').forEach(btn => {
+        if (btn.getAttribute('data-region') === routesFilter.region) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      applyRoutesFilter();
+    });
+  }
+
+  // Region pill buttons
+  document.querySelectorAll('.region-pill-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.region-pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      routesFilter.region = btn.getAttribute('data-region') || 'all';
+      if (regionSelect) {
+        regionSelect.value = routesFilter.region;
+      }
+      applyRoutesFilter();
+    });
+  });
+
+  // Area pill buttons (if present)
   document.querySelectorAll('.area-pill-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.area-pill-btn').forEach(b => b.classList.remove('active'));
@@ -2572,33 +2604,44 @@ function initRoutesEventListeners() {
 function applyRoutesFilter() {
   if (!allRoutesData || !allRoutesData.centers) return;
 
-  const areaFilter = routesFilter.area.toLowerCase();
-  const typeFilter = routesFilter.test_type.toLowerCase();
-  const searchFilter = routesFilter.search.toLowerCase();
+  const regionFilter = (routesFilter.region || 'all').toLowerCase();
+  const areaFilter = (routesFilter.area || 'all').toLowerCase();
+  const typeFilter = (routesFilter.test_type || 'all').toLowerCase();
+  const searchFilter = (routesFilter.search || '').toLowerCase();
 
   let matchedCenters = [];
   let totalMatchingRoutes = 0;
 
   allRoutesData.centers.forEach(c => {
-    // 1. Filter Area
-    if (areaFilter !== 'all' && c.area.toLowerCase() !== areaFilter) {
-      return;
-    }
-
-    // 2. Filter Routes in this Center by Test Type
-    let routes = c.routes || [];
-    if (typeFilter !== 'all') {
-      if (typeFilter === 'restricted') {
-        routes = routes.filter(r => r.badge_type === 'restricted');
-      } else if (typeFilter === 'full') {
-        routes = routes.filter(r => r.badge_type === 'full');
+    // 1. Filter Region
+    if (regionFilter !== 'all') {
+      const cRegId = (c.region_id || '').toLowerCase();
+      const cRegName = (c.region || '').toLowerCase();
+      if (cRegId !== regionFilter && cRegName !== regionFilter && !cRegName.includes(regionFilter)) {
+        return;
       }
     }
 
-    // 3. Search text
+    // 2. Filter Area
+    if (areaFilter !== 'all' && (c.area || '').toLowerCase() !== areaFilter) {
+      return;
+    }
+
+    // 3. Filter Routes in this Center by Test Type
+    let routes = c.routes || [];
+    if (typeFilter !== 'all') {
+      if (typeFilter === 'restricted') {
+        routes = routes.filter(r => r.badge_type === 'restricted' || (r.test_type && r.test_type.toLowerCase().includes('restricted')));
+      } else if (typeFilter === 'full') {
+        routes = routes.filter(r => r.badge_type === 'full' || (r.test_type && r.test_type.toLowerCase().includes('full')));
+      }
+    }
+
+    // 4. Search text
     if (searchFilter) {
       const centerMatch = (
         c.name.toLowerCase().includes(searchFilter) ||
+        (c.region && c.region.toLowerCase().includes(searchFilter)) ||
         (c.suburb && c.suburb.toLowerCase().includes(searchFilter)) ||
         (c.address && c.address.toLowerCase().includes(searchFilter)) ||
         (c.key_features && c.key_features.some(kf => kf.toLowerCase().includes(searchFilter)))
@@ -2703,6 +2746,7 @@ function renderRoutesCenters(centers) {
           <div class="center-title-row">
             <h3 class="center-title">${escapeHtml(c.name)}</h3>
             <div class="center-badges-row">
+              ${c.region ? `<span class="badge-region">${escapeHtml(c.region)}</span>` : ''}
               <span class="badge-area">${escapeHtml(c.area)}</span>
               <span class="badge-passrate">Pass Rate ~${escapeHtml(c.pass_rate || '60%')}</span>
               <span class="badge-agency">${escapeHtml(c.agency || 'VTNZ')}</span>
@@ -2713,9 +2757,9 @@ function renderRoutesCenters(centers) {
             <span>${escapeHtml(c.address)}</span>
           </div>
           ${featuresHtml ? `<div class="center-features-row">${featuresHtml}</div>` : ''}
-          ${c.center_tips ? `
+          ${c.center_tips && c.center_tips.length ? `
             <div class="center-officer-tip">
-              <b>Testing Area Note:</b> ${escapeHtml(c.center_tips)}
+              <b>Testing Area Note:</b> ${escapeHtml(Array.isArray(c.center_tips) ? c.center_tips.join(' ') : c.center_tips)}
             </div>
           ` : ''}
         </div>
@@ -2730,14 +2774,22 @@ function renderRoutesCenters(centers) {
 }
 
 function resetRoutesFilters() {
-  routesFilter = { area: 'all', test_type: 'all', search: '' };
+  routesFilter = { region: 'all', area: 'all', test_type: 'all', search: '' };
   const searchInput = document.getElementById('routes-search-input');
   if (searchInput) searchInput.value = '';
   const searchClear = document.getElementById('routes-search-clear');
   if (searchClear) searchClear.style.display = 'none';
 
+  const regSelect = document.getElementById('routes-region-select');
+  if (regSelect) regSelect.value = 'all';
+
   document.querySelectorAll('.type-filter-btn').forEach(b => {
     if (b.getAttribute('data-type') === 'all') b.classList.add('active');
+    else b.classList.remove('active');
+  });
+
+  document.querySelectorAll('.region-pill-btn').forEach(b => {
+    if (b.getAttribute('data-region') === 'all') b.classList.add('active');
     else b.classList.remove('active');
   });
 
@@ -2806,7 +2858,7 @@ async function openRouteModal(routeId) {
     typeEl.innerText = targetRoute.test_type || 'Restricted Licence (Class 1R)';
     typeEl.className = `route-badge-type ${targetRoute.badge_type === 'full' ? 'full' : 'restricted'}`;
   }
-  if (areaEl) areaEl.innerText = (targetCenter && targetCenter.area) || 'Auckland';
+  if (areaEl) areaEl.innerText = (targetCenter && targetCenter.region ? `${targetCenter.region} · ` : '') + ((targetCenter && targetCenter.area) || 'New Zealand');
   if (titleEl) titleEl.innerText = targetRoute.name || 'Practical Driving Route';
   if (addrTextEl) addrTextEl.innerText = (targetCenter && targetCenter.address) || '';
 

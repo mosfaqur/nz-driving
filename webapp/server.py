@@ -97,15 +97,34 @@ if os.path.exists(DRIVE_GO_VIDEOS_FILE):
     except Exception as e:
         print(f"Warning: Could not load drive go videos: {e}")
 
+NZ_ROUTES_FILE = os.path.join(_EXPORT_DIR, "new_zealand_test_routes.json")
 AUCKLAND_ROUTES_FILE = os.path.join(_EXPORT_DIR, "auckland_test_routes.json")
-AUCKLAND_ROUTES_DATA = {"region": "Auckland", "centers": [], "total_centers": 0, "total_routes": 0, "areas": []}
-if os.path.exists(AUCKLAND_ROUTES_FILE):
+ROUTES_DATA = {
+    "country": "New Zealand",
+    "region": "All New Zealand",
+    "centers": [],
+    "total_centers": 0,
+    "total_routes": 0,
+    "regions": [],
+    "areas": []
+}
+
+if os.path.exists(NZ_ROUTES_FILE):
+    try:
+        with open(NZ_ROUTES_FILE, "r", encoding="utf-8") as f:
+            ROUTES_DATA = json.load(f)
+        print(f"Loaded {ROUTES_DATA.get('total_centers', 0)} New Zealand practical test centres and {ROUTES_DATA.get('total_routes', 0)} driving routes across {len(ROUTES_DATA.get('regions', []))} regions.")
+    except Exception as e:
+        print(f"Warning: Could not load New Zealand driving test routes: {e}")
+elif os.path.exists(AUCKLAND_ROUTES_FILE):
     try:
         with open(AUCKLAND_ROUTES_FILE, "r", encoding="utf-8") as f:
-            AUCKLAND_ROUTES_DATA = json.load(f)
-        print(f"Loaded {AUCKLAND_ROUTES_DATA.get('total_centers', 0)} Auckland practical test centres and {AUCKLAND_ROUTES_DATA.get('total_routes', 0)} driving routes.")
+            ROUTES_DATA = json.load(f)
+        print(f"Loaded {ROUTES_DATA.get('total_centers', 0)} Auckland practical test centres and {ROUTES_DATA.get('total_routes', 0)} driving routes.")
     except Exception as e:
         print(f"Warning: Could not load Auckland driving test routes: {e}")
+
+AUCKLAND_ROUTES_DATA = ROUTES_DATA
 
 app = FastAPI(title="NZ Road Code Multi-User Study & Mock Exam Web App", version="1.1.0")
 
@@ -681,22 +700,40 @@ def get_theory_videos(category: Optional[str] = None):
     }
 
 # =============================================================================
-# AUCKLAND PRACTICAL DRIVING TEST ROUTES & GOOGLE MAPS NAVIGATION
+# NEW ZEALAND NATIONWIDE PRACTICAL DRIVING TEST ROUTES & NAVIGATION
 # =============================================================================
+@app.get("/api/regions")
+def get_regions():
+    return {
+        "country": "New Zealand",
+        "total_regions": len(ROUTES_DATA.get("regions", [])),
+        "regions": ROUTES_DATA.get("regions", [])
+    }
+
 @app.get("/api/routes")
 def get_driving_routes(
+    region: Optional[str] = None,
     area: Optional[str] = None,
     test_type: Optional[str] = None,
     search: Optional[str] = None
 ):
-    all_centers = AUCKLAND_ROUTES_DATA.get("centers", [])
-    areas_list = AUCKLAND_ROUTES_DATA.get("areas", [])
+    all_centers = ROUTES_DATA.get("centers", [])
+    regions_list = ROUTES_DATA.get("regions", [])
+    areas_list = ROUTES_DATA.get("areas", [])
     
     result_centers = []
     total_matching_routes = 0
     
     for c in all_centers:
-        # Filter by area
+        # Filter by region
+        if region and region.lower() != "all":
+            target_reg = region.lower().strip()
+            c_reg_id = c.get("region_id", "").lower()
+            c_reg_name = c.get("region", "").lower()
+            if target_reg != c_reg_id and target_reg != c_reg_name and target_reg not in c_reg_name:
+                continue
+
+        # Filter by area (if specified)
         if area and area.lower() != "all" and c.get("area", "").lower() != area.lower():
             continue
             
@@ -706,16 +743,17 @@ def get_driving_routes(
         if test_type and test_type.lower() != "all":
             tt = test_type.lower()
             if "rest" in tt or "1r" in tt:
-                routes_in_center = [r for r in routes_in_center if r.get("badge_type") == "restricted"]
+                routes_in_center = [r for r in routes_in_center if r.get("badge_type") == "restricted" or r.get("test_type") == "restricted"]
             elif "full" in tt or "1f" in tt:
-                routes_in_center = [r for r in routes_in_center if r.get("badge_type") == "full"]
+                routes_in_center = [r for r in routes_in_center if r.get("badge_type") == "full" or r.get("test_type") == "full"]
 
         # Filter by search keyword
         if search:
             q = search.lower().strip()
-            # Match center name, suburb, or address
+            # Match center name, region, suburb, or address
             center_match = (
                 q in c.get("name", "").lower() or
+                q in c.get("region", "").lower() or
                 q in c.get("suburb", "").lower() or
                 q in c.get("address", "").lower() or
                 any(q in kf.lower() for kf in c.get("key_features", []))
@@ -732,15 +770,26 @@ def get_driving_routes(
                 
         if routes_in_center:
             c_copy = dict(c)
-            c_copy["routes"] = routes_in_center
+            # Optimize bulk list payload by stripping duplicated route_led_coordinates (available via /api/routes/route/{id})
+            light_routes = []
+            for r in routes_in_center:
+                if "route_led_coordinates" in r:
+                    r_light = dict(r)
+                    del r_light["route_led_coordinates"]
+                    light_routes.append(r_light)
+                else:
+                    light_routes.append(r)
+            c_copy["routes"] = light_routes
             c_copy["matching_routes_count"] = len(routes_in_center)
             result_centers.append(c_copy)
             total_matching_routes += len(routes_in_center)
             
     return {
-        "region": AUCKLAND_ROUTES_DATA.get("region", "Auckland"),
+        "country": "New Zealand",
+        "region": region or "All",
         "total_centers": len(result_centers),
         "total_routes": total_matching_routes,
+        "regions": regions_list,
         "areas": areas_list,
         "centers": result_centers
     }

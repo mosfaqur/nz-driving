@@ -259,7 +259,8 @@
     </section>
 
     <!-- =================================================================== -->
-    <!-- VIEW: AUCKLAND DRIVING TEST ROUTES & GOOGLE MAPS NAVIGATION         -->
+    <!-- =================================================================== -->
+    <!-- VIEW: NEW ZEALAND DRIVING TEST ROUTES & NAVIGATION                  -->
     <!-- =================================================================== -->
     <section id="view-routes" class="view-panel">
       <!-- Routes Hero Header -->
@@ -267,21 +268,21 @@
         <div class="routes-hero-text">
           <div class="routes-badge">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
-            <span>Auckland Practical Test Navigation</span>
+            <span>New Zealand Practical Test Navigation</span>
           </div>
-          <h2 class="routes-title">Auckland Practical Driving Test Routes</h2>
+          <h2 class="routes-title">New Zealand Practical Driving Test Routes</h2>
           <p class="routes-subtitle">
-            Practice real Restricted (Class 1R) and Full (Class 1F) test routes across all 13 official practical testing centres in Greater Auckland. Click any route to launch turn-by-turn driving navigation in Google Maps.
+            Practice authentic Restricted (Class 1R) and Full (Class 1F) test routes across all 66 official practical testing centres nationwide (12 regions). Inspect real turn-by-turn guidance, run voice-guided simulation, or navigate live in Google Maps.
           </p>
         </div>
       </div>
 
-      <!-- Controls: Search, Area Pills, Test Type Filter -->
+      <!-- Controls: Search, Region Selector & Pills, Test Type Filter -->
       <div class="routes-controls-card">
         <div class="routes-search-row">
           <div class="routes-search-wrap">
             <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <input type="text" id="routes-search-input" class="routes-search-input" placeholder="Search testing centres, suburbs, or streets (e.g. Westgate, Albany, Fred Taylor, Spartan)..." />
+            <input type="text" id="routes-search-input" class="routes-search-input" placeholder="Search testing centres, suburbs, cities or streets (e.g. Wiri, Thorndon, Christchurch, Te Rapa, Westgate)..." />
             <button type="button" id="routes-search-clear" class="routes-search-clear" style="display:none;" title="Clear search">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
@@ -294,24 +295,53 @@
           </div>
         </div>
 
-        <div class="routes-area-bar" id="routes-area-pills">
-          <button type="button" class="area-pill-btn active" data-area="all">All Areas (13 Centres)</button>
-          <button type="button" class="area-pill-btn" data-area="West Auckland">West Auckland</button>
-          <button type="button" class="area-pill-btn" data-area="North Shore &amp; Rodney">North Shore &amp; Rodney</button>
-          <button type="button" class="area-pill-btn" data-area="Central &amp; East Auckland">Central &amp; East</button>
-          <button type="button" class="area-pill-btn" data-area="South Auckland &amp; Franklin">South Auckland &amp; Franklin</button>
+        <div class="routes-region-container">
+          <div class="routes-region-label-row">
+            <span class="routes-region-label">Region:</span>
+            <select id="routes-region-select" class="routes-region-select" aria-label="Filter routes by region">
+              <option value="all">All New Zealand (66 Centres, 145 Routes)</option>
+              <option value="auckland">Auckland (13 Centres, 39 Routes)</option>
+              <option value="wellington">Wellington (6 Centres, 12 Routes)</option>
+              <option value="canterbury">Canterbury (6 Centres, 12 Routes)</option>
+              <option value="waikato">Waikato (9 Centres, 18 Routes)</option>
+              <option value="bay-of-plenty">Bay of Plenty (6 Centres, 12 Routes)</option>
+              <option value="otago">Otago (5 Centres, 10 Routes)</option>
+              <option value="hawkes-bay">Hawke's Bay (4 Centres, 8 Routes)</option>
+              <option value="manawatu-whanganui">Manawatū-Whanganui (5 Centres, 10 Routes)</option>
+              <option value="northland">Northland (6 Centres, 12 Routes)</option>
+              <option value="taranaki">Taranaki (2 Centres, 4 Routes)</option>
+              <option value="southland">Southland (2 Centres, 4 Routes)</option>
+              <option value="nelson-marlborough-tasman">Nelson-Marlborough (2 Centres, 4 Routes)</option>
+            </select>
+          </div>
+
+          <div class="routes-area-bar" id="routes-region-pills">
+            <button type="button" class="region-pill-btn active" data-region="all">All New Zealand</button>
+            <button type="button" class="region-pill-btn" data-region="auckland">Auckland</button>
+            <button type="button" class="region-pill-btn" data-region="wellington">Wellington</button>
+            <button type="button" class="region-pill-btn" data-region="canterbury">Canterbury</button>
+            <button type="button" class="region-pill-btn" data-region="waikato">Waikato</button>
+            <button type="button" class="region-pill-btn" data-region="bay-of-plenty">Bay of Plenty</button>
+            <button type="button" class="region-pill-btn" data-region="otago">Otago</button>
+            <button type="button" class="region-pill-btn" data-region="hawkes-bay">Hawke's Bay</button>
+            <button type="button" class="region-pill-btn" data-region="manawatu-whanganui">Manawatū</button>
+            <button type="button" class="region-pill-btn" data-region="northland">Northland</button>
+            <button type="button" class="region-pill-btn" data-region="taranaki">Taranaki</button>
+            <button type="button" class="region-pill-btn" data-region="southland">Southland</button>
+            <button type="button" class="region-pill-btn" data-region="nelson-marlborough-tasman">Nelson-Marlborough</button>
+          </div>
         </div>
       </div>
 
       <!-- Live Summary Bar -->
       <div class="routes-summary-bar">
-        <span id="routes-summary-text" class="routes-summary-text">Showing 13 testing centres (39 routes)</span>
-        <span class="routes-summary-hint">Google Maps GPS navigation opens directly in Google Maps app or browser</span>
+        <span id="routes-summary-text" class="routes-summary-text">Showing 66 testing centres (145 routes)</span>
+        <span class="routes-summary-hint">Turn-by-turn spoken guidance, HUD drive simulation, and live Google Maps practice</span>
       </div>
 
       <!-- Test Centres & Routes Grid -->
       <div id="routes-centers-container" class="routes-centers-list">
-        <div class="loading-state">Loading Auckland practical test routes...</div>
+        <div class="loading-state">Loading New Zealand practical test routes...</div>
       </div>
     </section>
 
@@ -994,6 +1024,6 @@
   </div>
 
   <script src="/static/js/leaflet.js"></script>
-  <script src="/static/js/app.js?v=2.2.2"></script>
+  <script src="/static/js/app.js?v=2.3.0"></script>
 </body>
 </html>
