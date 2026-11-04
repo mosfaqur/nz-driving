@@ -124,6 +124,14 @@ elif os.path.exists(AUCKLAND_ROUTES_FILE):
     except Exception as e:
         print(f"Warning: Could not load Auckland driving test routes: {e}")
 
+# Ensure waze_url is guaranteed on every route
+for _c in ROUTES_DATA.get("centers", []):
+    _c_coords = _c.get("coords", [-36.8485, 174.7633])
+    for _r in _c.get("routes", []):
+        if not _r.get("waze_url"):
+            _start = _r.get("polyline_coords", [_c_coords])[0]
+            _r["waze_url"] = f"https://waze.com/ul?ll={_start[0]:.6f},{_start[1]:.6f}&navigate=yes"
+
 AUCKLAND_ROUTES_DATA = ROUTES_DATA
 
 app = FastAPI(title="NZ Road Code Multi-User Study & Mock Exam Web App", version="1.1.0")

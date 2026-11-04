@@ -48,7 +48,7 @@
     },
     {
       "id": "manawatu-whanganui",
-      "name": "Manawat\u016b-Whanganui",
+      "name": "Manawatū-Whanganui",
       "centers_count": 5,
       "routes_count": 10
     },
@@ -10006,7 +10006,8 @@
               "lat": -36.874692,
               "lon": 174.853615
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.874692,174.853615&navigate=yes"
         },
         {
           "id": "glen-innes-restricted-2",
@@ -24717,7 +24718,8 @@
               "lat": -36.874692,
               "lon": 174.853615
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.874692,174.853615&navigate=yes"
         },
         {
           "id": "glen-innes-full-1",
@@ -39301,7 +39303,8 @@
               "lat": -36.874692,
               "lon": 174.853615
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.874692,174.853615&navigate=yes"
         }
       ],
       "region": "Auckland",
@@ -44937,7 +44940,8 @@
               "lat": -36.935481,
               "lon": 174.886809
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.935481,174.886809&navigate=yes"
         },
         {
           "id": "highbrook-restricted-2",
@@ -46600,7 +46604,8 @@
               "lat": -36.935481,
               "lon": 174.886809
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.935481,174.886809&navigate=yes"
         },
         {
           "id": "highbrook-full-1",
@@ -50816,7 +50821,8 @@
               "lat": -36.935481,
               "lon": 174.886809
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.935481,174.886809&navigate=yes"
         }
       ],
       "region": "Auckland",
@@ -59051,7 +59057,8 @@
               "lat": -36.919914,
               "lon": 174.837408
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.919914,174.837408&navigate=yes"
         },
         {
           "id": "mount-wellington-restricted-2",
@@ -63106,7 +63113,8 @@
               "lat": -36.919914,
               "lon": 174.837408
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.919914,174.837408&navigate=yes"
         },
         {
           "id": "mount-wellington-full-1",
@@ -68090,7 +68098,8 @@
               "lat": -36.919914,
               "lon": 174.837408
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.919914,174.837408&navigate=yes"
         }
       ],
       "region": "Auckland",
@@ -80728,7 +80737,8 @@
               "lat": -36.752161,
               "lon": 174.714506
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.752161,174.714506&navigate=yes"
         },
         {
           "id": "albany-restricted-2",
@@ -85991,7 +86001,8 @@
               "lat": -36.752161,
               "lon": 174.714506
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.752161,174.714506&navigate=yes"
         },
         {
           "id": "albany-full-1",
@@ -89303,7 +89314,8 @@
               "lat": -36.752161,
               "lon": 174.714506
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.752161,174.714506&navigate=yes"
         }
       ],
       "region": "Auckland",
@@ -94951,7 +94963,8 @@
               "lat": -36.62447,
               "lon": 174.68104
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.624470,174.681040&navigate=yes"
         },
         {
           "id": "silverdale-restricted-2",
@@ -99334,7 +99347,8 @@
               "lat": -36.62447,
               "lon": 174.68104
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.624470,174.681040&navigate=yes"
         },
         {
           "id": "silverdale-full-1",
@@ -103590,7 +103604,8 @@
               "lat": -36.62447,
               "lon": 174.68104
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.624470,174.681040&navigate=yes"
         }
       ],
       "region": "Auckland",
@@ -113754,7 +113769,8 @@
               "lat": -36.792517,
               "lon": 174.750073
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.792517,174.750073&navigate=yes"
         },
         {
           "id": "takapuna-restricted-2",
@@ -123681,7 +123697,8 @@
               "lat": -36.792517,
               "lon": 174.750073
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.792517,174.750073&navigate=yes"
         },
         {
           "id": "takapuna-full-1",
@@ -132801,7 +132818,8 @@
               "lat": -36.792517,
               "lon": 174.750073
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.792517,174.750073&navigate=yes"
         }
       ],
       "region": "Auckland",
@@ -139704,7 +139722,8 @@
               "lat": -36.408218,
               "lon": 174.653123
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.408218,174.653123&navigate=yes"
         },
         {
           "id": "warkworth-restricted-2",
@@ -148535,7 +148554,8 @@
               "lat": -36.408218,
               "lon": 174.653123
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.408218,174.653123&navigate=yes"
         },
         {
           "id": "warkworth-full-1",
@@ -158167,7 +158187,8 @@
               "lat": -36.408218,
               "lon": 174.653123
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.408218,174.653123&navigate=yes"
         }
       ],
       "region": "Auckland",
@@ -163794,7 +163815,8 @@
               "lat": -36.991964,
               "lon": 174.87266
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.991964,174.872660&navigate=yes"
         },
         {
           "id": "manukau-lambie-restricted-2",
@@ -168545,7 +168567,8 @@
               "lat": -36.991964,
               "lon": 174.87266
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.991964,174.872660&navigate=yes"
         },
         {
           "id": "manukau-lambie-full-1",
@@ -172385,7 +172408,8 @@
               "lat": -36.991964,
               "lon": 174.87266
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.991964,174.872660&navigate=yes"
         }
       ],
       "region": "Auckland",
@@ -183043,7 +183067,8 @@
               "lat": -37.207128,
               "lon": 174.910918
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.207128,174.910918&navigate=yes"
         },
         {
           "id": "pukekohe-restricted-2",
@@ -190226,7 +190251,8 @@
               "lat": -37.207128,
               "lon": 174.910918
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.207128,174.910918&navigate=yes"
         },
         {
           "id": "pukekohe-full-1",
@@ -196738,7 +196764,8 @@
               "lat": -37.207128,
               "lon": 174.910918
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.207128,174.910918&navigate=yes"
         }
       ],
       "region": "Auckland",
@@ -204339,7 +204366,8 @@
               "lat": -37.035567,
               "lon": 174.911498
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.035567,174.911498&navigate=yes"
         },
         {
           "id": "takanini-restricted-2",
@@ -209586,7 +209614,8 @@
               "lat": -37.035567,
               "lon": 174.911498
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.035567,174.911498&navigate=yes"
         },
         {
           "id": "takanini-full-1",
@@ -215778,7 +215807,8 @@
               "lat": -37.035567,
               "lon": 174.911498
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.035567,174.911498&navigate=yes"
         }
       ],
       "region": "Auckland",
@@ -221747,7 +221777,8 @@
               "lat": -37.001502,
               "lon": 174.851618
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.001502,174.851618&navigate=yes"
         },
         {
           "id": "wiri-restricted-2",
@@ -225402,7 +225433,8 @@
               "lat": -37.001502,
               "lon": 174.851618
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.001502,174.851618&navigate=yes"
         },
         {
           "id": "wiri-full-1",
@@ -225413,7 +225445,7 @@
           "distance": "10.0 km",
           "duration": "20 min",
           "difficulty": "Challenging",
-          "overview": "Official Class 1 Full Licence practical test route from VTNZ Wiri, testing high-speed 100 km/h cruising, motorway merging and diverging, lane changing on State Highway 20 (Southwestern Motorway), and verbal hazard identification commentary between Wiri, M\u0101ngere East (Massey Road Exit 9), and Papatoetoe.",
+          "overview": "Official Class 1 Full Licence practical test route from VTNZ Wiri, testing high-speed 100 km/h cruising, motorway merging and diverging, lane changing on State Highway 20 (Southwestern Motorway), and verbal hazard identification commentary between Wiri, Māngere East (Massey Road Exit 9), and Papatoetoe.",
           "speed_zones": [
             "50 km/h Urban",
             "60 km/h Arterial (Roscommon Rd)",
@@ -225528,7 +225560,7 @@
             {
               "step_number": 9,
               "step_num": 9,
-              "instruction": "Indicate left for at least 3 seconds and take Exit 9 off-ramp toward Massey Road (M\u0101ngere East).",
+              "instruction": "Indicate left for at least 3 seconds and take Exit 9 off-ramp toward Massey Road (Māngere East).",
               "distance": "307 m",
               "duration": "0 min 15 s",
               "road_type": "Motorway Off-Ramp",
@@ -227343,7 +227375,8 @@
               "lat": -37.001502,
               "lon": 174.851618
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.001502,174.851618&navigate=yes"
         }
       ],
       "region": "Auckland",
@@ -238690,7 +238723,8 @@
               "lat": -36.91448,
               "lon": 174.690771
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.914480,174.690771&navigate=yes"
         },
         {
           "id": "new-lynn-restricted-2",
@@ -242617,7 +242651,8 @@
               "lat": -36.91448,
               "lon": 174.690771
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.914480,174.690771&navigate=yes"
         },
         {
           "id": "new-lynn-full-1",
@@ -246929,7 +246964,8 @@
               "lat": -36.91448,
               "lon": 174.690771
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.914480,174.690771&navigate=yes"
         }
       ],
       "region": "Auckland",
@@ -258272,7 +258308,8 @@
               "lat": -36.822164,
               "lon": 174.608635
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.822164,174.608635&navigate=yes"
         },
         {
           "id": "westgate-restricted-2",
@@ -260799,7 +260836,8 @@
               "lat": -36.822164,
               "lon": 174.608635
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.822164,174.608635&navigate=yes"
         },
         {
           "id": "westgate-full-1",
@@ -265882,7 +265920,8 @@
               "lat": -36.822164,
               "lon": 174.608635
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.822164,174.608635&navigate=yes"
         }
       ],
       "region": "Auckland",
@@ -268770,7 +268809,8 @@
               "lat": -37.664895,
               "lon": 176.189239
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.664895,176.189239&navigate=yes"
         },
         {
           "id": "bay-of-plenty-mt-maunganui-full-1",
@@ -271634,19 +271674,20 @@
               "lat": -37.664895,
               "lon": 176.189239
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.664895,176.189239&navigate=yes"
         }
       ]
     },
     {
       "center_id": "bay-of-plenty-opotiki",
-      "name": "VTNZ \u014cp\u014dtiki",
-      "official_title": "VTNZ \u014cp\u014dtiki Driving Test Centre",
+      "name": "VTNZ Ōpōtiki",
+      "official_title": "VTNZ Ōpōtiki Driving Test Centre",
       "region": "Bay of Plenty",
       "region_id": "bay-of-plenty",
-      "area": "\u014cp\u014dtiki",
-      "suburb": "\u014cp\u014dtiki",
-      "address": "93 Church Street, \u014cp\u014dtiki, Bay of Plenty 3122",
+      "area": "Ōpōtiki",
+      "suburb": "Ōpōtiki",
+      "address": "93 Church Street, Ōpōtiki, Bay of Plenty 3122",
       "coords": {
         "lat": -38.007054,
         "lng": 177.28438
@@ -271665,13 +271706,13 @@
         {
           "id": "bay-of-plenty-opotiki-restricted-1",
           "route_code": "Class 1R - Route 1",
-          "name": "VTNZ \u014cp\u014dtiki - Restricted Circuit 1",
+          "name": "VTNZ Ōpōtiki - Restricted Circuit 1",
           "test_type": "Restricted Licence (Class 1R)",
           "badge_type": "restricted",
           "distance": "9.4 km",
           "duration": "18 min",
           "difficulty": "Moderate",
-          "overview": "A sample \u014cp\u014dtiki test route starting from the centre at 93 Church Street. It takes around 20 min 57 s to drive this 8.9 km practice route, in preparation for your Bay of Plenty Restricted (1R) and Full (1F) test.",
+          "overview": "A sample Ōpōtiki test route starting from the centre at 93 Church Street. It takes around 20 min 57 s to drive this 8.9 km practice route, in preparation for your Bay of Plenty Restricted (1R) and Full (1F) test.",
           "speed_zones": [
             "50 km/h Urban",
             "60-80 km/h Arterial/Connector"
@@ -271695,7 +271736,7 @@
           ],
           "snapped_waypoints": [
             {
-              "name": "\u014cp\u014dtiki Test Depot (Start)",
+              "name": "Ōpōtiki Test Depot (Start)",
               "lat": -38.007054,
               "lng": 177.28438
             },
@@ -271735,7 +271776,7 @@
               "lng": 177.282004
             },
             {
-              "name": "\u014cp\u014dtiki Test Depot (Finish)",
+              "name": "Ōpōtiki Test Depot (Finish)",
               "lat": -38.007054,
               "lng": 177.28438
             }
@@ -273974,18 +274015,19 @@
               "lat": -38.007053,
               "lon": 177.284547
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-38.007053,177.284547&navigate=yes"
         },
         {
           "id": "bay-of-plenty-opotiki-full-1",
           "route_code": "Class 1F - Route 1",
-          "name": "VTNZ \u014cp\u014dtiki - Full Licence Highway & Arterial Circuit",
+          "name": "VTNZ Ōpōtiki - Full Licence Highway & Arterial Circuit",
           "test_type": "Full Licence (Class 1F)",
           "badge_type": "full",
           "distance": "10.8 km",
           "duration": "20 min",
           "difficulty": "Challenging",
-          "overview": "Class 1 Full Licence test route from VTNZ \u014cp\u014dtiki evaluating higher-speed driving, hazard detection commentary, and smooth merging on major Bay of Plenty highways and arterial connectors.",
+          "overview": "Class 1 Full Licence test route from VTNZ Ōpōtiki evaluating higher-speed driving, hazard detection commentary, and smooth merging on major Bay of Plenty highways and arterial connectors.",
           "speed_zones": [
             "50 km/h Urban",
             "80-100 km/h Highway/Open Road"
@@ -274013,7 +274055,7 @@
           ],
           "snapped_waypoints": [
             {
-              "name": "\u014cp\u014dtiki Test Depot (Start)",
+              "name": "Ōpōtiki Test Depot (Start)",
               "lat": -38.007054,
               "lng": 177.28438
             },
@@ -274053,7 +274095,7 @@
               "lng": 177.282004
             },
             {
-              "name": "\u014cp\u014dtiki Test Depot (Finish)",
+              "name": "Ōpōtiki Test Depot (Finish)",
               "lat": -38.007054,
               "lng": 177.28438
             }
@@ -276292,7 +276334,8 @@
               "lat": -38.007053,
               "lon": 177.284547
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-38.007053,177.284547&navigate=yes"
         }
       ]
     },
@@ -283412,7 +283455,8 @@
               "lat": -38.151346,
               "lon": 176.260746
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-38.151346,176.260746&navigate=yes"
         },
         {
           "id": "bay-of-plenty-rotorua-full-1",
@@ -290510,7 +290554,8 @@
               "lat": -38.151346,
               "lon": 176.260746
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-38.151346,176.260746&navigate=yes"
         }
       ]
     },
@@ -297472,7 +297517,8 @@
               "lat": -37.694296,
               "lon": 176.159546
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.694296,176.159546&navigate=yes"
         },
         {
           "id": "bay-of-plenty-tauranga-full-1",
@@ -304412,7 +304458,8 @@
               "lat": -37.694296,
               "lon": 176.159546
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.694296,176.159546&navigate=yes"
         }
       ]
     },
@@ -312948,7 +312995,8 @@
               "lat": -37.735966,
               "lon": 176.133837
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.735966,176.133837&navigate=yes"
         },
         {
           "id": "bay-of-plenty-tauranga-greerton-full-1",
@@ -321462,19 +321510,20 @@
               "lat": -37.735966,
               "lon": 176.133837
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.735966,176.133837&navigate=yes"
         }
       ]
     },
     {
       "center_id": "bay-of-plenty-whakatane",
-      "name": "VTNZ Whakat\u0101ne",
-      "official_title": "VTNZ Whakat\u0101ne Driving Test Centre",
+      "name": "VTNZ Whakatāne",
+      "official_title": "VTNZ Whakatāne Driving Test Centre",
       "region": "Bay of Plenty",
       "region_id": "bay-of-plenty",
-      "area": "Whakat\u0101ne",
-      "suburb": "Whakat\u0101ne",
-      "address": "11 Te Tahi Street, Whakat\u0101ne, Bay of Plenty 3120",
+      "area": "Whakatāne",
+      "suburb": "Whakatāne",
+      "address": "11 Te Tahi Street, Whakatāne, Bay of Plenty 3120",
       "coords": {
         "lat": -37.979857,
         "lng": 176.985386
@@ -321493,13 +321542,13 @@
         {
           "id": "bay-of-plenty-whakatane-restricted-1",
           "route_code": "Class 1R - Route 1",
-          "name": "VTNZ Whakat\u0101ne - Restricted Circuit 1",
+          "name": "VTNZ Whakatāne - Restricted Circuit 1",
           "test_type": "Restricted Licence (Class 1R)",
           "badge_type": "restricted",
           "distance": "17.6 km",
           "duration": "28 min",
           "difficulty": "Moderate",
-          "overview": "A sample Whakat\u0101ne test route starting from the centre at 11 Te Tahi Street. It takes around 21 min 33 s to drive this 14.0 km practice route, in preparation for your Bay of Plenty Restricted (1R) and Full (1F) test.",
+          "overview": "A sample Whakatāne test route starting from the centre at 11 Te Tahi Street. It takes around 21 min 33 s to drive this 14.0 km practice route, in preparation for your Bay of Plenty Restricted (1R) and Full (1F) test.",
           "speed_zones": [
             "50 km/h Urban",
             "60-80 km/h Arterial/Connector"
@@ -321522,7 +321571,7 @@
           ],
           "snapped_waypoints": [
             {
-              "name": "Whakat\u0101ne Test Depot (Start)",
+              "name": "Whakatāne Test Depot (Start)",
               "lat": -37.979857,
               "lng": 176.985386
             },
@@ -321557,7 +321606,7 @@
               "lng": 176.960787
             },
             {
-              "name": "Whakat\u0101ne Test Depot (Finish)",
+              "name": "Whakatāne Test Depot (Finish)",
               "lat": -37.979857,
               "lng": 176.985386
             }
@@ -328254,18 +328303,19 @@
               "lat": -37.979733,
               "lon": 176.985544
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.979733,176.985544&navigate=yes"
         },
         {
           "id": "bay-of-plenty-whakatane-full-1",
           "route_code": "Class 1F - Route 1",
-          "name": "VTNZ Whakat\u0101ne - Full Licence Highway & Arterial Circuit",
+          "name": "VTNZ Whakatāne - Full Licence Highway & Arterial Circuit",
           "test_type": "Full Licence (Class 1F)",
           "badge_type": "full",
           "distance": "20.2 km",
           "duration": "31 min",
           "difficulty": "Challenging",
-          "overview": "Class 1 Full Licence test route from VTNZ Whakat\u0101ne evaluating higher-speed driving, hazard detection commentary, and smooth merging on major Bay of Plenty highways and arterial connectors.",
+          "overview": "Class 1 Full Licence test route from VTNZ Whakatāne evaluating higher-speed driving, hazard detection commentary, and smooth merging on major Bay of Plenty highways and arterial connectors.",
           "speed_zones": [
             "50 km/h Urban",
             "80-100 km/h Highway/Open Road"
@@ -328292,7 +328342,7 @@
           ],
           "snapped_waypoints": [
             {
-              "name": "Whakat\u0101ne Test Depot (Start)",
+              "name": "Whakatāne Test Depot (Start)",
               "lat": -37.979857,
               "lng": 176.985386
             },
@@ -328327,7 +328377,7 @@
               "lng": 176.960787
             },
             {
-              "name": "Whakat\u0101ne Test Depot (Finish)",
+              "name": "Whakatāne Test Depot (Finish)",
               "lat": -37.979857,
               "lng": 176.985386
             }
@@ -335024,7 +335074,8 @@
               "lat": -37.979733,
               "lon": 176.985544
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.979733,176.985544&navigate=yes"
         }
       ]
     },
@@ -337690,7 +337741,8 @@
               "lat": -43.890745,
               "lon": 171.766461
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-43.890745,171.766461&navigate=yes"
         },
         {
           "id": "canterbury-ashburton-full-1",
@@ -340334,7 +340386,8 @@
               "lat": -43.890745,
               "lon": 171.766461
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-43.890745,171.766461&navigate=yes"
         }
       ]
     },
@@ -350104,7 +350157,8 @@
               "lat": -43.54432,
               "lon": 172.568095
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-43.544320,172.568095&navigate=yes"
         },
         {
           "id": "canterbury-christchurch-full-1",
@@ -359852,7 +359906,8 @@
               "lat": -43.54432,
               "lon": 172.568095
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-43.544320,172.568095&navigate=yes"
         }
       ]
     },
@@ -364790,7 +364845,8 @@
               "lat": -43.534839,
               "lon": 172.647919
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-43.534839,172.647919&navigate=yes"
         },
         {
           "id": "canterbury-christchurch-lichfield-full-1",
@@ -369706,7 +369762,8 @@
               "lat": -43.534839,
               "lon": 172.647919
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-43.534839,172.647919&navigate=yes"
         }
       ]
     },
@@ -375132,7 +375189,8 @@
               "lat": -43.460712,
               "lon": 172.625168
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-43.460712,172.625168&navigate=yes"
         },
         {
           "id": "canterbury-christchurch-northwood-full-1",
@@ -380536,7 +380594,8 @@
               "lat": -43.460712,
               "lon": 172.625168
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-43.460712,172.625168&navigate=yes"
         }
       ]
     },
@@ -385260,7 +385319,8 @@
               "lat": -43.328667,
               "lon": 172.599634
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-43.328667,172.599634&navigate=yes"
         },
         {
           "id": "canterbury-rangiora-full-1",
@@ -389962,7 +390022,8 @@
               "lat": -43.328667,
               "lon": 172.599634
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-43.328667,172.599634&navigate=yes"
         }
       ]
     },
@@ -397272,7 +397333,8 @@
               "lat": -44.356666,
               "lon": 171.23748
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-44.356666,171.237480&navigate=yes"
         },
         {
           "id": "canterbury-timaru-full-1",
@@ -404560,7 +404622,8 @@
               "lat": -44.356666,
               "lon": 171.23748
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-44.356666,171.237480&navigate=yes"
         }
       ]
     },
@@ -408874,7 +408937,8 @@
               "lat": -39.629106,
               "lon": 176.824451
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-39.629106,176.824451&navigate=yes"
         },
         {
           "id": "hawkes-bay-hastings-full-1",
@@ -413166,7 +413230,8 @@
               "lat": -39.629106,
               "lon": 176.824451
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-39.629106,176.824451&navigate=yes"
         }
       ]
     },
@@ -418338,7 +418403,8 @@
               "lat": -39.508436,
               "lon": 176.88017
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-39.508436,176.880170&navigate=yes"
         },
         {
           "id": "hawkes-bay-napier-full-1",
@@ -423488,7 +423554,8 @@
               "lat": -39.508436,
               "lon": 176.88017
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-39.508436,176.880170&navigate=yes"
         }
       ]
     },
@@ -425886,7 +425953,8 @@
               "lat": -39.994339,
               "lon": 176.55248
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-39.994339,176.552480&navigate=yes"
         },
         {
           "id": "hawkes-bay-waipukurau-full-1",
@@ -428262,7 +428330,8 @@
               "lat": -39.994339,
               "lon": 176.55248
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-39.994339,176.552480&navigate=yes"
         }
       ]
     },
@@ -432552,7 +432621,8 @@
               "lat": -39.026072,
               "lon": 177.420889
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-39.026072,177.420889&navigate=yes"
         },
         {
           "id": "hawkes-bay-wairoa-full-1",
@@ -436820,7 +436890,8 @@
               "lat": -39.026072,
               "lon": 177.420889
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-39.026072,177.420889&navigate=yes"
         }
       ]
     },
@@ -436828,11 +436899,11 @@
       "center_id": "manawatu-whanganui-feilding",
       "name": "VTNZ Feilding",
       "official_title": "VTNZ Feilding Driving Test Centre",
-      "region": "Manawat\u016b-Whanganui",
+      "region": "Manawatū-Whanganui",
       "region_id": "manawatu-whanganui",
       "area": "Feilding",
       "suburb": "Feilding",
-      "address": "Manchester House, 68 Aorangi Street, Feilding, Manawat\u016b-Whanganui 4702",
+      "address": "Manchester House, 68 Aorangi Street, Feilding, Manawatū-Whanganui 4702",
       "coords": {
         "lat": -40.22591,
         "lng": 175.567717
@@ -436840,7 +436911,7 @@
       "agency": "VTNZ",
       "pass_rate": "61%",
       "key_features": [
-        "Official Manawat\u016b-Whanganui Practical Test Station",
+        "Official Manawatū-Whanganui Practical Test Station",
         "Restricted (1R) and Full (1F) Test Routes",
         "Turn-by-turn spoken audio guidance",
         "Google Maps live practice navigation"
@@ -436857,7 +436928,7 @@
           "distance": "12.8 km",
           "duration": "20 min",
           "difficulty": "Moderate",
-          "overview": "A sample Feilding test route starting from the centre at Manchester House. It takes around 20 min 40 s to drive this 15.7 km practice route, in preparation for your Manawat\u016b-Whanganui Restricted (1R) and Full (1F) test.",
+          "overview": "A sample Feilding test route starting from the centre at Manchester House. It takes around 20 min 40 s to drive this 15.7 km practice route, in preparation for your Manawatū-Whanganui Restricted (1R) and Full (1F) test.",
           "speed_zones": [
             "50 km/h Urban",
             "60-80 km/h Arterial/Connector"
@@ -439964,7 +440035,8 @@
               "lat": -40.225817,
               "lon": 175.567906
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-40.225817,175.567906&navigate=yes"
         },
         {
           "id": "manawatu-whanganui-feilding-full-1",
@@ -439975,7 +440047,7 @@
           "distance": "14.7 km",
           "duration": "22 min",
           "difficulty": "Challenging",
-          "overview": "Class 1 Full Licence test route from VTNZ Feilding evaluating higher-speed driving, hazard detection commentary, and smooth merging on major Manawat\u016b-Whanganui highways and arterial connectors.",
+          "overview": "Class 1 Full Licence test route from VTNZ Feilding evaluating higher-speed driving, hazard detection commentary, and smooth merging on major Manawatū-Whanganui highways and arterial connectors.",
           "speed_zones": [
             "50 km/h Urban",
             "80-100 km/h Highway/Open Road"
@@ -443086,7 +443158,8 @@
               "lat": -40.225817,
               "lon": 175.567906
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-40.225817,175.567906&navigate=yes"
         }
       ]
     },
@@ -443094,11 +443167,11 @@
       "center_id": "manawatu-whanganui-levin",
       "name": "VTNZ Levin",
       "official_title": "VTNZ Levin Driving Test Centre",
-      "region": "Manawat\u016b-Whanganui",
+      "region": "Manawatū-Whanganui",
       "region_id": "manawatu-whanganui",
       "area": "Levin",
       "suburb": "Levin",
-      "address": "29 Reeve Street, Levin, Manawat\u016b-Whanganui 5510",
+      "address": "29 Reeve Street, Levin, Manawatū-Whanganui 5510",
       "coords": {
         "lat": -40.630318,
         "lng": 175.275028
@@ -443106,7 +443179,7 @@
       "agency": "VTNZ",
       "pass_rate": "62%",
       "key_features": [
-        "Official Manawat\u016b-Whanganui Practical Test Station",
+        "Official Manawatū-Whanganui Practical Test Station",
         "Restricted (1R) and Full (1F) Test Routes",
         "Turn-by-turn spoken audio guidance",
         "Google Maps live practice navigation"
@@ -443123,7 +443196,7 @@
           "distance": "9.0 km",
           "duration": "18 min",
           "difficulty": "Moderate",
-          "overview": "A sample Levin test route starting from the centre at 29 Reeve Street. It takes around 20 min 32 s to drive this 13.9 km practice route, in preparation for your Manawat\u016b-Whanganui Restricted (1R) and Full (1F) test.",
+          "overview": "A sample Levin test route starting from the centre at 29 Reeve Street. It takes around 20 min 32 s to drive this 13.9 km practice route, in preparation for your Manawatū-Whanganui Restricted (1R) and Full (1F) test.",
           "speed_zones": [
             "50 km/h Urban",
             "60-80 km/h Arterial/Connector"
@@ -444812,7 +444885,8 @@
               "lat": -40.63022,
               "lon": 175.274848
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-40.630220,175.274848&navigate=yes"
         },
         {
           "id": "manawatu-whanganui-levin-full-1",
@@ -444823,7 +444897,7 @@
           "distance": "10.3 km",
           "duration": "20 min",
           "difficulty": "Challenging",
-          "overview": "Class 1 Full Licence test route from VTNZ Levin evaluating higher-speed driving, hazard detection commentary, and smooth merging on major Manawat\u016b-Whanganui highways and arterial connectors.",
+          "overview": "Class 1 Full Licence test route from VTNZ Levin evaluating higher-speed driving, hazard detection commentary, and smooth merging on major Manawatū-Whanganui highways and arterial connectors.",
           "speed_zones": [
             "50 km/h Urban",
             "80-100 km/h Highway/Open Road"
@@ -446516,7 +446590,8 @@
               "lat": -40.63022,
               "lon": 175.274848
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-40.630220,175.274848&navigate=yes"
         }
       ]
     },
@@ -446524,11 +446599,11 @@
       "center_id": "manawatu-whanganui-palmerston-north",
       "name": "VTNZ Palmerston North",
       "official_title": "VTNZ Palmerston North Driving Test Centre",
-      "region": "Manawat\u016b-Whanganui",
+      "region": "Manawatū-Whanganui",
       "region_id": "manawatu-whanganui",
       "area": "Palmerston North",
       "suburb": "Palmerston North",
-      "address": "Cnr Rangit\u012bkei and Jasper Place, Palmerston North, Manawat\u016b-Whanganui 4414",
+      "address": "Cnr Rangitīkei and Jasper Place, Palmerston North, Manawatū-Whanganui 4414",
       "coords": {
         "lat": -40.339355,
         "lng": 175.619719
@@ -446536,7 +446611,7 @@
       "agency": "VTNZ",
       "pass_rate": "66%",
       "key_features": [
-        "Official Manawat\u016b-Whanganui Practical Test Station",
+        "Official Manawatū-Whanganui Practical Test Station",
         "Restricted (1R) and Full (1F) Test Routes",
         "Turn-by-turn spoken audio guidance",
         "Google Maps live practice navigation"
@@ -446553,7 +446628,7 @@
           "distance": "26.7 km",
           "duration": "45 min",
           "difficulty": "Moderate",
-          "overview": "A sample Palmerston North test route starting from the centre at Cnr Rangit\u012bkei and Jasper Place. It takes around 21 min 34 s to drive this 13.4 km practice route, in preparation for your Manawat\u016b-Whanganui Restricted (1R) and Full (1F) test.",
+          "overview": "A sample Palmerston North test route starting from the centre at Cnr Rangitīkei and Jasper Place. It takes around 21 min 34 s to drive this 13.4 km practice route, in preparation for your Manawatū-Whanganui Restricted (1R) and Full (1F) test.",
           "speed_zones": [
             "50 km/h Urban",
             "60-80 km/h Arterial/Connector"
@@ -453144,7 +453219,8 @@
               "lat": -40.339544,
               "lon": 175.619474
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-40.339544,175.619474&navigate=yes"
         },
         {
           "id": "manawatu-whanganui-palmerston-north-full-1",
@@ -453155,7 +453231,7 @@
           "distance": "30.7 km",
           "duration": "49 min",
           "difficulty": "Challenging",
-          "overview": "Class 1 Full Licence test route from VTNZ Palmerston North evaluating higher-speed driving, hazard detection commentary, and smooth merging on major Manawat\u016b-Whanganui highways and arterial connectors.",
+          "overview": "Class 1 Full Licence test route from VTNZ Palmerston North evaluating higher-speed driving, hazard detection commentary, and smooth merging on major Manawatū-Whanganui highways and arterial connectors.",
           "speed_zones": [
             "50 km/h Urban",
             "80-100 km/h Highway/Open Road"
@@ -459750,7 +459826,8 @@
               "lat": -40.339544,
               "lon": 175.619474
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-40.339544,175.619474&navigate=yes"
         }
       ]
     },
@@ -459758,11 +459835,11 @@
       "center_id": "manawatu-whanganui-taumarunui",
       "name": "VTNZ Taumarunui",
       "official_title": "VTNZ Taumarunui Driving Test Centre",
-      "region": "Manawat\u016b-Whanganui",
+      "region": "Manawatū-Whanganui",
       "region_id": "manawatu-whanganui",
       "area": "Taumarunui",
       "suburb": "Taumarunui",
-      "address": "REAP, 115 Hakiaha Street, Taumarunui, Manawat\u016b-Whanganui 3920",
+      "address": "REAP, 115 Hakiaha Street, Taumarunui, Manawatū-Whanganui 3920",
       "coords": {
         "lat": -38.882671,
         "lng": 175.264747
@@ -459770,7 +459847,7 @@
       "agency": "VTNZ",
       "pass_rate": "64%",
       "key_features": [
-        "Official Manawat\u016b-Whanganui Practical Test Station",
+        "Official Manawatū-Whanganui Practical Test Station",
         "Restricted (1R) and Full (1F) Test Routes",
         "Turn-by-turn spoken audio guidance",
         "Google Maps live practice navigation"
@@ -459787,7 +459864,7 @@
           "distance": "9.1 km",
           "duration": "17 min",
           "difficulty": "Moderate",
-          "overview": "A sample Taumarunui test route starting from the centre at REAP. It takes around 23 min 47 s to drive this 14.0 km practice route, in preparation for your Manawat\u016b-Whanganui Restricted (1R) and Full (1F) test.",
+          "overview": "A sample Taumarunui test route starting from the centre at REAP. It takes around 23 min 47 s to drive this 14.0 km practice route, in preparation for your Manawatū-Whanganui Restricted (1R) and Full (1F) test.",
           "speed_zones": [
             "50 km/h Urban",
             "60-80 km/h Arterial/Connector"
@@ -463004,7 +463081,8 @@
               "lat": -38.882863,
               "lon": 175.264757
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-38.882863,175.264757&navigate=yes"
         },
         {
           "id": "manawatu-whanganui-taumarunui-full-1",
@@ -463015,7 +463093,7 @@
           "distance": "10.5 km",
           "duration": "18 min",
           "difficulty": "Challenging",
-          "overview": "Class 1 Full Licence test route from VTNZ Taumarunui evaluating higher-speed driving, hazard detection commentary, and smooth merging on major Manawat\u016b-Whanganui highways and arterial connectors.",
+          "overview": "Class 1 Full Licence test route from VTNZ Taumarunui evaluating higher-speed driving, hazard detection commentary, and smooth merging on major Manawatū-Whanganui highways and arterial connectors.",
           "speed_zones": [
             "50 km/h Urban",
             "80-100 km/h Highway/Open Road"
@@ -466236,7 +466314,8 @@
               "lat": -38.882863,
               "lon": 175.264757
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-38.882863,175.264757&navigate=yes"
         }
       ]
     },
@@ -466244,11 +466323,11 @@
       "center_id": "manawatu-whanganui-whanganui",
       "name": "VTNZ Whanganui",
       "official_title": "VTNZ Whanganui Driving Test Centre",
-      "region": "Manawat\u016b-Whanganui",
+      "region": "Manawatū-Whanganui",
       "region_id": "manawatu-whanganui",
       "area": "Whanganui",
       "suburb": "Whanganui",
-      "address": "19 Heads Road, Gonville, Whanganui, Manawat\u016b-Whanganui 4500",
+      "address": "19 Heads Road, Gonville, Whanganui, Manawatū-Whanganui 4500",
       "coords": {
         "lat": -39.940129,
         "lng": 175.046188
@@ -466256,7 +466335,7 @@
       "agency": "VTNZ",
       "pass_rate": "70%",
       "key_features": [
-        "Official Manawat\u016b-Whanganui Practical Test Station",
+        "Official Manawatū-Whanganui Practical Test Station",
         "Restricted (1R) and Full (1F) Test Routes",
         "Turn-by-turn spoken audio guidance",
         "Google Maps live practice navigation"
@@ -466273,7 +466352,7 @@
           "distance": "12.0 km",
           "duration": "20 min",
           "difficulty": "Moderate",
-          "overview": "A sample Whanganui test route starting from the centre at 19 Heads Road. It takes around 19 min 32 s to drive this 12.0 km practice route, in preparation for your Manawat\u016b-Whanganui Restricted (1R) and Full (1F) test.",
+          "overview": "A sample Whanganui test route starting from the centre at 19 Heads Road. It takes around 19 min 32 s to drive this 12.0 km practice route, in preparation for your Manawatū-Whanganui Restricted (1R) and Full (1F) test.",
           "speed_zones": [
             "50 km/h Urban",
             "60-80 km/h Arterial/Connector"
@@ -470310,7 +470389,8 @@
               "lat": -39.939987,
               "lon": 175.046147
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-39.939987,175.046147&navigate=yes"
         },
         {
           "id": "manawatu-whanganui-whanganui-full-1",
@@ -470321,7 +470401,7 @@
           "distance": "13.9 km",
           "duration": "22 min",
           "difficulty": "Challenging",
-          "overview": "Class 1 Full Licence test route from VTNZ Whanganui evaluating higher-speed driving, hazard detection commentary, and smooth merging on major Manawat\u016b-Whanganui highways and arterial connectors.",
+          "overview": "Class 1 Full Licence test route from VTNZ Whanganui evaluating higher-speed driving, hazard detection commentary, and smooth merging on major Manawatū-Whanganui highways and arterial connectors.",
           "speed_zones": [
             "50 km/h Urban",
             "80-100 km/h Highway/Open Road"
@@ -474362,7 +474442,8 @@
               "lat": -39.939987,
               "lon": 175.046147
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-39.939987,175.046147&navigate=yes"
         }
       ]
     },
@@ -474858,7 +474939,8 @@
               "lat": -41.50329,
               "lon": 173.968507
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-41.503290,173.968507&navigate=yes"
         },
         {
           "id": "nelson-marlborough-tasman-blenheim-full-1",
@@ -475332,7 +475414,8 @@
               "lat": -41.50329,
               "lon": 173.968507
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-41.503290,173.968507&navigate=yes"
         }
       ]
     },
@@ -475744,7 +475827,8 @@
               "lat": -41.295938,
               "lon": 173.2294
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-41.295938,173.229400&navigate=yes"
         },
         {
           "id": "nelson-marlborough-tasman-nelson-full-1",
@@ -476134,7 +476218,8 @@
               "lat": -41.295938,
               "lon": 173.2294
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-41.295938,173.229400&navigate=yes"
         }
       ]
     },
@@ -480026,7 +480111,8 @@
               "lat": -35.939945,
               "lon": 173.871568
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-35.939945,173.871568&navigate=yes"
         },
         {
           "id": "northland-dargaville-full-1",
@@ -483896,7 +483982,8 @@
               "lat": -35.939945,
               "lon": 173.871568
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-35.939945,173.871568&navigate=yes"
         }
       ]
     },
@@ -487006,7 +487093,8 @@
               "lat": -35.408312,
               "lon": 173.798616
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-35.408312,173.798616&navigate=yes"
         },
         {
           "id": "northland-kaikohe-full-1",
@@ -490094,7 +490182,8 @@
               "lat": -35.408312,
               "lon": 173.798616
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-35.408312,173.798616&navigate=yes"
         }
       ]
     },
@@ -500224,7 +500313,8 @@
               "lat": -35.309851,
               "lon": 173.796984
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-35.309851,173.796984&navigate=yes"
         },
         {
           "id": "northland-kaikohe-testing-full-1",
@@ -510332,7 +510422,8 @@
               "lat": -35.309851,
               "lon": 173.796984
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-35.309851,173.796984&navigate=yes"
         }
       ]
     },
@@ -510359,7 +510450,7 @@
       ],
       "center_tips": [
         "Stay in the left lane on the roundabout, and signal once you pass the first exit. On SH1 be prepared for higher speeds - accelerate smoothly to match the flow of traffic.",
-        "Maintain appropriate speed for the road conditions \u2013 rural roads can have hidden entrances and loose gravel near edges. Use your mirrors regularly to keep aware of any traffic following you.",
+        "Maintain appropriate speed for the road conditions – rural roads can have hidden entrances and loose gravel near edges. Use your mirrors regularly to keep aware of any traffic following you.",
         "Listen carefully to each instruction as they test your ability to follow directions and navigate narrow suburban streets. Watch for pedestrians, especially children, and take your time at intersections."
       ],
       "total_routes": 2,
@@ -510386,7 +510477,7 @@
           ],
           "examiner_tips": [
             "Stay in the left lane on the roundabout, and signal once you pass the first exit. On SH1 be prepared for higher speeds - accelerate smoothly to match the flow of traffic.",
-            "Maintain appropriate speed for the road conditions \u2013 rural roads can have hidden entrances and loose gravel near edges. Use your mirrors regularly to keep aware of any traffic following you.",
+            "Maintain appropriate speed for the road conditions – rural roads can have hidden entrances and loose gravel near edges. Use your mirrors regularly to keep aware of any traffic following you.",
             "Listen carefully to each instruction as they test your ability to follow directions and navigate narrow suburban streets. Watch for pedestrians, especially children, and take your time at intersections."
           ],
           "google_maps_url": "https://www.google.com/maps/dir/?api=1&origin=-35.112565,173.261358&destination=-35.112565,173.261358&waypoints=-35.112571%2C173.26191%7C-35.114126%2C173.263996%7C-35.117469%2C173.268493%7C-35.117262%2C173.267475%7C-35.118634%2C173.267122%7C-35.118877%2C173.26148%7C-35.145731%2C173.243907%7C-35.118995%2C173.257886&travelmode=driving",
@@ -516694,7 +516785,8 @@
               "lat": -35.11235,
               "lon": 173.261706
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-35.112350,173.261706&navigate=yes"
         },
         {
           "id": "northland-kaitaia-full-1",
@@ -523026,7 +523118,8 @@
               "lat": -35.11235,
               "lon": 173.261706
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-35.112350,173.261706&navigate=yes"
         }
       ]
     },
@@ -529714,7 +529807,8 @@
               "lat": -35.235005,
               "lon": 173.95119
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-35.235005,173.951190&navigate=yes"
         },
         {
           "id": "northland-kerikeri-full-1",
@@ -536380,19 +536474,20 @@
               "lat": -35.235005,
               "lon": 173.95119
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-35.235005,173.951190&navigate=yes"
         }
       ]
     },
     {
       "center_id": "northland-whangarei",
-      "name": "VTNZ Whang\u0101rei",
-      "official_title": "VTNZ Whang\u0101rei Driving Test Centre",
+      "name": "VTNZ Whangārei",
+      "official_title": "VTNZ Whangārei Driving Test Centre",
       "region": "Northland",
       "region_id": "northland",
-      "area": "Whang\u0101rei",
-      "suburb": "Whang\u0101rei",
-      "address": "119 Port Road, Whang\u0101rei, Northland 0110",
+      "area": "Whangārei",
+      "suburb": "Whangārei",
+      "address": "119 Port Road, Whangārei, Northland 0110",
       "coords": {
         "lat": -35.732259,
         "lng": 174.332795
@@ -536411,13 +536506,13 @@
         {
           "id": "northland-whangarei-restricted-1",
           "route_code": "Class 1R - Route 1",
-          "name": "VTNZ Whang\u0101rei - Restricted Circuit 1",
+          "name": "VTNZ Whangārei - Restricted Circuit 1",
           "test_type": "Restricted Licence (Class 1R)",
           "badge_type": "restricted",
           "distance": "15.0 km",
           "duration": "26 min",
           "difficulty": "Moderate",
-          "overview": "A sample Whang\u0101rei test route starting from the centre at 119 Port Road. It takes around 21 min 31 s to drive this 11.4 km practice route, in preparation for your Northland Restricted (1R) and Full (1F) test.",
+          "overview": "A sample Whangārei test route starting from the centre at 119 Port Road. It takes around 21 min 31 s to drive this 11.4 km practice route, in preparation for your Northland Restricted (1R) and Full (1F) test.",
           "speed_zones": [
             "50 km/h Urban",
             "60-80 km/h Arterial/Connector"
@@ -536440,7 +536535,7 @@
           ],
           "snapped_waypoints": [
             {
-              "name": "Whang\u0101rei Test Depot (Start)",
+              "name": "Whangārei Test Depot (Start)",
               "lat": -35.732259,
               "lng": 174.332795
             },
@@ -536475,7 +536570,7 @@
               "lng": 174.323692
             },
             {
-              "name": "Whang\u0101rei Test Depot (Finish)",
+              "name": "Whangārei Test Depot (Finish)",
               "lat": -35.732259,
               "lng": 174.332795
             }
@@ -541560,18 +541655,19 @@
               "lat": -35.732285,
               "lon": 174.332497
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-35.732285,174.332497&navigate=yes"
         },
         {
           "id": "northland-whangarei-full-1",
           "route_code": "Class 1F - Route 1",
-          "name": "VTNZ Whang\u0101rei - Full Licence Highway & Arterial Circuit",
+          "name": "VTNZ Whangārei - Full Licence Highway & Arterial Circuit",
           "test_type": "Full Licence (Class 1F)",
           "badge_type": "full",
           "distance": "17.2 km",
           "duration": "28 min",
           "difficulty": "Challenging",
-          "overview": "Class 1 Full Licence test route from VTNZ Whang\u0101rei evaluating higher-speed driving, hazard detection commentary, and smooth merging on major Northland highways and arterial connectors.",
+          "overview": "Class 1 Full Licence test route from VTNZ Whangārei evaluating higher-speed driving, hazard detection commentary, and smooth merging on major Northland highways and arterial connectors.",
           "speed_zones": [
             "50 km/h Urban",
             "80-100 km/h Highway/Open Road"
@@ -541598,7 +541694,7 @@
           ],
           "snapped_waypoints": [
             {
-              "name": "Whang\u0101rei Test Depot (Start)",
+              "name": "Whangārei Test Depot (Start)",
               "lat": -35.732259,
               "lng": 174.332795
             },
@@ -541633,7 +541729,7 @@
               "lng": 174.323692
             },
             {
-              "name": "Whang\u0101rei Test Depot (Finish)",
+              "name": "Whangārei Test Depot (Finish)",
               "lat": -35.732259,
               "lng": 174.332795
             }
@@ -546718,7 +546814,8 @@
               "lat": -35.732285,
               "lon": 174.332497
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-35.732285,174.332497&navigate=yes"
         }
       ]
     },
@@ -560406,7 +560503,8 @@
               "lat": -45.244822,
               "lon": 169.394473
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-45.244822,169.394473&navigate=yes"
         },
         {
           "id": "otago-alexandra-full-1",
@@ -574072,7 +574170,8 @@
               "lat": -45.244822,
               "lon": 169.394473
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-45.244822,169.394473&navigate=yes"
         }
       ]
     },
@@ -577446,7 +577545,8 @@
               "lat": -46.235603,
               "lon": 169.745028
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-46.235603,169.745028&navigate=yes"
         },
         {
           "id": "otago-balclutha-full-1",
@@ -580798,7 +580898,8 @@
               "lat": -46.235603,
               "lon": 169.745028
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-46.235603,169.745028&navigate=yes"
         }
       ]
     },
@@ -585264,7 +585365,8 @@
               "lat": -45.895366,
               "lon": 170.509628
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-45.895366,170.509628&navigate=yes"
         },
         {
           "id": "otago-dunedin-full-1",
@@ -589708,7 +589810,8 @@
               "lat": -45.895366,
               "lon": 170.509628
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-45.895366,170.509628&navigate=yes"
         }
       ]
     },
@@ -589735,8 +589838,8 @@
       ],
       "center_tips": [
         "Keep signalling right until you pass the 2nd exit, then signal left... checking your mirrors before leaving the roundabout. Eden Street then leads to a long stretch heading out of town.",
-        "Watch for the speed limit changes between the urban and rural zones. On Redcastle Road, watch for any farm traffic and prepare to turn right onto the busy SH1 \u2013 ensuring three is a safe gap before pulling out.",
-        "Keep a look out for the speed limit reduction as you approach town. The signage mentions \"Historic Area/Penguin Colony/Hospital\" \u2013 so be alert for tourists, especially near the precinct."
+        "Watch for the speed limit changes between the urban and rural zones. On Redcastle Road, watch for any farm traffic and prepare to turn right onto the busy SH1 – ensuring three is a safe gap before pulling out.",
+        "Keep a look out for the speed limit reduction as you approach town. The signage mentions \"Historic Area/Penguin Colony/Hospital\" – so be alert for tourists, especially near the precinct."
       ],
       "total_routes": 2,
       "routes": [
@@ -589762,8 +589865,8 @@
           ],
           "examiner_tips": [
             "Keep signalling right until you pass the 2nd exit, then signal left... checking your mirrors before leaving the roundabout. Eden Street then leads to a long stretch heading out of town.",
-            "Watch for the speed limit changes between the urban and rural zones. On Redcastle Road, watch for any farm traffic and prepare to turn right onto the busy SH1 \u2013 ensuring three is a safe gap before pulling out.",
-            "Keep a look out for the speed limit reduction as you approach town. The signage mentions \"Historic Area/Penguin Colony/Hospital\" \u2013 so be alert for tourists, especially near the precinct."
+            "Watch for the speed limit changes between the urban and rural zones. On Redcastle Road, watch for any farm traffic and prepare to turn right onto the busy SH1 – ensuring three is a safe gap before pulling out.",
+            "Keep a look out for the speed limit reduction as you approach town. The signage mentions \"Historic Area/Penguin Colony/Hospital\" – so be alert for tourists, especially near the precinct."
           ],
           "google_maps_url": "https://www.google.com/maps/dir/?api=1&origin=-45.093451,170.973467&destination=-45.093451,170.973467&waypoints=-45.093628%2C170.973361%7C-45.073293%2C170.961385%7C-45.101955%2C170.969183%7C-45.088463%2C170.975545%7C-45.105961%2C170.965974%7C-45.107256%2C170.955921%7C-45.101955%2C170.969183&travelmode=driving",
           "waypoints": [
@@ -594236,7 +594339,8 @@
               "lat": -45.093391,
               "lon": 170.973231
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-45.093391,170.973231&navigate=yes"
         },
         {
           "id": "otago-oamaru-full-1",
@@ -598734,7 +598838,8 @@
               "lat": -45.093391,
               "lon": 170.973231
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-45.093391,170.973231&navigate=yes"
         }
       ]
     },
@@ -602380,7 +602485,8 @@
               "lat": -45.006843,
               "lon": 168.751409
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-45.006843,168.751409&navigate=yes"
         },
         {
           "id": "otago-queenstown-full-1",
@@ -606004,7 +606110,8 @@
               "lat": -45.006843,
               "lon": 168.751409
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-45.006843,168.751409&navigate=yes"
         }
       ]
     },
@@ -609340,7 +609447,8 @@
               "lat": -46.115967,
               "lon": 168.929173
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-46.115967,168.929173&navigate=yes"
         },
         {
           "id": "southland-gore-full-1",
@@ -612654,7 +612762,8 @@
               "lat": -46.115967,
               "lon": 168.929173
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-46.115967,168.929173&navigate=yes"
         }
       ]
     },
@@ -619098,7 +619207,8 @@
               "lat": -46.409314,
               "lon": 168.341922
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-46.409314,168.341922&navigate=yes"
         },
         {
           "id": "southland-invercargill-full-1",
@@ -625520,7 +625630,8 @@
               "lat": -46.409314,
               "lon": 168.341922
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-46.409314,168.341922&navigate=yes"
         }
       ]
     },
@@ -628324,7 +628435,8 @@
               "lat": -39.575486,
               "lon": 174.273789
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-39.575486,174.273789&navigate=yes"
         },
         {
           "id": "taranaki-hawera-full-1",
@@ -631106,7 +631218,8 @@
               "lat": -39.575486,
               "lon": 174.273789
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-39.575486,174.273789&navigate=yes"
         }
       ]
     },
@@ -635628,7 +635741,8 @@
               "lat": -39.04689,
               "lon": 174.116162
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-39.046890,174.116162&navigate=yes"
         },
         {
           "id": "taranaki-new-plymouth-full-1",
@@ -640128,7 +640242,8 @@
               "lat": -39.04689,
               "lon": 174.116162
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-39.046890,174.116162&navigate=yes"
         }
       ]
     },
@@ -640154,9 +640269,9 @@
         "Google Maps live practice navigation"
       ],
       "center_tips": [
-        "While taking the 1st exit should be straightforward, the preceding streets through Cambridge can be busy. Taylor Street then continues west for over a kilometre \u2013 so maintain your speed and lane position.",
-        "Cambridge is known for its many roundabouts, so remember to stay calm and treat each one individually. When continuing straight through the 2nd and 3rd roundabouts, no signal is needed on entry \u2013 just signal as you exit.",
-        "The exit onto Achilles Avenue requires an early signal left on approach. Stay alert \u2013 it's easy to become complacent after navigating multiple roundabouts, but the testing officer will be watching."
+        "While taking the 1st exit should be straightforward, the preceding streets through Cambridge can be busy. Taylor Street then continues west for over a kilometre – so maintain your speed and lane position.",
+        "Cambridge is known for its many roundabouts, so remember to stay calm and treat each one individually. When continuing straight through the 2nd and 3rd roundabouts, no signal is needed on entry – just signal as you exit.",
+        "The exit onto Achilles Avenue requires an early signal left on approach. Stay alert – it's easy to become complacent after navigating multiple roundabouts, but the testing officer will be watching."
       ],
       "total_routes": 2,
       "routes": [
@@ -640181,9 +640296,9 @@
             "Speed zone management between 50 km/h and arterial limits"
           ],
           "examiner_tips": [
-            "While taking the 1st exit should be straightforward, the preceding streets through Cambridge can be busy. Taylor Street then continues west for over a kilometre \u2013 so maintain your speed and lane position.",
-            "Cambridge is known for its many roundabouts, so remember to stay calm and treat each one individually. When continuing straight through the 2nd and 3rd roundabouts, no signal is needed on entry \u2013 just signal as you exit.",
-            "The exit onto Achilles Avenue requires an early signal left on approach. Stay alert \u2013 it's easy to become complacent after navigating multiple roundabouts, but the testing officer will be watching."
+            "While taking the 1st exit should be straightforward, the preceding streets through Cambridge can be busy. Taylor Street then continues west for over a kilometre – so maintain your speed and lane position.",
+            "Cambridge is known for its many roundabouts, so remember to stay calm and treat each one individually. When continuing straight through the 2nd and 3rd roundabouts, no signal is needed on entry – just signal as you exit.",
+            "The exit onto Achilles Avenue requires an early signal left on approach. Stay alert – it's easy to become complacent after navigating multiple roundabouts, but the testing officer will be watching."
           ],
           "google_maps_url": "https://www.google.com/maps/dir/?api=1&origin=-37.890316,175.470132&destination=-37.890316,175.470132&waypoints=-37.890316%2C175.470132%7C-37.891478%2C175.469929%7C-37.894951%2C175.475721%7C-37.880464%2C175.469072%7C-37.889683%2C175.457123%7C-37.891789%2C175.469107%7C-37.89055%2C175.467148%7C-37.900183%2C175.47397&travelmode=driving",
           "waypoints": [
@@ -649666,7 +649781,8 @@
               "lat": -37.890489,
               "lon": 175.470154
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.890489,175.470154&navigate=yes"
         },
         {
           "id": "waikato-cambridge-full-1",
@@ -659174,7 +659290,8 @@
               "lat": -37.890489,
               "lon": 175.470154
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.890489,175.470154&navigate=yes"
         }
       ]
     },
@@ -664858,7 +664975,8 @@
               "lat": -37.786463,
               "lon": 175.256863
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.786463,175.256863&navigate=yes"
         },
         {
           "id": "waikato-hamilton-full-1",
@@ -670520,7 +670638,8 @@
               "lat": -37.786463,
               "lon": 175.256863
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.786463,175.256863&navigate=yes"
         }
       ]
     },
@@ -678032,7 +678151,8 @@
               "lat": -37.740012,
               "lon": 175.229548
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.740012,175.229548&navigate=yes"
         },
         {
           "id": "waikato-hamilton-tawn-place-full-1",
@@ -685522,7 +685642,8 @@
               "lat": -37.740012,
               "lon": 175.229548
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.740012,175.229548&navigate=yes"
         }
       ]
     },
@@ -689000,7 +689121,8 @@
               "lat": -37.655901,
               "lon": 175.532425
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.655901,175.532425&navigate=yes"
         },
         {
           "id": "waikato-morrinsville-full-1",
@@ -692456,19 +692578,20 @@
               "lat": -37.655901,
               "lon": 175.532425
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.655901,175.532425&navigate=yes"
         }
       ]
     },
     {
       "center_id": "waikato-taupo",
-      "name": "VTNZ Taup\u014d",
-      "official_title": "VTNZ Taup\u014d Driving Test Centre",
+      "name": "VTNZ Taupō",
+      "official_title": "VTNZ Taupō Driving Test Centre",
       "region": "Waikato",
       "region_id": "waikato",
-      "area": "Taup\u014d",
-      "suburb": "Taup\u014d",
-      "address": "42 Matai Street, Taup\u014d, Waikato 3378",
+      "area": "Taupō",
+      "suburb": "Taupō",
+      "address": "42 Matai Street, Taupō, Waikato 3378",
       "coords": {
         "lat": -38.689403,
         "lng": 176.103603
@@ -692484,20 +692607,20 @@
       "center_tips": [
         "When merging, match the highway speed and find a safe gap to pull safely into. When you reach the roundabout, signal right, stay right, then signal to leave after passing the 2nd exit.",
         "Stay alert for any pedestrians crossing to the lake, cyclists, and vehicles leaving parking spots. Don't let the scenery distract you; keep your eyes on the road and check your mirrors regularly.",
-        "On the \"turn right to stay on\" instruction \u2013 the road curves but you still need to perform a turn. The Mere Road section is very brief (just 35m), so stay focused, and at the roundabouts check for traffic already circulating."
+        "On the \"turn right to stay on\" instruction – the road curves but you still need to perform a turn. The Mere Road section is very brief (just 35m), so stay focused, and at the roundabouts check for traffic already circulating."
       ],
       "total_routes": 2,
       "routes": [
         {
           "id": "waikato-taupo-restricted-1",
           "route_code": "Class 1R - Route 1",
-          "name": "VTNZ Taup\u014d - Restricted Circuit 1",
+          "name": "VTNZ Taupō - Restricted Circuit 1",
           "test_type": "Restricted Licence (Class 1R)",
           "badge_type": "restricted",
           "distance": "23.0 km",
           "duration": "35 min",
           "difficulty": "Moderate",
-          "overview": "A sample Taup\u014d test route starting from the centre at 42 Matai Street. It takes around 21 min 31 s to drive this 16.1 km practice route, in preparation for your Waikato Restricted (1R) and Full (1F) test.",
+          "overview": "A sample Taupō test route starting from the centre at 42 Matai Street. It takes around 21 min 31 s to drive this 16.1 km practice route, in preparation for your Waikato Restricted (1R) and Full (1F) test.",
           "speed_zones": [
             "50 km/h Urban",
             "60-80 km/h Arterial/Connector"
@@ -692511,7 +692634,7 @@
           "examiner_tips": [
             "When merging, match the highway speed and find a safe gap to pull safely into. When you reach the roundabout, signal right, stay right, then signal to leave after passing the 2nd exit.",
             "Stay alert for any pedestrians crossing to the lake, cyclists, and vehicles leaving parking spots. Don't let the scenery distract you; keep your eyes on the road and check your mirrors regularly.",
-            "On the \"turn right to stay on\" instruction \u2013 the road curves but you still need to perform a turn. The Mere Road section is very brief (just 35m), so stay focused, and at the roundabouts check for traffic already circulating."
+            "On the \"turn right to stay on\" instruction – the road curves but you still need to perform a turn. The Mere Road section is very brief (just 35m), so stay focused, and at the roundabouts check for traffic already circulating."
           ],
           "google_maps_url": "https://www.google.com/maps/dir/?api=1&origin=-38.689403,176.103603&destination=-38.689403,176.103603&waypoints=-38.677833%2C176.094247%7C-38.679798%2C176.081828%7C-38.7047%2C176.110588%7C-38.718105%2C176.089758%7C-38.691594%2C176.072976%7C-38.695975%2C176.084951%7C-38.68455%2C176.094586&travelmode=driving",
           "waypoints": [
@@ -692525,7 +692648,7 @@
           ],
           "snapped_waypoints": [
             {
-              "name": "Taup\u014d Test Depot (Start)",
+              "name": "Taupō Test Depot (Start)",
               "lat": -38.689403,
               "lng": 176.103603
             },
@@ -692565,7 +692688,7 @@
               "lng": 176.094586
             },
             {
-              "name": "Taup\u014d Test Depot (Finish)",
+              "name": "Taupō Test Depot (Finish)",
               "lat": -38.689403,
               "lng": 176.103603
             }
@@ -692575,7 +692698,7 @@
             {
               "step_number": 1,
               "step_num": 1,
-              "instruction": "Head southeast on Mata\u012b St toward Miro St",
+              "instruction": "Head southeast on Mataī St toward Miro St",
               "distance": "111 m",
               "duration": "0 min 16 s",
               "icon": "arrow-up",
@@ -692755,7 +692878,7 @@
             {
               "step_number": 19,
               "step_num": 19,
-              "instruction": "Head northeast on Rifle Range Rd toward K\u014dnini St Go through 1 roundabout",
+              "instruction": "Head northeast on Rifle Range Rd toward Kōnini St Go through 1 roundabout",
               "distance": "644 m",
               "duration": "1 min 7 s",
               "icon": "arrow-repeat",
@@ -692785,7 +692908,7 @@
             {
               "step_number": 22,
               "step_num": 22,
-              "instruction": "Turn right onto Mata\u012b St",
+              "instruction": "Turn right onto Mataī St",
               "distance": "111 m",
               "duration": "0 min 22 s",
               "icon": "arrow-right",
@@ -698534,18 +698657,19 @@
               "lat": -38.689527,
               "lon": 176.103489
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-38.689527,176.103489&navigate=yes"
         },
         {
           "id": "waikato-taupo-full-1",
           "route_code": "Class 1F - Route 1",
-          "name": "VTNZ Taup\u014d - Full Licence Highway & Arterial Circuit",
+          "name": "VTNZ Taupō - Full Licence Highway & Arterial Circuit",
           "test_type": "Full Licence (Class 1F)",
           "badge_type": "full",
           "distance": "26.5 km",
           "duration": "39 min",
           "difficulty": "Challenging",
-          "overview": "Class 1 Full Licence test route from VTNZ Taup\u014d evaluating higher-speed driving, hazard detection commentary, and smooth merging on major Waikato highways and arterial connectors.",
+          "overview": "Class 1 Full Licence test route from VTNZ Taupō evaluating higher-speed driving, hazard detection commentary, and smooth merging on major Waikato highways and arterial connectors.",
           "speed_zones": [
             "50 km/h Urban",
             "80-100 km/h Highway/Open Road"
@@ -698573,7 +698697,7 @@
           ],
           "snapped_waypoints": [
             {
-              "name": "Taup\u014d Test Depot (Start)",
+              "name": "Taupō Test Depot (Start)",
               "lat": -38.689403,
               "lng": 176.103603
             },
@@ -698613,7 +698737,7 @@
               "lng": 176.094586
             },
             {
-              "name": "Taup\u014d Test Depot (Finish)",
+              "name": "Taupō Test Depot (Finish)",
               "lat": -38.689403,
               "lng": 176.103603
             }
@@ -698623,7 +698747,7 @@
             {
               "step_number": 1,
               "step_num": 1,
-              "instruction": "Head southeast on Mata\u012b St toward Miro St",
+              "instruction": "Head southeast on Mataī St toward Miro St",
               "distance": "111 m",
               "duration": "0 min 16 s",
               "icon": "arrow-up",
@@ -698803,7 +698927,7 @@
             {
               "step_number": 19,
               "step_num": 19,
-              "instruction": "Head northeast on Rifle Range Rd toward K\u014dnini St Go through 1 roundabout",
+              "instruction": "Head northeast on Rifle Range Rd toward Kōnini St Go through 1 roundabout",
               "distance": "644 m",
               "duration": "1 min 7 s",
               "icon": "arrow-repeat",
@@ -698833,7 +698957,7 @@
             {
               "step_number": 22,
               "step_num": 22,
-              "instruction": "Turn right onto Mata\u012b St",
+              "instruction": "Turn right onto Mataī St",
               "distance": "111 m",
               "duration": "0 min 22 s",
               "icon": "arrow-right",
@@ -704582,7 +704706,8 @@
               "lat": -38.689527,
               "lon": 176.103489
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-38.689527,176.103489&navigate=yes"
         }
       ]
     },
@@ -706734,7 +706859,8 @@
               "lat": -38.007925,
               "lon": 175.318668
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-38.007925,175.318668&navigate=yes"
         },
         {
           "id": "waikato-te-awamutu-full-1",
@@ -708864,19 +708990,20 @@
               "lat": -38.007925,
               "lon": 175.318668
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-38.007925,175.318668&navigate=yes"
         }
       ]
     },
     {
       "center_id": "waikato-te-kuiti",
-      "name": "VTNZ Te K\u016biti",
-      "official_title": "VTNZ Te K\u016biti Driving Test Centre",
+      "name": "VTNZ Te Kūiti",
+      "official_title": "VTNZ Te Kūiti Driving Test Centre",
       "region": "Waikato",
       "region_id": "waikato",
-      "area": "Te K\u016biti",
-      "suburb": "Te K\u016biti",
-      "address": "Cnr Carroll &amp; King West Streets, Te K\u016biti, Waikato 3910",
+      "area": "Te Kūiti",
+      "suburb": "Te Kūiti",
+      "address": "Cnr Carroll &amp; King West Streets, Te Kūiti, Waikato 3910",
       "coords": {
         "lat": -38.334193,
         "lng": 175.165712
@@ -708895,13 +709022,13 @@
         {
           "id": "waikato-te-kuiti-restricted-1",
           "route_code": "Class 1R - Route 1",
-          "name": "VTNZ Te K\u016biti - Restricted Circuit 1",
+          "name": "VTNZ Te Kūiti - Restricted Circuit 1",
           "test_type": "Restricted Licence (Class 1R)",
           "badge_type": "restricted",
           "distance": "7.3 km",
           "duration": "19 min",
           "difficulty": "Moderate",
-          "overview": "A sample Te K\u016biti test route starting from the centre at Cnr Carroll & King West Streets. It takes around 18 min 36 s to drive this 8.9 km practice route, in preparation for your Waikato Restricted (1R) and Full (1F) test.",
+          "overview": "A sample Te Kūiti test route starting from the centre at Cnr Carroll & King West Streets. It takes around 18 min 36 s to drive this 8.9 km practice route, in preparation for your Waikato Restricted (1R) and Full (1F) test.",
           "speed_zones": [
             "50 km/h Urban",
             "60-80 km/h Arterial/Connector"
@@ -708925,7 +709052,7 @@
           ],
           "snapped_waypoints": [
             {
-              "name": "Te K\u016biti Test Depot (Start)",
+              "name": "Te Kūiti Test Depot (Start)",
               "lat": -38.334193,
               "lng": 175.165712
             },
@@ -708965,7 +709092,7 @@
               "lng": 175.165712
             },
             {
-              "name": "Te K\u016biti Test Depot (Finish)",
+              "name": "Te Kūiti Test Depot (Finish)",
               "lat": -38.334193,
               "lng": 175.165712
             }
@@ -711636,18 +711763,19 @@
               "lat": -38.333948,
               "lon": 175.166093
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-38.333948,175.166093&navigate=yes"
         },
         {
           "id": "waikato-te-kuiti-full-1",
           "route_code": "Class 1F - Route 1",
-          "name": "VTNZ Te K\u016biti - Full Licence Highway & Arterial Circuit",
+          "name": "VTNZ Te Kūiti - Full Licence Highway & Arterial Circuit",
           "test_type": "Full Licence (Class 1F)",
           "badge_type": "full",
           "distance": "8.4 km",
           "duration": "21 min",
           "difficulty": "Challenging",
-          "overview": "Class 1 Full Licence test route from VTNZ Te K\u016biti evaluating higher-speed driving, hazard detection commentary, and smooth merging on major Waikato highways and arterial connectors.",
+          "overview": "Class 1 Full Licence test route from VTNZ Te Kūiti evaluating higher-speed driving, hazard detection commentary, and smooth merging on major Waikato highways and arterial connectors.",
           "speed_zones": [
             "50 km/h Urban",
             "80-100 km/h Highway/Open Road"
@@ -711675,7 +711803,7 @@
           ],
           "snapped_waypoints": [
             {
-              "name": "Te K\u016biti Test Depot (Start)",
+              "name": "Te Kūiti Test Depot (Start)",
               "lat": -38.334193,
               "lng": 175.165712
             },
@@ -711715,7 +711843,7 @@
               "lng": 175.165712
             },
             {
-              "name": "Te K\u016biti Test Depot (Finish)",
+              "name": "Te Kūiti Test Depot (Finish)",
               "lat": -38.334193,
               "lng": 175.165712
             }
@@ -714386,7 +714514,8 @@
               "lat": -38.333948,
               "lon": 175.166093
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-38.333948,175.166093&navigate=yes"
         }
       ]
     },
@@ -720708,7 +720837,8 @@
               "lat": -37.186765,
               "lon": 175.580338
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.186765,175.580338&navigate=yes"
         },
         {
           "id": "waikato-thames-full-1",
@@ -727008,7 +727138,8 @@
               "lat": -37.186765,
               "lon": 175.580338
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.186765,175.580338&navigate=yes"
         }
       ]
     },
@@ -730784,7 +730915,8 @@
               "lat": -38.218251,
               "lon": 175.871794
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-38.218251,175.871794&navigate=yes"
         },
         {
           "id": "waikato-tokoroa-full-1",
@@ -734538,7 +734670,8 @@
               "lat": -38.218251,
               "lon": 175.871794
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-38.218251,175.871794&navigate=yes"
         }
       ]
     },
@@ -742022,7 +742155,8 @@
               "lat": -41.204915,
               "lon": 174.914701
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-41.204915,174.914701&navigate=yes"
         },
         {
           "id": "wellington-lower-hutt-full-1",
@@ -749484,7 +749618,8 @@
               "lat": -41.204915,
               "lon": 174.914701
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-41.204915,174.914701&navigate=yes"
         }
       ]
     },
@@ -749496,7 +749631,7 @@
       "region_id": "wellington",
       "area": "Masterton",
       "suburb": "Masterton",
-      "address": "157 Ng\u0101umutawa Road, Masterton, Wellington 5810",
+      "address": "157 Ngāumutawa Road, Masterton, Wellington 5810",
       "coords": {
         "lat": -40.947679,
         "lng": 175.636034
@@ -749521,7 +749656,7 @@
           "distance": "15.8 km",
           "duration": "25 min",
           "difficulty": "Moderate",
-          "overview": "A sample Masterton test route starting from the centre at 157 Ng\u0101umutawa Road. It takes around 20 min 38 s to drive this 13.9 km practice route, in preparation for your Wellington Restricted (1R) and Full (1F) test.",
+          "overview": "A sample Masterton test route starting from the centre at 157 Ngāumutawa Road. It takes around 20 min 38 s to drive this 13.9 km practice route, in preparation for your Wellington Restricted (1R) and Full (1F) test.",
           "speed_zones": [
             "50 km/h Urban",
             "60-80 km/h Arterial/Connector"
@@ -753362,7 +753497,8 @@
               "lat": -40.947656,
               "lon": 175.636045
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-40.947656,175.636045&navigate=yes"
         },
         {
           "id": "wellington-masterton-full-1",
@@ -757218,7 +757354,8 @@
               "lat": -40.947656,
               "lon": 175.636045
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-40.947656,175.636045&navigate=yes"
         }
       ]
     },
@@ -762624,7 +762761,8 @@
               "lat": -40.913639,
               "lon": 175.01092
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-40.913639,175.010920&navigate=yes"
         },
         {
           "id": "wellington-paraparaumu-full-1",
@@ -768008,7 +768146,8 @@
               "lat": -40.913639,
               "lon": 175.01092
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-40.913639,175.010920&navigate=yes"
         }
       ]
     },
@@ -768020,7 +768159,7 @@
       "region_id": "wellington",
       "area": "Porirua",
       "suburb": "Porirua",
-      "address": "10 T\u012btahi Road, Porirua, Wellington 5022",
+      "address": "10 Tītahi Road, Porirua, Wellington 5022",
       "coords": {
         "lat": -41.127379,
         "lng": 174.837428
@@ -768045,7 +768184,7 @@
           "distance": "20.5 km",
           "duration": "34 min",
           "difficulty": "Moderate",
-          "overview": "A sample Porirua test route starting from the centre at 10 T\u012btahi Road. It takes around 20 min 40 s to drive this 12.5 km practice route, in preparation for your Wellington Restricted (1R) and Full (1F) test.",
+          "overview": "A sample Porirua test route starting from the centre at 10 Tītahi Road. It takes around 20 min 40 s to drive this 12.5 km practice route, in preparation for your Wellington Restricted (1R) and Full (1F) test.",
           "speed_zones": [
             "50 km/h Urban",
             "60-80 km/h Arterial/Connector"
@@ -776274,7 +776413,8 @@
               "lat": -41.127276,
               "lon": 174.837441
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-41.127276,174.837441&navigate=yes"
         },
         {
           "id": "wellington-porirua-full-1",
@@ -784518,7 +784658,8 @@
               "lat": -41.127276,
               "lon": 174.837441
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-41.127276,174.837441&navigate=yes"
         }
       ]
     },
@@ -784623,7 +784764,7 @@
             {
               "step_number": 1,
               "step_num": 1,
-              "instruction": "Head southeast on Great Harbour Way / Te Aranui o P\u014dneke / Thorndon Quay toward Davis St Continue to follow Great Harbour Way / Te Aranui o P\u014dneke",
+              "instruction": "Head southeast on Great Harbour Way / Te Aranui o Pōneke / Thorndon Quay toward Davis St Continue to follow Great Harbour Way / Te Aranui o Pōneke",
               "distance": "749 m",
               "duration": "2 min 9 s",
               "icon": "arrow-up",
@@ -784633,7 +784774,7 @@
             {
               "step_number": 2,
               "step_num": 2,
-              "instruction": "Turn left onto Bunny St / Great Harbour Way / Te Aranui o P\u014dneke",
+              "instruction": "Turn left onto Bunny St / Great Harbour Way / Te Aranui o Pōneke",
               "distance": "119 m",
               "duration": "0 min 43 s",
               "icon": "arrow-left",
@@ -784643,7 +784784,7 @@
             {
               "step_number": 3,
               "step_num": 3,
-              "instruction": "Turn right onto Great Harbour Way / Te Aranui o P\u014dneke / Waterloo Quay",
+              "instruction": "Turn right onto Great Harbour Way / Te Aranui o Pōneke / Waterloo Quay",
               "distance": "219 m",
               "duration": "0 min 43 s",
               "icon": "arrow-right",
@@ -784813,7 +784954,7 @@
             {
               "step_number": 20,
               "step_num": 20,
-              "instruction": "Continue onto Featherston St / Great Harbour Way / Te Aranui o P\u014dneke Continue to follow Great Harbour Way / Te Aranui o P\u014dneke",
+              "instruction": "Continue onto Featherston St / Great Harbour Way / Te Aranui o Pōneke Continue to follow Great Harbour Way / Te Aranui o Pōneke",
               "distance": "754 m",
               "duration": "2 min 5 s",
               "icon": "arrow-up",
@@ -788378,7 +788519,8 @@
               "lat": -41.274006,
               "lon": 174.783718
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-41.274006,174.783718&navigate=yes"
         },
         {
           "id": "wellington-thorndon-full-1",
@@ -788461,7 +788603,7 @@
             {
               "step_number": 1,
               "step_num": 1,
-              "instruction": "Head southeast on Great Harbour Way / Te Aranui o P\u014dneke / Thorndon Quay toward Davis St Continue to follow Great Harbour Way / Te Aranui o P\u014dneke",
+              "instruction": "Head southeast on Great Harbour Way / Te Aranui o Pōneke / Thorndon Quay toward Davis St Continue to follow Great Harbour Way / Te Aranui o Pōneke",
               "distance": "749 m",
               "duration": "2 min 9 s",
               "icon": "arrow-up",
@@ -788471,7 +788613,7 @@
             {
               "step_number": 2,
               "step_num": 2,
-              "instruction": "Turn left onto Bunny St / Great Harbour Way / Te Aranui o P\u014dneke",
+              "instruction": "Turn left onto Bunny St / Great Harbour Way / Te Aranui o Pōneke",
               "distance": "119 m",
               "duration": "0 min 43 s",
               "icon": "arrow-left",
@@ -788481,7 +788623,7 @@
             {
               "step_number": 3,
               "step_num": 3,
-              "instruction": "Turn right onto Great Harbour Way / Te Aranui o P\u014dneke / Waterloo Quay",
+              "instruction": "Turn right onto Great Harbour Way / Te Aranui o Pōneke / Waterloo Quay",
               "distance": "219 m",
               "duration": "0 min 43 s",
               "icon": "arrow-right",
@@ -788651,7 +788793,7 @@
             {
               "step_number": 20,
               "step_num": 20,
-              "instruction": "Continue onto Featherston St / Great Harbour Way / Te Aranui o P\u014dneke Continue to follow Great Harbour Way / Te Aranui o P\u014dneke",
+              "instruction": "Continue onto Featherston St / Great Harbour Way / Te Aranui o Pōneke Continue to follow Great Harbour Way / Te Aranui o Pōneke",
               "distance": "754 m",
               "duration": "2 min 5 s",
               "icon": "arrow-up",
@@ -792216,7 +792358,8 @@
               "lat": -41.274006,
               "lon": 174.783718
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-41.274006,174.783718&navigate=yes"
         }
       ]
     },
@@ -798580,7 +798723,8 @@
               "lat": -41.139774,
               "lon": 175.026597
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-41.139774,175.026597&navigate=yes"
         },
         {
           "id": "wellington-upper-hutt-full-1",
@@ -804922,7 +805066,8 @@
               "lat": -41.139774,
               "lon": 175.026597
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-41.139774,175.026597&navigate=yes"
         }
       ]
     }

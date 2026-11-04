@@ -9938,7 +9938,8 @@
               "lat": -36.874692,
               "lon": 174.853615
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.874692,174.853615&navigate=yes"
         },
         {
           "id": "glen-innes-restricted-2",
@@ -24649,7 +24650,8 @@
               "lat": -36.874692,
               "lon": 174.853615
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.874692,174.853615&navigate=yes"
         },
         {
           "id": "glen-innes-full-1",
@@ -39233,7 +39235,8 @@
               "lat": -36.874692,
               "lon": 174.853615
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.874692,174.853615&navigate=yes"
         }
       ]
     },
@@ -44867,7 +44870,8 @@
               "lat": -36.935481,
               "lon": 174.886809
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.935481,174.886809&navigate=yes"
         },
         {
           "id": "highbrook-restricted-2",
@@ -46530,7 +46534,8 @@
               "lat": -36.935481,
               "lon": 174.886809
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.935481,174.886809&navigate=yes"
         },
         {
           "id": "highbrook-full-1",
@@ -50746,7 +50751,8 @@
               "lat": -36.935481,
               "lon": 174.886809
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.935481,174.886809&navigate=yes"
         }
       ]
     },
@@ -58979,7 +58985,8 @@
               "lat": -36.919914,
               "lon": 174.837408
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.919914,174.837408&navigate=yes"
         },
         {
           "id": "mount-wellington-restricted-2",
@@ -63034,7 +63041,8 @@
               "lat": -36.919914,
               "lon": 174.837408
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.919914,174.837408&navigate=yes"
         },
         {
           "id": "mount-wellington-full-1",
@@ -68018,7 +68026,8 @@
               "lat": -36.919914,
               "lon": 174.837408
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.919914,174.837408&navigate=yes"
         }
       ]
     },
@@ -80654,7 +80663,8 @@
               "lat": -36.752161,
               "lon": 174.714506
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.752161,174.714506&navigate=yes"
         },
         {
           "id": "albany-restricted-2",
@@ -85917,7 +85927,8 @@
               "lat": -36.752161,
               "lon": 174.714506
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.752161,174.714506&navigate=yes"
         },
         {
           "id": "albany-full-1",
@@ -89229,7 +89240,8 @@
               "lat": -36.752161,
               "lon": 174.714506
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.752161,174.714506&navigate=yes"
         }
       ]
     },
@@ -94875,7 +94887,8 @@
               "lat": -36.62447,
               "lon": 174.68104
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.624470,174.681040&navigate=yes"
         },
         {
           "id": "silverdale-restricted-2",
@@ -99258,7 +99271,8 @@
               "lat": -36.62447,
               "lon": 174.68104
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.624470,174.681040&navigate=yes"
         },
         {
           "id": "silverdale-full-1",
@@ -103514,7 +103528,8 @@
               "lat": -36.62447,
               "lon": 174.68104
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.624470,174.681040&navigate=yes"
         }
       ]
     },
@@ -113676,7 +113691,8 @@
               "lat": -36.792517,
               "lon": 174.750073
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.792517,174.750073&navigate=yes"
         },
         {
           "id": "takapuna-restricted-2",
@@ -123603,7 +123619,8 @@
               "lat": -36.792517,
               "lon": 174.750073
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.792517,174.750073&navigate=yes"
         },
         {
           "id": "takapuna-full-1",
@@ -132723,7 +132740,8 @@
               "lat": -36.792517,
               "lon": 174.750073
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.792517,174.750073&navigate=yes"
         }
       ]
     },
@@ -139624,7 +139642,8 @@
               "lat": -36.408218,
               "lon": 174.653123
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.408218,174.653123&navigate=yes"
         },
         {
           "id": "warkworth-restricted-2",
@@ -148455,7 +148474,8 @@
               "lat": -36.408218,
               "lon": 174.653123
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.408218,174.653123&navigate=yes"
         },
         {
           "id": "warkworth-full-1",
@@ -158087,7 +158107,8 @@
               "lat": -36.408218,
               "lon": 174.653123
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.408218,174.653123&navigate=yes"
         }
       ]
     },
@@ -163712,7 +163733,8 @@
               "lat": -36.991964,
               "lon": 174.87266
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.991964,174.872660&navigate=yes"
         },
         {
           "id": "manukau-lambie-restricted-2",
@@ -168463,7 +168485,8 @@
               "lat": -36.991964,
               "lon": 174.87266
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.991964,174.872660&navigate=yes"
         },
         {
           "id": "manukau-lambie-full-1",
@@ -172303,7 +172326,8 @@
               "lat": -36.991964,
               "lon": 174.87266
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.991964,174.872660&navigate=yes"
         }
       ]
     },
@@ -182959,7 +182983,8 @@
               "lat": -37.207128,
               "lon": 174.910918
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.207128,174.910918&navigate=yes"
         },
         {
           "id": "pukekohe-restricted-2",
@@ -190142,7 +190167,8 @@
               "lat": -37.207128,
               "lon": 174.910918
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.207128,174.910918&navigate=yes"
         },
         {
           "id": "pukekohe-full-1",
@@ -196654,7 +196680,8 @@
               "lat": -37.207128,
               "lon": 174.910918
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.207128,174.910918&navigate=yes"
         }
       ]
     },
@@ -204253,7 +204280,8 @@
               "lat": -37.035567,
               "lon": 174.911498
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.035567,174.911498&navigate=yes"
         },
         {
           "id": "takanini-restricted-2",
@@ -209500,7 +209528,8 @@
               "lat": -37.035567,
               "lon": 174.911498
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.035567,174.911498&navigate=yes"
         },
         {
           "id": "takanini-full-1",
@@ -215692,7 +215721,8 @@
               "lat": -37.035567,
               "lon": 174.911498
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.035567,174.911498&navigate=yes"
         }
       ]
     },
@@ -221659,7 +221689,8 @@
               "lat": -37.001502,
               "lon": 174.851618
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.001502,174.851618&navigate=yes"
         },
         {
           "id": "wiri-restricted-2",
@@ -225314,7 +225345,8 @@
               "lat": -37.001502,
               "lon": 174.851618
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.001502,174.851618&navigate=yes"
         },
         {
           "id": "wiri-full-1",
@@ -225325,7 +225357,7 @@
           "distance": "10.0 km",
           "duration": "20 min",
           "difficulty": "Challenging",
-          "overview": "Official Class 1 Full Licence practical test route from VTNZ Wiri, testing high-speed 100 km/h cruising, motorway merging and diverging, lane changing on State Highway 20 (Southwestern Motorway), and verbal hazard identification commentary between Wiri, M\u0101ngere East (Massey Road Exit 9), and Papatoetoe.",
+          "overview": "Official Class 1 Full Licence practical test route from VTNZ Wiri, testing high-speed 100 km/h cruising, motorway merging and diverging, lane changing on State Highway 20 (Southwestern Motorway), and verbal hazard identification commentary between Wiri, Māngere East (Massey Road Exit 9), and Papatoetoe.",
           "speed_zones": [
             "50 km/h Urban",
             "60 km/h Arterial (Roscommon Rd)",
@@ -225440,7 +225472,7 @@
             {
               "step_number": 9,
               "step_num": 9,
-              "instruction": "Indicate left for at least 3 seconds and take Exit 9 off-ramp toward Massey Road (M\u0101ngere East).",
+              "instruction": "Indicate left for at least 3 seconds and take Exit 9 off-ramp toward Massey Road (Māngere East).",
               "distance": "307 m",
               "duration": "0 min 15 s",
               "road_type": "Motorway Off-Ramp",
@@ -227255,7 +227287,8 @@
               "lat": -37.001502,
               "lon": 174.851618
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-37.001502,174.851618&navigate=yes"
         }
       ]
     },
@@ -238600,7 +238633,8 @@
               "lat": -36.91448,
               "lon": 174.690771
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.914480,174.690771&navigate=yes"
         },
         {
           "id": "new-lynn-restricted-2",
@@ -242527,7 +242561,8 @@
               "lat": -36.91448,
               "lon": 174.690771
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.914480,174.690771&navigate=yes"
         },
         {
           "id": "new-lynn-full-1",
@@ -246839,7 +246874,8 @@
               "lat": -36.91448,
               "lon": 174.690771
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.914480,174.690771&navigate=yes"
         }
       ]
     },
@@ -258180,7 +258216,8 @@
               "lat": -36.822164,
               "lon": 174.608635
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.822164,174.608635&navigate=yes"
         },
         {
           "id": "westgate-restricted-2",
@@ -260707,7 +260744,8 @@
               "lat": -36.822164,
               "lon": 174.608635
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.822164,174.608635&navigate=yes"
         },
         {
           "id": "westgate-full-1",
@@ -265790,7 +265828,8 @@
               "lat": -36.822164,
               "lon": 174.608635
             }
-          ]
+          ],
+          "waze_url": "https://waze.com/ul?ll=-36.822164,174.608635&navigate=yes"
         }
       ]
     }

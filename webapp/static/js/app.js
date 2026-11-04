@@ -2819,9 +2819,13 @@ function renderRoutesCenters(centers) {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
               <span>Steps &amp; Tips</span>
             </button>
-            <a href="${escapeHtml(r.google_maps_url)}" target="_blank" rel="noopener noreferrer" class="btn-gmaps-secondary" title="Open live GPS directions in Google Maps">
+            <a href="${escapeHtml(r.google_maps_url)}" target="_blank" rel="noopener noreferrer" class="btn-gmaps-secondary" title="Open complete circuit in Google Maps">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
               <span>Google Maps</span>
+            </a>
+            <a href="${escapeHtml(r.waze_url || ('https://waze.com/ul?ll=' + (r.polyline_coords && r.polyline_coords[0] ? (r.polyline_coords[0][0] + ',' + r.polyline_coords[0][1]) : (c.coords ? c.coords.join(',') : '')) + '&navigate=yes'))}" target="_blank" rel="noopener noreferrer" class="btn-waze-secondary" title="Navigate to route starting depot in Waze Navigation App">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M13.218 0C9.915 0 6.835 1.49 4.723 4.148c-1.515 1.913-2.31 4.272-2.31 6.706v1.739c0 .894-.62 1.738-1.862 1.813-.298.025-.547.224-.547.522-.05.82.82 2.31 2.012 3.502.82.844 1.788 1.515 2.832 2.036a3 3 0 0 0 2.955 3.528 2.966 2.966 0 0 0 2.931-2.385h2.509c.323 1.689 2.086 2.856 3.974 2.21 1.64-.546 2.36-2.409 1.763-3.924a12.84 12.84 0 0 0 1.838-1.465 10.73 10.73 0 0 0 3.18-7.65c0-2.882-1.118-5.589-3.155-7.625A10.899 10.899 0 0 0 13.218 0zm0 1.217c2.558 0 4.967.994 6.78 2.807a9.525 9.525 0 0 1 2.807 6.78A9.526 9.526 0 0 1 20 17.585a9.647 9.647 0 0 1-6.78 2.807h-2.46a3.008 3.008 0 0 0-2.93-2.41 3.03 3.03 0 0 0-2.534 1.367v.024a8.945 8.945 0 0 1-2.41-1.788c-.844-.844-1.316-1.614-1.515-2.11a2.858 2.858 0 0 0 1.441-.846 2.959 2.959 0 0 0 .795-2.036v-1.789c0-2.11.696-4.197 2.012-5.861 1.863-2.385 4.62-3.726 7.6-3.726zm-2.41 5.986a1.192 1.192 0 0 0-1.191 1.192 1.192 1.192 0 0 0 1.192 1.193A1.192 1.192 0 0 0 12 8.395a1.192 1.192 0 0 0-1.192-1.192zm7.204 0a1.192 1.192 0 0 0-1.192 1.192 1.192 1.192 0 0 0 1.192 1.193 1.192 1.192 0 0 0 1.192-1.193 1.192 1.192 0 0 0-1.192-1.192zm-7.377 4.769a.596.596 0 0 0-.546.845 4.813 4.813 0 0 0 4.346 2.757 4.77 4.77 0 0 0 4.347-2.757.596.596 0 0 0-.547-.845h-.025a.561.561 0 0 0-.521.348 3.59 3.59 0 0 1-3.254 2.061 3.591 3.591 0 0 1-3.254-2.061.64.64 0 0 0-.546-.348z"/></svg>
+              <span>Waze</span>
             </a>
             <a href="/api/routes/route/${escapeHtml(r.id)}/gpx" class="btn-gpx-export" download title="Download GPX file for Garmin, TomTom or car GPS">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
@@ -2948,6 +2952,8 @@ async function openRouteModal(routeId) {
   const passEl = document.getElementById('routeModalPassRate');
   const gmapsBtn = document.getElementById('routeModalGmapsBtn');
   const footerGmapsBtn = document.getElementById('routeModalFooterGmapsBtn');
+  const wazeBtn = document.getElementById('routeModalWazeBtn');
+  const footerWazeBtn = document.getElementById('routeModalFooterWazeBtn');
   const appleBtn = document.getElementById('routeModalAppleBtn');
   const overviewEl = document.getElementById('routeModalOverview');
   const speedZonesEl = document.getElementById('routeModalSpeedZones');
@@ -2973,6 +2979,11 @@ async function openRouteModal(routeId) {
 
   if (gmapsBtn) gmapsBtn.href = targetRoute.google_maps_url || '#';
   if (footerGmapsBtn) footerGmapsBtn.href = targetRoute.google_maps_url || '#';
+
+  const defaultWaze = targetRoute.waze_url || (targetRoute.polyline_coords && targetRoute.polyline_coords[0] ? `https://waze.com/ul?ll=${targetRoute.polyline_coords[0][0]},${targetRoute.polyline_coords[0][1]}&navigate=yes` : (targetCenter && targetCenter.coords ? `https://waze.com/ul?ll=${targetCenter.coords[0]},${targetCenter.coords[1]}&navigate=yes` : '#'));
+  if (wazeBtn) wazeBtn.href = defaultWaze;
+  if (footerWazeBtn) footerWazeBtn.href = defaultWaze;
+
   if (appleBtn && targetRoute.apple_maps_url) {
     appleBtn.href = targetRoute.apple_maps_url;
     appleBtn.style.display = 'inline-flex';
@@ -3021,11 +3032,18 @@ async function openRouteModal(routeId) {
 
   if (stepsListEl) {
     const steps = targetRoute.steps || [];
+    const navData = prepareRouteNavigation(targetRoute);
     let stepsHtml = '';
-    steps.forEach(s => {
+    steps.forEach((s, idx) => {
+      let wazeStepUrl = '';
+      if (navData && navData.stepTargets && navData.stepTargets[idx] && navData.stepTargets[idx].targetCoord) {
+        const tc = navData.stepTargets[idx].targetCoord;
+        wazeStepUrl = `https://waze.com/ul?ll=${tc[0].toFixed(6)},${tc[1].toFixed(6)}&navigate=yes`;
+      }
+      const stepNum = s.step_num || s.step_number || (idx + 1);
       stepsHtml += `
         <div class="route-step-row">
-          <div class="step-num-badge">${s.step_number}</div>
+          <div class="step-num-badge">${stepNum}</div>
           <div class="step-main">
             <div class="step-instruction">${escapeHtml(s.instruction)}</div>
             ${s.examiner_focus ? `<div class="step-tip">${escapeHtml(s.examiner_focus)}</div>` : ''}
@@ -3033,6 +3051,12 @@ async function openRouteModal(routeId) {
           <div class="step-meta">
             ${s.road_type ? `<span class="step-road-type">${escapeHtml(s.road_type)}</span>` : ''}
             <span class="step-distance">${escapeHtml(s.distance || '')}</span>
+            ${wazeStepUrl ? `
+              <a href="${wazeStepUrl}" target="_blank" rel="noopener noreferrer" class="btn-step-waze" title="Navigate directly to Turn #${stepNum} in Waze">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M13.218 0C9.915 0 6.835 1.49 4.723 4.148c-1.515 1.913-2.31 4.272-2.31 6.706v1.739c0 .894-.62 1.738-1.862 1.813-.298.025-.547.224-.547.522-.05.82.82 2.31 2.012 3.502.82.844 1.788 1.515 2.832 2.036a3 3 0 0 0 2.955 3.528 2.966 2.966 0 0 0 2.931-2.385h2.509c.323 1.689 2.086 2.856 3.974 2.21 1.64-.546 2.36-2.409 1.763-3.924a12.84 12.84 0 0 0 1.838-1.465 10.73 10.73 0 0 0 3.18-7.65c0-2.882-1.118-5.589-3.155-7.625A10.899 10.899 0 0 0 13.218 0zm0 1.217c2.558 0 4.967.994 6.78 2.807a9.525 9.525 0 0 1 2.807 6.78A9.526 9.526 0 0 1 20 17.585a9.647 9.647 0 0 1-6.78 2.807h-2.46a3.008 3.008 0 0 0-2.93-2.41 3.03 3.03 0 0 0-2.534 1.367v.024a8.945 8.945 0 0 1-2.41-1.788c-.844-.844-1.316-1.614-1.515-2.11a2.858 2.858 0 0 0 1.441-.846 2.959 2.959 0 0 0 .795-2.036v-1.789c0-2.11.696-4.197 2.012-5.861 1.863-2.385 4.62-3.726 7.6-3.726zm-2.41 5.986a1.192 1.192 0 0 0-1.191 1.192 1.192 1.192 0 0 0 1.192 1.193A1.192 1.192 0 0 0 12 8.395a1.192 1.192 0 0 0-1.192-1.192zm7.204 0a1.192 1.192 0 0 0-1.192 1.192 1.192 1.192 0 0 0 1.192 1.193 1.192 1.192 0 0 0 1.192-1.193 1.192 1.192 0 0 0-1.192-1.192zm-7.377 4.769a.596.596 0 0 0-.546.845 4.813 4.813 0 0 0 4.346 2.757 4.77 4.77 0 0 0 4.347-2.757.596.596 0 0 0-.547-.845h-.025a.561.561 0 0 0-.521.348 3.59 3.59 0 0 1-3.254 2.061 3.591 3.591 0 0 1-3.254-2.061.64.64 0 0 0-.546-.348z"/></svg>
+                <span>Waze</span>
+              </a>
+            ` : ''}
           </div>
         </div>
       `;

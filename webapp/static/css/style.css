@@ -3155,6 +3155,7 @@ dialog::backdrop {
   display: flex;
   gap: 8px;
   align-items: center;
+  flex-wrap: wrap;
   margin-top: auto;
   padding-top: 12px;
   border-top: 1px solid var(--slate-100);
@@ -3363,6 +3364,8 @@ dialog::backdrop {
 .launch-banner-btns {
   display: flex;
   gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .route-modal-section {
@@ -4181,6 +4184,71 @@ dialog::backdrop {
   background: #e2e8f0;
   border-color: #94a3b8;
   color: #0f172a !important;
+}
+
+.btn-waze-secondary {
+  background: #f0fdfa;
+  color: #0e7490 !important;
+  border: 1px solid #a5f3fc;
+  font-weight: 700;
+  font-size: 13.5px;
+  padding: 8px 14px;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-waze-secondary:hover {
+  background: #06b6d4;
+  border-color: #0891b2;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.35);
+}
+
+.route-actions-row .btn-waze-secondary {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 11px;
+  border-radius: 6px;
+  gap: 5px;
+}
+
+.btn-step-waze {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0891b2;
+  background: #ecfeff;
+  border: 1px solid #a5f3fc;
+  padding: 2px 7px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  margin-top: 2px;
+}
+
+.btn-step-waze:hover {
+  background: #06b6d4;
+  color: #ffffff !important;
+  border-color: #0891b2;
+}
+
+.route-export-note {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: #f8fafc;
+  border: 1px dashed var(--slate-300);
+  border-radius: 8px;
+  font-size: 12px;
+  color: var(--slate-600);
+  line-height: 1.5;
 }
 
 .footer-actions-group {
