@@ -27,6 +27,7 @@ quizzard_decompiled.js
 decompiled_src/
 vialsoft/
 dt_driver_training/
+route_led/
 
 # Redundant Raw Extraction Dumps (superseded by export/master_unique_questions.json)
 export/Quizzard/
