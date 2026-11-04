@@ -3081,9 +3081,13 @@ const driverNavState = {
   activeRoute: null,
   activeCenter: null,
   map: null,
-  polylineLayer: null,
+  traveledPolylineLayer: null,
+  upcomingPolylineLayer: null,
+  casingPolylineLayer: null,
   vehicleMarker: null,
   startMarker: null,
+  finishMarker: null,
+  stepMarkers: [],
   watchId: null,
   wakeLock: null,
   voiceEnabled: true,
@@ -3098,15 +3102,50 @@ const driverNavState = {
   startTime: null,
   hasStartedRoute: false,
   offRouteCount: 0,
-  onRouteCount: 0
+  onRouteCount: 0,
+  carPolylineIndex: 0,
+  cumulativeDistances: [],
+  stepTargets: [],
+  headingUpMode: true,
+  isOverviewMode: false,
+  userInteractedTime: 0,
+  audioContext: null
 };
+
+// Prime mobile audio contexts on user interaction
+function primeSpeechAudio() {
+  try {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (AudioContextClass) {
+      if (!driverNavState.audioContext) {
+        driverNavState.audioContext = new AudioContextClass();
+      }
+      if (driverNavState.audioContext.state === 'suspended') {
+        driverNavState.audioContext.resume();
+      }
+    }
+  } catch (e) {}
+
+  if ('speechSynthesis' in window) {
+    try {
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(' ');
+      u.volume = 0.01;
+      window.speechSynthesis.speak(u);
+    } catch (e) {}
+  }
+}
+window.primeSpeechAudio = primeSpeechAudio;
 
 // Web Audio API Chime for turn alert
 function playNavChime() {
   try {
     const AudioContextClass = window.AudioContext || window.webkitAudioContext;
     if (!AudioContextClass) return;
-    const ctx = new AudioContextClass();
+    const ctx = driverNavState.audioContext || new AudioContextClass();
+    if (ctx.state === 'suspended') {
+      ctx.resume();
+    }
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
     osc.connect(gain);
@@ -3115,12 +3154,83 @@ function playNavChime() {
     const now = ctx.currentTime;
     osc.frequency.setValueAtTime(540, now);
     osc.frequency.setValueAtTime(720, now + 0.1);
-    gain.gain.setValueAtTime(0.12, now);
+    gain.gain.setValueAtTime(0.18, now);
     gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
     osc.start(now);
     osc.stop(now + 0.35);
   } catch (e) {}
 }
+
+// Toggle Heading-Up Driving Perspective Mode
+function toggleDriverCompass() {
+  driverNavState.headingUpMode = !driverNavState.headingUpMode;
+  const btn = document.getElementById('driverCompassBtn');
+  if (btn) {
+    if (driverNavState.headingUpMode) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  }
+  const mapContainer = document.getElementById('driverNavMap');
+  if (mapContainer && driverNavState.map) {
+    const pane = driverNavState.map.getPane('mapPane');
+    const rotator = document.getElementById('vehiclePuckRotator');
+    if (!driverNavState.headingUpMode) {
+      mapContainer.classList.remove('heading-up');
+      if (pane) pane.style.transform = 'rotate(0deg)';
+      if (rotator && driverNavState.userLocation && driverNavState.userLocation.heading !== undefined) {
+        rotator.style.transform = `rotate(${driverNavState.userLocation.heading}deg)`;
+      }
+    } else {
+      mapContainer.classList.add('heading-up');
+      const h = (driverNavState.userLocation && driverNavState.userLocation.heading) || 0;
+      if (pane) pane.style.transform = `rotate(${-h}deg)`;
+      if (rotator) rotator.style.transform = 'rotate(0deg)';
+    }
+  }
+  speakNavInstruction(driverNavState.headingUpMode ? 'Heading up driving view enabled.' : 'North up map view enabled.', true);
+}
+window.toggleDriverCompass = toggleDriverCompass;
+
+// Toggle Full Route Overview vs Street Driving Zoom
+function toggleDriverCameraView() {
+  driverNavState.isOverviewMode = !driverNavState.isOverviewMode;
+  const btn = document.getElementById('driverCameraBtn');
+  if (btn) {
+    if (driverNavState.isOverviewMode) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  }
+  if (!driverNavState.map) return;
+
+  if (driverNavState.isOverviewMode) {
+    const poly = (driverNavState.activeRoute && driverNavState.activeRoute.polyline_coords) || [];
+    if (poly.length > 1) {
+      const bounds = L.latLngBounds(poly);
+      driverNavState.map.fitBounds(bounds, { padding: [60, 60] });
+    }
+  } else {
+    recenterDriverMap();
+  }
+}
+window.toggleDriverCameraView = toggleDriverCameraView;
+
+// Explicitly Force Start Route Guidance (Overrides Starting Depot Distance Gate)
+function forceStartRouteGuidance() {
+  driverNavState.hasStartedRoute = true;
+  const startBanner = document.getElementById('driverStartBanner');
+  if (startBanner) startBanner.style.display = 'none';
+
+  const steps = (driverNavState.activeRoute && driverNavState.activeRoute.steps) || [];
+  if (steps.length > 0) {
+    updateDriverHudStep(0, 50);
+    speakNavInstruction(`Starting driving test guidance for ${driverNavState.activeRoute.name}. ${steps[0].instruction}`, true);
+  }
+}
+window.forceStartRouteGuidance = forceStartRouteGuidance;
 
 // ============================================================================
 // VOICE SYNTHESIS ENGINE (CLEAN ENGLISH SAT-NAV AUDIO)
@@ -3353,8 +3463,76 @@ function getManeuverSvg(instruction) {
   }
 }
 
+// Precompute cumulative distances and map steps along polyline
+function prepareRouteNavigation(route) {
+  const poly = route.polyline_coords || [];
+  if (poly.length === 0) {
+    return { cumulativeDistances: [], stepTargets: [] };
+  }
+
+  // 1. Cumulative distances
+  const cumDist = [0];
+  for (let i = 1; i < poly.length; i++) {
+    const d = calcDistanceMeters(poly[i - 1][0], poly[i - 1][1], poly[i][0], poly[i][1]);
+    cumDist.push(cumDist[i - 1] + d);
+  }
+
+  // 2. Map steps to polyline
+  const steps = route.steps || [];
+  const wps = route.snapped_waypoints || [];
+  const stepTargets = [];
+
+  let lastIdx = 0;
+  for (let si = 0; si < steps.length; si++) {
+    const step = steps[si];
+    let targetIdx = -1;
+
+    // Try matching via snapped waypoint coordinate
+    if (si < wps.length && wps[si] && wps[si].lat !== undefined && wps[si].lng !== undefined) {
+      let bestDist = Infinity;
+      let bestIdx = lastIdx;
+      for (let pi = lastIdx; pi < poly.length; pi++) {
+        const d = calcDistanceMeters(wps[si].lat, wps[si].lng, poly[pi][0], poly[pi][1]);
+        if (d < bestDist) {
+          bestDist = d;
+          bestIdx = pi;
+        }
+      }
+      targetIdx = bestIdx;
+    }
+
+    if (targetIdx < 0 || targetIdx <= lastIdx) {
+      // Proportional distribution fallback
+      targetIdx = Math.min(poly.length - 1, Math.round((si / Math.max(1, steps.length - 1)) * (poly.length - 1)));
+    }
+
+    // Ensure strictly increasing indices
+    if (si > 0) {
+      targetIdx = Math.max(lastIdx + 1, targetIdx);
+    }
+    targetIdx = Math.min(poly.length - 1, targetIdx);
+    lastIdx = targetIdx;
+
+    stepTargets.push({
+      stepIndex: si,
+      targetPolylineIndex: targetIdx,
+      targetCoord: poly[targetIdx],
+      instruction: step.instruction || 'Follow route circuit',
+      road_type: step.road_type || 'Suburban Street',
+      examiner_focus: step.examiner_focus || 'Maintain legal speed, check mirrors regularly.',
+      announcedEarly: false,
+      announcedImminent: false,
+      announcedNow: false
+    });
+  }
+
+  return { cumulativeDistances: cumDist, stepTargets };
+}
+
 // Launch Navigation Mode
 async function launchDriverNav(routeId, autoDemo = false) {
+  primeSpeechAudio();
+
   let targetCenter = null;
   let targetRoute = null;
 
@@ -3395,9 +3573,21 @@ async function launchDriverNav(routeId, autoDemo = false) {
   driverNavState.hasStartedRoute = false;
   driverNavState.offRouteCount = 0;
   driverNavState.onRouteCount = 0;
+  driverNavState.carPolylineIndex = 0;
+  driverNavState.headingUpMode = true;
+  driverNavState.isOverviewMode = false;
+  driverNavState.userInteractedTime = 0;
+
+  // Precompute route distance metrics & step mapping
+  const prep = prepareRouteNavigation(targetRoute);
+  driverNavState.cumulativeDistances = prep.cumulativeDistances;
+  driverNavState.stepTargets = prep.stepTargets;
 
   const offRouteEl = document.getElementById('driverOffRouteBanner');
   if (offRouteEl) offRouteEl.style.display = 'none';
+
+  const startBanner = document.getElementById('driverStartBanner');
+  if (startBanner) startBanner.style.display = 'none';
 
   // Screen WakeLock to keep screen on while driving
   if ('wakeLock' in navigator) {
@@ -3413,11 +3603,17 @@ async function launchDriverNav(routeId, autoDemo = false) {
   // Initialize or update voice picker
   populateVoicePicker();
 
-  // Initialize Leaflet Map
+  // Initialize Leaflet Map (at street navigation level 17.5)
   initDriverNavMap(targetRoute, targetCenter);
 
-  // Update HUD
+  // Update HUD Initial Step
   updateDriverHudStep(0, 0);
+
+  // Compass and camera buttons state
+  const compassBtn = document.getElementById('driverCompassBtn');
+  if (compassBtn) compassBtn.classList.add('active');
+  const cameraBtn = document.getElementById('driverCameraBtn');
+  if (cameraBtn) cameraBtn.classList.remove('active');
 
   // If autoDemo requested, start simulation directly without touching device GPS hardware
   if (autoDemo) {
@@ -3449,40 +3645,48 @@ function initDriverNavMap(route, center) {
     centerLng = polyline[0][1];
   }
 
+  // Street-level driving zoom: 17.5
   driverNavState.map = L.map('driverNavMap', {
     zoomControl: false,
     attributionControl: false
-  }).setView([centerLat, centerLng], 17);
+  }).setView([centerLat, centerLng], 17.5);
 
-  // Clean OpenStreetMap tiles
+  // OpenStreetMap clean tiles
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19
   }).addTo(driverNavState.map);
 
-  // Polyline shadow and glowing path
   if (polyline.length > 1) {
     // Outer casing (casing layer for high visibility)
-    L.polyline(polyline, {
+    driverNavState.casingPolylineLayer = L.polyline(polyline, {
       color: '#0369a1',
-      weight: 9,
-      opacity: 0.65,
+      weight: 10,
+      opacity: 0.55,
       lineCap: 'round',
       lineJoin: 'round'
     }).addTo(driverNavState.map);
 
-    // Inner bright navigation polyline
-    driverNavState.polylineLayer = L.polyline(polyline, {
+    // Traveled breadcrumb path layer (slate grey behind car)
+    driverNavState.traveledPolylineLayer = L.polyline([], {
+      color: '#64748b',
+      weight: 5,
+      opacity: 0.6,
+      lineCap: 'round',
+      lineJoin: 'round'
+    }).addTo(driverNavState.map);
+
+    // Upcoming active guidance polyline (glowing vivid sat-nav cyan)
+    driverNavState.upcomingPolylineLayer = L.polyline(polyline, {
       color: '#0284c7',
-      weight: 6,
+      weight: 6.5,
       opacity: 0.95,
       lineCap: 'round',
       lineJoin: 'round'
     }).addTo(driverNavState.map);
-
-    driverNavState.map.fitBounds(driverNavState.polylineLayer.getBounds(), {
-      padding: [80, 80]
-    });
   }
+
+  // Clean up existing step markers
+  driverNavState.stepMarkers = [];
 
   // Start & Finish Markers
   const startIcon = L.divIcon({
@@ -3493,6 +3697,16 @@ function initDriverNavMap(route, center) {
   });
   if (polyline.length > 0) {
     driverNavState.startMarker = L.marker(polyline[0], { icon: startIcon }).addTo(driverNavState.map);
+  }
+
+  const finishIcon = L.divIcon({
+    className: 'custom-pin-finish',
+    html: `<div style="background:#dc2626;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:9px;border:3px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,0.4);">FINISH</div>`,
+    iconSize: [28, 28],
+    iconAnchor: [14, 14]
+  });
+  if (polyline.length > 1) {
+    driverNavState.finishMarker = L.marker(polyline[polyline.length - 1], { icon: finishIcon }).addTo(driverNavState.map);
   }
 
   // Vehicle puck marker
@@ -3511,6 +3725,16 @@ function initDriverNavMap(route, center) {
   const initialLoc = polyline.length > 0 ? polyline[0] : [centerLat, centerLng];
   driverNavState.vehicleMarker = L.marker(initialLoc, { icon: puckIcon, zIndexOffset: 1000 }).addTo(driverNavState.map);
   driverNavState.userLocation = { lat: initialLoc[0], lng: initialLoc[1], speed: 0, heading: 0 };
+
+  // Track user map touch to pause auto-center
+  driverNavState.map.on('movestart', (e) => {
+    // If not caused by code pan
+    if (e.originalEvent) {
+      driverNavState.userInteractedTime = Date.now();
+      const recenterBtn = document.getElementById('driverRecenterBtn');
+      if (recenterBtn) recenterBtn.classList.add('active');
+    }
+  });
 }
 
 // Start Geolocation Watcher
@@ -3529,7 +3753,6 @@ function startDriverGeolocation() {
 
   driverNavState.watchId = navigator.geolocation.watchPosition(
     (pos) => {
-      // If demo simulation is actively playing, ignore real hardware GPS updates
       if (driverNavState.isDemoPlaying) {
         return;
       }
@@ -3538,7 +3761,20 @@ function startDriverGeolocation() {
       const lng = pos.coords.longitude;
       const rawSpeed = pos.coords.speed;
       const speedKmh = rawSpeed !== null && rawSpeed > 0 ? Math.round(rawSpeed * 3.6) : 0;
-      const heading = pos.coords.heading || 0;
+      let heading = pos.coords.heading;
+
+      // Calculate heading from recent movement if device sensor is null
+      if (heading === null || heading === undefined || isNaN(heading)) {
+        if (driverNavState.userLocation && (lat !== driverNavState.userLocation.lat || lng !== driverNavState.userLocation.lng)) {
+          const dLon = (lng - driverNavState.userLocation.lng) * Math.PI / 180;
+          const y = Math.sin(dLon) * Math.cos(lat * Math.PI / 180);
+          const x = Math.cos(driverNavState.userLocation.lat * Math.PI / 180) * Math.sin(lat * Math.PI / 180) -
+                    Math.sin(driverNavState.userLocation.lat * Math.PI / 180) * Math.cos(lat * Math.PI / 180) * Math.cos(dLon);
+          heading = (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
+        } else {
+          heading = (driverNavState.userLocation && driverNavState.userLocation.heading) || 0;
+        }
+      }
 
       updateDriverGpsStatus('GPS Locked', true);
       processVehiclePosition(lat, lng, speedKmh, heading);
@@ -3565,19 +3801,13 @@ function updateDriverGpsStatus(text, isGood) {
   }
 }
 
-// Process new vehicle location & update HUD
+// Process new vehicle location & drive turn-by-turn guidance
 function processVehiclePosition(lat, lng, speedKmh, heading) {
   driverNavState.userLocation = { lat, lng, speed: speedKmh, heading };
 
   // Update vehicle marker on map
   if (driverNavState.vehicleMarker) {
     driverNavState.vehicleMarker.setLatLng([lat, lng]);
-  }
-
-  // Rotate vehicle arrowhead
-  const rotator = document.getElementById('vehiclePuckRotator');
-  if (rotator && heading !== null && heading !== undefined) {
-    rotator.style.transform = `rotate(${heading}deg)`;
   }
 
   // Update Speedometer HUD
@@ -3593,54 +3823,174 @@ function processVehiclePosition(lat, lng, speedKmh, heading) {
     }
   }
 
-  // Follow vehicle smoothly
-  if (driverNavState.map && !driverNavState.isDemoPlaying) {
-    driverNavState.map.panTo([lat, lng], { animate: true, duration: 0.5 });
-  }
+  const polyline = (driverNavState.activeRoute && driverNavState.activeRoute.polyline_coords) || [];
+  const steps = (driverNavState.activeRoute && driverNavState.activeRoute.steps) || [];
+  const cumDist = driverNavState.cumulativeDistances || [];
+  const targets = driverNavState.stepTargets || [];
 
-  // Check off-route status (ONLY for live driving GPS, NEVER during demo simulation!)
-  if (!driverNavState.isDemoPlaying) {
-    const polyline = (driverNavState.activeRoute && driverNavState.activeRoute.polyline_coords) || [];
-    if (polyline.length > 0) {
-      const startCoord = polyline[0];
-      const distToStart = calcDistanceMeters(lat, lng, startCoord[0], startCoord[1]);
+  if (polyline.length > 1) {
+    // 1. Locate car along polyline using forward search window
+    const lastPi = driverNavState.carPolylineIndex || 0;
+    const fromIdx = Math.max(0, lastPi - 10);
+    const toIdx = Math.min(polyline.length - 1, lastPi + 50);
 
-      // Before driver arrives at starting point (e.g. at home or heading to test centre)
-      if (!driverNavState.hasStartedRoute) {
-        if (distToStart <= 120) {
-          driverNavState.hasStartedRoute = true;
-          speakNavInstruction('Arrived at test starting point. Follow the highlighted route.');
-        } else {
-          // Guide toward test centre without false off-route alarms
-          const offRouteEl = document.getElementById('driverOffRouteBanner');
-          if (offRouteEl) offRouteEl.style.display = 'none';
-          const countEl = document.getElementById('driverCountdown');
-          if (countEl) countEl.innerText = `${Math.round(distToStart / 100) / 10} km`;
-          const instEl = document.getElementById('driverInstruction');
-          if (instEl) instEl.innerText = `Proceed to starting point: ${driverNavState.activeCenter?.name || 'Testing Centre'}`;
-          return;
+    let bestPi = lastPi;
+    let minD = Infinity;
+
+    for (let pi = fromIdx; pi <= toIdx; pi++) {
+      const d = calcDistanceMeters(lat, lng, polyline[pi][0], polyline[pi][1]);
+      if (d < minD) {
+        minD = d;
+        bestPi = pi;
+      }
+    }
+
+    // If outside local search window, scan entire polyline
+    if (minD > 75) {
+      for (let pi = 0; pi < polyline.length; pi++) {
+        const d = calcDistanceMeters(lat, lng, polyline[pi][0], polyline[pi][1]);
+        if (d < minD) {
+          minD = d;
+          bestPi = pi;
         }
       }
+    }
 
-      // Live GPS Debounced Off-Route check
-      const minDist = calcMinDistToPolyline([lat, lng], polyline);
+    // Monotonic progression (allow small tolerance)
+    driverNavState.carPolylineIndex = Math.max(lastPi, bestPi);
+    const carPi = driverNavState.carPolylineIndex;
+
+    // 2. Start of Route Detection (No Lockout!)
+    const distToStart = calcDistanceMeters(lat, lng, polyline[0][0], polyline[0][1]);
+    const startBanner = document.getElementById('driverStartBanner');
+    const startBannerText = document.getElementById('driverStartBannerText');
+
+    if (!driverNavState.hasStartedRoute && !driverNavState.isDemoPlaying) {
+      if (distToStart <= 350 || minD <= 200) {
+        driverNavState.hasStartedRoute = true;
+        if (startBanner) startBanner.style.display = 'none';
+        speakNavInstruction(`Starting driving test guidance for ${driverNavState.activeRoute.name}. ${steps[0]?.instruction || ''}`);
+      } else {
+        // Show start banner with distance without blocking guidance
+        if (startBanner) startBanner.style.display = 'flex';
+        if (startBannerText) {
+          startBannerText.innerText = `Test Depot is ${Math.round(distToStart)}m away.`;
+        }
+      }
+    } else {
+      if (startBanner) startBanner.style.display = 'none';
+    }
+
+    // 3. Dynamic Maneuver Progress & Step Advancement
+    let currStepIdx = driverNavState.currentStepIndex;
+    if (currStepIdx < targets.length) {
+      const targetObj = targets[currStepIdx];
+      const targetPi = targetObj.targetPolylineIndex;
+
+      // Real road distance along polyline to upcoming maneuver
+      let distToManeuver = 0;
+      if (targetPi > carPi && cumDist.length > targetPi) {
+        distToManeuver = Math.max(0, cumDist[targetPi] - cumDist[carPi]);
+      } else {
+        distToManeuver = calcDistanceMeters(lat, lng, polyline[targetPi][0], polyline[targetPi][1]);
+      }
+
+      // Check if driver has reached or passed the maneuver
+      if (carPi >= targetPi || distToManeuver <= 25) {
+        // Arrived at maneuver point!
+        playNavChime();
+        driverNavState.currentStepIndex++;
+        currStepIdx = driverNavState.currentStepIndex;
+
+        if (currStepIdx < steps.length) {
+          const nextStep = steps[currStepIdx];
+          const nextTarget = targets[currStepIdx];
+          let distToNext = 150;
+          if (nextTarget && cumDist.length > nextTarget.targetPolylineIndex) {
+            distToNext = Math.max(0, cumDist[nextTarget.targetPolylineIndex] - cumDist[carPi]);
+          }
+          updateDriverHudStep(currStepIdx, distToNext);
+          speakNavInstruction(nextStep.instruction);
+
+          // Follow-up examiner focus tip announcement
+          setTimeout(() => {
+            if (driverNavState.currentStepIndex === currStepIdx) {
+              speakNavInstruction(nextStep.examiner_focus);
+            }
+          }, 3600);
+        } else {
+          // Completed route
+          updateDriverHudStep(steps.length - 1, 0);
+          speakNavInstruction('You have returned to the testing depot. Practical driving test circuit completed!');
+        }
+      } else {
+        // Update countdown in real time
+        updateDriverHudStep(currStepIdx, distToManeuver);
+
+        // Pre-maneuver voice alerts (live GPS only, demo mode handles its own triggers)
+        if (!driverNavState.isDemoPlaying) {
+          if (distToManeuver <= 400 && distToManeuver > 150 && !targetObj.announcedEarly) {
+            targetObj.announcedEarly = true;
+            const roundedM = Math.round(distToManeuver / 50) * 50;
+            speakNavInstruction(`In ${roundedM} meters, ${steps[currStepIdx]?.instruction || ''}`);
+          } else if (distToManeuver <= 80 && distToManeuver > 25 && !targetObj.announcedImminent) {
+            targetObj.announcedImminent = true;
+            speakNavInstruction(`In ${Math.round(distToManeuver)} meters, ${steps[currStepIdx]?.instruction || ''}`);
+          }
+        }
+      }
+    }
+
+    // 4. Update Visual Polyline Layers (Traveled grey breadcrumb vs Upcoming glowing cyan)
+    if (driverNavState.traveledPolylineLayer && driverNavState.upcomingPolylineLayer) {
+      driverNavState.traveledPolylineLayer.setLatLngs(polyline.slice(0, carPi + 1));
+      driverNavState.upcomingPolylineLayer.setLatLngs(polyline.slice(carPi));
+    }
+
+    // 5. Update Remaining Distance & ETA
+    const totalDist = cumDist[cumDist.length - 1] || 10000;
+    const traveledDist = cumDist[carPi] || 0;
+    const remainingM = Math.max(0, totalDist - traveledDist);
+
+    const remDistEl = document.getElementById('driverRemainingDist');
+    if (remDistEl) {
+      if (remainingM > 1000) {
+        remDistEl.innerText = `${(remainingM / 1000).toFixed(1)} km`;
+      } else {
+        remDistEl.innerText = `${Math.round(remainingM)} m`;
+      }
+    }
+
+    const remTimeEl = document.getElementById('driverRemainingTime');
+    if (remTimeEl) {
+      const avgSpeedKmh = Math.max(25, speedKmh || 40);
+      const estMin = Math.max(1, Math.round((remainingM / 1000) / (avgSpeedKmh / 60)));
+      remTimeEl.innerText = `${estMin} min`;
+    }
+
+    const fillEl = document.getElementById('driverProgressFill');
+    if (fillEl && totalDist > 0) {
+      const pct = Math.min(100, Math.round((traveledDist / totalDist) * 100));
+      fillEl.style.width = `${pct}%`;
+    }
+
+    // 6. Off-Route Check
+    if (!driverNavState.isDemoPlaying && driverNavState.hasStartedRoute) {
       const offRouteEl = document.getElementById('driverOffRouteBanner');
-
-      if (minDist > 65) {
+      if (minD > 75) {
         driverNavState.offRouteCount = (driverNavState.offRouteCount || 0) + 1;
         driverNavState.onRouteCount = 0;
-        // Require 3 consecutive readings (>3s) outside 65m to avoid GPS jitter
         if (driverNavState.offRouteCount >= 3) {
           if (!driverNavState.isOffRoute) {
             driverNavState.isOffRoute = true;
             if (offRouteEl) offRouteEl.style.display = 'flex';
-            speakNavInstruction('You are off the test route. Please return to the official route.');
+            const nextInst = steps[driverNavState.currentStepIndex]?.instruction || 'test track';
+            speakNavInstruction(`You are off the test route. Please rejoin at ${nextInst}`);
           }
         }
-      } else if (minDist < 40) {
+      } else if (minD < 45) {
         driverNavState.onRouteCount = (driverNavState.onRouteCount || 0) + 1;
         driverNavState.offRouteCount = 0;
-        // Require 2 consecutive readings inside 40m before confirming rejoin
         if (driverNavState.onRouteCount >= 2) {
           if (driverNavState.isOffRoute) {
             driverNavState.isOffRoute = false;
@@ -3650,19 +4000,38 @@ function processVehiclePosition(lat, lng, speedKmh, heading) {
         }
       }
     }
-  } else {
-    // In demo mode: strictly keep off-route state and banner disabled
-    driverNavState.isOffRoute = false;
-    const offRouteEl = document.getElementById('driverOffRouteBanner');
-    if (offRouteEl) offRouteEl.style.display = 'none';
   }
 
-  // Advance steps based on proximity (live GPS only, demo mode handles its own countdown)
-  if (!driverNavState.isDemoPlaying) {
-    const steps = (driverNavState.activeRoute && driverNavState.activeRoute.steps) || [];
-    const currIdx = driverNavState.currentStepIndex;
-    if (currIdx < steps.length) {
-      updateDriverHudStep(currIdx, 150);
+  // 7. Camera Follow & Heading-Up Rotation
+  const now = Date.now();
+  const isRecentInteraction = (now - (driverNavState.userInteractedTime || 0)) < 6000;
+  const recenterBtn = document.getElementById('driverRecenterBtn');
+  if (recenterBtn && !isRecentInteraction) {
+    recenterBtn.classList.remove('active');
+  }
+
+  if (driverNavState.map && !driverNavState.isOverviewMode && !isRecentInteraction) {
+    driverNavState.map.panTo([lat, lng], { animate: true, duration: 0.35 });
+  }
+
+  // Heading-Up map rotation
+  const mapContainer = document.getElementById('driverNavMap');
+  const rotator = document.getElementById('vehiclePuckRotator');
+
+  if (driverNavState.headingUpMode && mapContainer && driverNavState.map) {
+    mapContainer.classList.add('heading-up');
+    const pane = driverNavState.map.getPane('mapPane');
+    const h = (heading !== null && heading !== undefined) ? heading : 0;
+    if (pane) pane.style.transform = `rotate(${-h}deg)`;
+    if (rotator) rotator.style.transform = 'rotate(0deg)';
+  } else {
+    if (mapContainer && driverNavState.map) {
+      mapContainer.classList.remove('heading-up');
+      const pane = driverNavState.map.getPane('mapPane');
+      if (pane) pane.style.transform = 'rotate(0deg)';
+    }
+    if (rotator && heading !== null && heading !== undefined) {
+      rotator.style.transform = `rotate(${heading}deg)`;
     }
   }
 }
@@ -3685,7 +4054,8 @@ function updateDriverHudStep(stepIndex, countdownMeters) {
   // Countdown text
   const countEl = document.getElementById('driverCountdown');
   if (countEl) {
-    if (countdownMeters <= 30) countEl.innerText = 'Now';
+    if (countdownMeters <= 25) countEl.innerText = 'Now';
+    else if (countdownMeters > 1000) countEl.innerText = `In ${(countdownMeters / 1000).toFixed(1)} km`;
     else countEl.innerText = `In ${Math.round(countdownMeters)} m`;
   }
 
@@ -3714,20 +4084,6 @@ function updateDriverHudStep(stepIndex, countdownMeters) {
   if (tipEl) {
     tipEl.innerText = step.examiner_focus || 'Scan mirrors every 10-15 seconds, check blind spots before changing lanes.';
   }
-
-  // Progress Bar
-  const fillEl = document.getElementById('driverProgressFill');
-  if (fillEl && steps.length > 0) {
-    const pct = Math.round(((stepIndex + 1) / steps.length) * 100);
-    fillEl.style.width = `${pct}%`;
-  }
-
-  // Remaining Distance
-  const remDistEl = document.getElementById('driverRemainingDist');
-  if (remDistEl) remDistEl.innerText = route.distance || '-- km';
-
-  const remTimeEl = document.getElementById('driverRemainingTime');
-  if (remTimeEl) remTimeEl.innerText = route.duration || '-- min';
 }
 
 // Toggle Voice Guidance
@@ -3750,8 +4106,12 @@ window.toggleDriverVoice = toggleDriverVoice;
 
 // Re-center Map on Vehicle
 function recenterDriverMap() {
+  driverNavState.userInteractedTime = 0;
+  const recenterBtn = document.getElementById('driverRecenterBtn');
+  if (recenterBtn) recenterBtn.classList.remove('active');
+
   if (driverNavState.map && driverNavState.userLocation) {
-    driverNavState.map.setView([driverNavState.userLocation.lat, driverNavState.userLocation.lng], 17, {
+    driverNavState.map.setView([driverNavState.userLocation.lat, driverNavState.userLocation.lng], 17.5, {
       animate: true,
       duration: 0.5
     });
@@ -3783,9 +4143,13 @@ function startDriverDemoSimulation() {
   driverNavState.isOffRoute = false;
   driverNavState.offRouteCount = 0;
   driverNavState.onRouteCount = 0;
+  driverNavState.hasStartedRoute = true;
 
   const offRouteEl = document.getElementById('driverOffRouteBanner');
   if (offRouteEl) offRouteEl.style.display = 'none';
+
+  const startBanner = document.getElementById('driverStartBanner');
+  if (startBanner) startBanner.style.display = 'none';
 
   const btn = document.getElementById('driverDemoBtn');
   if (btn) {
@@ -3796,22 +4160,20 @@ function startDriverDemoSimulation() {
   updateDriverGpsStatus('Demo Simulating', true);
 
   const steps = (driverNavState.activeRoute && driverNavState.activeRoute.steps) || [];
-  const stepInterval = Math.max(1, Math.floor(polyline.length / Math.max(1, steps.length)));
 
   if (driverNavState.demoIndex >= polyline.length - 1) {
     driverNavState.demoIndex = 0;
     driverNavState.currentStepIndex = 0;
+    driverNavState.carPolylineIndex = 0;
   }
 
   if (driverNavState.demoIndex === 0 && steps.length > 0) {
-    const firstStep = steps[0];
     updateDriverHudStep(0, 50);
-    speakNavInstruction(`Starting demo simulation for ${driverNavState.activeRoute.name}. ${firstStep.instruction}.`);
+    speakNavInstruction(`Starting demo simulation for ${driverNavState.activeRoute.name}. ${steps[0].instruction}`);
   }
 
   driverNavState.demoTimer = setInterval(() => {
     if (driverNavState.demoIndex >= polyline.length - 1) {
-      // Completed route circuit
       stopDriverDemoSimulation();
       speakNavInstruction('You have arrived back at the testing centre. Practical driving test circuit completed!');
       return;
@@ -3821,36 +4183,17 @@ function startDriverDemoSimulation() {
     driverNavState.demoIndex = Math.min(driverNavState.demoIndex + 2, polyline.length - 1);
     const p2 = polyline[driverNavState.demoIndex];
 
-    // Calculate bearing between p1 and p2
+    // Bearing
     const dLon = (p2[1] - p1[1]) * Math.PI / 180;
     const y = Math.sin(dLon) * Math.cos(p2[0] * Math.PI / 180);
     const x = Math.cos(p1[0] * Math.PI / 180) * Math.sin(p2[0] * Math.PI / 180) -
               Math.sin(p1[0] * Math.PI / 180) * Math.cos(p2[0] * Math.PI / 180) * Math.cos(dLon);
     const bearing = (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
 
-    // Realistic simulated speed ~ 48-52 km/h
-    const simSpeed = Math.floor(45 + Math.random() * 8);
+    const simSpeed = Math.floor(48 + Math.random() * 5);
 
     processVehiclePosition(p2[0], p2[1], simSpeed, bearing);
-
-    if (driverNavState.map) {
-      driverNavState.map.panTo([p2[0], p2[1]], { animate: true, duration: 0.2 });
-    }
-
-    // Dynamic countdown and step advancement
-    const stepIdx = Math.min(steps.length - 1, Math.floor(driverNavState.demoIndex / stepInterval));
-    const nextTargetPoint = (stepIdx + 1) * stepInterval;
-    const pointsRemaining = Math.max(0, nextTargetPoint - driverNavState.demoIndex);
-    const countdownMeters = Math.max(15, Math.round(pointsRemaining * 12));
-
-    updateDriverHudStep(stepIdx, countdownMeters);
-
-    if (stepIdx !== driverNavState.currentStepIndex) {
-      driverNavState.currentStepIndex = stepIdx;
-      const currentStep = steps[stepIdx];
-      speakNavInstruction(currentStep.instruction);
-    }
-  }, 250);
+  }, 220);
 }
 window.startDriverDemoSimulation = startDriverDemoSimulation;
 
@@ -3897,6 +4240,11 @@ function exitDriverNavigation() {
     driverNavState.map = null;
   }
 
+  const mapContainer = document.getElementById('driverNavMap');
+  if (mapContainer) {
+    mapContainer.classList.remove('heading-up');
+  }
+
   driverNavState.activeRoute = null;
   driverNavState.activeCenter = null;
   driverNavState.isOffRoute = false;
@@ -3905,5 +4253,8 @@ function exitDriverNavigation() {
   driverNavState.offRouteCount = 0;
   driverNavState.onRouteCount = 0;
   driverNavState.demoIndex = 0;
+  driverNavState.carPolylineIndex = 0;
+  driverNavState.cumulativeDistances = [];
+  driverNavState.stepTargets = [];
 }
 window.exitDriverNavigation = exitDriverNavigation;

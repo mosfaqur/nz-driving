@@ -970,6 +970,12 @@
         <div class="examiner-tip-text" id="driverExaminerTipText">Maintain legal speed limit, scan mirrors every 10-15 seconds.</div>
       </div>
 
+      <!-- Distance to Starting Point / Force Start Banner -->
+      <div class="driver-start-banner" id="driverStartBanner" style="display: none;">
+        <span class="start-banner-text" id="driverStartBannerText">Testing Depot is nearby.</span>
+        <button type="button" class="btn-start-guidance" onclick="forceStartRouteGuidance()">Start Guidance Now</button>
+      </div>
+
       <!-- Off-Route Warning Alert Banner -->
       <div class="driver-offroute-banner" id="driverOffRouteBanner" style="display: none;">
         <span class="offroute-alert-badge">OFF TEST ROUTE</span>
@@ -990,9 +996,19 @@
       </div>
       <!-- Floating Action Buttons -->
       <div class="driver-floating-actions">
+        <!-- Voice Prompts Toggle -->
         <button type="button" class="driver-float-btn active" id="driverVoiceBtn" onclick="toggleDriverVoice()" title="Toggle Voice Prompts">
           <svg id="driverVoiceIcon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
         </button>
+        <!-- Heading-Up vs North-Up Compass Toggle -->
+        <button type="button" class="driver-float-btn active" id="driverCompassBtn" onclick="toggleDriverCompass()" title="Toggle Heading-Up / North-Up Driving Perspective">
+          <svg id="driverCompassIcon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 19 21 12 17 5 21 12 2"></polygon></svg>
+        </button>
+        <!-- Driving View vs Route Overview Camera Toggle -->
+        <button type="button" class="driver-float-btn" id="driverCameraBtn" onclick="toggleDriverCameraView()" title="Toggle Full Route Overview / Street Driving Zoom">
+          <svg id="driverCameraIcon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        </button>
+        <!-- Re-center on Vehicle Button -->
         <button type="button" class="driver-float-btn" id="driverRecenterBtn" onclick="recenterDriverMap()" title="Re-center on Vehicle">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
         </button>
@@ -1036,6 +1052,6 @@
   </div>
 
   <script src="/static/js/leaflet.js"></script>
-  <script src="/static/js/app.js?v=2.3.1"></script>
+  <script src="/static/js/app.js?v=2.4.0"></script>
 </body>
 </html>

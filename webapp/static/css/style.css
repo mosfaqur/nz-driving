@@ -3614,6 +3614,15 @@ dialog::backdrop {
   background: #0f172a;
 }
 
+.driver-nav-map-container.heading-up {
+  overflow: hidden;
+}
+
+.driver-nav-map-container.heading-up .leaflet-map-pane {
+  transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  transform-origin: 50% 50%;
+}
+
 /* Custom Vehicle Puck on Leaflet Map */
 .vehicle-marker-puck {
   position: relative;
@@ -3779,6 +3788,44 @@ dialog::backdrop {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* Start Navigation Guidance Banner */
+.driver-start-banner {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1.5px solid #0284c7;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #f8fafc;
+  font-size: 13.5px;
+  font-weight: 600;
+  pointer-events: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.driver-start-banner .btn-start-guidance {
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 12.5px;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
+  transition: all 0.2s;
+}
+
+.driver-start-banner .btn-start-guidance:hover {
+  background: #0ea5e9;
+  transform: translateY(-1px);
 }
 
 /* Off-Route Alert Banner */
