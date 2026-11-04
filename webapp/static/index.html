@@ -7,7 +7,7 @@
   <title>NZ Road Code Master Study & Mock Exam</title>
   <link rel="icon" type="image/png" href="/static/favicon.png">
   <link rel="stylesheet" href="/static/css/leaflet.css">
-  <link rel="stylesheet" href="/static/css/style.css?v=2.2.2">
+  <link rel="stylesheet" href="/static/css/style.css?v=2.3.1">
   <script src="/static/js/chart.min.js"></script>
 </head>
 <body>
@@ -333,10 +333,22 @@
         </div>
       </div>
 
-      <!-- Live Summary Bar -->
+      <!-- Live Summary Bar & Accordion Controls -->
       <div class="routes-summary-bar">
-        <span id="routes-summary-text" class="routes-summary-text">Showing 66 testing centres (145 routes)</span>
-        <span class="routes-summary-hint">Turn-by-turn spoken guidance, HUD drive simulation, and live Google Maps practice</span>
+        <div class="routes-summary-left">
+          <span id="routes-summary-text" class="routes-summary-text">Showing 66 testing centres (145 routes)</span>
+          <span class="routes-summary-hint">Click any testing centre to expand its routes, or use Expand/Collapse All</span>
+        </div>
+        <div class="routes-accordion-actions">
+          <button type="button" id="btn-routes-expand-all" class="btn-accordion-toggle" onclick="expandAllCenters()" title="Expand all testing centres to view all route cards">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+            <span>Expand All</span>
+          </button>
+          <button type="button" id="btn-routes-collapse-all" class="btn-accordion-toggle" onclick="collapseAllCenters()" title="Collapse all testing centres to compact list">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
+            <span>Collapse All</span>
+          </button>
+        </div>
       </div>
 
       <!-- Test Centres & Routes Grid -->
@@ -1024,6 +1036,6 @@
   </div>
 
   <script src="/static/js/leaflet.js"></script>
-  <script src="/static/js/app.js?v=2.3.0"></script>
+  <script src="/static/js/app.js?v=2.3.1"></script>
 </body>
 </html>

@@ -2788,51 +2788,188 @@ dialog::backdrop {
   font-size: 13px;
   color: var(--slate-500);
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 10px;
+}
+
+.routes-summary-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .routes-summary-text {
-  font-weight: 600;
-  color: var(--slate-700);
+  font-weight: 700;
+  color: var(--slate-800);
 }
 
 .routes-summary-hint {
   font-size: 12px;
-  color: var(--slate-400);
+  color: var(--slate-500);
+}
+
+.routes-accordion-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-accordion-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #ffffff;
+  border: 1px solid var(--slate-300);
+  color: var(--slate-700);
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-accordion-toggle:hover {
+  background: var(--slate-100);
+  color: var(--slate-900);
+  border-color: var(--slate-400);
 }
 
 /* Centres List */
 .routes-centers-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 12px;
 }
 
 .center-card {
   background: #ffffff;
   border: 1px solid var(--slate-200);
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.center-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .center-card-header {
-  padding: 18px 22px;
+  padding: 14px 18px;
   background: #f8fafc;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease;
+}
+
+.center-card-header:hover {
+  background: #f1f5f9;
+}
+
+.center-card.is-expanded .center-card-header {
   border-bottom: 1px solid var(--slate-200);
+  background: #f8fafc;
+}
+
+.center-card.is-collapsed .center-card-header {
+  border-bottom: none;
+}
+
+.center-card.is-collapsed .center-address-row {
+  margin-bottom: 0;
+}
+
+.center-card.is-collapsed .center-features-row,
+.center-card.is-collapsed .center-officer-tip,
+.center-card.is-collapsed .center-routes-grid {
+  display: none !important;
+}
+
+.center-card.is-expanded .center-routes-grid {
+  display: grid;
+  animation: fadeInRoutes 0.2s ease;
+}
+
+@keyframes fadeInRoutes {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .center-title-row {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+}
+
+.center-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .center-title {
-  font-size: 18px;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--slate-900);
+  margin: 0;
+}
+
+.badge-routes-count {
+  background: #e2e8f0;
+  color: #334155;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.center-card.is-expanded .badge-routes-count {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.center-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-center-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid var(--slate-300);
+  color: var(--slate-700);
+  padding: 5px 11px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.center-card-header:hover .btn-center-toggle {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: #f0f7ff;
+}
+
+.toggle-icon {
+  transition: transform 0.2s ease;
+}
+
+.toggle-icon.rotated {
+  transform: rotate(180deg);
+}
   font-weight: 800;
   color: var(--slate-900);
   margin: 0;

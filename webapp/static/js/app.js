@@ -2566,6 +2566,7 @@ function initRoutesEventListeners() {
   if (regionSelect) {
     regionSelect.addEventListener('change', (e) => {
       routesFilter.region = e.target.value || 'all';
+      userManualToggle = false;
       document.querySelectorAll('.region-pill-btn').forEach(btn => {
         if (btn.getAttribute('data-region') === routesFilter.region) {
           btn.classList.add('active');
@@ -2583,6 +2584,7 @@ function initRoutesEventListeners() {
       document.querySelectorAll('.region-pill-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       routesFilter.region = btn.getAttribute('data-region') || 'all';
+      userManualToggle = false;
       if (regionSelect) {
         regionSelect.value = routesFilter.region;
       }
@@ -2670,7 +2672,94 @@ function applyRoutesFilter() {
     summaryEl.innerText = `Showing ${matchedCenters.length} testing centre${matchedCenters.length === 1 ? '' : 's'} (${totalMatchingRoutes} route${totalMatchingRoutes === 1 ? '' : 's'})`;
   }
 
+  // Manage accordion expand/collapse state:
+  // If user searched for something specific, expand all matching centres immediately so routes are visible.
+  if (routesFilter.search && routesFilter.search.trim().length > 0) {
+    matchedCenters.forEach(c => expandedCenterIds.add(c.center_id));
+  } else if (!userManualToggle) {
+    // If only 1-2 centres match, auto-expand them.
+    if (matchedCenters.length <= 2) {
+      matchedCenters.forEach(c => expandedCenterIds.add(c.center_id));
+    } else {
+      // By default keep centres collapsed for a compact, clean directory overview!
+      expandedCenterIds.clear();
+    }
+  }
+
   renderRoutesCenters(matchedCenters);
+}
+
+// Global accordion state
+let expandedCenterIds = new Set();
+let userManualToggle = false;
+
+function onCenterHeaderClick(event, centerId) {
+  // Ignore clicks if triggered directly on links or inputs inside header
+  if (event.target.closest('a') || event.target.closest('input')) {
+    return;
+  }
+  toggleCenterRoutes(centerId);
+}
+
+function toggleCenterRoutes(centerId) {
+  userManualToggle = true;
+  if (expandedCenterIds.has(centerId)) {
+    expandedCenterIds.delete(centerId);
+  } else {
+    expandedCenterIds.add(centerId);
+  }
+  
+  const card = document.getElementById(`center-${centerId}`);
+  if (card) {
+    const isNowExpanded = expandedCenterIds.has(centerId);
+    card.classList.toggle('is-expanded', isNowExpanded);
+    card.classList.toggle('is-collapsed', !isNowExpanded);
+    card.setAttribute('aria-expanded', isNowExpanded ? 'true' : 'false');
+    
+    const toggleBtn = card.querySelector('.btn-center-toggle');
+    if (toggleBtn) {
+      const txt = toggleBtn.querySelector('.toggle-text');
+      const icon = toggleBtn.querySelector('.toggle-icon');
+      if (txt) txt.innerText = isNowExpanded ? 'Hide Routes' : 'View Routes';
+      if (icon) icon.classList.toggle('rotated', isNowExpanded);
+    }
+  }
+}
+
+function expandAllCenters() {
+  userManualToggle = true;
+  if (allRoutesData && allRoutesData.centers) {
+    allRoutesData.centers.forEach(c => expandedCenterIds.add(c.center_id));
+  }
+  document.querySelectorAll('.center-card').forEach(card => {
+    card.classList.add('is-expanded');
+    card.classList.remove('is-collapsed');
+    card.setAttribute('aria-expanded', 'true');
+    const toggleBtn = card.querySelector('.btn-center-toggle');
+    if (toggleBtn) {
+      const txt = toggleBtn.querySelector('.toggle-text');
+      const icon = toggleBtn.querySelector('.toggle-icon');
+      if (txt) txt.innerText = 'Hide Routes';
+      if (icon) icon.classList.add('rotated');
+    }
+  });
+}
+
+function collapseAllCenters() {
+  userManualToggle = true;
+  expandedCenterIds.clear();
+  document.querySelectorAll('.center-card').forEach(card => {
+    card.classList.remove('is-expanded');
+    card.classList.add('is-collapsed');
+    card.setAttribute('aria-expanded', 'false');
+    const toggleBtn = card.querySelector('.btn-center-toggle');
+    if (toggleBtn) {
+      const txt = toggleBtn.querySelector('.toggle-text');
+      const icon = toggleBtn.querySelector('.toggle-icon');
+      if (txt) txt.innerText = 'View Routes';
+      if (icon) icon.classList.remove('rotated');
+    }
+  });
 }
 
 function renderRoutesCenters(centers) {
@@ -2690,6 +2779,9 @@ function renderRoutesCenters(centers) {
 
   let html = '';
   centers.forEach(c => {
+    const isExpanded = expandedCenterIds.has(c.center_id);
+    const expandClass = isExpanded ? 'is-expanded' : 'is-collapsed';
+    const routeCount = (c.routes || []).length;
     const featuresHtml = (c.key_features || []).map(f => `<span class="center-feature-pill">${escapeHtml(f)}</span>`).join('');
     
     let routesHtml = '';
@@ -2741,15 +2833,24 @@ function renderRoutesCenters(centers) {
     });
 
     html += `
-      <div class="center-card" id="center-${escapeHtml(c.center_id)}">
-        <div class="center-card-header">
+      <div class="center-card ${expandClass}" id="center-${escapeHtml(c.center_id)}" aria-expanded="${isExpanded ? 'true' : 'false'}">
+        <div class="center-card-header" onclick="onCenterHeaderClick(event, '${escapeHtml(c.center_id)}')" onkeydown="if(event.key==='Enter'||event.key===' '){toggleCenterRoutes('${escapeHtml(c.center_id)}'); event.preventDefault();}" role="button" tabindex="0" title="Click to ${isExpanded ? 'collapse' : 'expand'} ${escapeHtml(c.name)} routes">
           <div class="center-title-row">
-            <h3 class="center-title">${escapeHtml(c.name)}</h3>
-            <div class="center-badges-row">
-              ${c.region ? `<span class="badge-region">${escapeHtml(c.region)}</span>` : ''}
-              <span class="badge-area">${escapeHtml(c.area)}</span>
-              <span class="badge-passrate">Pass Rate ~${escapeHtml(c.pass_rate || '60%')}</span>
-              <span class="badge-agency">${escapeHtml(c.agency || 'VTNZ')}</span>
+            <div class="center-title-group">
+              <h3 class="center-title">${escapeHtml(c.name)}</h3>
+              <span class="badge-routes-count">${routeCount} Route${routeCount === 1 ? '' : 's'}</span>
+            </div>
+            <div class="center-header-right">
+              <div class="center-badges-row">
+                ${c.region ? `<span class="badge-region">${escapeHtml(c.region)}</span>` : ''}
+                <span class="badge-area">${escapeHtml(c.area)}</span>
+                <span class="badge-passrate">Pass Rate ~${escapeHtml(c.pass_rate || '60%')}</span>
+                <span class="badge-agency">${escapeHtml(c.agency || 'VTNZ')}</span>
+              </div>
+              <button type="button" class="btn-center-toggle" onclick="toggleCenterRoutes('${escapeHtml(c.center_id)}'); event.stopPropagation();" aria-label="Toggle ${escapeHtml(c.name)} routes">
+                <span class="toggle-text">${isExpanded ? 'Hide Routes' : 'View Routes'}</span>
+                <svg class="toggle-icon ${isExpanded ? 'rotated' : ''}" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
             </div>
           </div>
           <div class="center-address-row">
@@ -2775,6 +2876,8 @@ function renderRoutesCenters(centers) {
 
 function resetRoutesFilters() {
   routesFilter = { region: 'all', area: 'all', test_type: 'all', search: '' };
+  expandedCenterIds.clear();
+  userManualToggle = false;
   const searchInput = document.getElementById('routes-search-input');
   if (searchInput) searchInput.value = '';
   const searchClear = document.getElementById('routes-search-clear');
@@ -2954,6 +3057,10 @@ window.openRouteModal = openRouteModal;
 window.closeRouteModal = closeRouteModal;
 window.resetRoutesFilters = resetRoutesFilters;
 window.loadRoutesView = loadRoutesView;
+window.toggleCenterRoutes = toggleCenterRoutes;
+window.onCenterHeaderClick = onCenterHeaderClick;
+window.expandAllCenters = expandAllCenters;
+window.collapseAllCenters = collapseAllCenters;
 
 
 
